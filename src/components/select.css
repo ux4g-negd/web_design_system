@@ -1,0 +1,488 @@
+/* ==========================================================================
+   UX4G Select Option Component
+   Styles for Single Select and Multi Select with Small, Medium, Large sizes
+   Namespace: .ux4g-select*
+   ========================================================================== */
+
+.ux4g-select {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--ux4g-padding-2xs, 4px);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ux4g-select * {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Control Container (The Trigger Box) - Default Medium (M)
+   ========================================================================== */
+
+.ux4g-select .ux4g-select-control {
+  min-height: var(--ux4g-sz-m, 2.5rem);
+  width: 100%;
+  border-radius: var(--ux4g-radius-md, 8px);
+  border: var(--ux4g-border-width-sm, 1px) solid var(--ux4g-border-color-neutral-subtle, #e5e5e5);
+  background: var(--ux4g-bg-neutral-elevated, #ffffff);
+  color: var(--ux4g-text-neutral-primary, #171717);
+  padding: var(--ux4g-padding-none, 0) var(--ux4g-padding-s, 12px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ux4g-gap-column-xs, 8px);
+  cursor: pointer;
+  outline: none;
+  font-family: inherit;
+  font-size: var(--ux4g-fs-14, 14px);
+  text-align: var(--ux4g-ta-start);
+  user-select: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.ux4g-select .ux4g-select-control:hover {
+  border-color: var(--ux4g-border-color-neutral-default, #c4c4c4);
+}
+
+.ux4g-select .ux4g-select-control:focus {
+  outline: none;
+}
+
+/* Focus and Open State Highlight */
+.ux4g-select:is(.is-open, :focus-within) .ux4g-select-control,
+.ux4g-select .ux4g-select-control:focus-visible {
+  border-color: var(--ux4g-border-color-primary-strong, #4a2bc2);
+  box-shadow: 0 0 0 var(--ux4g-border-width-sm, 1px) var(--ux4g-border-color-primary-strong, #4a2bc2);
+  outline: none;
+}
+
+.ux4g-select.is-open {
+  z-index: var(--ux4g-z-dropdown, 1000);
+}
+
+/* Value & Content */
+.ux4g-select .ux4g-select-value {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ux4g-gap-column-xs, 8px);
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+
+.ux4g-select .ux4g-select-icon {
+  font-size: var(--ux4g-sz-20, 20px);
+  color: var(--ux4g-text-neutral-secondary, #525252);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ux4g-select .ux4g-select-text {
+  flex: 1;
+  white-space: var(--ux4g-ws-nowrap);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: var(--ux4g-fs-14, 14px);
+  color: var(--ux4g-text-neutral-primary, #171717);
+}
+
+.ux4g-select .ux4g-select-text.is-placeholder {
+  color: var(--ux4g-text-neutral-tertiary, #737373);
+}
+
+/* Native Select Tag for Form Interoperability & Accessibility */
+.ux4g-select .ux4g-select-native {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  z-index: -1;
+  clip: rect(0, 0, 0, 0);
+}
+
+.ux4g-select-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: inherit;
+  font-size: var(--ux4g-fs-14, 14px);
+  color: var(--ux4g-text-neutral-primary, #171717);
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.ux4g-select-input::placeholder {
+  color: var(--ux4g-text-neutral-tertiary, #737373);
+}
+
+/* Caret / Chevron */
+.ux4g-select .ux4g-select-caret {
+  color: var(--ux4g-text-neutral-secondary, #525252);
+  font-size: var(--ux4g-sz-20, 20px);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+
+.ux4g-select.is-open .ux4g-select-caret {
+  transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   Size Variations: Small (S), Medium (M), Large (L)
+   ========================================================================== */
+
+/* Small (S) */
+.ux4g-select:is(.ux4g-select-s, .ux4g-select--s) .ux4g-select-control {
+  height: var(--ux4g-sz-36, 2.25rem);
+  min-height: var(--ux4g-sz-36, 2.25rem);
+  padding: var(--ux4g-padding-none, 0) var(--ux4g-padding-xs, 10px);
+  border-radius: var(--ux4g-radius-md, 8px);
+}
+
+.ux4g-select:is(.ux4g-select-s, .ux4g-select--s) :is(.ux4g-select-icon, .ux4g-select-caret) {
+  font-size: var(--ux4g-sz-18, 18px);
+}
+
+.ux4g-select:is(.ux4g-select-s, .ux4g-select--s) :is(.ux4g-select-text, .ux4g-select-input, .ux4g-select-option, .ux4g-select-checkbox-label) {
+  font-size: 13px;
+}
+
+/* Medium (M) - Default */
+.ux4g-select:is(.ux4g-select-m, .ux4g-select--m) .ux4g-select-control {
+  height: var(--ux4g-sz-m, 2.5rem);
+  min-height: var(--ux4g-sz-m, 2.5rem);
+  padding: var(--ux4g-padding-none, 0) var(--ux4g-padding-s, 12px);
+  border-radius: var(--ux4g-radius-md, 8px);
+}
+
+.ux4g-select:is(.ux4g-select-m, .ux4g-select--m) :is(.ux4g-select-icon, .ux4g-select-caret) {
+  font-size: var(--ux4g-sz-20, 20px);
+}
+
+.ux4g-select:is(.ux4g-select-m, .ux4g-select--m) :is(.ux4g-select-text, .ux4g-select-input, .ux4g-select-option, .ux4g-select-checkbox-label) {
+  font-size: var(--ux4g-fs-14, 14px);
+}
+
+/* Large (L) */
+.ux4g-select:is(.ux4g-select-l, .ux4g-select--l) .ux4g-select-control {
+  height: var(--ux4g-sz-l, 3rem);
+  min-height: var(--ux4g-sz-l, 3rem);
+  padding: var(--ux4g-padding-none, 0) var(--ux4g-padding-m, 16px);
+  border-radius: var(--ux4g-radius-lg, 10px);
+}
+
+.ux4g-select:is(.ux4g-select-l, .ux4g-select--l) :is(.ux4g-select-icon, .ux4g-select-caret) {
+  font-size: var(--ux4g-sz-20, 20px);
+}
+
+.ux4g-select:is(.ux4g-select-l, .ux4g-select--l) :is(.ux4g-select-text, .ux4g-select-input, .ux4g-select-option, .ux4g-select-checkbox-label) {
+  font-size: var(--ux4g-fs-16, 16px);
+}
+
+/* ==========================================================================
+   Chips / Tag for Selected items in multi-select
+   ========================================================================== */
+
+.ux4g-select .ux4g-select-chips {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ux4g-padding-2xs, 4px);
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.ux4g-select-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ux4g-padding-2xs, 4px);
+  background: var(--ux4g-bg-neutral-subtle, #f3f4f6);
+  border: var(--ux4g-border-width-sm, 1px) solid var(--ux4g-border-color-neutral-subtle, #e5e5e5);
+  border-radius: var(--ux4g-radius-sm, 4px);
+  padding: var(--ux4g-padding-3xs, 2px) var(--ux4g-padding-2xs, 6px);
+  font-size: var(--ux4g-fs-12, 12px);
+  line-height: 1;
+  color: var(--ux4g-text-neutral-primary, #171717);
+  white-space: var(--ux4g-ws-nowrap);
+}
+
+.ux4g-select-chip-remove {
+  cursor: pointer;
+  font-size: var(--ux4g-fs-14, 14px);
+  color: var(--ux4g-text-neutral-secondary, #737373);
+}
+
+.ux4g-select-chip-remove:hover {
+  color: var(--ux4g-text-neutral-primary, #171717);
+}
+
+.ux4g-select-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ux4g-bg-primary-strong, var(--ux4g-color-primary-600, #4a2bc2));
+  color: var(--ux4g-text-neutral-inverse, var(--ux4g-text-white, #ffffff));
+  font-size: var(--ux4g-fs-11, 11px);
+  font-weight: var(--ux4g-fw-semibold, 600);
+  border-radius: var(--ux4g-radius-full, 9999px);
+  padding: var(--ux4g-padding-3xs, 2px) var(--ux4g-padding-2xs, 6px);
+  margin-left: var(--ux4g-padding-2xs, 4px);
+}
+
+/* ==========================================================================
+   Help & Description Text
+   ========================================================================== */
+
+.ux4g-select .ux4g-select-help {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ux4g-padding-2xs, 4px);
+  font-size: var(--ux4g-fs-12, 12px);
+  line-height: var(--ux4g-lh-18, 1.4);
+  color: var(--ux4g-text-neutral-secondary, #737373);
+  margin-top: var(--ux4g-padding-3xs, 2px);
+}
+
+.ux4g-select .ux4g-select-help .ux4g-icon-outlined,
+.ux4g-select .ux4g-select-help .ux4g-icon {
+  font-size: var(--ux4g-fs-14, 14px);
+  color: var(--ux4g-text-neutral-secondary, #737373);
+}
+
+/* ==========================================================================
+   Dropdown Menu & Dropdown List
+   ========================================================================== */
+
+.ux4g-select .ux4g-select-menu {
+  position: absolute;
+  top: calc(100% - 20px);
+  left: 0;
+  width: 100%;
+  background: var(--ux4g-bg-neutral-elevated, #ffffff);
+  border: var(--ux4g-border-width-sm, 1px) solid var(--ux4g-border-color-neutral-subtle, #e5e5e5);
+  border-radius: var(--ux4g-radius-md, 10px);
+  box-shadow: var(--ux4g-shadow-l2, 0 10px 25px -5px rgba(0, 0, 0, 0.1));
+  padding: var(--ux4g-padding-2xs, 6px) var(--ux4g-padding-none, 0);
+  display: none;
+  z-index: var(--ux4g-z-dropdown, 1001);
+  max-height: 15rem;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.ux4g-select.is-open .ux4g-select-menu {
+  display: block;
+}
+
+.ux4g-select .ux4g-select-list {
+  list-style: none;
+  padding: var(--ux4g-padding-none, 0);
+  margin: var(--ux4g-padding-none, 0);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ux4g-padding-3xs, 2px);
+}
+
+/* Single Select Option */
+.ux4g-select .ux4g-select-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - var(--ux4g-padding-s, 0.75rem));
+  margin: var(--ux4g-padding-none, 0) var(--ux4g-padding-2xs, 6px);
+  padding: var(--ux4g-padding-xs, 8px) var(--ux4g-padding-s, 12px);
+  border-radius: var(--ux4g-radius-sm, 6px);
+  border: none;
+  background: transparent;
+  color: var(--ux4g-text-neutral-primary, #171717);
+  font-family: inherit;
+  font-size: var(--ux4g-fs-14, 14px);
+  text-align: var(--ux4g-ta-start);
+  cursor: pointer;
+  outline: none;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.ux4g-select .ux4g-select-option:hover {
+  background-color: var(--ux4g-bg-neutral-subtle, #f3f4f6);
+}
+
+.ux4g-select .ux4g-select-option:focus-visible {
+  background-color: var(--ux4g-bg-neutral-subtle, #f3f4f6);
+  outline: var(--ux4g-border-width-md, 2px) solid var(--ux4g-border-color-primary-strong, #4a2bc2);
+  outline-offset: -2px;
+}
+
+.ux4g-select .ux4g-select-option.is-selected,
+.ux4g-select .ux4g-select-option[aria-selected="true"] {
+  background-color: var(--ux4g-bg-primary-soft, #ede9fe);
+  color: var(--ux4g-text-brand-primary-default, var(--ux4g-color-primary-600, #4a2bc2));
+  font-weight: var(--ux4g-fw-medium, 500);
+}
+
+.ux4g-select .ux4g-select-option .ux4g-select-option-check {
+  font-size: var(--ux4g-sz-18, 18px);
+  color: var(--ux4g-text-brand-primary-default, var(--ux4g-color-primary-600, #4a2bc2));
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.ux4g-select .ux4g-select-option.is-selected .ux4g-select-option-check,
+.ux4g-select .ux4g-select-option[aria-selected="true"] .ux4g-select-option-check {
+  opacity: 1;
+}
+
+/* Multi Select Option Row with Standard UX4G Checkbox */
+.ux4g-select .ux4g-select-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: var(--ux4g-gap-column-xs, 8px);
+  width: calc(100% - var(--ux4g-padding-s, 0.75rem));
+  margin: var(--ux4g-padding-none, 0) var(--ux4g-padding-2xs, 6px);
+  padding: var(--ux4g-padding-xs, 8px) var(--ux4g-padding-xs, 10px);
+  border-radius: var(--ux4g-radius-sm, 4px);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease;
+}
+
+.ux4g-select .ux4g-select-checkbox-row:hover {
+  background-color: var(--ux4g-bg-neutral-subtle, #f3f4f6);
+}
+
+.ux4g-select .ux4g-select-checkbox-row:focus-visible {
+  background-color: var(--ux4g-bg-neutral-subtle, #f3f4f6);
+  outline: var(--ux4g-border-width-md, 2px) solid var(--ux4g-border-color-primary-strong, #4a2bc2);
+  outline-offset: -2px;
+}
+
+.ux4g-select .ux4g-select-checkbox-row.is-selected {
+  background-color: var(--ux4g-bg-primary-soft, #ede9fe);
+}
+
+.ux4g-select .ux4g-select-checkbox-row .ux4g-checkbox {
+  pointer-events: none;
+  width: auto;
+}
+
+.ux4g-select-checkbox-label {
+  font-size: var(--ux4g-fs-14, 14px);
+  color: var(--ux4g-text-neutral-primary, #171717);
+  flex: 1;
+}
+
+/* ==========================================================================
+   UX4G Native Form Select Variant (.ux4g-form-select)
+   ========================================================================== */
+
+.ux4g-form-select {
+  display: block;
+  width: 100%;
+  height: var(--ux4g-sz-m, 2.5rem);
+  min-height: var(--ux4g-sz-m, 2.5rem);
+  padding: var(--ux4g-padding-2xs, 8px) var(--ux4g-padding-xl, 32px) var(--ux4g-padding-2xs, 8px) var(--ux4g-padding-s, 12px);
+  font-family: inherit;
+  font-size: var(--ux4g-fs-14, 14px);
+  font-weight: var(--ux4g-fw-regular, 400);
+  line-height: var(--ux4g-lh-20, 1.4);
+  color: var(--ux4g-text-neutral-primary, #171717);
+  background-color: var(--ux4g-bg-neutral-elevated, #ffffff);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23171717'%3e%3cpath d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px 20px;
+  border: var(--ux4g-border-width-sm, 1px) solid var(--ux4g-border-color-neutral-subtle, #e5e5e5);
+  border-radius: var(--ux4g-radius-md);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.ux4g-form-select:hover {
+  border-color: var(--ux4g-border-color-neutral-default, #c4c4c4);
+}
+
+.ux4g-form-select:focus,
+.ux4g-form-select:focus-visible {
+  border-color: var(--ux4g-border-color-primary-strong, #4a2bc2);
+  box-shadow: 0 0 0 var(--ux4g-border-width-sm, 1px) var(--ux4g-border-color-primary-strong, #4a2bc2);
+  outline: none;
+}
+
+.ux4g-form-select:disabled {
+  background-color: var(--ux4g-bg-neutral-subtle, #f3f4f6);
+  border-color: var(--ux4g-border-color-neutral-subtle, #e5e5e5);
+  color: var(--ux4g-text-neutral-disabled, #a3a3a3);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Form Select Sizes: Small (S), Medium (M), Large (L) */
+
+/* Small (S) */
+
+.ux4g-form-select-s {
+  height: var(--ux4g-sz-36, 2.25rem);
+  min-height: var(--ux4g-sz-36, 2.25rem);
+  padding: var(--ux4g-padding-2xs, 6px) var(--ux4g-padding-l, 28px) var(--ux4g-padding-2xs, 6px) var(--ux4g-padding-xs, 10px);
+  font-size: 13px;
+  line-height: var(--ux4g-lh-18, 1.3);
+  border-radius: var(--ux4g-radius-md, 8px);
+  background-position: right var(--ux4g-padding-xs, 8px) center;
+  background-size: 16px 16px;
+}
+
+/* Medium (M) - Default */
+.ux4g-form-select-m {
+  height: var(--ux4g-sz-m, 2.5rem);
+  min-height: var(--ux4g-sz-m, 2.5rem);
+  padding: var(--ux4g-padding-xs, 8px) var(--ux4g-padding-xl, 32px) var(--ux4g-padding-xs, 8px) var(--ux4g-padding-s, 12px);
+  font-size: var(--ux4g-fs-14, 14px);
+  line-height: var(--ux4g-lh-20, 1.4);
+  border-radius: var(--ux4g-radius-md, 8px);
+  background-position: right var(--ux4g-padding-xs, 10px) center;
+  background-size: 18px 18px;
+}
+
+/* Large (L) */
+.ux4g-form-select-l {
+  height: var(--ux4g-sz-l, 3rem);
+  min-height: var(--ux4g-sz-l, 3rem);
+  padding: var(--ux4g-padding-s, 12px) var(--ux4g-padding-2xl, 38px) var(--ux4g-padding-s, 12px) var(--ux4g-padding-m, 16px);
+  font-size: var(--ux4g-fs-16, 16px);
+  line-height: var(--ux4g-lh-24, 1.5);
+  border-radius: var(--ux4g-radius-lg, 10px);
+  background-position: right var(--ux4g-padding-s, 12px) center;
+  background-size: 22px 22px;
+}
+
+@media (max-width: 768px) {
+  .ux4g-form-select-m {
+      height: 3rem;
+  }
+}

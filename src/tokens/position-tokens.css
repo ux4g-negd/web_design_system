@@ -1,0 +1,68 @@
+/* =========================================
+   UX4G POSITION PRIMITIVE TOKENS
+========================================= */
+
+:root {
+  /* 1. Position Types */
+  --ux4g-position-static: static;
+  --ux4g-position-relative: relative;
+  --ux4g-position-absolute: absolute;
+  --ux4g-position-fixed: fixed;
+  --ux4g-position-sticky: sticky;
+
+  /* 2. Position Percentage / Auto Values */
+  --ux4g-position-0: 0;
+  --ux4g-position-25: 25%;
+  --ux4g-position-50: 50%;
+  --ux4g-position-75: 75%;
+  --ux4g-position-100: 100%;
+  --ux4g-position-auto: auto;
+
+  /* 3. Position Fixed Pixel Values */
+  --ux4g-position-px-0: 0;          /* 0px */
+  --ux4g-position-px-2: 0.125rem;   /* 2px */
+  --ux4g-position-px-4: 0.25rem;    /* 4px */
+  --ux4g-position-px-6: 0.375rem;   /* 6px */
+  --ux4g-position-px-8: 0.5rem;     /* 8px */
+  --ux4g-position-px-10: 0.625rem;  /* 10px */
+  --ux4g-position-px-12: 0.75rem;   /* 12px */
+  --ux4g-position-px-14: 0.875rem;  /* 14px */
+  --ux4g-position-px-16: 1rem;      /* 16px */
+  --ux4g-position-px-20: 1.25rem;   /* 20px */
+  --ux4g-position-px-24: 1.5rem;    /* 24px */
+  --ux4g-position-px-28: 1.75rem;   /* 28px */
+  --ux4g-position-px-32: 2rem;      /* 32px */
+  --ux4g-position-px-36: 2.25rem;   /* 36px */
+  --ux4g-position-px-40: 2.5rem;    /* 40px */
+  --ux4g-position-px-48: 3rem;      /* 48px */
+  --ux4g-position-px-56: 3.5rem;    /* 56px */
+  --ux4g-position-px-64: 4rem;      /* 64px */
+  --ux4g-position-px-80: 5rem;      /* 80px */
+  --ux4g-position-px-96: 6rem;      /* 96px */
+
+  /* 4. Position Negative Pixel Values */
+  --ux4g-position-px-n-2:  calc(var(--ux4g-position-px-2) * -1);   /* -2px */
+  --ux4g-position-px-n-4:  calc(var(--ux4g-position-px-4) * -1);   /* -4px */
+  --ux4g-position-px-n-6:  calc(var(--ux4g-position-px-6) * -1);   /* -6px */
+  --ux4g-position-px-n-8:  calc(var(--ux4g-position-px-8) * -1);   /* -8px */
+  --ux4g-position-px-n-10: calc(var(--ux4g-position-px-10) * -1);  /* -10px */
+  --ux4g-position-px-n-12: calc(var(--ux4g-position-px-12) * -1);  /* -12px */
+  --ux4g-position-px-n-14: calc(var(--ux4g-position-px-14) * -1);  /* -14px */
+  --ux4g-position-px-n-16: calc(var(--ux4g-position-px-16) * -1);  /* -16px */
+  --ux4g-position-px-n-20: calc(var(--ux4g-position-px-20) * -1);  /* -20px */
+  --ux4g-position-px-n-24: calc(var(--ux4g-position-px-24) * -1);  /* -24px */
+  --ux4g-position-px-n-28: calc(var(--ux4g-position-px-28) * -1);  /* -28px */
+  --ux4g-position-px-n-32: calc(var(--ux4g-position-px-32) * -1);  /* -32px */
+  --ux4g-position-px-n-36: calc(var(--ux4g-position-px-36) * -1);  /* -36px */
+  --ux4g-position-px-n-40: calc(var(--ux4g-position-px-40) * -1);  /* -40px */
+  --ux4g-position-px-n-48: calc(var(--ux4g-position-px-48) * -1);  /* -48px */
+  --ux4g-position-px-n-56: calc(var(--ux4g-position-px-56) * -1);  /* -56px */
+  --ux4g-position-px-n-64: calc(var(--ux4g-position-px-64) * -1);  /* -64px */
+  --ux4g-position-px-n-80: calc(var(--ux4g-position-px-80) * -1);  /* -80px */
+  --ux4g-position-px-n-96: calc(var(--ux4g-position-px-96) * -1);  /* -96px */
+
+  /* 5. Transform Centers */
+  --ux4g-translate-middle: translate(-50%, -50%);
+  --ux4g-translate-middle-x: translateX(-50%);
+  --ux4g-translate-middle-y: translateY(-50%);
+}

@@ -1,0 +1,66 @@
+/*
+ * UX4G Utilities — index
+ * All 36 utility modules
+ *
+ * 1. TYPOGRAPHY & TEXT
+ * 2. LAYOUT & SPACING
+ * 3. FLEXBOX & ALIGNMENT
+ * 4. VISUAL EFFECTS & BORDERS
+ * 5. INTERACTIONS & STATES
+ * 6. TRANSITIONS & ANIMATIONS
+ * 7. TRANSFORMS
+ * 8. FILTERS & EFFECTS
+ */
+
+/* 1. TYPOGRAPHY & TEXT */
+@import "./text.css";
+@import "./line-clamp.css";
+@import "./typography.css";
+@import "./typescale.css";
+@import "./colors.css";
+@import "./vertical-align.css";
+
+/* 2. LAYOUT & SPACING */
+@import "./display.css";
+@import "./position.css";
+@import "./position-responsive.css";
+@import "./sizing.css";
+@import "./padding.css";
+@import "./margin.css";
+@import "./gap.css";
+@import "./child-spacing.css";
+@import "./overflow.css";
+@import "./scroll.css";
+@import "./float.css";
+@import "./object-fit.css";
+@import "./visibility.css";
+@import "./z-index.css";
+
+/* 3. FLEXBOX & ALIGNMENT */
+@import "./flex.css";
+@import "./align.css";
+@import "./justify.css";
+@import "./order.css";
+
+/* 4. VISUAL EFFECTS & BORDERS */
+@import "./background.css";
+@import "./border.css";
+@import "./radius.css";
+@import "./outline.css";
+@import "./divide.css";
+@import "./ring.css";
+@import "./shadow.css";
+@import "./opacity.css";
+@import "./blur.css";
+
+/* 5. INTERACTIONS & STATES */
+@import "./interaction.css";
+
+/* 6. TRANSITIONS & ANIMATIONS */
+@import "./transition.css";
+
+/* 7. TRANSFORMS */
+@import "./transform.css";
+
+/* 8. FILTERS & EFFECTS */
+@import "./effects.css";

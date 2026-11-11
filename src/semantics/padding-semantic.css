@@ -1,0 +1,24 @@
+/* =========================================
+   UX4G PADDING SEMANTIC TOKENS
+
+   1. Padding Scale (none, 3xs to 4xl)
+========================================= */
+
+:root {
+
+  /* =========================================
+     1. PADDING SCALE
+  ========================================= */
+  --ux4g-padding-none: var(--ux4g-padding-token-none); /* 0px */
+  --ux4g-padding-3xs:  var(--ux4g-padding-token-1);    /* 2px */
+  --ux4g-padding-2xs:  var(--ux4g-padding-token-2);    /* 4px */
+  --ux4g-padding-xs:   var(--ux4g-padding-token-4);    /* 8px */
+  --ux4g-padding-s:    var(--ux4g-padding-token-5);    /* 12px */
+  --ux4g-padding-m:    var(--ux4g-padding-token-6);    /* 16px */
+  --ux4g-padding-l:    var(--ux4g-padding-token-7);    /* 20px */
+  --ux4g-padding-xl:   var(--ux4g-padding-token-8);    /* 24px */
+  --ux4g-padding-2xl:  var(--ux4g-padding-token-10);   /* 32px */
+  --ux4g-padding-3xl:  var(--ux4g-padding-token-12);   /* 40px */
+  --ux4g-padding-4xl:  var(--ux4g-padding-token-13);   /* 48px */
+
+}

@@ -1,0 +1,17 @@
+/* =========================================
+   UX4G SPACING SEMANTIC TOKENS
+   Semantic child spacing scale
+========================================= */
+
+:root {
+  --ux4g-spacing-0:   var(--ux4g-space-none);
+  --ux4g-spacing-1: var(--ux4g-space-1);
+  --ux4g-spacing-2:   var(--ux4g-space-2);
+  --ux4g-spacing-3: var(--ux4g-space-3);
+  --ux4g-spacing-4:   var(--ux4g-space-4);
+  --ux4g-spacing-5:   var(--ux4g-space-5);
+  --ux4g-spacing-6:   var(--ux4g-space-6);
+  --ux4g-spacing-8:   var(--ux4g-space-8);
+  --ux4g-spacing-10:  var(--ux4g-space-10);
+  --ux4g-spacing-12:  var(--ux4g-space-12);
+}

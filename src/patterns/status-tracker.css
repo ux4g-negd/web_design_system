@@ -1,0 +1,203 @@
+.status-tracker-container .ux4g-result-list {
+    border: var(--ux4g-border-width-sm) solid var(--ux4g-border-color-neutral-default);
+    border-radius: var(--ux4g-radius-md);
+}
+
+.status-tracker-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - var(--ux4g-sz-48) - var(--ux4g-sz-24));
+    width: 100%;
+    overflow: hidden;
+    position: var(--ux4g-pos-relative);
+    padding: var(--ux4g-padding-xl);
+    padding-bottom: var(--ux4g-sz-80);
+}
+.status-tracker-container .ux4g-time-slot-compact-container{
+max-width: 100%;
+}
+
+.status-tracker-container-card .journey-timeline-card {
+    border-radius: var(--ux4g-radius-none);
+    border: var(--ux4g-border-width-none) !important;
+    padding: var(--ux4g-padding-none);
+
+}
+
+.ux4g-status-tracker-main {
+    max-width: 37.5rem;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding: var(--ux4g-section-m) var(--ux4g-padding-2xl); */
+}
+
+@media (max-width: 768px) {
+    .ux4g-status-tracker-main {
+        padding: var(--ux4g-padding-s) var(--ux4g-padding-s);
+    }
+}
+
+.status-rejected-alert {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ux4g-gap-row-xs);
+}
+
+.status-rejected-alert .ux4g-alert-message {
+    display: flex;
+    flex-direction: column;
+}
+
+.status-rejected-alert ol {
+    margin: 0;
+    padding-left: var(--ux4g-padding-xl);
+    /* Aligns list numbers with the text block */
+    color: inherit;
+}
+
+.ux4g-status-button-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ux4g-gap-row-m);
+    align-items: center;
+    width: 100%;
+}
+
+.ux4g-status-button-row {
+    flex-direction: row;
+}
+
+.ux4g-grievance-button-container {
+    display: grid;
+    flex-direction: row;
+    gap: var(--ux4g-gap-row-m);
+    align-items: center;
+    width: 100%;
+    padding: var(--ux4g-padding-l);
+    border-radius: var(--ux4g-radius-md);
+}
+
+.ux4g-grievance-button-container .ux4g-btn-outline-primary {
+    width: 100%;
+}
+
+
+.ux4g-status-button-container .ux4g-btn-primary,
+.ux4g-status-button-container .ux4g-btn-text-primary,
+.ux4g-status-button-container .ux4g-btn-outline-primary,
+.ux4g-status-button-container .ux4g-btn-text-danger {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .ux4g-status-button-row {
+        flex-direction: column;
+    }
+
+    .ux4g-status-button-container .ux4g-btn-primary,
+    .ux4g-status-button-container .ux4g-btn-text-primary,
+    .ux4g-status-button-container .ux4g-btn-outline-primary,
+    .ux4g-status-button-container .ux4g-btn-text-danger {
+        width: 100%;
+    }
+
+    .ux4g-result-list-title-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .ux4g-result-list-meta,
+    .ux4g-sla-linear {
+        display: block !important;
+        grid-column: 1 / span 2;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .status-tracker-container {
+        padding: var(--ux4g-padding-none);
+    }
+}
+
+/* Type-2 Card Variant */
+.status-tracker-container-card {
+    background-color: var(--ux4g-bg-primary-soft);
+    padding: var(--ux4g-sz-80) 0;
+
+}
+
+
+.status-tracker-container-card .ux4g-status-tracker-main {
+    background-color: var(--ux4g-bg-neutral-elevated);
+    border-radius: var(--ux4g-radius-lg);
+    box-shadow: var(--ux4g-shadow-l2);
+    padding: var(--ux4g-padding-l);
+}
+
+/* Remove borders inside Type-2 Card */
+/* .status-tracker-container-card .ux4g-result-list {
+    border: none !important;
+    padding: var(--ux4g-padding-m) 0 !important;
+} */
+
+@media (max-width: 767px) {
+    .status-tracker-container-card {
+        padding: var(--ux4g-padding-s);
+    }
+
+    .status-tracker-container-card .ux4g-status-tracker-main {
+        padding: var(--ux4g-padding-s);
+    }
+}
+
+.ux4g-grievance-wrapper,
+.ux4g-inspection-wrapper,
+.ux4g-escalation-path,
+.ux4g-field-inspection,
+.ux4g-assigne-wrapper,
+.ux4g-whn-wrapper,
+.ux4g-gl-wrapper,
+.ux4g-ai-wrapper,
+.ux4g-slot-wrapper,
+.ux4g-assigned-wrapper {
+    border-radius: var(--ux4g-radius-md);
+    border: var(--ux4g-border-width-sm) solid var(--ux4g-border-color-neutral-default);
+    background: var(--ux4g-bg-neutral-elevated);
+    display: flex;
+    padding: var(--ux4g-padding-m);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--ux4g-gap-row-s);
+    align-self: stretch;
+}
+
+.ux4g-assigned-wrapper,
+.ux4g-slot-wrapper,
+.ux4g-ai-wrapper,
+.ux4g-gl-wrapper {
+    border: none;
+}
+
+.ux4g-escalation-level-card {
+    background-color: var(--ux4g-bg-neutral-soft);
+    border-radius: var(--ux4g-radius-md);
+    padding: var(--ux4g-padding-m);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--ux4g-gap-row-2xs);
+}
+
+/* Active Step Card in Status Tracker Journey Timeline */
+.status-tracker-container .ux4g-journey-step-active .ux4g-journey-card {
+    background-color: var(--ux4g-bg-primary-soft) !important;
+    border: var(--ux4g-border-width-sm) solid var(--ux4g-border-color-primary-default) !important;
+}
+
+
+

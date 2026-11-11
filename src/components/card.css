@@ -1,0 +1,191 @@
+.ux4g-card-solid {
+    background-color: var(--ux4g-bg-neutral-elevated);
+    box-shadow: var(--ux4g-shadow-l1);
+    border: var(--ux4g-border-width-sm) solid var(--ux4g-border-color-neutral-default);
+}
+ 
+.ux4g-card-outline {
+    border: var(--ux4g-border-width-sm) solid var(--ux4g-border-color-neutral-default);
+}
+ 
+.ux4g-card {
+    border-radius: var(--ux4g-radius-lg);
+    transition: all 0.3s ease;
+}
+ 
+.ux4g-card:hover {
+    box-shadow: var(--ux4g-shadow-l2);
+}
+ 
+ 
+.ux4g-card-body {
+    padding: var(--ux4g-padding-m);
+}
+ 
+.ux4g-card-vertical .ux4g-card-body .ux4g-avatar {
+    margin-top: var(--ux4g-space-10);
+}
+ 
+.ux4g-card-body p {
+    font-size: var(--ux4g-fs-14);
+    line-height: var(--ux4g-lh-20);
+    font-weight: var(--ux4g-font-weight-regular);
+    color: var(--ux4g-text-neutral-primary);
+}
+ 
+.card-group {
+    display: flex;
+    gap: var(--ux4g-gap-column-s);
+}
+ 
+ 
+.ux4g-card-footer {
+    padding: var(--ux4g-padding-m);
+    margin-top: auto;
+}
+ 
+.ux4g-card-title {
+    color: var(--ux4g-text-neutral-primary);
+    font-size: var(--ux4g-fs-16);
+    line-height: var(--ux4g-lh-20);
+    font-weight: var(--ux4g-font-weight-display-semibold);
+}
+ 
+.ux4g-card-sub-title {
+    color: var(--ux4g-text-neutral-secondary);
+    font-size: var(--ux4g-fs-16);
+    line-height: var(--ux4g-lh-24);
+    font-weight: var(--ux4g-font-weight-regular);
+}
+ 
+/* .ux4g-card-header-img {
+     width: 100%;
+     height: 12.5rem;
+     background: linear-gradient(135deg, #4338ca 0%, #6d28d9 35%, #a21caf 70%, #d946ef 100%);
+     display: block;
+     overflow: var(--ux4g-of-hidden)
+}
+ */
+.ux4g-card-header-img {
+    position: var(--ux4g-pos-relative);
+}
+ 
+.ux4g-card-header-image {
+    transition: all 0.3s ease;
+    width: 100%;
+    object-fit: var(--ux4g-of-card-media);
+    object-position: var(--ux4g-op-card-media);
+    display: block;
+}
+ 
+.ux4g-card-vertical .ux4g-card-header-image {    
+    height: 12rem;
+}
+ 
+.ux4g-card-header-image:hover {
+    transform: scale(1.01);
+}
+ 
+.ux4g-card-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ux4g-gap-row-2xs);
+    padding: var(--ux4g-padding-m);
+}
+ 
+.ux4g-card-header-tag {
+    position: var(--ux4g-position-absolute) !important;
+    top: var(--ux4g-pos-inset-px-0) !important;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+ 
+ 
+/* .ux4g-card-header-img:hover {
+}
+ */
+.ux4g-card-token {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: rgba(23, 23, 23, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ux4g-color-neutral-0);
+}
+ 
+.ux4g-card-token .ux4g-icon-outlined {
+    color: var(--ux4g-color-neutral-0);
+}
+ 
+.ux4g-card-header-tag {
+    padding: var(--ux4g-space-5);
+}
+ 
+.ux4g-card[disabled] {
+    opacity: var(--ux4g-opacity-30);
+    pointer-events: none;
+}
+ 
+/* Horizontal card */
+.ux4g-card-horizontal {
+    display: flex;
+    width: 100%;
+}
+ 
+.ux4g-card-horizontal .ux4g-card-header-img {
+    height: 100%;
+}
+ 
+.ux4g-card-horizontal .ux4g-card-header-image {
+    height: 100%;
+    width: 100%;
+    object-fit: var(--ux4g-of-card-media);
+    object-position: var(--ux4g-op-card-media);
+}
+ 
+.ux4g-card-horizontal .ux4g-card-header {
+    flex: 2;
+}
+ 
+.ux4g-card-horizontal > .ux4g-flex-3,
+.ux4g-card-horizontal > [class*="ux4g-flex-"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+ 
+@media (max-width: 768px) {
+    .ux4g-card-horizontal {
+        flex-direction: column;
+    }
+ 
+    .ux4g-card-horizontal .ux4g-card-header,
+    .ux4g-card-horizontal .ux4g-card-body {
+        flex: none;
+        width: 100%;
+    }
+ 
+    .ux4g-card-horizontal .ux4g-card-header-img {
+        margin-bottom: 0;
+    }
+    /* Wrap tag lists inside the card body on mobile */
+    .ux4g-card-body .ux4g-d-flex:has(> [class*="ux4g-tag-"]),
+    .ux4g-card-body .ux4g-d-flex:has(> [class*="ux4g-choice-chip"]) {
+        flex-wrap: wrap;
+    }
+   
+}
+/* ipad */
+@media (min-width: 320px) and (max-width: 1024px) {
+    .ux4g-card-horizontal .ux4g-card-header-image {    
+        height: 20vh;
+    }
+    .ux4g-card-vertical .ux4g-card-header-image {
+        height: 20vh;
+    }
+}
+ 

@@ -1,0 +1,19 @@
+/* =========================================
+   UX4G OUTLINE PRIMITIVE TOKENS
+========================================= */
+
+:root {
+  /* Outline Width Scale */
+  --ux4g-outline-width-0: 0;          /* 0px */
+  --ux4g-outline-width-1: 0.0625rem;  /* 1px */
+  --ux4g-outline-width-2: 0.125rem;   /* 2px */
+  --ux4g-outline-width-4: 0.25rem;    /* 4px */
+  --ux4g-outline-width-8: 0.5rem;     /* 8px */
+
+  /* Outline Offset Scale */
+  --ux4g-outline-offset-0: 0;         /* 0px */
+  --ux4g-outline-offset-1: 0.0625rem; /* 1px */
+  --ux4g-outline-offset-2: 0.125rem;  /* 2px */
+  --ux4g-outline-offset-4: 0.25rem;   /* 4px */
+  --ux4g-outline-offset-8: 0.5rem;    /* 8px */
+}

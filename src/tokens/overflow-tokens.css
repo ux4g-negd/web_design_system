@@ -1,0 +1,17 @@
+/* =========================================
+   UX4G OVERFLOW PRIMITIVE TOKENS
+========================================= */
+
+:root {
+  /* Overflow Modes */
+  --ux4g-overflow-auto: auto;
+  --ux4g-overflow-hidden: hidden;
+  --ux4g-overflow-visible: visible;
+  --ux4g-overflow-scroll: scroll;
+
+  /* Custom Scrollbar Styles */
+  --ux4g-scrollbar-thumb: var(--ux4g-color-neutral-500);
+  --ux4g-scrollbar-track: transparent;
+  --ux4g-scrollbar-size: 0.5rem;                           /* 8px */
+  --ux4g-scrollbar-radius: 999px;
+}

@@ -1,0 +1,44 @@
+{
+  "name": "ux4g-web-components",
+  "version": "3.3.2",
+  "type": "module",
+  "description": "UX4G Government Design System — accessible CSS components, utilities, tokens, and patterns for Indian public digital services.",
+  "keywords": [
+    "design-system",
+    "ux4g",
+    "government",
+    "accessibility",
+    "css",
+    "components",
+    "tokens",
+    "utilities",
+    "patterns"
+  ],
+  "homepage": "https://web.ux4g.gov.in/?path=/story/getting-started-introduction--overview",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ux4g-negd/web_design_system.git"
+  },
+  "license": "MIT",
+  "author": "UX4G",
+  "types": "./src/ux4g.d.ts",
+  "files": [
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "import": "./src/index.css",
+      "require": "./src/index.css"
+    },
+    "./styles.css": "./src/index.css",
+    "./design-system": {
+      "types": "./src/ux4g.d.ts",
+      "import": "./src/ux4g.js"
+    }
+  },
+  "scripts": {
+    "build:package": "npm --prefix packages/ux4g-web-components run build"
+  }
+}

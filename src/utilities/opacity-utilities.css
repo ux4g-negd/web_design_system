@@ -1,0 +1,45 @@
+/* =========================================
+   UX4G OPACITY UTILITIES
+
+   1. Opacity Scale
+   2. Semantic Opacity
+========================================= */
+
+
+/* =========================================
+   1. BASE ENGINE
+========================================= */
+
+[class^="ux4g-opacity-"],
+[class*=" ux4g-opacity-"] {
+  opacity: var(--ux4g-opacity-current);
+}
+
+
+/* =========================================
+   2. OPACITY SCALE
+========================================= */
+
+.ux4g-opacity-0   { --ux4g-opacity-current: var(--ux4g-opacity-val-0); }
+.ux4g-opacity-5   { --ux4g-opacity-current: var(--ux4g-opacity-val-5); }
+.ux4g-opacity-10  { --ux4g-opacity-current: var(--ux4g-opacity-val-10); }
+.ux4g-opacity-20  { --ux4g-opacity-current: var(--ux4g-opacity-val-20); }
+.ux4g-opacity-25  { --ux4g-opacity-current: var(--ux4g-opacity-val-25); }
+.ux4g-opacity-30  { --ux4g-opacity-current: var(--ux4g-opacity-val-30); }
+.ux4g-opacity-40  { --ux4g-opacity-current: var(--ux4g-opacity-val-40); }
+.ux4g-opacity-50  { --ux4g-opacity-current: var(--ux4g-opacity-val-50); }
+.ux4g-opacity-60  { --ux4g-opacity-current: var(--ux4g-opacity-val-60); }
+.ux4g-opacity-70  { --ux4g-opacity-current: var(--ux4g-opacity-val-70); }
+.ux4g-opacity-75  { --ux4g-opacity-current: var(--ux4g-opacity-val-75); }
+.ux4g-opacity-80  { --ux4g-opacity-current: var(--ux4g-opacity-val-80); }
+.ux4g-opacity-90  { --ux4g-opacity-current: var(--ux4g-opacity-val-90); }
+.ux4g-opacity-95  { --ux4g-opacity-current: var(--ux4g-opacity-val-95); }
+.ux4g-opacity-100 { --ux4g-opacity-current: var(--ux4g-opacity-val-100); }
+
+
+/* =========================================
+   3. SEMANTIC OPACITY
+========================================= */
+
+.ux4g-opacity-disabled { --ux4g-opacity-current: var(--ux4g-opacity-disabled); }
+.ux4g-opacity-hover    { --ux4g-opacity-current: var(--ux4g-opacity-hover); }

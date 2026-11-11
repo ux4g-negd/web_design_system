@@ -1,0 +1,319 @@
+/* ==========================================================================
+   UX4G FLOATING ACTION MENU COMPONENT
+   Floating action button triggers with expandable action menus.
+   
+   3 Structure Types (Each available in 2 Color Variants):
+   1. ux4g-floating-action-menu-join     (Joined vertical pill)
+   2. ux4g-floating-action-menu-spaced   (Individually spaced circular icons)
+   3. ux4g-floating-action-menu-labelled (Horizontal badges with Icon + Label)
+   
+   Variants:
+   - Default / Primary (.ux4g-fam-primary): Primary filled trigger FAB
+   - Light / Outlined  (.ux4g-fam-light):   White background trigger FAB
+   ========================================================================== */
+
+/* ==========================================
+   1. BASE FLOATING ACTION MENU CONTAINER
+   ========================================== */
+.ux4g-floating-action-menu {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+  z-index: var(--ux4g-z-dropdown, 1000);
+}
+
+/* ==========================================
+   2. MAIN TRIGGER FAB BUTTON
+   ========================================== */
+.ux4g-fam-trigger,
+.ux4g-floating-action-menu-trigger {
+  width: var(--ux4g-sz-56, 3.5rem);
+  height: var(--ux4g-sz-56, 3.5rem);
+  border-radius: var(--ux4g-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  box-shadow: var(--ux4g-shadow-l2, 0 4px 16px rgba(0, 0, 0, 0.12));
+  transition: background-color 0.2s ease,
+              box-shadow 0.2s ease;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.ux4g-fam-trigger:hover,
+.ux4g-floating-action-menu-trigger:hover {
+  box-shadow: var(--ux4g-shadow-l3, 0 8px 24px rgba(0, 0, 0, 0.16));
+}
+
+
+
+.ux4g-fam-trigger .ux4g-icon-outlined,
+.ux4g-fam-trigger .ux4g-icon,
+.ux4g-floating-action-menu-trigger .ux4g-icon-outlined {
+  font-size: var(--ux4g-fs-28, 1.75rem);
+  width: var(--ux4g-sz-28, 1.75rem);
+  height: var(--ux4g-sz-28, 1.75rem);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Rotate icon to X when open */
+.ux4g-floating-action-menu.is-open .ux4g-fam-trigger .ux4g-icon-outlined,
+.ux4g-floating-action-menu.is-open .ux4g-fam-trigger .ux4g-fam-icon,
+.ux4g-floating-action-menu.is-open .ux4g-floating-action-menu-trigger .ux4g-icon-outlined {
+  transform: rotate(45deg);
+}
+
+/* Trigger Variant 1: Primary Filled */
+.ux4g-fam-primary .ux4g-fam-trigger,
+.ux4g-floating-action-menu.ux4g-fam-primary .ux4g-floating-action-menu-trigger,
+.ux4g-floating-action-menu:not(.ux4g-fam-light) .ux4g-fam-trigger,
+.ux4g-floating-action-menu:not(.ux4g-fam-light) .ux4g-floating-action-menu-trigger {
+  background-color: var(--ux4g-bg-primary-strong, #4F39F6);
+  color: var(--ux4g-text-neutral-inverse, #ffffff);
+}
+
+.ux4g-fam-primary .ux4g-fam-trigger:hover,
+.ux4g-floating-action-menu.ux4g-fam-primary .ux4g-floating-action-menu-trigger:hover,
+.ux4g-floating-action-menu:not(.ux4g-fam-light) .ux4g-fam-trigger:hover,
+.ux4g-floating-action-menu:not(.ux4g-fam-light) .ux4g-floating-action-menu-trigger:hover {
+  background-color: var(--ux4g-bg-primary-strong-hover, #432FD0);
+}
+
+/* Trigger Variant 2: Light / White */
+.ux4g-fam-light .ux4g-fam-trigger,
+.ux4g-floating-action-menu.ux4g-fam-light .ux4g-floating-action-menu-trigger {
+  background-color: var(--ux4g-bg-neutral-elevated, #ffffff);
+  color: var(--ux4g-text-brand-primary-default, #4F39F6);
+  border: var(--ux4g-border-width-sm, 1px) solid var(--ux4g-border-color-neutral-subtle, #f0f0f0);
+}
+
+.ux4g-fam-light .ux4g-fam-trigger:hover,
+.ux4g-floating-action-menu.ux4g-fam-light .ux4g-floating-action-menu-trigger:hover {
+  background-color: var(--ux4g-bg-neutral-soft, #f9f9f9);
+}
+
+/* ==========================================
+   3. MENU ITEMS CONTAINER (Pop-up Animation)
+   ========================================== */
+.ux4g-fam-items,
+.ux4g-floating-action-menu-items {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--ux4g-spacing-3, 0.75rem);
+  opacity: 0;
+  transform: translateX(-50%) translateY(12px) scale(0.92);
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.28s;
+  will-change: transform, opacity;
+  z-index: 1;
+}
+
+/* Open State */
+.ux4g-floating-action-menu.is-open .ux4g-fam-items,
+.ux4g-floating-action-menu.is-open .ux4g-floating-action-menu-items {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+  pointer-events: auto;
+  visibility: visible;
+}
+
+/* Static Display Variant (For showcases/always open preview) */
+.ux4g-floating-action-menu.is-static .ux4g-fam-items,
+.ux4g-floating-action-menu.is-static .ux4g-floating-action-menu-items {
+  opacity: 1 !important;
+  transform: translateX(-50%) translateY(0) scale(1) !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
+}
+
+/* ==========================================
+   4. TYPE 1: JOINED ACTION MENU (Vertical Pill)
+   ========================================== */
+.ux4g-floating-action-menu-join .ux4g-fam-items,
+.ux4g-floating-action-menu-join .ux4g-floating-action-menu-items,
+.ux4g-fam-join .ux4g-fam-items {
+  background-color: var(--ux4g-bg-neutral-elevated, #ffffff);
+  border-radius: var(--ux4g-radius-full);
+  box-shadow: var(--ux4g-shadow-l2, 0 4px 16px rgba(0, 0, 0, 0.12));
+  border: var(--ux4g-border-width-sm, 1px) solid var(--ux4g-border-color-neutral-subtle, rgba(0, 0, 0, 0.06));
+  padding: var(--ux4g-spacing-1, 0.25rem);
+  gap: var(--ux4g-gap-row-2xs, 0.25rem);
+}
+
+.ux4g-floating-action-menu-join .ux4g-fam-item,
+.ux4g-fam-join .ux4g-fam-item {
+  width: var(--ux4g-sz-44, 2.75rem);
+  height: var(--ux4g-sz-44, 2.75rem);
+  border-radius: var(--ux4g-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--ux4g-text-neutral-primary, #171717);
+  transition: background-color 0.18s ease,
+              color 0.18s ease;
+  padding: 0;
+}
+
+.ux4g-floating-action-menu-join .ux4g-fam-item:hover,
+.ux4g-fam-join .ux4g-fam-item:hover {
+  background-color: var(--ux4g-bg-neutral-soft, #f5f5f5);
+  color: var(--ux4g-text-brand-primary-default, #4F39F6);
+}
+
+.ux4g-floating-action-menu-join .ux4g-fam-item .ux4g-icon-outlined,
+.ux4g-fam-join .ux4g-fam-item .ux4g-icon-outlined {
+  font-size: var(--ux4g-fs-22, 1.375rem);
+  width: var(--ux4g-sz-22, 1.375rem);
+  height: var(--ux4g-sz-22, 1.375rem);
+}
+
+/* ==========================================
+   5. TYPE 2: SPACED ACTION MENU (Separated Circles)
+   ========================================== */
+.ux4g-floating-action-menu-spaced .ux4g-fam-items,
+.ux4g-floating-action-menu-spaced .ux4g-floating-action-menu-items,
+.ux4g-fam-spaced .ux4g-fam-items {
+  gap: var(--ux4g-gap-row-s, 0.75rem);
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+}
+
+.ux4g-floating-action-menu-spaced .ux4g-fam-item,
+.ux4g-fam-spaced .ux4g-fam-item {
+  width: var(--ux4g-sz-44, 2.75rem);
+  height: var(--ux4g-sz-44, 2.75rem);
+  border-radius: var(--ux4g-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ux4g-bg-neutral-elevated, #ffffff);
+  border: var(--ux4g-border-width-sm, 1px) solid var(--ux4g-border-color-neutral-subtle, rgba(0, 0, 0, 0.06));
+  box-shadow: var(--ux4g-shadow-l1, 0 2px 8px rgba(0, 0, 0, 0.08));
+  cursor: pointer;
+  color: var(--ux4g-text-neutral-primary, #171717);
+  transition: box-shadow 0.2s ease,
+              background-color 0.2s ease,
+              color 0.2s ease;
+  padding: 0;
+}
+
+.ux4g-floating-action-menu-spaced .ux4g-fam-item:hover,
+.ux4g-fam-spaced .ux4g-fam-item:hover {
+  box-shadow: var(--ux4g-shadow-l2, 0 4px 16px rgba(0, 0, 0, 0.12));
+  background-color: var(--ux4g-bg-neutral-soft, #f5f5f5);
+  color: var(--ux4g-text-brand-primary-default, #4F39F6);
+}
+
+.ux4g-floating-action-menu-spaced .ux4g-fam-item .ux4g-icon-outlined,
+.ux4g-fam-spaced .ux4g-fam-item .ux4g-icon-outlined {
+  font-size: var(--ux4g-fs-22, 1.375rem);
+  width: var(--ux4g-sz-22, 1.375rem);
+  height: var(--ux4g-sz-22, 1.375rem);
+}
+
+/* ==========================================
+   6. TYPE 3: LABELLED ACTION MENU (Horizontal Badges)
+   ========================================== */
+.ux4g-floating-action-menu-labelled,
+.ux4g-fam-labelled {
+  align-items: flex-end;
+}
+
+.ux4g-floating-action-menu-labelled .ux4g-fam-items,
+.ux4g-floating-action-menu-labelled .ux4g-floating-action-menu-items,
+.ux4g-fam-labelled .ux4g-fam-items {
+  left: auto;
+  right: 0;
+  transform: translateY(12px) scale(0.92);
+  gap: var(--ux4g-gap-row-s, 0.75rem);
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  align-items: flex-end;
+  width: max-content;
+}
+
+.ux4g-floating-action-menu-labelled.is-open .ux4g-fam-items,
+.ux4g-floating-action-menu-labelled.is-open .ux4g-floating-action-menu-items,
+.ux4g-fam-labelled.is-open .ux4g-fam-items {
+  transform: translateY(0) scale(1);
+}
+
+.ux4g-floating-action-menu-labelled .ux4g-fam-item,
+.ux4g-fam-labelled .ux4g-fam-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ux4g-gap-column-xs, 0.5rem);
+  padding: var(--ux4g-padding-xs, 0.5rem) var(--ux4g-padding-m, 1rem);
+  border-radius: var(--ux4g-radius-full);
+  background-color: var(--ux4g-bg-neutral-elevated, #ffffff);
+  font-family: var(--ux4g-ff-base, inherit);
+  font-size: var(--ux4g-fs-14, 0.875rem);
+  line-height: var(--ux4g-lh-18, 1.125rem);
+  font-weight: var(--ux4g-fw-medium, 500);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease,
+              background-color 0.2s ease,
+              border-color 0.2s ease,
+              color 0.2s ease;
+}
+
+.ux4g-floating-action-menu-labelled .ux4g-fam-item .ux4g-icon-outlined,
+.ux4g-fam-labelled .ux4g-fam-item .ux4g-icon-outlined {
+  font-size: var(--ux4g-fs-18, 1.125rem);
+  width: var(--ux4g-sz-18, 1.125rem);
+  height: var(--ux4g-sz-18, 1.125rem);
+}
+
+/* Labelled - Variant 1 (Primary / Brand Purple Text & Soft Shadow) */
+.ux4g-floating-action-menu-labelled.ux4g-fam-primary .ux4g-fam-item,
+.ux4g-floating-action-menu-labelled:not(.ux4g-fam-light) .ux4g-fam-item,
+.ux4g-fam-labelled:not(.ux4g-fam-light) .ux4g-fam-item {
+  color: var(--ux4g-text-brand-primary-default, #4F39F6);
+  background-color: var(--ux4g-bg-neutral-elevated, #ffffff);
+  box-shadow: var(--ux4g-shadow-l1, 0 2px 8px rgba(0, 0, 0, 0.08));
+}
+
+.ux4g-floating-action-menu-labelled.ux4g-fam-primary .ux4g-fam-item:hover,
+.ux4g-floating-action-menu-labelled:not(.ux4g-fam-light) .ux4g-fam-item:hover,
+.ux4g-fam-labelled:not(.ux4g-fam-light) .ux4g-fam-item:hover {
+  background-color: var(--ux4g-bg-primary-soft, #EEF0FD);
+}
+
+/* Labelled - Variant 2 (Light / Neutral Dark Text & Subtle Border) */
+.ux4g-floating-action-menu-labelled.ux4g-fam-light .ux4g-fam-item,
+.ux4g-fam-labelled.ux4g-fam-light .ux4g-fam-item {
+  color: var(--ux4g-text-neutral-primary, #171717);
+  background-color: var(--ux4g-bg-neutral-elevated, #ffffff);
+  border: var(--ux4g-border-width-sm, 1px) solid var(--ux4g-border-color-neutral-subtle, #e0e0e0);
+  box-shadow: none;
+}
+
+.ux4g-floating-action-menu-labelled.ux4g-fam-light .ux4g-fam-item:hover,
+.ux4g-fam-labelled.ux4g-fam-light .ux4g-fam-item:hover {
+  background-color: var(--ux4g-bg-neutral-soft, #f5f5f5);
+  border-color: var(--ux4g-border-color-neutral-default, #d0d0d0);
+}

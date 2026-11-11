@@ -1,0 +1,86 @@
+/* =========================================
+   UX4G FLOAT UTILITIES
+
+   1. Float
+   2. Responsive Float
+   3. Clear
+
+   Breakpoints:
+     xs (base): <576px
+     sm:        ≥576px
+     md:        ≥768px
+     lg:        ≥992px
+     xl:        ≥1200px
+     2xl:       ≥1400px
+========================================= */
+
+
+/* =========================================
+   1. FLOAT
+========================================= */
+
+.ux4g-float-left { float: left; }
+.ux4g-float-right { float: right; }
+.ux4g-float-none { float: none; }
+.ux4g-float-start { float: inline-start; }
+.ux4g-float-end { float: inline-end; }
+
+
+/* =========================================
+   2. RESPONSIVE FLOAT
+========================================= */
+
+
+/* SM — ≥576px */
+
+@media (min-width: 576px) {
+  .ux4g-sm-float-start { float: inline-start; }
+  .ux4g-sm-float-end { float: inline-end; }
+  .ux4g-sm-float-none { float: none; }
+}
+
+
+/* MD — ≥768px */
+
+@media (min-width: 768px) {
+  .ux4g-md-float-start { float: inline-start; }
+  .ux4g-md-float-end { float: inline-end; }
+  .ux4g-md-float-none { float: none; }
+}
+
+
+/* LG — ≥992px */
+
+@media (min-width: 992px) {
+  .ux4g-lg-float-start { float: inline-start; }
+  .ux4g-lg-float-end { float: inline-end; }
+  .ux4g-lg-float-none { float: none; }
+}
+
+
+/* XL — ≥1200px */
+
+@media (min-width: 1200px) {
+  .ux4g-xl-float-start { float: inline-start; }
+  .ux4g-xl-float-end { float: inline-end; }
+  .ux4g-xl-float-none { float: none; }
+}
+
+
+/* 2XL — ≥1400px */
+
+@media (min-width: 1400px) {
+  .ux4g-2xl-float-start { float: inline-start; }
+  .ux4g-2xl-float-end { float: inline-end; }
+  .ux4g-2xl-float-none { float: none; }
+}
+
+
+/* =========================================
+   3. CLEAR
+========================================= */
+
+.ux4g-clear-left { clear: left; }
+.ux4g-clear-right { clear: right; }
+.ux4g-clear-both { clear: both; }
+.ux4g-clear-none { clear: none; }

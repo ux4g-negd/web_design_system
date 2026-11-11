@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "declaration": true,
+    "declarationDir": "./dist/runtime",
+    "outDir": "./dist/runtime",
+    "rootDir": "./src/runtime"
+  },
+  "include": ["src/runtime/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

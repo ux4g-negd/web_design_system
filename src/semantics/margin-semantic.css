@@ -1,0 +1,40 @@
+/* =========================================
+   UX4G MARGIN SEMANTIC TOKENS
+
+   1. Margin Scale (none, 3xs to 4xl)
+   2. Negative Margin Scale
+========================================= */
+
+:root {
+
+  /* =========================================
+     1. MARGIN SCALE
+  ========================================= */
+  --ux4g-margin-none: var(--ux4g-margin-token-none); /* 0px */
+  --ux4g-margin-3xs:  var(--ux4g-margin-token-1);    /* 2px */
+  --ux4g-margin-2xs:  var(--ux4g-margin-token-2);    /* 4px */
+  --ux4g-margin-xs:   var(--ux4g-margin-token-4);    /* 8px */
+  --ux4g-margin-s:    var(--ux4g-margin-token-5);    /* 12px */
+  --ux4g-margin-m:    var(--ux4g-margin-token-6);    /* 16px */
+  --ux4g-margin-l:    var(--ux4g-margin-token-7);    /* 20px */
+  --ux4g-margin-xl:   var(--ux4g-margin-token-8);    /* 24px */
+  --ux4g-margin-2xl:  var(--ux4g-margin-token-10);   /* 32px */
+  --ux4g-margin-3xl:  var(--ux4g-margin-token-12);   /* 40px */
+  --ux4g-margin-4xl:  var(--ux4g-margin-token-13);   /* 48px */
+
+
+  /* =========================================
+     2. NEGATIVE MARGIN SCALE
+  ========================================= */
+  --ux4g-margin-negative-3xs: calc(var(--ux4g-margin-3xs) * -1); /* -4px */
+  --ux4g-margin-negative-2xs: calc(var(--ux4g-margin-2xs) * -1); /* -8px */
+  --ux4g-margin-negative-xs:  calc(var(--ux4g-margin-xs) * -1);  /* -16px */
+  --ux4g-margin-negative-s:   calc(var(--ux4g-margin-s) * -1);   /* -20px */
+  --ux4g-margin-negative-m:   calc(var(--ux4g-margin-m) * -1);   /* -24px */
+  --ux4g-margin-negative-l:   calc(var(--ux4g-margin-l) * -1);   /* -28px */
+  --ux4g-margin-negative-xl:  calc(var(--ux4g-margin-xl) * -1);  /* -32px */
+  --ux4g-margin-negative-2xl: calc(var(--ux4g-margin-2xl) * -1); /* -36px */
+  --ux4g-margin-negative-3xl: calc(var(--ux4g-margin-3xl) * -1); /* -40px */
+  --ux4g-margin-negative-4xl: calc(var(--ux4g-margin-4xl) * -1); /* -48px */
+
+}

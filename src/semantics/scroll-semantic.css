@@ -1,0 +1,20 @@
+/* =========================================
+   UX4G SCROLL SEMANTIC TOKENS
+   Semantic scroll offset and behavior roles
+========================================= */
+
+:root {
+  /* Scroll Behaviors */
+  --ux4g-scroll-behavior-default: var(--ux4g-scroll-behavior-smooth);
+  --ux4g-scroll-behavior-instant: var(--ux4g-scroll-behavior-auto);
+
+  /* Scroll Margin Top Scale */
+  --ux4g-scroll-margin-top-0: var(--ux4g-scroll-mt-0);
+  --ux4g-scroll-margin-top-1: var(--ux4g-scroll-mt-1);
+  --ux4g-scroll-margin-top-2: var(--ux4g-scroll-mt-2);
+  --ux4g-scroll-margin-top-3: var(--ux4g-scroll-mt-3);
+  --ux4g-scroll-margin-top-4: var(--ux4g-scroll-mt-4);
+  --ux4g-scroll-margin-top-5: var(--ux4g-scroll-mt-5);
+  --ux4g-scroll-margin-top-6: var(--ux4g-scroll-mt-6);
+  --ux4g-scroll-margin-top-8: var(--ux4g-scroll-mt-8);
+}

@@ -1,0 +1,164 @@
+/* =========================================
+   UX4G GUTTER UTILITIES
+   Matching Bootstrap 5.3 Gutters system
+   
+   1. Horizontal & Vertical (g-*)
+   2. Horizontal only (gx-*)
+   3. Vertical only (gy-*)
+   4. Responsive Gutters (sm, md, lg, xl, 2xl)
+========================================= */
+
+/* =========================================
+   1. BASE (XS) GUTTERS
+========================================= */
+
+/* Both Axes (g-*) */
+.ux4g-g-0 { --ux4g-gutter-x: var(--ux4g-gutter-x-0); --ux4g-gutter-y: var(--ux4g-gutter-y-0); }
+.ux4g-g-1 { --ux4g-gutter-x: var(--ux4g-gutter-x-1); --ux4g-gutter-y: var(--ux4g-gutter-y-1); }
+.ux4g-g-2 { --ux4g-gutter-x: var(--ux4g-gutter-x-2); --ux4g-gutter-y: var(--ux4g-gutter-y-2); }
+.ux4g-g-3 { --ux4g-gutter-x: var(--ux4g-gutter-x-3); --ux4g-gutter-y: var(--ux4g-gutter-y-3); }
+.ux4g-g-4 { --ux4g-gutter-x: var(--ux4g-gutter-x-4); --ux4g-gutter-y: var(--ux4g-gutter-y-4); }
+.ux4g-g-5 { --ux4g-gutter-x: var(--ux4g-gutter-x-5); --ux4g-gutter-y: var(--ux4g-gutter-y-5); }
+
+/* Horizontal Gutter (gx-*) */
+.ux4g-gx-0 { --ux4g-gutter-x: var(--ux4g-gutter-x-0); }
+.ux4g-gx-1 { --ux4g-gutter-x: var(--ux4g-gutter-x-1); }
+.ux4g-gx-2 { --ux4g-gutter-x: var(--ux4g-gutter-x-2); }
+.ux4g-gx-3 { --ux4g-gutter-x: var(--ux4g-gutter-x-3); }
+.ux4g-gx-4 { --ux4g-gutter-x: var(--ux4g-gutter-x-4); }
+.ux4g-gx-5 { --ux4g-gutter-x: var(--ux4g-gutter-x-5); }
+
+/* Vertical Gutter (gy-*) */
+.ux4g-gy-0 { --ux4g-gutter-y: var(--ux4g-gutter-y-0); }
+.ux4g-gy-1 { --ux4g-gutter-y: var(--ux4g-gutter-y-1); }
+.ux4g-gy-2 { --ux4g-gutter-y: var(--ux4g-gutter-y-2); }
+.ux4g-gy-3 { --ux4g-gutter-y: var(--ux4g-gutter-y-3); }
+.ux4g-gy-4 { --ux4g-gutter-y: var(--ux4g-gutter-y-4); }
+.ux4g-gy-5 { --ux4g-gutter-y: var(--ux4g-gutter-y-5); }
+
+
+/* =========================================
+   2. RESPONSIVE GUTTERS
+========================================= */
+
+/* SM — ≥576px */
+@media (min-width: 576px) {
+  .ux4g-sm-g-0  { --ux4g-gutter-x: var(--ux4g-gutter-x-0); --ux4g-gutter-y: var(--ux4g-gutter-y-0); }
+  .ux4g-sm-g-1  { --ux4g-gutter-x: var(--ux4g-gutter-x-1); --ux4g-gutter-y: var(--ux4g-gutter-y-1); }
+  .ux4g-sm-g-2  { --ux4g-gutter-x: var(--ux4g-gutter-x-2); --ux4g-gutter-y: var(--ux4g-gutter-y-2); }
+  .ux4g-sm-g-3  { --ux4g-gutter-x: var(--ux4g-gutter-x-3); --ux4g-gutter-y: var(--ux4g-gutter-y-3); }
+  .ux4g-sm-g-4  { --ux4g-gutter-x: var(--ux4g-gutter-x-4); --ux4g-gutter-y: var(--ux4g-gutter-y-4); }
+  .ux4g-sm-g-5  { --ux4g-gutter-x: var(--ux4g-gutter-x-5); --ux4g-gutter-y: var(--ux4g-gutter-y-5); }
+
+  .ux4g-sm-gx-0 { --ux4g-gutter-x: var(--ux4g-gutter-x-0); }
+  .ux4g-sm-gx-1 { --ux4g-gutter-x: var(--ux4g-gutter-x-1); }
+  .ux4g-sm-gx-2 { --ux4g-gutter-x: var(--ux4g-gutter-x-2); }
+  .ux4g-sm-gx-3 { --ux4g-gutter-x: var(--ux4g-gutter-x-3); }
+  .ux4g-sm-gx-4 { --ux4g-gutter-x: var(--ux4g-gutter-x-4); }
+  .ux4g-sm-gx-5 { --ux4g-gutter-x: var(--ux4g-gutter-x-5); }
+
+  .ux4g-sm-gy-0 { --ux4g-gutter-y: var(--ux4g-gutter-y-0); }
+  .ux4g-sm-gy-1 { --ux4g-gutter-y: var(--ux4g-gutter-y-1); }
+  .ux4g-sm-gy-2 { --ux4g-gutter-y: var(--ux4g-gutter-y-2); }
+  .ux4g-sm-gy-3 { --ux4g-gutter-y: var(--ux4g-gutter-y-3); }
+  .ux4g-sm-gy-4 { --ux4g-gutter-y: var(--ux4g-gutter-y-4); }
+  .ux4g-sm-gy-5 { --ux4g-gutter-y: var(--ux4g-gutter-y-5); }
+}
+
+/* MD — ≥768px */
+@media (min-width: 768px) {
+  .ux4g-md-g-0  { --ux4g-gutter-x: var(--ux4g-gutter-x-0); --ux4g-gutter-y: var(--ux4g-gutter-y-0); }
+  .ux4g-md-g-1  { --ux4g-gutter-x: var(--ux4g-gutter-x-1); --ux4g-gutter-y: var(--ux4g-gutter-y-1); }
+  .ux4g-md-g-2  { --ux4g-gutter-x: var(--ux4g-gutter-x-2); --ux4g-gutter-y: var(--ux4g-gutter-y-2); }
+  .ux4g-md-g-3  { --ux4g-gutter-x: var(--ux4g-gutter-x-3); --ux4g-gutter-y: var(--ux4g-gutter-y-3); }
+  .ux4g-md-g-4  { --ux4g-gutter-x: var(--ux4g-gutter-x-4); --ux4g-gutter-y: var(--ux4g-gutter-y-4); }
+  .ux4g-md-g-5  { --ux4g-gutter-x: var(--ux4g-gutter-x-5); --ux4g-gutter-y: var(--ux4g-gutter-y-5); }
+
+  .ux4g-md-gx-0 { --ux4g-gutter-x: var(--ux4g-gutter-x-0); }
+  .ux4g-md-gx-1 { --ux4g-gutter-x: var(--ux4g-gutter-x-1); }
+  .ux4g-md-gx-2 { --ux4g-gutter-x: var(--ux4g-gutter-x-2); }
+  .ux4g-md-gx-3 { --ux4g-gutter-x: var(--ux4g-gutter-x-3); }
+  .ux4g-md-gx-4 { --ux4g-gutter-x: var(--ux4g-gutter-x-4); }
+  .ux4g-md-gx-5 { --ux4g-gutter-x: var(--ux4g-gutter-x-5); }
+
+  .ux4g-md-gy-0 { --ux4g-gutter-y: var(--ux4g-gutter-y-0); }
+  .ux4g-md-gy-1 { --ux4g-gutter-y: var(--ux4g-gutter-y-1); }
+  .ux4g-md-gy-2 { --ux4g-gutter-y: var(--ux4g-gutter-y-2); }
+  .ux4g-md-gy-3 { --ux4g-gutter-y: var(--ux4g-gutter-y-3); }
+  .ux4g-md-gy-4 { --ux4g-gutter-y: var(--ux4g-gutter-y-4); }
+  .ux4g-md-gy-5 { --ux4g-gutter-y: var(--ux4g-gutter-y-5); }
+}
+
+/* LG — ≥992px */
+@media (min-width: 992px) {
+  .ux4g-lg-g-0  { --ux4g-gutter-x: var(--ux4g-gutter-x-0); --ux4g-gutter-y: var(--ux4g-gutter-y-0); }
+  .ux4g-lg-g-1  { --ux4g-gutter-x: var(--ux4g-gutter-x-1); --ux4g-gutter-y: var(--ux4g-gutter-y-1); }
+  .ux4g-lg-g-2  { --ux4g-gutter-x: var(--ux4g-gutter-x-2); --ux4g-gutter-y: var(--ux4g-gutter-y-2); }
+  .ux4g-lg-g-3  { --ux4g-gutter-x: var(--ux4g-gutter-x-3); --ux4g-gutter-y: var(--ux4g-gutter-y-3); }
+  .ux4g-lg-g-4  { --ux4g-gutter-x: var(--ux4g-gutter-x-4); --ux4g-gutter-y: var(--ux4g-gutter-y-4); }
+  .ux4g-lg-g-5  { --ux4g-gutter-x: var(--ux4g-gutter-x-5); --ux4g-gutter-y: var(--ux4g-gutter-y-5); }
+
+  .ux4g-lg-gx-0 { --ux4g-gutter-x: var(--ux4g-gutter-x-0); }
+  .ux4g-lg-gx-1 { --ux4g-gutter-x: var(--ux4g-gutter-x-1); }
+  .ux4g-lg-gx-2 { --ux4g-gutter-x: var(--ux4g-gutter-x-2); }
+  .ux4g-lg-gx-3 { --ux4g-gutter-x: var(--ux4g-gutter-x-3); }
+  .ux4g-lg-gx-4 { --ux4g-gutter-x: var(--ux4g-gutter-x-4); }
+  .ux4g-lg-gx-5 { --ux4g-gutter-x: var(--ux4g-gutter-x-5); }
+
+  .ux4g-lg-gy-0 { --ux4g-gutter-y: var(--ux4g-gutter-y-0); }
+  .ux4g-lg-gy-1 { --ux4g-gutter-y: var(--ux4g-gutter-y-1); }
+  .ux4g-lg-gy-2 { --ux4g-gutter-y: var(--ux4g-gutter-y-2); }
+  .ux4g-lg-gy-3 { --ux4g-gutter-y: var(--ux4g-gutter-y-3); }
+  .ux4g-lg-gy-4 { --ux4g-gutter-y: var(--ux4g-gutter-y-4); }
+  .ux4g-lg-gy-5 { --ux4g-gutter-y: var(--ux4g-gutter-y-5); }
+}
+
+/* XL — ≥1200px */
+@media (min-width: 1200px) {
+  .ux4g-xl-g-0  { --ux4g-gutter-x: var(--ux4g-gutter-x-0); --ux4g-gutter-y: var(--ux4g-gutter-y-0); }
+  .ux4g-xl-g-1  { --ux4g-gutter-x: var(--ux4g-gutter-x-1); --ux4g-gutter-y: var(--ux4g-gutter-y-1); }
+  .ux4g-xl-g-2  { --ux4g-gutter-x: var(--ux4g-gutter-x-2); --ux4g-gutter-y: var(--ux4g-gutter-y-2); }
+  .ux4g-xl-g-3  { --ux4g-gutter-x: var(--ux4g-gutter-x-3); --ux4g-gutter-y: var(--ux4g-gutter-y-3); }
+  .ux4g-xl-g-4  { --ux4g-gutter-x: var(--ux4g-gutter-x-4); --ux4g-gutter-y: var(--ux4g-gutter-y-4); }
+  .ux4g-xl-g-5  { --ux4g-gutter-x: var(--ux4g-gutter-x-5); --ux4g-gutter-y: var(--ux4g-gutter-y-5); }
+
+  .ux4g-xl-gx-0 { --ux4g-gutter-x: var(--ux4g-gutter-x-0); }
+  .ux4g-xl-gx-1 { --ux4g-gutter-x: var(--ux4g-gutter-x-1); }
+  .ux4g-xl-gx-2 { --ux4g-gutter-x: var(--ux4g-gutter-x-2); }
+  .ux4g-xl-gx-3 { --ux4g-gutter-x: var(--ux4g-gutter-x-3); }
+  .ux4g-xl-gx-4 { --ux4g-gutter-x: var(--ux4g-gutter-x-4); }
+  .ux4g-xl-gx-5 { --ux4g-gutter-x: var(--ux4g-gutter-x-5); }
+
+  .ux4g-xl-gy-0 { --ux4g-gutter-y: var(--ux4g-gutter-y-0); }
+  .ux4g-xl-gy-1 { --ux4g-gutter-y: var(--ux4g-gutter-y-1); }
+  .ux4g-xl-gy-2 { --ux4g-gutter-y: var(--ux4g-gutter-y-2); }
+  .ux4g-xl-gy-3 { --ux4g-gutter-y: var(--ux4g-gutter-y-3); }
+  .ux4g-xl-gy-4 { --ux4g-gutter-y: var(--ux4g-gutter-y-4); }
+  .ux4g-xl-gy-5 { --ux4g-gutter-y: var(--ux4g-gutter-y-5); }
+}
+
+/* 2XL — ≥1400px */
+@media (min-width: 1400px) {
+  .ux4g-2xl-g-0  { --ux4g-gutter-x: var(--ux4g-gutter-x-0); --ux4g-gutter-y: var(--ux4g-gutter-y-0); }
+  .ux4g-2xl-g-1  { --ux4g-gutter-x: var(--ux4g-gutter-x-1); --ux4g-gutter-y: var(--ux4g-gutter-y-1); }
+  .ux4g-2xl-g-2  { --ux4g-gutter-x: var(--ux4g-gutter-x-2); --ux4g-gutter-y: var(--ux4g-gutter-y-2); }
+  .ux4g-2xl-g-3  { --ux4g-gutter-x: var(--ux4g-gutter-x-3); --ux4g-gutter-y: var(--ux4g-gutter-y-3); }
+  .ux4g-2xl-g-4  { --ux4g-gutter-x: var(--ux4g-gutter-x-4); --ux4g-gutter-y: var(--ux4g-gutter-y-4); }
+  .ux4g-2xl-g-5  { --ux4g-gutter-x: var(--ux4g-gutter-x-5); --ux4g-gutter-y: var(--ux4g-gutter-y-5); }
+
+  .ux4g-2xl-gx-0 { --ux4g-gutter-x: var(--ux4g-gutter-x-0); }
+  .ux4g-2xl-gx-1 { --ux4g-gutter-x: var(--ux4g-gutter-x-1); }
+  .ux4g-2xl-gx-2 { --ux4g-gutter-x: var(--ux4g-gutter-x-2); }
+  .ux4g-2xl-gx-3 { --ux4g-gutter-x: var(--ux4g-gutter-x-3); }
+  .ux4g-2xl-gx-4 { --ux4g-gutter-x: var(--ux4g-gutter-x-4); }
+  .ux4g-2xl-gx-5 { --ux4g-gutter-x: var(--ux4g-gutter-x-5); }
+
+  .ux4g-2xl-gy-0 { --ux4g-gutter-y: var(--ux4g-gutter-y-0); }
+  .ux4g-2xl-gy-1 { --ux4g-gutter-y: var(--ux4g-gutter-y-1); }
+  .ux4g-2xl-gy-2 { --ux4g-gutter-y: var(--ux4g-gutter-y-2); }
+  .ux4g-2xl-gy-3 { --ux4g-gutter-y: var(--ux4g-gutter-y-3); }
+  .ux4g-2xl-gy-4 { --ux4g-gutter-y: var(--ux4g-gutter-y-4); }
+  .ux4g-2xl-gy-5 { --ux4g-gutter-y: var(--ux4g-gutter-y-5); }
+}
+
+

@@ -1,0 +1,18 @@
+/* ==========================================================================
+   UX4G Z-INDEX UTILITIES
+   Stacking order utility classes for layering and elevation management.
+   ========================================================================== */
+
+/* ─── Base Stacking Contexts ─── */
+.ux4g-z-n1 { z-index: var(--ux4g-z-below); }         /* -1 - Background / Behind */
+.ux4g-z-0  { z-index: var(--ux4g-z-layout-base); }   /*  0 - Normal document flow */
+.ux4g-z-1  { z-index: var(--ux4g-z-layout-raised); } /*  1 - Layer 1 (Elevated card/border) */
+.ux4g-z-2  { z-index: var(--ux4g-z-layout-overlay); }/*  2 - Layer 2 */
+.ux4g-z-3  { z-index: var(--ux4g-z-layout-top); }    /*  3 - Layer 3 */
+
+/* ─── Extended Overlay Scale ─── */
+.ux4g-z-10 { z-index: var(--ux4g-z-10); }  /* 10 - Sticky headers & navbars */
+.ux4g-z-20 { z-index: var(--ux4g-z-20); }  /* 20 - Dropdowns & selects */
+.ux4g-z-30 { z-index: var(--ux4g-z-30); }  /* 30 - Drawers & side sheets */
+.ux4g-z-40 { z-index: var(--ux4g-z-40); }  /* 40 - Modals & dialogs */
+.ux4g-z-50 { z-index: var(--ux4g-z-50); }  /* 50 - Tooltips, toasts & alerts */

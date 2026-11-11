@@ -1,0 +1,124 @@
+/* =========================================
+   UX4G CONTAINER SYSTEM
+   Approach: Mobile-first   
+
+   Breakpoints:
+      (base):  <576px
+     sm:         ≥576px
+     md:         ≥768px
+     lg:         ≥992px
+     xl:         ≥1200px
+     2xl:        ≥1400px
+
+   Container Max-Widths:
+     sm:   540px  (33.75rem)
+     md:   720px  (45rem)
+     lg:   960px  (60rem)
+     xl:   1140px (71.25rem)
+     2xl:  1320px (82.5rem)
+   ========================================= */
+/*
+| Class                  | xs (<576) | sm (≥576) | md (≥768) | lg (≥992) | xl (≥1200) | 2xl (≥1400) |
+|------------------------|-----------|-----------|-----------|-----------|------------|-------------|
+| .ux4g-container        | 100%      | 540px     | 720px     | 960px     | 1140px     | 1320px      |
+| .ux4g-container-sm     | 100%      | 540px     | 720px     | 960px     | 1140px     | 1320px      |
+| .ux4g-container-md     | 100%      | 100%      | 720px     | 960px     | 1140px     | 1320px      |
+| .ux4g-container-lg     | 100%      | 100%      | 100%      | 960px     | 1140px     | 1320px      |
+| .ux4g-container-xl     | 100%      | 100%      | 100%      | 100%      | 1140px     | 1320px      |
+| .ux4g-container-2xl    | 100%      | 100%      | 100%      | 100%      | 100%       | 1320px      |
+| .ux4g-container-fluid  | 100%      | 100%      | 100%      | 100%      | 100%       | 100%        |
+*/
+
+
+/* ─── Base: Mobile (xs) ─── */
+
+.ux4g-container,
+.ux4g-container-fluid,
+.ux4g-container-sm,
+.ux4g-container-md,
+.ux4g-container-lg,
+.ux4g-container-xl,
+.ux4g-container-2xl {
+  width: 100%;
+  padding-inline: calc(var(--ux4g-container-gutter-x, 1.5rem) * 0.5);
+  margin-inline: auto;
+}
+
+/* All containers are fluid on xs (mobile) */
+
+.ux4g-container,
+.ux4g-container-sm,
+.ux4g-container-md,
+.ux4g-container-lg,
+.ux4g-container-xl,
+.ux4g-container-2xl,
+.ux4g-container-fluid {
+  max-width: 100%;
+}
+
+
+/* ─── Small: ≥ 576px ─── */
+
+@media (min-width: 576px) {
+  .ux4g-container,
+  .ux4g-container-sm {
+    max-width: var(--ux4g-container-max-width-sm, 33.75rem);
+  }
+}
+
+
+/* ─── Medium: ≥ 768px ─── */
+
+@media (min-width: 768px) {
+  .ux4g-container,
+  .ux4g-container-sm,
+  .ux4g-container-md {
+    max-width: var(--ux4g-container-max-width-md, 45rem);
+  }
+}
+
+
+/* ─── Large: ≥ 992px ─── */
+
+@media (min-width: 992px) {
+  .ux4g-container,
+  .ux4g-container-sm,
+  .ux4g-container-md,
+  .ux4g-container-lg {
+    max-width: var(--ux4g-container-max-width-lg, 60rem);
+  }
+}
+
+
+/* ─── Extra Large: ≥ 1200px ─── */
+
+@media (min-width: 1200px) {
+  .ux4g-container,
+  .ux4g-container-sm,
+  .ux4g-container-md,
+  .ux4g-container-lg,
+  .ux4g-container-xl {
+    max-width: var(--ux4g-container-max-width-xl, 71.25rem);
+  }
+}
+
+
+/* ─── Extra Extra Large (2xl): ≥ 1400px ─── */
+
+@media (min-width: 1400px) {
+  .ux4g-container,
+  .ux4g-container-sm,
+  .ux4g-container-md,
+  .ux4g-container-lg,
+  .ux4g-container-xl,
+  .ux4g-container-2xl {
+    max-width: var(--ux4g-container-max-width-2xl, 82.5rem);
+  }
+}
+
+
+/* ─── Fluid Container ─── */
+
+.ux4g-container-fluid {
+  max-width: 100%;
+}

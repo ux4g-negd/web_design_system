@@ -1,0 +1,17 @@
+/* =========================================
+   UX4G ANIMATION SEMANTIC TOKENS
+
+   1. Animation Semantics
+========================================= */
+
+:root {
+
+  /* =========================================
+     1. ANIMATION SEMANTICS
+  ========================================= */
+  --ux4g-anim-spin:   var(--ux4g-animate-spin);
+  --ux4g-anim-ping:   var(--ux4g-animate-ping);
+  --ux4g-anim-pulse:  var(--ux4g-animate-pulse);
+  --ux4g-anim-bounce: var(--ux4g-animate-bounce);
+
+}

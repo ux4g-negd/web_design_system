@@ -1,0 +1,160 @@
+/* =========================================
+   UX4G TEXT & ICON UTILITIES
+
+   1. Text Engine
+   2. Icon Engine
+   3. Neutral Text
+   4. Brand Text
+   5. Status Text
+   6. Icon Status
+   7. Neutral Links
+   8. Brand Links
+   9. Static Colors
+   10. Disabled Links
+   11. Visited Links
+========================================= */
+
+
+/* =========================================
+   1. TEXT ENGINE
+========================================= */
+
+.ux4g-text-neutral-primary,
+.ux4g-text-neutral-secondary,
+.ux4g-text-neutral-tertiary,
+.ux4g-text-neutral-inverse,
+.ux4g-text-neutral-emphasis,
+.ux4g-text-primary,
+.ux4g-text-secondary,
+.ux4g-text-tertiary,
+.ux4g-text-success,
+.ux4g-text-error,
+.ux4g-text-warning,
+.ux4g-text-info,
+.ux4g-text-link-neutral,
+.ux4g-text-link-neutral-inverse,
+.ux4g-text-link,
+.ux4g-text-link-inverse,
+.ux4g-text-link-disabled,
+.ux4g-text-link-visited,
+.ux4g-text-white,
+.ux4g-text-black,
+.ux4g-text-error-default {
+  color: var(--ux4g-text-current, var(--ux4g-text-neutral-primary)) !important;
+}
+
+
+/* =========================================
+   2. ICON ENGINE
+========================================= */
+
+.ux4g-icon,
+[class^="ux4g-icon-"],
+[class*=" ux4g-icon-"] {
+  color: var(--ux4g-icon-color, var(--ux4g-text-current, inherit));
+  fill: currentColor;
+}
+
+
+/* =========================================
+   3. NEUTRAL TEXT
+========================================= */
+
+.ux4g-text-neutral-primary { --ux4g-text-current: var(--ux4g-text-neutral-primary); }
+.ux4g-text-neutral-secondary { --ux4g-text-current: var(--ux4g-text-neutral-secondary); }
+.ux4g-text-neutral-tertiary { --ux4g-text-current: var(--ux4g-text-neutral-tertiary); }
+.ux4g-text-neutral-inverse { --ux4g-text-current: var(--ux4g-text-neutral-inverse); }
+.ux4g-text-neutral-emphasis { --ux4g-text-current: var(--ux4g-text-neutral-emphasis); }
+
+
+/* =========================================
+   4. BRAND TEXT
+========================================= */
+
+.ux4g-text-primary { --ux4g-text-current: var(--ux4g-text-brand-primary-default); }
+.ux4g-text-secondary { --ux4g-text-current: var(--ux4g-text-brand-secondary-default); }
+.ux4g-text-tertiary { --ux4g-text-current: var(--ux4g-text-brand-tertiary-default); }
+
+
+/* =========================================
+   5. STATUS TEXT
+========================================= */
+
+.ux4g-text-success { --ux4g-text-current: var(--ux4g-text-status-success); }
+.ux4g-text-error { --ux4g-text-current: var(--ux4g-text-status-error); }
+.ux4g-text-warning { --ux4g-text-current: var(--ux4g-text-status-warning); }
+.ux4g-text-info { --ux4g-text-current: var(--ux4g-text-status-info); }
+
+
+/* =========================================
+   6. ICON STATUS
+========================================= */
+
+.ux4g-icon-success { --ux4g-text-current: var(--ux4g-icon-status-success); }
+.ux4g-icon-error { --ux4g-text-current: var(--ux4g-icon-status-error); }
+.ux4g-icon-warning { --ux4g-text-current: var(--ux4g-icon-status-warning); }
+.ux4g-icon-info { --ux4g-text-current: var(--ux4g-icon-status-info); }
+.ux4g-icon-neutral { --ux4g-text-current: var(--ux4g-text-neutral-secondary); }
+
+
+/* =========================================
+   7. LINKS - NEUTRAL
+========================================= */
+
+.ux4g-text-link-neutral { --ux4g-text-current: var(--ux4g-text-link-neutral-default); }
+.ux4g-text-link-neutral:hover { --ux4g-text-current: var(--ux4g-text-link-neutral-hover); }
+.ux4g-text-link-neutral:active { --ux4g-text-current: var(--ux4g-text-link-neutral-active); }
+.ux4g-text-link-neutral:visited { --ux4g-text-current: var(--ux4g-text-link-neutral-visited); }
+.ux4g-text-link-neutral-inverse { --ux4g-text-current: var(--ux4g-text-link-neutral-inverse); }
+
+
+/* =========================================
+   8. LINKS - BRAND
+========================================= */
+
+.ux4g-text-link { --ux4g-text-current: var(--ux4g-text-link-default-default); }
+.ux4g-text-link:hover { --ux4g-text-current: var(--ux4g-text-link-default-hover); }
+.ux4g-text-link:active { --ux4g-text-current: var(--ux4g-text-link-default-active); }
+.ux4g-text-link:visited { --ux4g-text-current: var(--ux4g-text-link-default-visited); }
+.ux4g-text-link-inverse { --ux4g-text-current: var(--ux4g-text-link-default-inverse); }
+
+
+/* =========================================
+   9. STATIC COLORS
+========================================= */
+
+.ux4g-text-white { --ux4g-text-current: var(--ux4g-text-white); }
+.ux4g-text-black { --ux4g-text-current: var(--ux4g-text-black); }
+.ux4g-text-error-default { --ux4g-text-current: var(--ux4g-text-error-default); }
+
+
+/* =========================================
+   10. DISABLED LINKS
+========================================= */
+
+.ux4g-text-link:is(:disabled, [aria-disabled="true"]),
+.ux4g-text-link-neutral:is(:disabled, [aria-disabled="true"]) {
+  --ux4g-text-current: var(--ux4g-text-link-disabled);
+  color: var(--ux4g-text-current);
+  cursor: not-allowed;
+  text-decoration: none;
+  pointer-events: none;
+}
+
+.ux4g-text-link-disabled {
+  --ux4g-text-current: var(--ux4g-text-link-disabled);
+  color: var(--ux4g-text-current);
+  cursor: not-allowed;
+  text-decoration: none;
+  pointer-events: none;
+}
+
+
+/* =========================================
+   11. VISITED LINKS
+========================================= */
+
+.ux4g-text-link-visited {
+  --ux4g-text-current: var(--ux4g-text-link-default-visited);
+  color: var(--ux4g-text-current);
+}

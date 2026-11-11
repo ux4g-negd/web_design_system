@@ -1,0 +1,126 @@
+/* =========================================
+   UX4G NAVBAR PATTERN
+========================================= */
+
+.ux4g-navbar {
+    background: var(--ux4g-bg-neutral-elevated);
+    box-shadow: var(--ux4g-shadow-l2);
+    width: 100%;
+}
+
+.ux4g-navbar-wrap {
+    display: flex;
+    padding: var(--ux4g-padding-m) 0;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    gap: var(--ux4g-gap-column-m);
+}
+
+.ux4g-navbar-logo {
+    height: 2.5rem;
+    width: auto;
+}
+
+.ux4g-navbar-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ===== REMOVE ALL BULLETS / DOTS ===== */
+
+.ux4g-navbar-links {
+    display: flex;
+    align-items: center;
+    column-gap: var(--ux4g-column-xl);
+
+    list-style: none !important;
+    margin: 0;
+    padding: 0;
+}
+
+.ux4g-navbar-links>li {
+    display: flex;
+    align-items: center;
+
+    list-style: none !important;
+    margin: 0;
+    padding: 0;
+}
+
+.ux4g-navbar-links>li::marker {
+    content: none !important;
+}
+
+.ux4g-navbar-links>li::before,
+.ux4g-navbar-links>li::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* ===================================== */
+
+.ux4g-navbar-links .ux4g-dropdown-control:hover {
+    text-decoration: var(--ux4g-td-none) !important;
+}
+
+.ux4g-navbar-links .ux4g-dropdown-control:hover>span:first-child {
+    text-decoration: var(--ux4g-td-underline);
+}
+
+/* ===================================== */
+/* Mobile Responsiveness                 */
+/* ===================================== */
+
+.ux4g-navbar-mobile {
+    display: none;
+}
+
+@media (max-width: 991.98px) {
+    .ux4g-navbar-desktop {
+        display: none !important;
+    }
+
+    .ux4g-navbar {
+        position: relative;
+    }
+
+    .ux4g-navbar:has(.ux4g-navbar-mobile .ux4g-dropdown.is-open) {
+        z-index: var(--ux4g-z-dropdown, 1000);
+    }
+
+    .ux4g-navbar-mobile {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    /* Set positioning context to static on mobile so the menu spans the full navbar width */
+    .ux4g-navbar-mobile,
+    .ux4g-navbar-mobile>.ux4g-relative,
+    .ux4g-navbar-mobile>.ux4g-relative>.ux4g-dropdown {
+        position: static !important;
+    }
+
+    /* Style mobile dropdown menu to be full-width block below navbar */
+    .ux4g-navbar-mobile .ux4g-dropdown-menu {
+        position: absolute !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: 100% !important;
+        bottom: auto !important;
+        width: 100% !important;
+        margin-top: 0 !important;
+        box-sizing: border-box !important;
+        z-index: var(--ux4g-z-dropdown, 1000) !important;
+        border-radius: 0 !important;
+        border-left: none !important;
+        border-right: none !important;
+        background: var(--ux4g-bg-neutral-elevated, #ffffff) !important;
+        box-shadow: var(--ux4g-shadow-l2) !important;
+    }
+
+    .ux4g-navbar.ux4g-radius-full {
+        border-radius: 0 !important;
+    }
+}

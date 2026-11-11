@@ -1,0 +1,54 @@
+/* =========================================
+   UX4G MASTER TOKENS BUNDLE
+
+   A central entry point importing all primitive tokens.
+   Table of Contents:
+     1. Colors, Typography & Text
+     2. Spacing, Inset, Scroll & Layout
+     3. Borders, Rings, Outlines, Divide, Radius & Shadows
+     4. Effects (Blur, Opacity, Visibility, Filters)
+     5. Position & Z-Index
+     6. Motion & Transforms
+========================================= */
+
+/* 1. COLORS, TYPOGRAPHY & TEXT */
+@import "./colors-tokens.css";
+@import "./typography-tokens.css";
+@import "./text-tokens.css";
+@import "./vertical-align-tokens.css";
+@import "./line-clamp-tokens.css";
+
+/* 2. SPACING, INSET, SCROLL & LAYOUT */
+@import "./size-tokens.css";
+@import "./spacing-tokens.css";
+@import "./padding-tokens.css";
+@import "./margin-tokens.css";
+@import "./gap-tokens.css";
+@import "./gutter-tokens.css";
+@import "./scroll-tokens.css";
+@import "./container-tokens.css";
+@import "./overflow-tokens.css";
+@import "./object-fit-tokens.css";
+
+/* 3. BORDERS, RINGS, OUTLINES, DIVIDE, RADIUS & SHADOWS */
+@import "./border-tokens.css";
+@import "./ring-tokens.css";
+@import "./outline-tokens.css";
+@import "./divide-tokens.css";
+@import "./radius-tokens.css";
+@import "./shadow-tokens.css";
+
+/* 4. EFFECTS & FILTERS */
+@import "./blur-tokens.css";
+@import "./opacity-tokens.css";
+@import "./visibility-tokens.css";
+@import "./effects-tokens.css";
+
+/* 5. POSITION & Z-INDEX */
+@import "./position-tokens.css";
+@import "./z-index-tokens.css";
+
+/* 6. MOTION & TRANSFORMS */
+@import "./interaction-tokens.css";
+@import "./transition-tokens.css";
+@import "./transform-tokens.css";

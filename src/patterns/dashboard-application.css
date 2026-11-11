@@ -1,0 +1,264 @@
+/* =========================================================
+   UX4G Pattern: Dashboard & My Applications
+   ========================================================= */
+
+/* Main Layout */
+.ux4g-dashboard-layout-container {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    min-height: calc(100vh - 120px);
+}
+
+/* Sidebar */
+.ux4g-dashboard-sidebar {
+    width: 16rem;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--ux4g-gap-row-xl, 24px);
+    border-right: var(--ux4g-border-width-sm) solid var(--ux4g-border-color-neutral-default);
+    padding: var(--ux4g-padding-xl, 24px) var(--ux4g-padding-m, 16px);
+    background: var(--ux4g-bg-neutral-elevated);
+}
+
+.ux4g-dashboard-sidebar-profile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: var(--ux4g-ta-center, center);
+}
+
+.ux4g-dashboard-sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ux4g-gap-row-xs, 8px);
+    flex-grow: 1;
+    width: 100%;
+}
+
+.ux4g-dashboard-sidebar-footer {
+    margin-top: auto;
+    width: 100%;
+    padding-top: var(--ux4g-padding-xl, 24px);
+}
+
+/* Main Content Area */
+.ux4g-dashboard-main-content {
+    display: flex;
+    padding: var(--ux4g-padding-xl, 24px) var(--ux4g-padding-2xl, 32px);
+    flex-direction: column;
+    gap: var(--ux4g-gap-row-l, 20px);
+    flex: 1 0 0;
+    min-width: 0;
+}
+
+/* 4 Card Overview Grid */
+.ux4g-dashboard-overview-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ux4g-gap-column-m, 16px);
+}
+
+.ux4g-dashboard-overview-card {
+    display: flex;
+    min-width: 13.5rem;
+    flex: 1;
+    padding: var(--ux4g-padding-m, 16px) var(--ux4g-padding-l, 20px);
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--ux4g-gap-row-2xs, 4px);
+    border-radius: var(--ux4g-radius-md, 8px);
+    border: var(--ux4g-border-width-sm) solid var(--ux4g-border-color-neutral-default);
+    background: var(--ux4g-bg-neutral-elevated);
+}
+
+/* Search Container Width */
+.ux4g-dashboard-search-container {
+    width: 100%;
+    max-width: 32rem;
+}
+
+/* Bulk Select Bar */
+.ux4g-dashboard-header-container {
+    background-color: var(--ux4g-bg-primary-soft);
+    border: var(--ux4g-border-width-sm) solid var(--ux4g-border-color-primary-default);
+    border-radius: var(--ux4g-radius-md, 8px);
+    padding: var(--ux4g-padding-m, 12px) var(--ux4g-padding-l, 20px);
+    width: 100%;
+}
+
+.ux4g-dashbaord-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Popular Services Grid */
+.ux4g-dashboard-service-grid {
+    display: flex;
+    gap: var(--ux4g-gap-column-m, 16px);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ux4g-dashboard-service-card {
+    display: flex;
+    padding: var(--ux4g-padding-l, 20px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--ux4g-gap-row-xs, 8px);
+    flex: 1 0 0;
+    min-width: 15.625rem;
+    border-radius: var(--ux4g-radius-md, 8px);
+    border: var(--ux4g-border-width-sm) solid var(--ux4g-border-color-neutral-default);
+    background: var(--ux4g-bg-neutral-elevated);
+    transition: box-shadow 0.2s ease;
+}
+
+.ux4g-dashboard-service-card:hover {
+    box-shadow: var(--ux4g-shadow-l2);
+}
+
+/* Pattern State Navigation Toolbar */
+.ux4g-dashboard-state-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--ux4g-gap-column-xs, 8px);
+    background: var(--ux4g-bg-neutral-elevated);
+    border-bottom: var(--ux4g-border-width-sm) solid var(--ux4g-border-color-neutral-default);
+    padding: var(--ux4g-padding-s, 8px) var(--ux4g-padding-xl, 24px);
+    position: var(--ux4g-pos-sticky);
+    top: var(--ux4g-pos-top-0);
+    z-index: var(--ux4g-z-dropdown);
+}
+
+.ux4g-dashboard-state-btn {
+    padding: 6px 14px;
+    border-radius: var(--ux4g-radius-full, 9999px);
+    border: 1px solid var(--ux4g-border-color-neutral-default);
+    background: transparent;
+    color: var(--ux4g-text-neutral-secondary);
+    font-size: var(--ux4g-fs-14);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ux4g-dashboard-state-btn:hover {
+    background: var(--ux4g-bg-neutral-soft);
+    color: var(--ux4g-text-neutral-primary);
+}
+
+.ux4g-dashboard-state-btn.active {
+    background: var(--ux4g-bg-primary);
+    color: var(--ux4g-text-white);
+    border-color: var(--ux4g-bg-primary);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .ux4g-dashboard-sidebar {
+        display: none !important;
+    }
+
+    .ux4g-dashboard-main-content {
+        padding: var(--ux4g-padding-m, 16px);
+    }
+
+    .ux4g-dashboard-overview-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--ux4g-gap-column-s);
+    }
+
+    .ux4g-dashboard-overview-card {
+        min-width: 0;
+    }
+
+    .ux4g-dashbaord-header-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--ux4g-gap-row-m, 12px) var(--ux4g-gap-column-m, 12px);
+        align-items: center;
+    }
+
+    .ux4g-dashbaord-header-wrapper > .ux4g-d-flex {
+        display: contents !important;
+    }
+
+    .ux4g-dashbaord-header-wrapper .ux4g-label-xl-strong {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+    }
+
+    .ux4g-dashbaord-header-wrapper .ux4g-btn-text-primary {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+    }
+
+    .ux4g-dashbaord-header-wrapper .ux4g-btn-outline-primary {
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+    }
+
+    .ux4g-dashbaord-header-wrapper .ux4g-btn-primary {
+        grid-column: 2;
+        grid-row: 2;
+        width: 100%;
+    }
+
+    .ux4g-result-list:has(.ux4g-checkbox) {
+        grid-template-columns: auto 1fr auto !important;
+    }
+
+    .ux4g-result-list:has(.ux4g-checkbox) .ux4g-checkbox {
+        grid-column: 1 !important;
+        grid-row: 1 / span 2 !important;
+        align-self: flex-start !important;
+        margin-right: var(--ux4g-margin-s, 8px);
+        margin-top: 4px;
+    }
+
+    .ux4g-result-list:has(.ux4g-checkbox) .ux4g-result-list-title,
+    .ux4g-result-list:has(.ux4g-checkbox) .ux4g-result-list-title-group-header {
+        grid-column: 2 !important;
+    }
+
+    .ux4g-result-list:has(.ux4g-checkbox) .ux4g-result-list-actions {
+        grid-column: 3 !important;
+    }
+
+    .ux4g-result-list:has(.ux4g-checkbox) [class*="ux4g-sla-badge"],
+    .ux4g-result-list:has(.ux4g-checkbox) [class*="ux4g-tag-"] {
+        grid-column: 2 / span 2 !important;
+    }
+
+    .ux4g-result-list-v1:has(.ux4g-checkbox) .ux4g-result-list-id,
+    .ux4g-result-list-v1:has(.ux4g-checkbox) .ux4g-result-list-dept {
+        grid-column: 2 !important;
+    }
+
+    .ux4g-result-list-v1:has(.ux4g-checkbox) .ux4g-result-list-date {
+        grid-column: 3 !important;
+    }
+
+    .ux4g-result-list-v1:has(.ux4g-checkbox) .ux4g-result-list-details .ux4g-result-list-detail-item:nth-child(odd) {
+        grid-column: 2 !important;
+    }
+
+    .ux4g-result-list-v1:has(.ux4g-checkbox) .ux4g-result-list-details .ux4g-result-list-detail-item:nth-child(even) {
+        grid-column: 3 !important;
+    }
+
+    .ux4g-result-list-v1:has(.ux4g-checkbox) .ux4g-result-list-details .ux4g-result-list-detail-item:nth-child(5) {
+        grid-column: 2 / span 2 !important;
+    }
+}

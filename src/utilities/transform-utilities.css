@@ -1,0 +1,153 @@
+/* =========================================
+   UX4G TRANSFORM UTILITIES
+
+   Controls CSS transforms.
+
+   1. Transform Engine
+   2. Translate X
+   3. Translate Y
+   4. Negative Translate X
+   5. Negative Translate Y
+   6. Rotate
+   7. Negative Rotate
+   8. Transform Reset & Helpers
+========================================= */
+
+
+/* =========================================
+   1. TRANSFORM ENGINE
+========================================= */
+
+.ux4g-transform {
+  transform:
+    translateX(var(--ux4g-translate-x, 0))
+    translateY(var(--ux4g-translate-y, 0))
+    rotate(var(--ux4g-rotate, 0));
+}
+
+
+/* =========================================
+   2. TRANSLATE X
+========================================= */
+
+.ux4g-translate-x-0     { --ux4g-translate-x: var(--ux4g-tx-0); }
+.ux4g-translate-x-0-5   { --ux4g-translate-x: var(--ux4g-tx-0-5); }
+.ux4g-translate-x-1     { --ux4g-translate-x: var(--ux4g-tx-1); }
+.ux4g-translate-x-2     { --ux4g-translate-x: var(--ux4g-tx-2); }
+.ux4g-translate-x-3     { --ux4g-translate-x: var(--ux4g-tx-3); }
+.ux4g-translate-x-4     { --ux4g-translate-x: var(--ux4g-tx-4); }
+.ux4g-translate-x-5     { --ux4g-translate-x: var(--ux4g-tx-5); }
+.ux4g-translate-x-6     { --ux4g-translate-x: var(--ux4g-tx-6); }
+.ux4g-translate-x-8     { --ux4g-translate-x: var(--ux4g-tx-8); }
+.ux4g-translate-x-10    { --ux4g-translate-x: var(--ux4g-tx-10); }
+.ux4g-translate-x-12    { --ux4g-translate-x: var(--ux4g-tx-12); }
+.ux4g-translate-x-16    { --ux4g-translate-x: var(--ux4g-tx-16); }
+.ux4g-translate-x-20    { --ux4g-translate-x: var(--ux4g-tx-20); }
+.ux4g-translate-x-24    { --ux4g-translate-x: var(--ux4g-tx-24); }
+.ux4g-translate-x-full  { --ux4g-translate-x: var(--ux4g-tx-full); }
+.ux4g-translate-x-1\/2  { --ux4g-translate-x: var(--ux4g-tx-1\/2); }
+
+
+/* =========================================
+   3. TRANSLATE Y
+========================================= */
+
+.ux4g-translate-y-0     { --ux4g-translate-y: var(--ux4g-tx-0); }
+.ux4g-translate-y-0-5   { --ux4g-translate-y: var(--ux4g-tx-0-5); }
+.ux4g-translate-y-1     { --ux4g-translate-y: var(--ux4g-tx-1); }
+.ux4g-translate-y-2     { --ux4g-translate-y: var(--ux4g-tx-2); }
+.ux4g-translate-y-3     { --ux4g-translate-y: var(--ux4g-tx-3); }
+.ux4g-translate-y-4     { --ux4g-translate-y: var(--ux4g-tx-4); }
+.ux4g-translate-y-5     { --ux4g-translate-y: var(--ux4g-tx-5); }
+.ux4g-translate-y-6     { --ux4g-translate-y: var(--ux4g-tx-6); }
+.ux4g-translate-y-8     { --ux4g-translate-y: var(--ux4g-tx-8); }
+.ux4g-translate-y-10    { --ux4g-translate-y: var(--ux4g-tx-10); }
+.ux4g-translate-y-12    { --ux4g-translate-y: var(--ux4g-tx-12); }
+.ux4g-translate-y-16    { --ux4g-translate-y: var(--ux4g-tx-16); }
+.ux4g-translate-y-20    { --ux4g-translate-y: var(--ux4g-tx-20); }
+.ux4g-translate-y-24    { --ux4g-translate-y: var(--ux4g-tx-24); }
+.ux4g-translate-y-full  { --ux4g-translate-y: var(--ux4g-tx-full); }
+.ux4g-translate-y-1\/2  { --ux4g-translate-y: var(--ux4g-tx-1\/2); }
+
+
+/* =========================================
+   4. NEGATIVE TRANSLATE X
+========================================= */
+
+.ux4g-n-translate-x-0-5  { --ux4g-translate-x: calc(var(--ux4g-tx-0-5) * -1); }
+.ux4g-n-translate-x-1    { --ux4g-translate-x: calc(var(--ux4g-tx-1) * -1); }
+.ux4g-n-translate-x-2    { --ux4g-translate-x: calc(var(--ux4g-tx-2) * -1); }
+.ux4g-n-translate-x-4    { --ux4g-translate-x: calc(var(--ux4g-tx-4) * -1); }
+.ux4g-n-translate-x-6    { --ux4g-translate-x: calc(var(--ux4g-tx-6) * -1); }
+.ux4g-n-translate-x-8    { --ux4g-translate-x: calc(var(--ux4g-tx-8) * -1); }
+.ux4g-n-translate-x-12   { --ux4g-translate-x: calc(var(--ux4g-tx-12) * -1); }
+.ux4g-n-translate-x-full { --ux4g-translate-x: calc(var(--ux4g-tx-full) * -1); }
+.ux4g-n-translate-x-1\/2 { --ux4g-translate-x: calc(var(--ux4g-tx-1\/2) * -1); }
+
+
+/* =========================================
+   5. NEGATIVE TRANSLATE Y
+========================================= */
+
+.ux4g-n-translate-y-0-5  { --ux4g-translate-y: calc(var(--ux4g-tx-0-5) * -1); }
+.ux4g-n-translate-y-1    { --ux4g-translate-y: calc(var(--ux4g-tx-1) * -1); }
+.ux4g-n-translate-y-2    { --ux4g-translate-y: calc(var(--ux4g-tx-2) * -1); }
+.ux4g-n-translate-y-4    { --ux4g-translate-y: calc(var(--ux4g-tx-4) * -1); }
+.ux4g-n-translate-y-6    { --ux4g-translate-y: calc(var(--ux4g-tx-6) * -1); }
+.ux4g-n-translate-y-8    { --ux4g-translate-y: calc(var(--ux4g-tx-8) * -1); }
+.ux4g-n-translate-y-12   { --ux4g-translate-y: calc(var(--ux4g-tx-12) * -1); }
+.ux4g-n-translate-y-full { --ux4g-translate-y: calc(var(--ux4g-tx-full) * -1); }
+.ux4g-n-translate-y-1\/2 { --ux4g-translate-y: calc(var(--ux4g-tx-1\/2) * -1); }
+
+
+/* =========================================
+   6. ROTATE
+========================================= */
+
+.ux4g-rotate-0   { --ux4g-rotate: var(--ux4g-rot-0); }
+.ux4g-rotate-1   { --ux4g-rotate: var(--ux4g-rot-1); }
+.ux4g-rotate-2   { --ux4g-rotate: var(--ux4g-rot-2); }
+.ux4g-rotate-3   { --ux4g-rotate: var(--ux4g-rot-3); }
+.ux4g-rotate-6   { --ux4g-rotate: var(--ux4g-rot-6); }
+.ux4g-rotate-12  { --ux4g-rotate: var(--ux4g-rot-12); }
+.ux4g-rotate-45  { --ux4g-rotate: var(--ux4g-rot-45); }
+.ux4g-rotate-90  { --ux4g-rotate: var(--ux4g-rot-90); }
+.ux4g-rotate-180 { --ux4g-rotate: var(--ux4g-rot-180); }
+
+
+/* =========================================
+   7. NEGATIVE ROTATE
+========================================= */
+
+.ux4g-n-rotate-1   { --ux4g-rotate: calc(var(--ux4g-rot-1) * -1); }
+.ux4g-n-rotate-2   { --ux4g-rotate: calc(var(--ux4g-rot-2) * -1); }
+.ux4g-n-rotate-3   { --ux4g-rotate: calc(var(--ux4g-rot-3) * -1); }
+.ux4g-n-rotate-6   { --ux4g-rotate: calc(var(--ux4g-rot-6) * -1); }
+.ux4g-n-rotate-12  { --ux4g-rotate: calc(var(--ux4g-rot-12) * -1); }
+.ux4g-n-rotate-45  { --ux4g-rotate: calc(var(--ux4g-rot-45) * -1); }
+.ux4g-n-rotate-90  { --ux4g-rotate: calc(var(--ux4g-rot-90) * -1); }
+.ux4g-n-rotate-180 { --ux4g-rotate: calc(var(--ux4g-rot-180) * -1); }
+
+
+/* =========================================
+   8. TRANSFORM RESET & HELPERS
+========================================= */
+
+.ux4g-transform-none {
+  transform: none;
+}
+
+.ux4g-transform-gpu {
+  transform: translateZ(0);
+}
+
+.ux4g-translate-middle   { transform: var(--ux4g-pos-translate-middle); }
+.ux4g-translate-middle-x { transform: var(--ux4g-pos-translate-middle-x); }
+.ux4g-translate-middle-y { transform: var(--ux4g-pos-translate-middle-y); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ux4g-transform {
+    transition: none !important;
+  }
+}
+

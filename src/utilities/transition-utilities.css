@@ -1,0 +1,75 @@
+/* =========================================
+   UX4G ANIMATION UTILITIES
+
+   1. Animation
+   2. Keyframes
+   3. Reduced Motion
+   4. Transition Reset
+========================================= */
+
+
+/* =========================================
+   1. ANIMATION
+========================================= */
+
+.ux4g-animate-none   { animation: none; }
+.ux4g-animate-spin   { animation: var(--ux4g-anim-spin); }
+.ux4g-animate-ping   { animation: var(--ux4g-anim-ping); }
+.ux4g-animate-pulse  { animation: var(--ux4g-anim-pulse); }
+.ux4g-animate-bounce { animation: var(--ux4g-anim-bounce); }
+
+
+/* =========================================
+   2. KEYFRAMES
+========================================= */
+
+@keyframes ux4g-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ux4g-ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes ux4g-pulse {
+  50% { opacity: 0.5; }
+}
+
+@keyframes ux4g-bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+
+/* =========================================
+   3. ACCESSIBILITY — REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .ux4g-animate-spin,
+  .ux4g-animate-ping,
+  .ux4g-animate-pulse,
+  .ux4g-animate-bounce {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+
+/* =========================================
+   4. TRANSITION RESET
+========================================= */
+
+.ux4g-transition-none {
+  transition-property: none;
+}

@@ -1,0 +1,81 @@
+/* ================================
+   LINK - SMALL
+================================ */
+.ux4g-text-link-s,
+.ux4g-text-link-neutral-s {
+  font-size: var(--ux4g-fs-14);
+  line-height: var(--ux4g-lh-20);
+  font-weight: var(--ux4g-font-weight-medium);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ux4g-space-2, 4px);
+}
+
+/* ================================
+   LINK - MEDIUM
+================================ */
+.ux4g-text-link-m,
+.ux4g-text-link-neutral-m {
+  font-size: var(--ux4g-fs-16);
+  line-height: var(--ux4g-lh-24);
+  font-weight: var(--ux4g-font-weight-medium);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ux4g-space-2, 4px);
+}
+
+/* ================================
+   ICON FIX
+================================ */
+.ux4g-text-link-s .ux4g-icon-outlined,
+.ux4g-text-link-m .ux4g-icon-outlined,
+.ux4g-text-link-neutral-s .ux4g-icon-outlined,
+.ux4g-text-link-neutral-m .ux4g-icon-outlined {
+  font-size: var(--ux4g-fs-16);
+}
+
+/* ================================
+   COLOR
+================================ */
+.ux4g-text-link-s,
+.ux4g-text-link-m {
+  --ux4g-text-current: var(--ux4g-text-link-default-default);
+  color: var(--ux4g-text-current);
+}
+
+.ux4g-text-link-neutral-s,
+.ux4g-text-link-neutral-m {
+  --ux4g-text-current: var(--ux4g-text-link-neutral-default);
+  color: var(--ux4g-text-current);
+}
+
+/* ================================
+   INTERACTION
+================================ */
+.ux4g-text-link-s,
+.ux4g-text-link-m,
+.ux4g-text-link-neutral-s,
+.ux4g-text-link-neutral-m {
+  text-decoration: var(--ux4g-td-none);
+}
+
+.ux4g-text-link-s:hover,
+.ux4g-text-link-m:hover,
+.ux4g-text-link-neutral-s:hover,
+.ux4g-text-link-neutral-m:hover {
+  text-decoration: var(--ux4g-td-underline);
+}
+
+.ux4g-text-link-s .ux4g-icon-outlined:hover,
+.ux4g-text-link-m .ux4g-icon-outlined:hover,
+.ux4g-text-link-neutral-s .ux4g-icon-outlined:hover,
+.ux4g-text-link-neutral-m .ux4g-icon-outlined:hover {
+  text-decoration: var(--ux4g-td-none) !important;
+}
+
+:is(.ux4g-text-link, .ux4g-text-link-neutral)[disabled] {
+ color: rgba(23, 23, 23, 0.25) !important;
+  cursor: not-allowed;
+  text-decoration: var(--ux4g-td-none);
+  pointer-events: none;
+}

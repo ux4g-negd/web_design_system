@@ -1,0 +1,99 @@
+/* =========================================
+   UX4G TYPOGRAPHY UTILITIES
+
+   1. Typography Engines
+   2. Font Size
+   3. Line Height
+   4. Leading
+   5. Font Weight
+   6. Font Family
+========================================= */
+
+
+/* =========================================
+   1. TYPOGRAPHY ENGINES
+========================================= */
+
+[class*="ux4g-fs-"] { font-size: var(--ux4g-fs-current) !important; }
+[class*="ux4g-lh-"], [class*="ux4g-leading-"] { line-height: var(--ux4g-lh-current) !important; }
+[class*="ux4g-fw-"] { font-weight: var(--ux4g-fw-current) !important; }
+[class*="ux4g-ff-"] { font-family: var(--ux4g-ff-current, var(--ux4g-ff)) !important; }
+
+
+/* =========================================
+   2. FONT SIZE
+========================================= */
+
+.ux4g-fs-60 { --ux4g-fs-current: var(--ux4g-fs-60); }
+.ux4g-fs-52 { --ux4g-fs-current: var(--ux4g-fs-52); }
+.ux4g-fs-48 { --ux4g-fs-current: var(--ux4g-fs-48); }
+.ux4g-fs-40 { --ux4g-fs-current: var(--ux4g-fs-40); }
+.ux4g-fs-36 { --ux4g-fs-current: var(--ux4g-fs-36); }
+.ux4g-fs-32 { --ux4g-fs-current: var(--ux4g-fs-32); }
+.ux4g-fs-28 { --ux4g-fs-current: var(--ux4g-fs-28); }
+.ux4g-fs-24 { --ux4g-fs-current: var(--ux4g-fs-24); }
+.ux4g-fs-20 { --ux4g-fs-current: var(--ux4g-fs-20); }
+.ux4g-fs-18 { --ux4g-fs-current: var(--ux4g-fs-18); }
+.ux4g-fs-16 { --ux4g-fs-current: var(--ux4g-fs-16); }
+.ux4g-fs-14 { --ux4g-fs-current: var(--ux4g-fs-14); }
+.ux4g-fs-12 { --ux4g-fs-current: var(--ux4g-fs-12); }
+.ux4g-fs-11 { --ux4g-fs-current: var(--ux4g-fs-11); }
+.ux4g-fs-8  { --ux4g-fs-current: var(--ux4g-fs-8); }
+
+
+/* =========================================
+   3. LINE HEIGHT
+========================================= */
+
+.ux4g-lh-64 { --ux4g-lh-current: var(--ux4g-lh-64); }
+.ux4g-lh-56 { --ux4g-lh-current: var(--ux4g-lh-56); }
+.ux4g-lh-52 { --ux4g-lh-current: var(--ux4g-lh-52); }
+.ux4g-lh-48 { --ux4g-lh-current: var(--ux4g-lh-48); }
+.ux4g-lh-44 { --ux4g-lh-current: var(--ux4g-lh-44); }
+.ux4g-lh-40 { --ux4g-lh-current: var(--ux4g-lh-40); }
+.ux4g-lh-36 { --ux4g-lh-current: var(--ux4g-lh-36); }
+.ux4g-lh-32 { --ux4g-lh-current: var(--ux4g-lh-32); }
+.ux4g-lh-28 { --ux4g-lh-current: var(--ux4g-lh-28); }
+.ux4g-lh-26 { --ux4g-lh-current: var(--ux4g-lh-26); }
+.ux4g-lh-24 { --ux4g-lh-current: var(--ux4g-lh-24); }
+.ux4g-lh-22 { --ux4g-lh-current: var(--ux4g-lh-22); }
+.ux4g-lh-20 { --ux4g-lh-current: var(--ux4g-lh-20); }
+.ux4g-lh-18 { --ux4g-lh-current: var(--ux4g-lh-18); }
+.ux4g-lh-16 { --ux4g-lh-current: var(--ux4g-lh-16); }
+.ux4g-lh-14 { --ux4g-lh-current: var(--ux4g-lh-14); }
+
+
+/* =========================================
+   4. LEADING
+========================================= */
+
+.ux4g-leading-none { --ux4g-lh-current: var(--ux4g-lh-16); }
+.ux4g-leading-tight { --ux4g-lh-current: var(--ux4g-lh-20); }
+.ux4g-leading-snug { --ux4g-lh-current: var(--ux4g-lh-22); }
+.ux4g-leading-normal { --ux4g-lh-current: var(--ux4g-lh-24); }
+.ux4g-leading-relaxed { --ux4g-lh-current: var(--ux4g-lh-26); }
+.ux4g-leading-loose { --ux4g-lh-current: var(--ux4g-lh-32); }
+
+
+/* =========================================
+   5. FONT WEIGHT
+========================================= */
+
+.ux4g-fw-thin { --ux4g-fw-current: var(--ux4g-fw-thin); }
+.ux4g-fw-light { --ux4g-fw-current: var(--ux4g-fw-light); }
+.ux4g-fw-regular { --ux4g-fw-current: var(--ux4g-fw-regular); }
+.ux4g-fw-medium { --ux4g-fw-current: var(--ux4g-fw-medium); }
+.ux4g-fw-semibold { --ux4g-fw-current: var(--ux4g-fw-semibold); }
+.ux4g-fw-bold { --ux4g-fw-current: var(--ux4g-fw-bold); }
+.ux4g-fw-extrabold { --ux4g-fw-current: var(--ux4g-fw-extrabold); }
+.ux4g-fw-black { --ux4g-fw-current: var(--ux4g-fw-black); }
+.ux4g-fw-d-semibold { --ux4g-fw-current: var(--ux4g-fw-display-semibold); }
+.ux4g-fw-d-bold { --ux4g-fw-current: var(--ux4g-fw-display-bold); }
+
+
+/* =========================================
+   6. FONT FAMILY
+========================================= */
+
+.ux4g-ff-base { --ux4g-ff-current: var(--ux4g-ff); }
+.ux4g-ff-display { --ux4g-ff-current: var(--ux4g-ff-display); }

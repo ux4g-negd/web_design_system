@@ -1,0 +1,12 @@
+/* =========================================
+   UX4G SHADOW & ELEVATION PRIMITIVE TOKENS
+========================================= */
+
+:root {
+  /* Elevation Opacity Levels */
+  --ux4g-elevation-color-0: rgba(0, 0, 0, 0);
+  --ux4g-elevation-color-1: rgba(0, 0, 0, 0.04);
+  --ux4g-elevation-color-2: rgba(0, 0, 0, 0.08);
+  --ux4g-elevation-color-4: rgba(0, 0, 0, 0.16);
+  --ux4g-elevation-color-6: rgba(0, 0, 0, 0.24);
+}

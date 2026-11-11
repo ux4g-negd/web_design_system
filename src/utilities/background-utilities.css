@@ -1,0 +1,134 @@
+/* =========================================
+   UX4G BACKGROUND UTILITIES
+
+   1. Background Engine
+   2. Neutral Backgrounds
+   3. Primary Backgrounds
+   4. Secondary Backgrounds
+   5. Tertiary Backgrounds
+   6. Success Backgrounds
+   7. Error Backgrounds
+   8. Warning Backgrounds
+   9. Info Backgrounds
+   10. Other Backgrounds
+   11. Background Utility
+========================================= */
+
+
+/* =========================================
+   1. BACKGROUND ENGINE
+========================================= */
+
+[class^="ux4g-bg-"],
+[class*=" ux4g-bg-"] {
+  background-color: var(--ux4g-bg-current, var(--ux4g-bg-neutral-elevated));
+  color: var(--ux4g-text-current, var(--ux4g-text-neutral-primary));
+}
+
+
+/* =========================================
+   2. NEUTRAL BACKGROUNDS
+========================================= */
+
+.ux4g-bg-neutral-elevated { --ux4g-bg-current: var(--ux4g-bg-neutral-elevated); }
+.ux4g-bg-neutral { --ux4g-bg-current: var(--ux4g-bg-neutral); }
+.ux4g-bg-neutral-soft { --ux4g-bg-current: var(--ux4g-bg-neutral-soft); }
+.ux4g-bg-neutral-subtle { --ux4g-bg-current: var(--ux4g-bg-neutral-subtle); }
+.ux4g-bg-neutral-emphasis { --ux4g-bg-current: var(--ux4g-bg-neutral-emphasis); }
+.ux4g-bg-neutral-strong { --ux4g-bg-current: var(--ux4g-bg-neutral-strong); --ux4g-text-current: var(--ux4g-text-neutral-primary); }
+.ux4g-bg-neutral-stronger { --ux4g-bg-current: var(--ux4g-bg-neutral-stronger); --ux4g-text-current: var(--ux4g-text-neutral-inverse); }
+.ux4g-bg-neutral-disabled { --ux4g-bg-current: var(--ux4g-bg-neutral-disabled); }
+
+
+/* =========================================
+   3. PRIMARY BACKGROUNDS
+========================================= */
+
+.ux4g-bg-primary { --ux4g-bg-current: var(--ux4g-bg-primary); }
+.ux4g-bg-primary-soft { --ux4g-bg-current: var(--ux4g-bg-primary-soft); }
+.ux4g-bg-primary-subtle { --ux4g-bg-current: var(--ux4g-bg-primary-subtle); }
+.ux4g-bg-primary-emphasis { --ux4g-bg-current: var(--ux4g-bg-primary-emphasis); }
+.ux4g-bg-primary-strong { --ux4g-bg-current: var(--ux4g-bg-primary-strong); --ux4g-text-current: var(--ux4g-text-neutral-inverse); }
+.ux4g-bg-primary-stronger { --ux4g-bg-current: var(--ux4g-bg-primary-stronger); --ux4g-text-current: var(--ux4g-text-neutral-inverse); }
+
+
+/* =========================================
+   4. SECONDARY BACKGROUNDS
+========================================= */
+
+.ux4g-bg-secondary { --ux4g-bg-current: var(--ux4g-bg-secondary); }
+.ux4g-bg-secondary-soft { --ux4g-bg-current: var(--ux4g-bg-secondary-soft); }
+.ux4g-bg-secondary-subtle { --ux4g-bg-current: var(--ux4g-bg-secondary-subtle); }
+.ux4g-bg-secondary-emphasis { --ux4g-bg-current: var(--ux4g-bg-secondary-emphasis); }
+.ux4g-bg-secondary-strong { --ux4g-bg-current: var(--ux4g-bg-secondary-strong); --ux4g-text-current: var(--ux4g-text-neutral-inverse); }
+
+
+/* =========================================
+   5. TERTIARY BACKGROUNDS
+========================================= */
+
+.ux4g-bg-tertiary { --ux4g-bg-current: var(--ux4g-bg-tertiary); }
+.ux4g-bg-tertiary-soft { --ux4g-bg-current: var(--ux4g-bg-tertiary-soft); }
+.ux4g-bg-tertiary-subtle { --ux4g-bg-current: var(--ux4g-bg-tertiary-subtle); }
+.ux4g-bg-tertiary-emphasis { --ux4g-bg-current: var(--ux4g-bg-tertiary-emphasis); }
+.ux4g-bg-tertiary-strong { --ux4g-bg-current: var(--ux4g-bg-tertiary-strong); --ux4g-text-current: var(--ux4g-text-neutral-inverse); }
+
+
+/* =========================================
+   6. SUCCESS BACKGROUNDS
+========================================= */
+
+.ux4g-bg-success { --ux4g-bg-current: var(--ux4g-bg-success); }
+.ux4g-bg-success-soft { --ux4g-bg-current: var(--ux4g-bg-success-soft); }
+.ux4g-bg-success-subtle { --ux4g-bg-current: var(--ux4g-bg-success-subtle); }
+.ux4g-bg-success-emphasis { --ux4g-bg-current: var(--ux4g-bg-success-emphasis); }
+.ux4g-bg-success-strong { --ux4g-bg-current: var(--ux4g-bg-success-strong); --ux4g-text-current: var(--ux4g-text-neutral-inverse); }
+
+
+/* =========================================
+   7. ERROR BACKGROUNDS
+========================================= */
+
+.ux4g-bg-error { --ux4g-bg-current: var(--ux4g-bg-error); }
+.ux4g-bg-error-soft { --ux4g-bg-current: var(--ux4g-bg-error-soft); }
+.ux4g-bg-error-subtle { --ux4g-bg-current: var(--ux4g-bg-error-subtle); }
+.ux4g-bg-error-emphasis { --ux4g-bg-current: var(--ux4g-bg-error-emphasis); }
+.ux4g-bg-error-strong { --ux4g-bg-current: var(--ux4g-bg-error-strong); --ux4g-text-current: var(--ux4g-text-neutral-inverse); }
+.ux4g-bg-error-stronger { --ux4g-bg-current: var(--ux4g-bg-error-stronger); --ux4g-text-current: var(--ux4g-text-neutral-inverse); }
+
+
+/* =========================================
+   8. WARNING BACKGROUNDS
+========================================= */
+
+.ux4g-bg-warning { --ux4g-bg-current: var(--ux4g-bg-warning); }
+.ux4g-bg-warning-soft { --ux4g-bg-current: var(--ux4g-bg-warning-soft); }
+.ux4g-bg-warning-subtle { --ux4g-bg-current: var(--ux4g-bg-warning-subtle); }
+.ux4g-bg-warning-emphasis { --ux4g-bg-current: var(--ux4g-bg-warning-emphasis); }
+.ux4g-bg-warning-strong { --ux4g-bg-current: var(--ux4g-bg-warning-strong); --ux4g-text-current: var(--ux4g-text-neutral-inverse); }
+
+
+/* =========================================
+   9. INFO BACKGROUNDS
+========================================= */
+
+.ux4g-bg-info { --ux4g-bg-current: var(--ux4g-bg-info); }
+.ux4g-bg-info-soft { --ux4g-bg-current: var(--ux4g-bg-info-soft); }
+.ux4g-bg-info-subtle { --ux4g-bg-current: var(--ux4g-bg-info-subtle); }
+.ux4g-bg-info-emphasis { --ux4g-bg-current: var(--ux4g-bg-info-emphasis); }
+.ux4g-bg-info-strong { --ux4g-bg-current: var(--ux4g-bg-info-strong); --ux4g-text-current: var(--ux4g-text-neutral-inverse); }
+
+
+/* =========================================
+   10. OTHER BACKGROUNDS
+========================================= */
+.ux4g-bg-black { --ux4g-bg-current: var(--ux4g-bg-black); }
+
+
+/* =========================================
+   11. BACKGROUND UTILITY
+========================================= */
+
+.ux4g-bg-none {
+  background-color: transparent !important;
+}

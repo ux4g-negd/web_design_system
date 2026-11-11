@@ -1,0 +1,12 @@
+/* =========================================
+   UX4G BLUR PRIMITIVE TOKENS
+========================================= */
+
+:root {
+  /* Blur Scale */
+  --ux4g-blur-none: 0;          /* 0px */
+  --ux4g-blur-1: 0.125rem;     /* 2px */
+  --ux4g-blur-2: 0.25rem;      /* 4px */
+  --ux4g-blur-3: 0.5rem;       /* 8px */
+  --ux4g-blur-4: 1rem;         /* 16px */
+}

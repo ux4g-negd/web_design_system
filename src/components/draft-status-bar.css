@@ -1,0 +1,117 @@
+/* =========================================
+   DRAFT STATUS BAR PATTERN
+   ========================================= */
+
+.ux4g-draft-status-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: var(--ux4g-padding-xl);
+    padding-block: var(--ux4g-padding-m);
+    border-radius: var(--ux4g-radius-md);
+}
+
+.ux4g-auto-draft-status-bar {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-inline: var(--ux4g-padding-xl);
+    padding-block: var(--ux4g-padding-m);
+    border-radius: var(--ux4g-radius-md);
+}
+
+.ux4g-success-draft-status-bar {
+    display: flex;
+    align-items: center;
+    padding-inline: var(--ux4g-padding-xl);
+    padding-block: var(--ux4g-padding-m);
+    border-radius: var(--ux4g-radius-md);
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+    .ux4g-draft-status-bar {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: var(--ux4g-gap-row-m);
+        padding-inline: var(--ux4g-padding-m);
+    }
+
+    .ux4g-auto-draft-status-bar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        padding-inline: var(--ux4g-padding-m);
+    }
+
+    .ux4g-success-draft-status-bar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding-inline: var(--ux4g-padding-m);
+    }
+    
+    /* Hide the token icon button in mobile for first variant */
+    .ux4g-draft-status-bar > .ux4g-d-flex > .ux4g-icon-btn.ux4g-bg-warning-subtle {
+        display: none;
+    }
+    
+    /* Make the title, tag, and date stack on mobile for the first variant */
+    .ux4g-draft-status-bar .ux4g-flex-column > .ux4g-d-flex {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: var(--ux4g-gap-row-xs);
+        width: 100%;
+    }
+    
+    .ux4g-draft-status-bar .ux4g-flex-column {
+        width: 100%;
+    }
+    
+    .ux4g-draft-status-bar > .ux4g-d-flex:first-child {
+        width: 100%;
+    }
+
+    /* Discard and Resume buttons should be 50% width on mobile */
+    .ux4g-draft-status-bar > .ux4g-d-flex:last-child:has(.ux4g-btn-primary) {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: var(--ux4g-gap-row-m);
+        margin-top: var(--ux4g-gap-row-xs);
+    }
+    
+    .ux4g-draft-status-bar > .ux4g-d-flex:last-child:has(.ux4g-btn-primary) > button {
+        flex: 1 1 0%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: var(--ux4g-ta-center);
+    }
+    
+    /* 3. Urgent Expiry */
+    .ux4g-draft-status-bar.ux4g-bg-warning-strong > .ux4g-d-flex > .ux4g-icon-btn {
+        display: none;
+    }
+    
+    /* 4. Expired */
+    .ux4g-draft-status-bar.ux4g-bg-error-soft {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .ux4g-draft-status-bar.ux4g-bg-error-soft > .ux4g-d-flex {
+        flex: 1;
+    }
+}
+/* iPad Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .ux4g-draft-status-bar .ux4g-flex-column > .ux4g-d-flex {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: var(--ux4g-gap-row-xs);
+    }
+}

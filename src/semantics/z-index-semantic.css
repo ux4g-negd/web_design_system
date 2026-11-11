@@ -1,0 +1,24 @@
+/* ==========================================================================
+   UX4G Z-INDEX SEMANTIC TOKENS
+   Semantic layering tokens for positioning components within the stacking hierarchy.
+   ========================================================================== */
+
+:root {
+  /* ─── Base Layout Stacking ─── */
+  --ux4g-z-below:          var(--ux4g-z-n1);      /* Behind / submerged (-1) */
+  --ux4g-z-layout-base:    var(--ux4g-z-0);       /* Base surface flow (0) */
+  --ux4g-z-layout-raised:  var(--ux4g-z-1);       /* Slightly lifted card / header (1) */
+  --ux4g-z-layout-overlay: var(--ux4g-z-2);       /* Low-level overlay (2) */
+  --ux4g-z-layout-top:     var(--ux4g-z-3);       /* High-priority layout element (3) */
+
+  /* ─── Extended Numeric Scale ─── */
+  --ux4g-z-10: var(--ux4g-z-index-10);            /* Z-Index 10 (Sticky bars, sub-navs) */
+  --ux4g-z-20: var(--ux4g-z-index-20);            /* Z-Index 20 (Dropdowns, selects, popovers) */
+  --ux4g-z-30: var(--ux4g-z-index-30);            /* Z-Index 30 (Drawers, side-sheets) */
+  --ux4g-z-40: var(--ux4g-z-index-40);            /* Z-Index 40 (Modals, backdrops) */
+  --ux4g-z-50: var(--ux4g-z-index-50);            /* Z-Index 50 (Tooltips, toasts, snackbars) */
+
+  /* ─── Component Specific Aliases ─── */
+  --ux4g-z-dropdown: var(--ux4g-z-index-20);      /* Dropdown menus & autocomplete */
+  --ux4g-z-tooltip:  var(--ux4g-z-index-50);      /* Top-level hover tooltips */
+}

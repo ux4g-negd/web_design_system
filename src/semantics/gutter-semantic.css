@@ -1,0 +1,24 @@
+/* =========================================
+   UX4G GUTTER SEMANTIC TOKENS
+========================================= */
+
+:root {
+  /* Default Gutters */
+  --ux4g-grid-gutter-x: var(--ux4g-gutter-4); /* 1.5rem / 24px */
+  --ux4g-grid-gutter-y: var(--ux4g-gutter-0); /* 0px */
+
+  /* Semantic scale (0-5) */
+  --ux4g-gutter-x-0: var(--ux4g-gutter-0);
+  --ux4g-gutter-x-1: var(--ux4g-gutter-1);
+  --ux4g-gutter-x-2: var(--ux4g-gutter-2);
+  --ux4g-gutter-x-3: var(--ux4g-gutter-3);
+  --ux4g-gutter-x-4: var(--ux4g-gutter-4);
+  --ux4g-gutter-x-5: var(--ux4g-gutter-5);
+
+  --ux4g-gutter-y-0: var(--ux4g-gutter-0);
+  --ux4g-gutter-y-1: var(--ux4g-gutter-1);
+  --ux4g-gutter-y-2: var(--ux4g-gutter-2);
+  --ux4g-gutter-y-3: var(--ux4g-gutter-3);
+  --ux4g-gutter-y-4: var(--ux4g-gutter-4);
+  --ux4g-gutter-y-5: var(--ux4g-gutter-5);
+}

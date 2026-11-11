@@ -1,0 +1,11 @@
+/* =========================================
+   UX4G ANIMATION & TRANSITION PRIMITIVE TOKENS
+========================================= */
+
+:root {
+  /* Animation Keyframe References */
+  --ux4g-animate-spin: ux4g-spin 1s linear infinite;
+  --ux4g-animate-ping: ux4g-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  --ux4g-animate-pulse: ux4g-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --ux4g-animate-bounce: ux4g-bounce 1s infinite;
+}

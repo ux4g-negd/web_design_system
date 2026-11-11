@@ -1,0 +1,50 @@
+/* UX4G Rekh Theme Tokens */
+[data-theme="rekh"] {
+  /* Typography & Shape */
+  --ux4g-font-family-base: "Poppins", sans-serif;
+  --ux4g-font-family-display: "Poppins", sans-serif;
+  --ux4g-ff: var(--ux4g-font-family-base);
+  --ux4g-ff-display: var(--ux4g-font-family-display);
+
+  /* Button Border Radius */
+  --ux4g-btn-radius: var(--ux4g-radius-0);
+
+  /* Primary Palette (Teal) */
+  --ux4g-color-primary-50: #DDFFFC;
+  --ux4g-color-primary-100: #B6FEFA;
+  --ux4g-color-primary-200: #A4EFEA;
+  --ux4g-color-primary-300: #8AD9D4;
+  --ux4g-color-primary-400: #64B9B4;
+  --ux4g-color-primary-500: #369792;
+  --ux4g-color-primary-600: #077D79;
+  --ux4g-color-primary-700: #005A57;
+  --ux4g-color-primary-800: #003937;
+  --ux4g-color-primary-900: #001E1D;
+  --ux4g-color-primary-950: #000C0B;
+
+  /* Secondary Palette (Gold Amber) */
+  --ux4g-color-secondary-50: #FFF6E4;
+  --ux4g-color-secondary-100: #FFEDCA;
+  --ux4g-color-secondary-200: #FFDB96;
+  --ux4g-color-secondary-300: #EEC573;
+  --ux4g-color-secondary-400: #D1A64C;
+  --ux4g-color-secondary-500: #B28518;
+  --ux4g-color-secondary-600: #966F00;
+  --ux4g-color-secondary-700: #6C4E00;
+  --ux4g-color-secondary-800: #443100;
+  --ux4g-color-secondary-900: #241800;
+  --ux4g-color-secondary-950: #0F0800;
+
+  /* Tertiary Palette (Clay) */
+  --ux4g-color-tertiary-50: #FFF4EE;
+  --ux4g-color-tertiary-100: #FCEBE2;
+  --ux4g-color-tertiary-200: #EDDDD3;
+  --ux4g-color-tertiary-300: #D9C8BE;
+  --ux4g-color-tertiary-400: #BBA99F;
+  --ux4g-color-tertiary-500: #9B897F;
+  --ux4g-color-tertiary-600: #847267;
+  --ux4g-color-tertiary-700: #605047;
+  --ux4g-color-tertiary-800: #3F3129;
+  --ux4g-color-tertiary-900: #231811;
+  --ux4g-color-tertiary-950: #100703;
+}

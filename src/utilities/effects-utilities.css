@@ -1,0 +1,149 @@
+/* =========================================
+   UX4G EFFECTS & FILTERS UTILITIES
+
+   1. Backdrop Blur Engine
+   2. Backdrop Saturate Engine
+   3. Brightness Engine
+   4. Mix Blend Mode Engine
+   5. Background Blend Mode Engine
+   6. Backdrop Blur
+   7. Backdrop Saturate
+   8. Brightness
+   9. Mix Blend Mode
+   10. Background Blend Mode
+========================================= */
+
+
+/* =========================================
+   1. BACKDROP BLUR ENGINE
+========================================= */
+
+[class*="ux4g-backdrop-blur-"],
+.ux4g-backdrop-blur {
+  backdrop-filter: var(--ux4g-backdrop-blur-current, var(--ux4g-backdrop-blur-default, blur(8px))) !important;
+  -webkit-backdrop-filter: var(--ux4g-backdrop-blur-current, var(--ux4g-backdrop-blur-default, blur(8px))) !important;
+}
+
+
+/* =========================================
+   2. BACKDROP SATURATE ENGINE
+========================================= */
+
+[class*="ux4g-backdrop-saturate-"] {
+  backdrop-filter: var(--ux4g-backdrop-saturate-current, var(--ux4g-backdrop-saturate-default, saturate(1))) !important;
+  -webkit-backdrop-filter: var(--ux4g-backdrop-saturate-current, var(--ux4g-backdrop-saturate-default, saturate(1))) !important;
+}
+
+
+/* =========================================
+   3. BRIGHTNESS ENGINE
+========================================= */
+
+[class*="ux4g-brightness-"] {
+  filter: var(--ux4g-brightness-current, var(--ux4g-brightness-default, brightness(1))) !important;
+}
+
+
+/* =========================================
+   4. MIX BLEND MODE ENGINE
+========================================= */
+
+[class*="ux4g-mix-blend-"] {
+  mix-blend-mode: var(--ux4g-mix-blend-current, var(--ux4g-mix-blend-default, normal)) !important;
+}
+
+
+/* =========================================
+   5. BACKGROUND BLEND MODE ENGINE
+========================================= */
+
+[class*="ux4g-bg-blend-"] {
+  background-blend-mode: var(--ux4g-bg-blend-current, var(--ux4g-bg-blend-default, normal)) !important;
+}
+
+
+/* =========================================
+   6. BACKDROP BLUR
+========================================= */
+
+.ux4g-backdrop-blur-none { --ux4g-backdrop-blur-current: var(--ux4g-backdrop-blur-val-none); }
+.ux4g-backdrop-blur-xs   { --ux4g-backdrop-blur-current: var(--ux4g-backdrop-blur-val-xs); }
+.ux4g-backdrop-blur-sm   { --ux4g-backdrop-blur-current: var(--ux4g-backdrop-blur-val-sm); }
+.ux4g-backdrop-blur      { --ux4g-backdrop-blur-current: var(--ux4g-backdrop-blur-default); }
+.ux4g-backdrop-blur-md   { --ux4g-backdrop-blur-current: var(--ux4g-backdrop-blur-val-md); }
+.ux4g-backdrop-blur-lg   { --ux4g-backdrop-blur-current: var(--ux4g-backdrop-blur-val-lg); }
+.ux4g-backdrop-blur-xl   { --ux4g-backdrop-blur-current: var(--ux4g-backdrop-blur-val-xl); }
+.ux4g-backdrop-blur-2xl  { --ux4g-backdrop-blur-current: var(--ux4g-backdrop-blur-val-2xl); }
+.ux4g-backdrop-blur-3xl  { --ux4g-backdrop-blur-current: var(--ux4g-backdrop-blur-val-3xl); }
+
+
+/* =========================================
+   7. BACKDROP SATURATE
+========================================= */
+
+.ux4g-backdrop-saturate-0   { --ux4g-backdrop-saturate-current: var(--ux4g-backdrop-saturate-val-0); }
+.ux4g-backdrop-saturate-50  { --ux4g-backdrop-saturate-current: var(--ux4g-backdrop-saturate-val-50); }
+.ux4g-backdrop-saturate-100 { --ux4g-backdrop-saturate-current: var(--ux4g-backdrop-saturate-val-100); }
+.ux4g-backdrop-saturate-150 { --ux4g-backdrop-saturate-current: var(--ux4g-backdrop-saturate-val-150); }
+.ux4g-backdrop-saturate-200 { --ux4g-backdrop-saturate-current: var(--ux4g-backdrop-saturate-val-200); }
+
+
+/* =========================================
+   8. BRIGHTNESS
+========================================= */
+
+.ux4g-brightness-0   { --ux4g-brightness-current: var(--ux4g-brightness-val-0); }
+.ux4g-brightness-50  { --ux4g-brightness-current: var(--ux4g-brightness-val-50); }
+.ux4g-brightness-75  { --ux4g-brightness-current: var(--ux4g-brightness-val-75); }
+.ux4g-brightness-90  { --ux4g-brightness-current: var(--ux4g-brightness-val-90); }
+.ux4g-brightness-95  { --ux4g-brightness-current: var(--ux4g-brightness-val-95); }
+.ux4g-brightness-100 { --ux4g-brightness-current: var(--ux4g-brightness-val-100); }
+.ux4g-brightness-105 { --ux4g-brightness-current: var(--ux4g-brightness-val-105); }
+.ux4g-brightness-110 { --ux4g-brightness-current: var(--ux4g-brightness-val-110); }
+.ux4g-brightness-125 { --ux4g-brightness-current: var(--ux4g-brightness-val-125); }
+.ux4g-brightness-150 { --ux4g-brightness-current: var(--ux4g-brightness-val-150); }
+.ux4g-brightness-200 { --ux4g-brightness-current: var(--ux4g-brightness-val-200); }
+
+
+/* =========================================
+   9. MIX BLEND MODE
+========================================= */
+
+.ux4g-mix-blend-normal      { --ux4g-mix-blend-current: var(--ux4g-mix-blend-normal); }
+.ux4g-mix-blend-multiply    { --ux4g-mix-blend-current: var(--ux4g-mix-blend-multiply); }
+.ux4g-mix-blend-screen      { --ux4g-mix-blend-current: var(--ux4g-mix-blend-screen); }
+.ux4g-mix-blend-overlay     { --ux4g-mix-blend-current: var(--ux4g-mix-blend-overlay); }
+.ux4g-mix-blend-darken      { --ux4g-mix-blend-current: var(--ux4g-mix-blend-darken); }
+.ux4g-mix-blend-lighten     { --ux4g-mix-blend-current: var(--ux4g-mix-blend-lighten); }
+.ux4g-mix-blend-color-dodge { --ux4g-mix-blend-current: var(--ux4g-mix-blend-color-dodge); }
+.ux4g-mix-blend-color-burn  { --ux4g-mix-blend-current: var(--ux4g-mix-blend-color-burn); }
+.ux4g-mix-blend-hard-light  { --ux4g-mix-blend-current: var(--ux4g-mix-blend-hard-light); }
+.ux4g-mix-blend-soft-light  { --ux4g-mix-blend-current: var(--ux4g-mix-blend-soft-light); }
+.ux4g-mix-blend-difference  { --ux4g-mix-blend-current: var(--ux4g-mix-blend-difference); }
+.ux4g-mix-blend-exclusion   { --ux4g-mix-blend-current: var(--ux4g-mix-blend-exclusion); }
+.ux4g-mix-blend-hue         { --ux4g-mix-blend-current: var(--ux4g-mix-blend-hue); }
+.ux4g-mix-blend-saturation  { --ux4g-mix-blend-current: var(--ux4g-mix-blend-saturation); }
+.ux4g-mix-blend-color       { --ux4g-mix-blend-current: var(--ux4g-mix-blend-color); }
+.ux4g-mix-blend-luminosity  { --ux4g-mix-blend-current: var(--ux4g-mix-blend-luminosity); }
+
+
+/* =========================================
+   10. BACKGROUND BLEND MODE
+========================================= */
+
+.ux4g-bg-blend-normal      { --ux4g-bg-blend-current: var(--ux4g-bg-blend-normal); }
+.ux4g-bg-blend-multiply    { --ux4g-bg-blend-current: var(--ux4g-bg-blend-multiply); }
+.ux4g-bg-blend-screen      { --ux4g-bg-blend-current: var(--ux4g-bg-blend-screen); }
+.ux4g-bg-blend-overlay     { --ux4g-bg-blend-current: var(--ux4g-bg-blend-overlay); }
+.ux4g-bg-blend-darken      { --ux4g-bg-blend-current: var(--ux4g-bg-blend-darken); }
+.ux4g-bg-blend-lighten     { --ux4g-bg-blend-lighten: var(--ux4g-bg-blend-lighten); }
+.ux4g-bg-blend-color-dodge { --ux4g-bg-blend-current: var(--ux4g-bg-blend-color-dodge); }
+.ux4g-bg-blend-color-burn  { --ux4g-bg-blend-current: var(--ux4g-bg-blend-color-burn); }
+.ux4g-bg-blend-hard-light  { --ux4g-bg-blend-current: var(--ux4g-bg-blend-hard-light); }
+.ux4g-bg-blend-soft-light  { --ux4g-bg-blend-current: var(--ux4g-bg-blend-soft-light); }
+.ux4g-bg-blend-difference  { --ux4g-bg-blend-current: var(--ux4g-bg-blend-difference); }
+.ux4g-bg-blend-exclusion   { --ux4g-bg-blend-current: var(--ux4g-bg-blend-exclusion); }
+.ux4g-bg-blend-hue         { --ux4g-bg-blend-current: var(--ux4g-bg-blend-hue); }
+.ux4g-bg-blend-saturation  { --ux4g-bg-blend-current: var(--ux4g-bg-blend-saturation); }
+.ux4g-bg-blend-color       { --ux4g-bg-blend-current: var(--ux4g-bg-blend-color); }
+.ux4g-bg-blend-luminosity  { --ux4g-bg-blend-current: var(--ux4g-bg-blend-luminosity); }

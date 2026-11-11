@@ -1,0 +1,76 @@
+/* ==========================================================================
+   UX4G VISIBILITY UTILITIES
+   Display visibility classes for controlling rendering box without breaking flow.
+
+   Breakpoints:
+   xs: <576px
+   sm: ≥576px
+   md: ≥768px
+   lg: ≥992px
+   xl: ≥1200px
+   2xl: ≥1400px
+   ========================================================================== */
+
+/* ─── 1. Element Visible ─── */
+.ux4g-visible {
+  visibility: var(--ux4g-visibility-show) !important;
+}
+
+/* ─── 2. Element Invisible (Preserves Layout Space) ─── */
+.ux4g-invisible {
+  visibility: var(--ux4g-visibility-hide) !important;
+}
+
+/* =========================================
+   RESPONSIVE VISIBILITY
+   ========================================= */
+
+/* Small — ≥576px */
+@media (min-width: 576px) {
+  .ux4g-sm-visible {
+    visibility: var(--ux4g-visibility-show) !important;
+  }
+  .ux4g-sm-invisible {
+    visibility: var(--ux4g-visibility-hide) !important;
+  }
+}
+
+/* Medium — ≥768px */
+@media (min-width: 768px) {
+  .ux4g-md-visible {
+    visibility: var(--ux4g-visibility-show) !important;
+  }
+  .ux4g-md-invisible {
+    visibility: var(--ux4g-visibility-hide) !important;
+  }
+}
+
+/* Large — ≥992px */
+@media (min-width: 992px) {
+  .ux4g-lg-visible {
+    visibility: var(--ux4g-visibility-show) !important;
+  }
+  .ux4g-lg-invisible {
+    visibility: var(--ux4g-visibility-hide) !important;
+  }
+}
+
+/* Extra Large — ≥1200px */
+@media (min-width: 1200px) {
+  .ux4g-xl-visible {
+    visibility: var(--ux4g-visibility-show) !important;
+  }
+  .ux4g-xl-invisible {
+    visibility: var(--ux4g-visibility-hide) !important;
+  }
+}
+
+/* Extra Extra Large — ≥1400px */
+@media (min-width: 1400px) {
+  .ux4g-2xl-visible {
+    visibility: var(--ux4g-visibility-show) !important;
+  }
+  .ux4g-2xl-invisible {
+    visibility: var(--ux4g-visibility-hide) !important;
+  }
+}

@@ -1,0 +1,13 @@
+/* =========================================
+   UX4G LINE CLAMP PRIMITIVE TOKENS
+========================================= */
+
+:root {
+  --ux4g-line-clamp-1: 1;
+  --ux4g-line-clamp-2: 2;
+  --ux4g-line-clamp-3: 3;
+  --ux4g-line-clamp-4: 4;
+  --ux4g-line-clamp-5: 5;
+  --ux4g-line-clamp-6: 6;
+  --ux4g-line-clamp-none: unset;
+}

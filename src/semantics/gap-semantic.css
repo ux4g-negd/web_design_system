@@ -1,0 +1,60 @@
+/* =========================================
+   UX4G GAP & SPACING SEMANTIC TOKENS
+
+   1. General Spacing
+   2. Section Spacing (Both Axes)
+   3. Inline Spacing (Column Gap)
+   4. Stack Spacing (Row Gap)
+========================================= */
+
+:root {
+
+  /* =========================================
+     1. GENERAL SPACING
+  ========================================= */
+  --ux4g-spacing-none: var(--ux4g-gap-0); /* 0rem / 0px */
+  --ux4g-spacing-3:    var(--ux4g-gap-3); /* 0.375rem / 6px */
+
+
+  /* =========================================
+     2. SECTION SPACING (BOTH AXES)
+  ========================================= */
+  --ux4g-section-none: var(--ux4g-gap-0);  /* 0rem / 0px */
+  --ux4g-section-2xs:  var(--ux4g-gap-2);  /* 0.25rem / 4px */
+  --ux4g-section-3xs:  var(--ux4g-gap-3);  /* 0.375rem / 6px */
+  --ux4g-section-4xs:  var(--ux4g-gap-4);  /* 0.5rem / 8px */
+  --ux4g-section-5xs:  var(--ux4g-gap-5);  /* 0.75rem / 12px */
+  --ux4g-section-6xs:  var(--ux4g-gap-6);  /* 1rem / 16px */
+  --ux4g-section-7xs:  var(--ux4g-gap-7);  /* 1.25rem / 20px */
+  --ux4g-section-xs:   var(--ux4g-gap-8);  /* 1.5rem / 24px */
+  --ux4g-section-s:    var(--ux4g-gap-9);  /* 1.75rem / 28px */
+  --ux4g-section-m:    var(--ux4g-gap-11); /* 2.25rem / 36px */
+  --ux4g-section-l:    var(--ux4g-gap-12); /* 2.5rem / 40px */
+  --ux4g-section-xl:   var(--ux4g-gap-13); /* 3rem / 48px */
+  --ux4g-section-2xl:  var(--ux4g-gap-14); /* 3.5rem / 56px */
+
+
+  /* =========================================
+     3. INLINE SPACING (COLUMN GAP)
+  ========================================= */
+  --ux4g-gap-column-none: var(--ux4g-gap-0); /* 0rem / 0px */
+  --ux4g-gap-column-2xs:  var(--ux4g-gap-1); /* 0.125rem / 2px */
+  --ux4g-gap-column-xs:   var(--ux4g-gap-2); /* 0.25rem / 4px */
+  --ux4g-gap-column-s:    var(--ux4g-gap-4); /* 0.5rem / 8px */
+  --ux4g-gap-column-m:    var(--ux4g-gap-5); /* 0.75rem / 12px */
+  --ux4g-gap-column-l:    var(--ux4g-gap-6); /* 1rem / 16px */
+  --ux4g-column-xl:       var(--ux4g-gap-8); /* 1.5rem / 24px */
+
+
+  /* =========================================
+     4. STACK SPACING (ROW GAP)
+  ========================================= */
+  --ux4g-gap-row-none: var(--ux4g-gap-0); /* 0rem / 0px */
+  --ux4g-gap-row-2xs:  var(--ux4g-gap-2); /* 0.25rem / 4px */
+  --ux4g-gap-row-xs:   var(--ux4g-gap-4); /* 0.5rem / 8px */
+  --ux4g-gap-row-s:    var(--ux4g-gap-5); /* 0.75rem / 12px */
+  --ux4g-gap-row-m:    var(--ux4g-gap-6); /* 1rem / 16px */
+  --ux4g-gap-row-l:    var(--ux4g-gap-8); /* 1.5rem / 24px */
+  --ux4g-gap-row-xl:   var(--ux4g-gap-9); /* 1.75rem / 28px */
+
+}

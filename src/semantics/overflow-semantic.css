@@ -1,0 +1,31 @@
+/* ==========================================================================
+   UX4G OVERFLOW & SCROLLBAR SEMANTIC TOKENS
+   Semantic mappings for container overflow behaviors and custom scrollbar appearance.
+   ========================================================================== */
+
+:root {
+  /* ─── Generic Overflow ─── */
+  --ux4g-of-auto:    var(--ux4g-overflow-auto);      /* Auto scroll */
+  --ux4g-of-hidden:  var(--ux4g-overflow-hidden);    /* Clip overflow */
+  --ux4g-of-visible: var(--ux4g-overflow-visible);   /* Visible overflow */
+  --ux4g-of-scroll:  var(--ux4g-overflow-scroll);    /* Always show scroll */
+
+  /* ─── Horizontal Overflow (X-Axis) ─── */
+  --ux4g-ofx-auto:    var(--ux4g-overflow-auto);
+  --ux4g-ofx-hidden:  var(--ux4g-overflow-hidden);
+  --ux4g-ofx-visible: var(--ux4g-overflow-visible);
+  --ux4g-ofx-scroll:  var(--ux4g-overflow-scroll);
+
+  /* ─── Vertical Overflow (Y-Axis) ─── */
+  --ux4g-ofy-auto:    var(--ux4g-overflow-auto);
+  --ux4g-ofy-hidden:  var(--ux4g-overflow-hidden);
+  --ux4g-ofy-visible: var(--ux4g-overflow-visible);
+  --ux4g-ofy-scroll:  var(--ux4g-overflow-scroll);
+
+  /* ─── Scrollbar Appearance Semantics ─── */
+  --ux4g-scroll-thumb:       var(--ux4g-scrollbar-thumb);        /* Handle color */
+  --ux4g-scroll-thumb-hover: var(--ux4g-color-neutral-400);      /* Handle hover color */
+  --ux4g-scroll-track:       var(--ux4g-scrollbar-track);        /* Track background */
+  --ux4g-scroll-size:        var(--ux4g-scrollbar-size);         /* Scrollbar width/height */
+  --ux4g-scroll-radius:      var(--ux4g-scrollbar-radius);       /* Rounded pill thumb */
+}

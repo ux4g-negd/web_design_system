@@ -1,0 +1,12 @@
+/* =========================================
+   UX4G VERTICAL ALIGN PRIMITIVE TOKENS
+========================================= */
+
+:root {
+  --ux4g-vertical-align-baseline: baseline;
+  --ux4g-vertical-align-top: top;
+  --ux4g-vertical-align-middle: middle;
+  --ux4g-vertical-align-bottom: bottom;
+  --ux4g-vertical-align-text-top: text-top;
+  --ux4g-vertical-align-text-bottom: text-bottom;
+}

@@ -1,0 +1,10 @@
+/* ==========================================================================
+   UX4G VISIBILITY SEMANTIC TOKENS
+   Semantic visibility states for show and hide utility classes.
+   ========================================================================== */
+
+:root {
+  /* ─── Visibility States ─── */
+  --ux4g-visibility-show: var(--ux4g-visibility-visible);  /* Element is rendered & visible */
+  --ux4g-visibility-hide: var(--ux4g-visibility-hidden);   /* Element is hidden (preserves layout box) */
+}

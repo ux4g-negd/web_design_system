@@ -1,0 +1,8 @@
+/* =========================================
+   UX4G VISIBILITY PRIMITIVE TOKENS
+========================================= */
+
+:root {
+  --ux4g-visibility-visible: visible;
+  --ux4g-visibility-hidden: hidden;
+}

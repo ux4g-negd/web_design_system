@@ -1,0 +1,20 @@
+/* =========================================
+   UX4G DIVIDE SEMANTIC TOKENS
+   Semantic child separator colors and widths
+========================================= */
+
+:root {
+  /* Default Width & Colors */
+  --ux4g-divide-width-default: var(--ux4g-divide-width-1);
+  --ux4g-divide-color-default: var(--ux4g-border-color-neutral-default);
+  --ux4g-divide-color-subtle:  var(--ux4g-border-color-neutral-subtle);
+  --ux4g-divide-color-strong:  var(--ux4g-border-color-neutral-strong);
+  --ux4g-divide-color-primary: var(--ux4g-border-color-primary-default);
+
+  /* Divide Width Scale */
+  --ux4g-divide-width-none: var(--ux4g-divide-width-0);
+  --ux4g-divide-width-sm:   var(--ux4g-divide-width-1);
+  --ux4g-divide-width-md:   var(--ux4g-divide-width-2);
+  --ux4g-divide-width-lg:   var(--ux4g-divide-width-3);
+  --ux4g-divide-width-xl:   var(--ux4g-divide-width-4);
+}

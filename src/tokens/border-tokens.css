@@ -1,0 +1,12 @@
+/* =========================================
+   UX4G BORDER PRIMITIVE TOKENS
+========================================= */
+
+:root {
+  --ux4g-border-none: 0;         /* 0px */
+  --ux4g-border-sm: 0.0625rem;   /* 1px */
+  --ux4g-border-md: 0.125rem;    /* 2px */
+  --ux4g-border-lg: 0.1875rem;   /* 3px */
+  --ux4g-border-xl: 0.25rem;     /* 4px */
+  --ux4g-border-2xl: 0.5rem;     /* 8px */
+}

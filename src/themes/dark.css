@@ -1,0 +1,174 @@
+/* ==========================================================================
+   UX4G DARK THEME
+   Consolidated Dark Mode Tokens & Component Overrides
+   ========================================================================== */
+
+:root[data-mode="dark"],
+[data-mode="dark"],
+.dark {
+   /* ==========================================================================
+     1. TEXT COLORS
+     ========================================================================== */
+   --ux4g-text-neutral-primary: var(--ux4g-color-neutral-50);
+   --ux4g-text-neutral-secondary: var(--ux4g-color-neutral-200);
+   --ux4g-text-neutral-tertiary: var(--ux4g-color-neutral-300);
+   --ux4g-text-neutral-inverse: var(--ux4g-color-neutral-900);
+   --ux4g-text-neutral-disabled: color-mix(in srgb, var(--ux4g-color-neutral-50) calc(var(--ux4g-opacity-25) * 100%), transparent);
+   --ux4g-text-neutral-emphasis: var(--ux4g-color-neutral-700);
+   --ux4g-text-black: var(--ux4g-color-neutral-0);
+   --ux4g-text-white: var(--ux4g-color-neutral-1000);
+
+   /* Brand Text Colors */
+   --ux4g-text-brand-primary-default: var(--ux4g-color-primary-300);
+   --ux4g-text-brand-secondary-default: var(--ux4g-color-secondary-300);
+   --ux4g-text-brand-tertiary-default: var(--ux4g-color-tertiary-300);
+
+   /* Status Text Colors */
+   --ux4g-text-status-success: var(--ux4g-color-green-300);
+   --ux4g-text-status-error: var(--ux4g-color-red-300);
+   --ux4g-text-status-warning: var(--ux4g-color-orange-300);
+   --ux4g-text-status-info: var(--ux4g-color-cyan-300);
+
+   /* Link Text Colors */
+   --ux4g-text-link-default-default: var(--ux4g-color-primary-300);
+   --ux4g-text-link-default-hover: var(--ux4g-color-primary-200);
+   --ux4g-text-link-default-active: var(--ux4g-color-primary-100);
+   --ux4g-text-link-default-inverse: var(--ux4g-color-primary-800);
+   --ux4g-text-link-neutral-default: var(--ux4g-color-neutral-300);
+   --ux4g-text-link-neutral-hover: var(--ux4g-color-neutral-200);
+   --ux4g-text-link-neutral-active: var(--ux4g-color-neutral-100);
+   --ux4g-text-link-neutral-inverse: var(--ux4g-color-neutral-800);
+   --ux4g-text-link-visited-default: var(--ux4g-color-primary-300);
+   --ux4g-text-link-visited-hover: var(--ux4g-color-primary-200);
+   --ux4g-text-link-visited-active: var(--ux4g-color-primary-100);
+   --ux4g-text-link-visited-inverse: var(--ux4g-color-neutral-800);
+   --ux4g-text-link-disabled: var(--ux4g-color-neutral-300);
+   --ux4g-icon-neutral-inverse: var(--ux4g-color-neutral-950);
+
+   /* ==========================================================================
+     2. BACKGROUNDS
+     ========================================================================== */
+   --ux4g-bg-neutral-elevated: var(--ux4g-color-neutral-950);
+   --ux4g-bg-neutral: var(--ux4g-color-neutral-900);
+   --ux4g-bg-neutral-soft: var(--ux4g-color-neutral-800);
+   --ux4g-bg-neutral-subtle: var(--ux4g-color-neutral-800);
+   --ux4g-bg-neutral-emphasis: var(--ux4g-color-neutral-700);
+   --ux4g-bg-neutral-strong: var(--ux4g-color-neutral-950);
+   --ux4g-bg-neutral-stronger: var(--ux4g-color-neutral-50);
+   --ux4g-bg-neutral-inverse: var(--ux4g-color-neutral-50);
+   --ux4g-bg-neutral-disabled: color-mix(in srgb, var(--ux4g-color-neutral-50) calc(var(--ux4g-opacity-25) * 100%), transparent);
+   --ux4g-bg-neutral-none: transparent;
+   --ux4g-bg-overlay: color-mix(in srgb, var(--ux4g-color-neutral-50) calc(var(--ux4g-opacity-60) * 100%), transparent);
+   --ux4g-bg-black: var(--ux4g-color-neutral-0);
+
+   /* Primary Brand Backgrounds */
+   --ux4g-bg-primary: var(--ux4g-color-primary-900);
+   --ux4g-bg-primary-soft: var(--ux4g-color-primary-800);
+   --ux4g-bg-primary-subtle: var(--ux4g-color-primary-700);
+   --ux4g-bg-primary-emphasis: var(--ux4g-color-primary-600);
+   --ux4g-bg-primary-strong: var(--ux4g-color-primary-300);
+   --ux4g-bg-primary-strong-hover: var(--ux4g-color-primary-400);
+   --ux4g-bg-primary-stronger: var(--ux4g-color-primary-200);
+   --ux4g-bg-primary-stronger-hover: var(--ux4g-color-primary-100);
+
+   /* Secondary Brand Backgrounds */
+   --ux4g-bg-secondary: var(--ux4g-color-secondary-900);
+   --ux4g-bg-secondary-soft: var(--ux4g-color-secondary-800);
+   --ux4g-bg-secondary-subtle: var(--ux4g-color-secondary-700);
+   --ux4g-bg-secondary-emphasis: var(--ux4g-color-secondary-600);
+   --ux4g-bg-secondary-strong: var(--ux4g-color-secondary-300);
+
+   /* Tertiary Brand Backgrounds */
+   --ux4g-bg-tertiary: var(--ux4g-color-tertiary-900);
+   --ux4g-bg-tertiary-soft: var(--ux4g-color-tertiary-800);
+   --ux4g-bg-tertiary-subtle: var(--ux4g-color-tertiary-700);
+   --ux4g-bg-tertiary-emphasis: var(--ux4g-color-tertiary-600);
+   --ux4g-bg-tertiary-strong: var(--ux4g-color-tertiary-300);
+
+   /* Semantic Feedback Backgrounds */
+   --ux4g-bg-success: var(--ux4g-color-green-900);
+   --ux4g-bg-success-soft: var(--ux4g-color-green-800);
+   --ux4g-bg-success-subtle: var(--ux4g-color-green-700);
+   --ux4g-bg-success-emphasis: var(--ux4g-color-green-600);
+   --ux4g-bg-success-strong: var(--ux4g-color-green-300);
+   --ux4g-bg-error: var(--ux4g-color-red-900);
+   --ux4g-bg-error-soft: var(--ux4g-color-red-800);
+   --ux4g-bg-error-subtle: var(--ux4g-color-red-700);
+   --ux4g-bg-error-emphasis: var(--ux4g-color-red-600);
+   --ux4g-bg-error-strong: var(--ux4g-color-red-300);
+   --ux4g-bg-error-stronger: var(--ux4g-color-red-200);
+   --ux4g-bg-warning: var(--ux4g-color-orange-900);
+   --ux4g-bg-warning-soft: var(--ux4g-color-orange-800);
+   --ux4g-bg-warning-subtle: var(--ux4g-color-orange-700);
+   --ux4g-bg-warning-emphasis: var(--ux4g-color-orange-600);
+   --ux4g-bg-warning-strong: var(--ux4g-color-orange-300);
+   --ux4g-bg-info: var(--ux4g-color-cyan-900);
+   --ux4g-bg-info-soft: var(--ux4g-color-cyan-800);
+   --ux4g-bg-info-subtle: var(--ux4g-color-cyan-700);
+   --ux4g-bg-info-emphasis: var(--ux4g-color-cyan-600);
+   --ux4g-bg-info-strong: var(--ux4g-color-cyan-300);
+   --ux4g-bg-yellow-strong: var(--ux4g-color-yellow-300);
+
+   /* ==========================================================================
+     3. BORDERS
+     ========================================================================== */
+   --ux4g-border-color-neutral-default: var(--ux4g-color-neutral-600);
+   --ux4g-border-color-neutral-subtle: var(--ux4g-color-neutral-700);
+   --ux4g-border-color-neutral-strong: var(--ux4g-color-neutral-400);
+   --ux4g-border-color-neutral-focus: var(--ux4g-color-neutral-300);
+   --ux4g-border-color-neutral-hover: var(--ux4g-color-neutral-700);
+   --ux4g-border-color-neutral-active: var(--ux4g-color-neutral-600);
+   --ux4g-border-color-neutral-elevated: var(--ux4g-color-neutral-950);
+   --ux4g-border-color-primary-default: var(--ux4g-color-primary-600);
+   --ux4g-border-color-primary-strong: var(--ux4g-color-primary-300);
+   --ux4g-border-color-primary-hover: var(--ux4g-color-primary-200);
+   --ux4g-border-color-primary-active: var(--ux4g-color-primary-100);
+   --ux4g-border-color-secondary-default: var(--ux4g-color-secondary-600);
+   --ux4g-border-color-tertiary-default: var(--ux4g-color-tertiary-600);
+   --ux4g-border-color-success-default: var(--ux4g-color-green-700);
+   --ux4g-border-color-success-strong: var(--ux4g-color-green-300);
+   --ux4g-border-color-info-default: var(--ux4g-color-cyan-700);
+   --ux4g-border-color-info-strong: var(--ux4g-color-cyan-300);
+   --ux4g-border-color-error-default: var(--ux4g-color-red-700);
+   --ux4g-border-color-error-strong: var(--ux4g-color-red-300);
+   --ux4g-border-color-warning-default: var(--ux4g-color-orange-700);
+   --ux4g-border-color-warning-strong: var(--ux4g-color-orange-300);
+   --ux4g-icon-border-disabled: var(--ux4g-color-neutral-700);
+
+   /* ==========================================================================
+     4. ELEVATION & SHADOWS
+     ========================================================================== */
+   --ux4g-elevation-color-0: transparent;
+   --ux4g-elevation-color-1: color-mix(in srgb, var(--ux4g-color-neutral-1000) calc(var(--ux4g-opacity-20) * 100%), transparent);
+   --ux4g-elevation-color-2: color-mix(in srgb, var(--ux4g-color-neutral-1000) calc(var(--ux4g-opacity-30) * 100%), transparent);
+   --ux4g-elevation-color-4: color-mix(in srgb, var(--ux4g-color-neutral-1000) calc(var(--ux4g-opacity-50) * 100%), transparent);
+   --ux4g-elevation-color-6: color-mix(in srgb, var(--ux4g-color-neutral-1000) calc(var(--ux4g-opacity-70) * 100%), transparent);
+
+   /* ==========================================================================
+     5. OPACITY & SPINNERS
+     ========================================================================== */
+   --ux4g-opacity-disabled: var(--ux4g-opacity-40);
+   --ux4g-opacity-hover: var(--ux4g-opacity-80);
+   --ux4g-spinner-light-color-1: var(--ux4g-color-neutral-600);
+   --ux4g-spinner-light-color-2: var(--ux4g-color-neutral-50);
+}
+
+/* ==========================================================================
+   COMPONENT SPECIFIC DARK MODE OVERRIDES
+   ========================================================================== */
+/* Navbar Logo & Department Logo Inversion for Dark Mode */
+[data-mode="dark"] .ux4g-navbar-logo,
+[data-mode="dark"] .ux4g-dept-logo,
+.dark .ux4g-navbar-logo,
+.dark .ux4g-dept-logo {
+   filter: brightness(0) invert(1);
+}
+
+/* Digital India Corporation (DIC) Logo Swapping */
+[data-mode="dark"] img[src*="dic.svg"],
+[data-mode="dark"] img[src*="dic-dark.svg"],
+.dark img[src*="dic.svg"],
+.dark img[src*="dic-dark.svg"] {
+   content: url("../assets/images/dic-dark.svg");
+   filter: none;
+}

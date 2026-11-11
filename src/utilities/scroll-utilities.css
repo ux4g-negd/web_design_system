@@ -1,0 +1,54 @@
+/* =========================================
+   UX4G SCROLL UTILITIES
+
+   1. Scroll Behavior
+   2. Scroll Margin Top
+   3. Scroll Snap Type
+   4. Scroll Snap Align
+========================================= */
+
+
+/* =========================================
+   1. SCROLL BEHAVIOR
+========================================= */
+
+.ux4g-scroll-auto   { scroll-behavior: var(--ux4g-scroll-behavior-instant); }
+.ux4g-scroll-smooth { scroll-behavior: var(--ux4g-scroll-behavior-default); }
+
+
+/* =========================================
+   2. SCROLL MARGIN TOP
+========================================= */
+
+.ux4g-scroll-mt-0 { scroll-margin-top: var(--ux4g-scroll-margin-top-0); }
+.ux4g-scroll-mt-1 { scroll-margin-top: var(--ux4g-scroll-margin-top-1); }
+.ux4g-scroll-mt-2 { scroll-margin-top: var(--ux4g-scroll-margin-top-2); }
+.ux4g-scroll-mt-3 { scroll-margin-top: var(--ux4g-scroll-margin-top-3); }
+.ux4g-scroll-mt-4 { scroll-margin-top: var(--ux4g-scroll-margin-top-4); }
+.ux4g-scroll-mt-5 { scroll-margin-top: var(--ux4g-scroll-margin-top-5); }
+.ux4g-scroll-mt-6 { scroll-margin-top: var(--ux4g-scroll-margin-top-6); }
+.ux4g-scroll-mt-8 { scroll-margin-top: var(--ux4g-scroll-margin-top-8); }
+
+
+/* =========================================
+   3. SCROLL SNAP TYPE
+========================================= */
+
+.ux4g-snap-none { scroll-snap-type: none; }
+.ux4g-snap-x    { scroll-snap-type: x mandatory; }
+.ux4g-snap-y    { scroll-snap-type: y mandatory; }
+.ux4g-snap-both { scroll-snap-type: both mandatory; }
+
+.ux4g-snap-proximity-x    { scroll-snap-type: x proximity; }
+.ux4g-snap-proximity-y    { scroll-snap-type: y proximity; }
+.ux4g-snap-proximity-both { scroll-snap-type: both proximity; }
+
+
+/* =========================================
+   4. SCROLL SNAP ALIGN
+========================================= */
+
+.ux4g-snap-start      { scroll-snap-align: start; }
+.ux4g-snap-end        { scroll-snap-align: end; }
+.ux4g-snap-center     { scroll-snap-align: center; }
+.ux4g-snap-none-align { scroll-snap-align: none; }

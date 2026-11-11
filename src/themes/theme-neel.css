@@ -1,0 +1,50 @@
+/* UX4G Neel Theme Tokens */
+[data-theme="neel"] {
+  /* Typography & Font */
+  --ux4g-font-family-base: "Lexend Deca", sans-serif;
+  --ux4g-font-family-display: "Inter", sans-serif;
+  --ux4g-ff: var(--ux4g-font-family-base);
+  --ux4g-ff-display: var(--ux4g-font-family-display);
+
+  /* Button Border Radius */
+  --ux4g-btn-radius: var(--ux4g-radius-md);
+
+  /* Primary Palette (Royal Blue) */
+  --ux4g-color-primary-50: #F3F7FF;
+  --ux4g-color-primary-100: #E7EEFF;
+  --ux4g-color-primary-200: #D0DEFF;
+  --ux4g-color-primary-300: #B0C8FF;
+  --ux4g-color-primary-400: #7FA4FF;
+  --ux4g-color-primary-500: #4C7AFF;
+  --ux4g-color-primary-600: #325CE8;
+  --ux4g-color-primary-700: #1B3ABB;
+  --ux4g-color-primary-800: #0A138F;
+  --ux4g-color-primary-900: #03005A;
+  --ux4g-color-primary-950: #01002F;
+
+  /* Secondary Palette (Slate Blue) */
+  --ux4g-color-secondary-50: #F3F7FF;
+  --ux4g-color-secondary-100: #E6EEFF;
+  --ux4g-color-secondary-200: #D0DFFD;
+  --ux4g-color-secondary-300: #B9C8E8;
+  --ux4g-color-secondary-400: #97A7C8;
+  --ux4g-color-secondary-500: #7485A6;
+  --ux4g-color-secondary-600: #5B6B8B;
+  --ux4g-color-secondary-700: #3F4C69;
+  --ux4g-color-secondary-800: #243049;
+  --ux4g-color-secondary-900: #0E182E;
+  --ux4g-color-secondary-950: #03081B;
+
+  /* Tertiary Palette (Neutral Steel) */
+  --ux4g-color-tertiary-50: #F7F7F7;
+  --ux4g-color-tertiary-100: #EFEFEF;
+  --ux4g-color-tertiary-200: #E0E0E0;
+  --ux4g-color-tertiary-300: #CBCBCB;
+  --ux4g-color-tertiary-400: #ADADAD;
+  --ux4g-color-tertiary-500: #8D8D8D;
+  --ux4g-color-tertiary-600: #757575;
+  --ux4g-color-tertiary-700: #545454;
+  --ux4g-color-tertiary-800: #343434;
+  --ux4g-color-tertiary-900: #1A1A1A;
+  --ux4g-color-tertiary-950: #090909;
+}

@@ -1,0 +1,19 @@
+/* =========================================
+   UX4G Z-INDEX PRIMITIVE TOKENS
+========================================= */
+
+:root {
+  /* Base Stacking Levels */
+  --ux4g-z-n1: -1;
+  --ux4g-z-0: 0;
+  --ux4g-z-1: 1;
+  --ux4g-z-2: 2;
+  --ux4g-z-3: 3;
+
+  /* Global Overlay Hierarchy */
+  --ux4g-z-index-10: 10;
+  --ux4g-z-index-20: 20;
+  --ux4g-z-index-30: 30;
+  --ux4g-z-index-40: 40;
+  --ux4g-z-index-50: 50;
+}

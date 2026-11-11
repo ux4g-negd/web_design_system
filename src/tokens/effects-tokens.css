@@ -1,0 +1,62 @@
+/* =========================================
+   UX4G EFFECTS & FILTERS PRIMITIVE TOKENS
+========================================= */
+
+:root {
+  /* =========================================
+     1. BACKDROP BLUR SCALE
+  ========================================= */
+  --ux4g-backdrop-blur-none: 0;         /* 0px */
+  --ux4g-backdrop-blur-xs:   0.125rem;  /* 2px */
+  --ux4g-backdrop-blur-sm:   0.25rem;   /* 4px */
+  --ux4g-backdrop-blur-base: 0.5rem;    /* 8px */
+  --ux4g-backdrop-blur-md:   0.75rem;   /* 12px */
+  --ux4g-backdrop-blur-lg:   1rem;      /* 16px */
+  --ux4g-backdrop-blur-xl:   1.5rem;    /* 24px */
+  --ux4g-backdrop-blur-2xl:  2.5rem;    /* 40px */
+  --ux4g-backdrop-blur-3xl:  4rem;      /* 64px */
+
+  /* =========================================
+     2. BACKDROP SATURATE SCALE
+  ========================================= */
+  --ux4g-backdrop-saturate-0:   0;
+  --ux4g-backdrop-saturate-50:  0.5;
+  --ux4g-backdrop-saturate-100: 1;
+  --ux4g-backdrop-saturate-150: 1.5;
+  --ux4g-backdrop-saturate-200: 2;
+
+  /* =========================================
+     3. BRIGHTNESS SCALE
+  ========================================= */
+  --ux4g-brightness-0:   0;
+  --ux4g-brightness-50:  0.5;
+  --ux4g-brightness-75:  0.75;
+  --ux4g-brightness-90:  0.9;
+  --ux4g-brightness-95:  0.95;
+  --ux4g-brightness-100: 1;
+  --ux4g-brightness-105: 1.05;
+  --ux4g-brightness-110: 1.1;
+  --ux4g-brightness-125: 1.25;
+  --ux4g-brightness-150: 1.5;
+  --ux4g-brightness-200: 2;
+
+  /* =========================================
+     4. BLEND MODES
+  ========================================= */
+  --ux4g-blend-normal:      normal;
+  --ux4g-blend-multiply:    multiply;
+  --ux4g-blend-screen:      screen;
+  --ux4g-blend-overlay:     overlay;
+  --ux4g-blend-darken:      darken;
+  --ux4g-blend-lighten:     lighten;
+  --ux4g-blend-color-dodge: color-dodge;
+  --ux4g-blend-color-burn:  color-burn;
+  --ux4g-blend-hard-light:  hard-light;
+  --ux4g-blend-soft-light:  soft-light;
+  --ux4g-blend-difference:  difference;
+  --ux4g-blend-exclusion:   exclusion;
+  --ux4g-blend-hue:         hue;
+  --ux4g-blend-saturation:  saturation;
+  --ux4g-blend-color:       color;
+  --ux4g-blend-luminosity:  luminosity;
+}

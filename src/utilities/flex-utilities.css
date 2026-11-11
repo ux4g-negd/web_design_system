@@ -1,0 +1,225 @@
+/* =========================================
+   UX4G FLEX UTILITIES
+
+   1. Flex Direction
+   2. Flex Wrap
+   3. Flex Fill / Auto / None
+   4. Flex Grow
+   5. Flex Shrink
+   6. Responsive Flex
+
+   Breakpoints:
+     xs (base): <576px
+     sm:        ≥576px
+     md:        ≥768px
+     lg:        ≥992px
+     xl:        ≥1200px
+     2xl:       ≥1400px
+========================================= */
+
+
+/* =========================================
+   1. FLEX DIRECTION
+========================================= */
+
+.ux4g-flex-row { flex-direction: row; }
+.ux4g-flex-column { flex-direction: column; }
+.ux4g-flex-row-reverse { flex-direction: row-reverse; }
+.ux4g-flex-col-reverse { flex-direction: column-reverse; }
+
+   
+/* =========================================
+   2. FLEX WRAP
+========================================= */
+
+.ux4g-flex-wrap { flex-wrap: wrap; }
+.ux4g-flex-nowrap { flex-wrap: nowrap; }
+.ux4g-flex-wrap-reverse { flex-wrap: wrap-reverse; }
+
+
+/* =========================================
+   3. FLEX FILL / AUTO / NONE
+========================================= */
+
+.ux4g-flex-fill { flex: 1 1 auto; }
+.ux4g-flex-auto { flex: 1 1 auto; }
+.ux4g-flex-1 { flex: 1 1 0%; }
+.ux4g-flex-2 { flex: 2 1 0%; }
+.ux4g-flex-3 { flex: 3 1 0%; }
+.ux4g-flex-none { flex: none; }
+
+
+/* =========================================
+   4. FLEX GROW
+========================================= */
+
+.ux4g-flex-grow-0 { flex-grow: 0; }
+.ux4g-flex-grow-1 { flex-grow: 1; }
+
+
+/* =========================================
+   5. FLEX SHRINK
+========================================= */
+
+.ux4g-flex-shrink-0 { flex-shrink: 0; }
+.ux4g-flex-shrink-1 { flex-shrink: 1; }
+
+
+/* =========================================
+   6. RESPONSIVE FLEX
+========================================= */
+
+
+/* =========================================
+   SM — ≥576px
+========================================= */
+
+@media (min-width: 576px) {
+
+  .ux4g-sm-flex-row { flex-direction: row; }
+  .ux4g-sm-flex-col { flex-direction: column; }
+  .ux4g-sm-flex-row-reverse { flex-direction: row-reverse; }
+  .ux4g-sm-flex-col-reverse { flex-direction: column-reverse; }
+
+  .ux4g-sm-flex-wrap { flex-wrap: wrap; }
+  .ux4g-sm-flex-nowrap { flex-wrap: nowrap; }
+  .ux4g-sm-flex-wrap-reverse { flex-wrap: wrap-reverse; }
+
+  .ux4g-sm-flex-fill { flex: 1 1 auto; }
+  .ux4g-sm-flex-auto { flex: 1 1 auto; }
+  .ux4g-sm-flex-1 { flex: 1 1 0%; }
+  .ux4g-sm-flex-2 { flex: 2 1 0%; }
+  .ux4g-sm-flex-3 { flex: 3 1 0%; }
+  .ux4g-sm-flex-none { flex: none; }
+
+  .ux4g-sm-flex-grow-0 { flex-grow: 0; }
+  .ux4g-sm-flex-grow-1 { flex-grow: 1; }
+
+  .ux4g-sm-flex-shrink-0 { flex-shrink: 0; }
+  .ux4g-sm-flex-shrink-1 { flex-shrink: 1; }
+
+}
+
+
+/* =========================================
+   MD — ≥768px
+========================================= */
+
+@media (min-width: 768px) {
+
+  .ux4g-md-flex-row { flex-direction: row; }
+  .ux4g-md-flex-col { flex-direction: column; }
+  .ux4g-md-flex-row-reverse { flex-direction: row-reverse; }
+  .ux4g-md-flex-col-reverse { flex-direction: column-reverse; }
+
+  .ux4g-md-flex-wrap { flex-wrap: wrap; }
+  .ux4g-md-flex-nowrap { flex-wrap: nowrap; }
+  .ux4g-md-flex-wrap-reverse { flex-wrap: wrap-reverse; }
+
+  .ux4g-md-flex-fill { flex: 1 1 auto; }
+  .ux4g-md-flex-auto { flex: 1 1 auto; }
+  .ux4g-md-flex-1 { flex: 1 1 0%; }
+  .ux4g-md-flex-2 { flex: 2 1 0%; }
+  .ux4g-md-flex-3 { flex: 3 1 0%; }
+  .ux4g-md-flex-none { flex: none; }
+
+  .ux4g-md-flex-grow-0 { flex-grow: 0; }
+  .ux4g-md-flex-grow-1 { flex-grow: 1; }
+
+  .ux4g-md-flex-shrink-0 { flex-shrink: 0; }
+  .ux4g-md-flex-shrink-1 { flex-shrink: 1; }
+
+}
+
+
+/* =========================================
+   LG — ≥992px
+========================================= */
+
+@media (min-width: 992px) {
+
+  .ux4g-lg-flex-row { flex-direction: row; }
+  .ux4g-lg-flex-col { flex-direction: column; }
+  .ux4g-lg-flex-row-reverse { flex-direction: row-reverse; }
+  .ux4g-lg-flex-col-reverse { flex-direction: column-reverse; }
+
+  .ux4g-lg-flex-wrap { flex-wrap: wrap; }
+  .ux4g-lg-flex-nowrap { flex-wrap: nowrap; }
+  .ux4g-lg-flex-wrap-reverse { flex-wrap: wrap-reverse; }
+
+  .ux4g-lg-flex-fill { flex: 1 1 auto; }
+  .ux4g-lg-flex-auto { flex: 1 1 auto; }
+  .ux4g-lg-flex-1 { flex: 1 1 0%; }
+  .ux4g-lg-flex-2 { flex: 2 1 0%; }
+  .ux4g-lg-flex-3 { flex: 3 1 0%; }
+  .ux4g-lg-flex-none { flex: none; }
+
+  .ux4g-lg-flex-grow-0 { flex-grow: 0; }
+  .ux4g-lg-flex-grow-1 { flex-grow: 1; }
+
+  .ux4g-lg-flex-shrink-0 { flex-shrink: 0; }
+  .ux4g-lg-flex-shrink-1 { flex-shrink: 1; }
+
+}
+
+
+/* =========================================
+   XL — ≥1200px
+========================================= */
+
+@media (min-width: 1200px) {
+
+  .ux4g-xl-flex-row { flex-direction: row; }
+  .ux4g-xl-flex-col { flex-direction: column; }
+  .ux4g-xl-flex-row-reverse { flex-direction: row-reverse; }
+  .ux4g-xl-flex-col-reverse { flex-direction: column-reverse; }
+
+  .ux4g-xl-flex-wrap { flex-wrap: wrap; }
+  .ux4g-xl-flex-nowrap { flex-wrap: nowrap; }
+  .ux4g-xl-flex-wrap-reverse { flex-wrap: wrap-reverse; }
+
+  .ux4g-xl-flex-fill { flex: 1 1 auto; }
+  .ux4g-xl-flex-auto { flex: 1 1 auto; }
+  .ux4g-xl-flex-1 { flex: 1 1 0%; }
+  .ux4g-xl-flex-2 { flex: 2 1 0%; }
+  .ux4g-xl-flex-3 { flex: 3 1 0%; }
+  .ux4g-xl-flex-none { flex: none; }
+
+  .ux4g-xl-flex-grow-0 { flex-grow: 0; }
+  .ux4g-xl-flex-grow-1 { flex-grow: 1; }
+
+  .ux4g-xl-flex-shrink-0 { flex-shrink: 0; }
+  .ux4g-xl-flex-shrink-1 { flex-shrink: 1; }
+
+}
+
+
+/* =========================================
+   2XL — ≥1400px
+========================================= */
+
+@media (min-width: 1400px) {
+
+  .ux4g-2xl-flex-row { flex-direction: row; }
+  .ux4g-2xl-flex-col { flex-direction: column; }
+  .ux4g-2xl-flex-row-reverse { flex-direction: row-reverse; }
+  .ux4g-2xl-flex-col-reverse { flex-direction: column-reverse; }
+
+  .ux4g-2xl-flex-wrap { flex-wrap: wrap; }
+  .ux4g-2xl-flex-nowrap { flex-wrap: nowrap; }
+  .ux4g-2xl-flex-wrap-reverse { flex-wrap: wrap-reverse; }
+
+  .ux4g-2xl-flex-fill { flex: 1 1 auto; }
+  .ux4g-2xl-flex-auto { flex: 1 1 auto; }
+  .ux4g-2xl-flex-1 { flex: 1 1 0%; }
+  .ux4g-2xl-flex-2 { flex: 2 1 0%; }
+  .ux4g-2xl-flex-3 { flex: 3 1 0%; }
+  .ux4g-2xl-flex-none { flex: none; }
+
+  .ux4g-2xl-flex-grow-0 { flex-grow: 0; }
+  .ux4g-2xl-flex-grow-1 { flex-grow: 1; }
+
+  .ux4g-2xl-flex-shrink-0 { flex-shrink: 0; }
+  .ux4g-2xl-flex-shrink-1 { flex-shrink: 1; }
+
+}

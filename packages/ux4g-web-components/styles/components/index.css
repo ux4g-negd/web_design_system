@@ -1,0 +1,59 @@
+/*
+ * UX4G Components — complete index
+ * All component CSS files from src/components/ux4g.components.css
+ *
+ * Typography is covered by utilities (typescale.utilities.css + typography.utilities.css).
+ * There is no separate typography component CSS file in the vendor source.
+ */
+@import "./alert.css";
+@import "./badge.css";
+@import "./spinner.css";
+@import "./avatar.css";
+@import "./button.css";
+@import "./dividers.css";
+@import "./links.css";
+@import "./tag.css";
+@import "./chip.css";
+@import "./accessibility-bar.css";
+@import "./checkbox.css";
+@import "./radio.css";
+@import "./breadcrumb.css";
+@import "./list.css";
+@import "./card.css";
+@import "./modal.css";
+@import "./search.css";
+@import "./table.css";
+@import "./image.css";
+@import "./accordion.css";
+@import "./switch.css";
+@import "./stepper.css";
+@import "./input.css";
+@import "./dropdown.css";
+@import "./combobox.css";
+@import "./popover.css";
+@import "./drawer.css";
+@import "./pagination.css";
+@import "./tooltip.css";
+@import "./tab.css";
+@import "./slider.css";
+@import "./button-icon.css";
+@import "./status-pipeline.css";
+@import "./date-time.css";
+@import "./social-link.css";
+@import "./journey-timeline.css";
+@import "./time-slot.css";
+@import "./result-list.css";
+@import "./mega-menu.css";
+@import "./navbar.css";
+@import "./otp.css";
+@import "./draft-status-bar.css";
+@import "./upload.css";
+@import "./empty-state.css";
+@import "./feedback.css";
+@import "./chips-group.css";
+@import "./sla-progress-indicator.css";
+@import "./form-field-group.css";
+@import "./progress-indicator.css";
+@import "./carousel.css";
+@import "./footer.css";
+@import "./select.css";

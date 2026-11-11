@@ -1,0 +1,15 @@
+/* =========================================
+   UX4G RADIUS PRIMITIVE TOKENS
+========================================= */
+
+:root {
+  /* Base Corner Radius Scale */
+  --ux4g-radius-0: 0;           /* 0px */
+  --ux4g-radius-1: 0.125rem;    /* 2px */
+  --ux4g-radius-2: 0.25rem;     /* 4px */
+  --ux4g-radius-3: 0.5rem;      /* 8px */
+  --ux4g-radius-4: 0.75rem;     /* 12px */
+  --ux4g-radius-5: 1rem;        /* 16px */
+  --ux4g-radius-6: 1.5rem;      /* 24px */
+  --ux4g-radius-circular: 999px;
+}

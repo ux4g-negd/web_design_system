@@ -1,0 +1,34 @@
+/* ==========================================================================
+   UX4G OBJECT-FIT & POSITION SEMANTIC TOKENS
+   Semantic tokens for media display, avatars, card thumbnails, and anchor alignments.
+   ========================================================================== */
+
+:root {
+  /* ─── 1. Media Semantic Fits ─── */
+  --ux4g-of-image:      var(--ux4g-object-fit-cover);   /* General responsive images */
+  --ux4g-of-avatar:     var(--ux4g-object-fit-cover);   /* User profile avatars */
+  --ux4g-of-card-media: var(--ux4g-object-fit-cover);   /* Card header media */
+
+  /* ─── 2. Utility Bridges ─── */
+  --ux4g-of-contain:    var(--ux4g-object-fit-contain);
+  --ux4g-of-cover:      var(--ux4g-object-fit-cover);
+  --ux4g-of-fill:       var(--ux4g-object-fit-fill);
+  --ux4g-of-none:       var(--ux4g-object-fit-none);
+  --ux4g-of-scale-down: var(--ux4g-object-fit-scale-down);
+
+  /* ─── 3. Media Anchor Position Semantics ─── */
+  --ux4g-op-image:      var(--ux4g-object-position-center);
+  --ux4g-op-avatar:     var(--ux4g-object-position-center);
+  --ux4g-op-card-media: var(--ux4g-object-position-center);
+
+  /* ─── 4. Directional Anchor Bridges ─── */
+  --ux4g-op-center:       var(--ux4g-object-position-center);
+  --ux4g-op-top:          var(--ux4g-object-position-top);
+  --ux4g-op-bottom:       var(--ux4g-object-position-bottom);
+  --ux4g-op-left:         var(--ux4g-object-position-left);
+  --ux4g-op-right:        var(--ux4g-object-position-right);
+  --ux4g-op-top-left:     var(--ux4g-object-position-top-left);
+  --ux4g-op-top-right:    var(--ux4g-object-position-top-right);
+  --ux4g-op-bottom-left:  var(--ux4g-object-position-bottom-left);
+  --ux4g-op-bottom-right: var(--ux4g-object-position-bottom-right);
+}

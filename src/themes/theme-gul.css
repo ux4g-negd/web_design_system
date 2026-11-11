@@ -1,0 +1,50 @@
+/* UX4G Gul Theme Tokens */
+[data-theme="gul"] {
+  /* Typography & Shape */
+  --ux4g-font-family-base: "Josefin Sans", sans-serif;
+  --ux4g-font-family-display: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --ux4g-ff: var(--ux4g-font-family-base);
+  --ux4g-ff-display: var(--ux4g-font-family-display);
+
+  /* Button Border Radius */
+  --ux4g-btn-radius: var(--ux4g-radius-circular);
+
+  /* Primary Palette (Orchid) */
+  --ux4g-color-primary-50: #FAF4FF;
+  --ux4g-color-primary-100: #F6EAFF;
+  --ux4g-color-primary-200: #EFD7FF;
+  --ux4g-color-primary-300: #E4BBFF;
+  --ux4g-color-primary-400: #D390FB;
+  --ux4g-color-primary-500: #B56EDE;
+  --ux4g-color-primary-600: #9F54C8;
+  --ux4g-color-primary-700: #77309C;
+  --ux4g-color-primary-800: #510670;
+  --ux4g-color-primary-900: #2C0040;
+  --ux4g-color-primary-950: #12001D;
+
+  /* Secondary Palette (Rose) */
+  --ux4g-color-secondary-50: #FFF1F2;
+  --ux4g-color-secondary-100: #FFE4E6;
+  --ux4g-color-secondary-200: #FECDD3;
+  --ux4g-color-secondary-300: #FDA4AF;
+  --ux4g-color-secondary-400: #FB7185;
+  --ux4g-color-secondary-500: #F43F5E;
+  --ux4g-color-secondary-600: #E11D48;
+  --ux4g-color-secondary-700: #BE123C;
+  --ux4g-color-secondary-800: #9F1239;
+  --ux4g-color-secondary-900: #881337;
+  --ux4g-color-secondary-950: #4C0519;
+
+  /* Tertiary Palette (Terracotta) */
+  --ux4g-color-tertiary-50: #FFF4EE;
+  --ux4g-color-tertiary-100: #FFEADF;
+  --ux4g-color-tertiary-200: #FFD7C2;
+  --ux4g-color-tertiary-300: #FCBC99;
+  --ux4g-color-tertiary-400: #DF9D79;
+  --ux4g-color-tertiary-500: #C07C56;
+  --ux4g-color-tertiary-600: #A8643C;
+  --ux4g-color-tertiary-700: #80421D;
+  --ux4g-color-tertiary-800: #572400;
+  --ux4g-color-tertiary-900: #2F1000;
+  --ux4g-color-tertiary-950: #150400;
+}

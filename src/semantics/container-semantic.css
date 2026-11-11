@@ -1,0 +1,16 @@
+/* =========================================
+   UX4G CONTAINER SEMANTIC TOKENS
+========================================= */
+
+:root {
+  /* Responsive Container Max-Widths */
+  --ux4g-container-max-width-sm:  var(--ux4g-container-sm);
+  --ux4g-container-max-width-md:  var(--ux4g-container-md);
+  --ux4g-container-max-width-lg:  var(--ux4g-container-lg);
+  --ux4g-container-max-width-xl:  var(--ux4g-container-xl);
+  --ux4g-container-max-width-2xl: var(--ux4g-container-2xl);
+
+  /* Grid Gutters */
+  --ux4g-container-gutter-x: var(--ux4g-gutter-x);
+  --ux4g-container-gutter-y: var(--ux4g-gutter-y);
+}

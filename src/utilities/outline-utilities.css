@@ -1,0 +1,27 @@
+/* =========================================
+   UX4G OUTLINE UTILITIES
+
+   1. Outline Width & Style
+   2. Outline Offset
+========================================= */
+
+/* =========================================
+   1. OUTLINE WIDTH & STYLE
+========================================= */
+
+.ux4g-outline-none { outline: none; }
+.ux4g-outline-0 { outline-width: var(--ux4g-outline-width-none); }
+.ux4g-outline-1 { outline-style: var(--ux4g-outline-style-default); outline-width: var(--ux4g-outline-width-sm); outline-color: var(--ux4g-outline-color-default); }
+.ux4g-outline-2 { outline-style: var(--ux4g-outline-style-default); outline-width: var(--ux4g-outline-width-md); outline-color: var(--ux4g-outline-color-default); }
+.ux4g-outline-4 { outline-style: var(--ux4g-outline-style-default); outline-width: var(--ux4g-outline-width-lg); outline-color: var(--ux4g-outline-color-default); }
+.ux4g-outline-8 { outline-style: var(--ux4g-outline-style-default); outline-width: var(--ux4g-outline-width-xl); outline-color: var(--ux4g-outline-color-default); }
+
+/* =========================================
+   2. OUTLINE OFFSET
+========================================= */
+
+.ux4g-outline-offset-0 { outline-offset: var(--ux4g-outline-offset-none); }
+.ux4g-outline-offset-1 { outline-offset: var(--ux4g-outline-offset-sm); }
+.ux4g-outline-offset-2 { outline-offset: var(--ux4g-outline-offset-md); }
+.ux4g-outline-offset-4 { outline-offset: var(--ux4g-outline-offset-lg); }
+.ux4g-outline-offset-8 { outline-offset: var(--ux4g-outline-offset-xl); }

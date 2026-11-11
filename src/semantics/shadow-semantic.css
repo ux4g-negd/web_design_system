@@ -1,0 +1,18 @@
+/* =========================================
+   UX4G SHADOW & ELEVATION SEMANTIC TOKENS
+
+   1. Elevation Levels (L0 - L4)
+========================================= */
+
+:root {
+
+  /* =========================================
+     1. ELEVATION LEVELS
+  ========================================= */
+  --ux4g-shadow-l0: 0 0 0 0 var(--ux4g-elevation-color-0);
+  --ux4g-shadow-l1: 0px 1px 2px 0px var(--ux4g-elevation-color-1), 0px 1px 2px 0px var(--ux4g-elevation-color-1);
+  --ux4g-shadow-l2: 0px 4px 8px 0px var(--ux4g-elevation-color-2), 0px 1px 2px 0px var(--ux4g-elevation-color-1);
+  --ux4g-shadow-l3: 0px 8px 16px 0px var(--ux4g-elevation-color-4), 0px 4px 8px 0px var(--ux4g-elevation-color-2);
+  --ux4g-shadow-l4: 0px 16px 32px 0px var(--ux4g-elevation-color-6), 0px 8px 16px 0px var(--ux4g-elevation-color-4);
+
+}

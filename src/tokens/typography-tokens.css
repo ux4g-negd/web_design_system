@@ -1,0 +1,57 @@
+/* =========================================
+   UX4G TYPOGRAPHY PRIMITIVE TOKENS
+========================================= */
+
+:root {
+  /* FONT FAMILY */
+  --ux4g-font-family-base: "Noto Sans", system-ui, sans-serif;
+  --ux4g-font-family-display: "Noto Sans Display", "Noto Sans", sans-serif;
+
+  /* FONT SIZE */
+  --ux4g-font-size-60: 3.75rem;     /* 60px */
+  --ux4g-font-size-52: 3.25rem;     /* 52px */
+  --ux4g-font-size-48: 3rem;        /* 48px */
+  --ux4g-font-size-40: 2.5rem;      /* 40px */
+  --ux4g-font-size-36: 2.25rem;     /* 36px */
+  --ux4g-font-size-32: 2rem;        /* 32px */
+  --ux4g-font-size-28: 1.75rem;     /* 28px */
+  --ux4g-font-size-24: 1.5rem;      /* 24px */
+  --ux4g-font-size-20: 1.25rem;     /* 20px */
+  --ux4g-font-size-18: 1.125rem;    /* 18px */
+  --ux4g-font-size-16: 1rem;        /* 16px */
+  --ux4g-font-size-14: 0.875rem;    /* 14px */
+  --ux4g-font-size-12: 0.75rem;     /* 12px */
+  --ux4g-font-size-11: 0.6875rem;   /* 11px */
+  --ux4g-font-size-8:  0.5rem;       /* 8px */
+
+  /* LINE HEIGHT */
+  --ux4g-line-height-64: 4rem;      /* 64px */
+  --ux4g-line-height-56: 3.5rem;    /* 56px */
+  --ux4g-line-height-52: 3.25rem;   /* 52px */
+  --ux4g-line-height-48: 3rem;      /* 48px */
+  --ux4g-line-height-44: 2.75rem;   /* 44px */
+  --ux4g-line-height-40: 2.5rem;    /* 40px */
+  --ux4g-line-height-36: 2.25rem;   /* 36px */
+  --ux4g-line-height-32: 2rem;      /* 32px */
+  --ux4g-line-height-28: 1.75rem;   /* 28px */
+  --ux4g-line-height-26: 1.625rem;  /* 26px */
+  --ux4g-line-height-24: 1.5rem;    /* 24px */
+  --ux4g-line-height-22: 1.375rem;  /* 22px */
+  --ux4g-line-height-20: 1.25rem;   /* 20px */
+  --ux4g-line-height-18: 1.125rem;  /* 18px */
+  --ux4g-line-height-16: 1rem;      /* 16px */
+  --ux4g-line-height-14: 0.875rem;  /* 14px */
+
+  /* FONT WEIGHT */
+  --ux4g-font-weight-thin: 100;
+  --ux4g-font-weight-light: 300;
+  --ux4g-font-weight-regular: 400;
+  --ux4g-font-weight-medium: 500;
+  --ux4g-font-weight-semibold: 600;
+  --ux4g-font-weight-bold: 700;
+  --ux4g-font-weight-extrabold: 800;
+  --ux4g-font-weight-black: 900;
+  /* Display variants (if using Noto Sans Display) */
+  --ux4g-font-weight-display-semibold: 600;
+  --ux4g-font-weight-display-bold: 700;
+}

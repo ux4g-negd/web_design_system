@@ -1,0 +1,13 @@
+/* =========================================
+   UX4G GUTTER PRIMITIVE TOKENS
+   Gutter spacing scale (0 - 5) matching Bootstrap 5.3
+========================================= */
+
+:root {
+  --ux4g-gutter-0: 0;           /* 0px */
+  --ux4g-gutter-1: 0.25rem;     /* 4px */
+  --ux4g-gutter-2: 0.5rem;      /* 8px */
+  --ux4g-gutter-3: 1rem;        /* 16px */
+  --ux4g-gutter-4: 1.5rem;      /* 24px - Default Grid Gutter */
+  --ux4g-gutter-5: 3rem;        /* 48px */
+}

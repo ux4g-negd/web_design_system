@@ -1,0 +1,14 @@
+/* ==========================================================================
+   UX4G VERTICAL ALIGNMENT SEMANTIC TOKENS
+   Semantic mappings for CSS vertical alignment utilities.
+   ========================================================================== */
+
+:root {
+  /* ─── Vertical Alignment Mappings ─── */
+  --ux4g-va-baseline:    var(--ux4g-vertical-align-baseline);     /* Baseline alignment */
+  --ux4g-va-top:         var(--ux4g-vertical-align-top);          /* Top alignment */
+  --ux4g-va-middle:      var(--ux4g-vertical-align-middle);       /* Middle / center alignment */
+  --ux4g-va-bottom:      var(--ux4g-vertical-align-bottom);       /* Bottom alignment */
+  --ux4g-va-text-top:    var(--ux4g-vertical-align-text-top);    /* Text-top alignment */
+  --ux4g-va-text-bottom: var(--ux4g-vertical-align-text-bottom); /* Text-bottom alignment */
+}

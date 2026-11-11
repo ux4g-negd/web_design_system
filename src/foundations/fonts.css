@@ -1,0 +1,40 @@
+/* ==========================================================================
+   UX4G FONTS & TYPOGRAPHY FOUNDATIONS
+   ========================================================================== */
+
+/* Google Fonts for Themes & Inspector */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Hind:wght@300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Serif:ital,wght@0,300..700;1,300..700&family=Inter:wght@300;400;500;600;700;800&family=Josefin+Sans:ital,wght@0,300..700;1,300..700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lexend+Deca:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,300..900;1,300..900&family=Mukta:wght@300;400;500;600;700;800&family=Noto+Sans+Display:ital,wght@0,300..900;1,300..900&family=Noto+Sans:ital,wght@0,300..900;1,300..900&family=Noto+Serif:ital,wght@0,300..900;1,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@300;400;500;600;700&family=Roboto:ital,wght@0,300..900;1,300..900&family=Source+Sans+3:ital,wght@0,300..900;1,300..900&display=swap");
+
+/* Base UI Font */
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../assets/fonts/NotoSans.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Global Typography Baseline */
+html,
+body {
+  font-family: var(--ux4g-font-family-base, "Noto Sans", system-ui, sans-serif);
+}
+
+/* Ensure form controls follow global font-family and text color */
+:where(button, input, optgroup, select, textarea) {
+  font: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+
+/* Display Font (Headings) */
+@font-face {
+  font-family: "Noto Sans Display";
+  src: url("../assets/fonts/NotoSansDisplay.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+

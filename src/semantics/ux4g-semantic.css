@@ -1,0 +1,74 @@
+/* ==========================================================================
+   UX4G MASTER SEMANTIC TOKENS BUNDLE
+
+   A central entry point importing all semantic design tokens.
+   Designed for systematic theming, component styling, and AI/LLM indexing.
+
+   Table of Contents:
+     1. Typography, Text & Color Semantics
+     2. Layout, Sizing, Spacing & Scroll Semantics
+     3. Borders, Rings, Outlines, Divide, Radius & Shadows Semantics
+     4. Backgrounds & Overlays Semantics
+     5. Position, Inset & Stacking Semantics
+     6. Motion, Transforms & Interaction Semantics
+     7. Visibility, Opacity, Filters & Effects Semantics
+   ========================================================================== */
+
+/* ==========================================================================
+   1. TYPOGRAPHY, TEXT & COLOR SEMANTICS
+   ========================================================================== */
+@import "./typography-semantic.css";
+@import "./text-semantic.css";
+@import "./colors-semantic.css";
+@import "./vertical-align-semantic.css";
+@import "./line-clamp-semantic.css";
+
+/* ==========================================================================
+   2. LAYOUT, SIZING, SPACING & SCROLL SEMANTICS
+   ========================================================================== */
+@import "./size-semantic.css";
+@import "./container-semantic.css";
+@import "./spacing-semantic.css";
+@import "./padding-semantic.css";
+@import "./margin-semantic.css";
+@import "./gap-semantic.css";
+@import "./gutter-semantic.css";
+@import "./scroll-semantic.css";
+@import "./overflow-semantic.css";
+@import "./object-fit-semantic.css";
+
+/* ==========================================================================
+   3. BORDERS, RINGS, OUTLINES, DIVIDE, RADIUS & SHADOWS SEMANTICS
+   ========================================================================== */
+@import "./border-semantic.css";
+@import "./ring-semantic.css";
+@import "./outline-semantic.css";
+@import "./divide-semantic.css";
+@import "./radius-semantic.css";
+@import "./shadow-semantic.css";
+
+/* ==========================================================================
+   4. BACKGROUNDS & OVERLAYS SEMANTICS
+   ========================================================================== */
+@import "./background-semantic.css";
+
+/* ==========================================================================
+   5. POSITION & STACKING SEMANTICS
+   ========================================================================== */
+@import "./position-semantic.css";
+@import "./z-index-semantic.css";
+
+/* ==========================================================================
+   6. MOTION, TRANSFORMS & INTERACTION SEMANTICS
+   ========================================================================== */
+@import "./interaction-semantic.css";
+@import "./transition-semantic.css";
+@import "./transform-semantic.css";
+
+/* ==========================================================================
+   7. VISIBILITY, OPACITY, FILTERS & EFFECTS SEMANTICS
+   ========================================================================== */
+@import "./visibility-semantic.css";
+@import "./opacity-semantic.css";
+@import "./blur-semantic.css";
+@import "./effects-semantic.css";

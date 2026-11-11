@@ -1,0 +1,34 @@
+/* =========================================
+   UX4G RING SEMANTIC TOKENS
+   Accessible focus ring roles, offsets, and colors
+========================================= */
+
+:root {
+  /* Semantic Ring Widths & Offsets */
+  --ux4g-ring-width-default:        var(--ux4g-ring-width-3);
+  --ux4g-ring-offset-default:       var(--ux4g-ring-offset-width-0);
+  --ux4g-ring-offset-color-default: var(--ux4g-bg-neutral-elevated);
+
+  /* Ring Width Scale */
+  --ux4g-ring-w-0: var(--ux4g-ring-width-0);
+  --ux4g-ring-w-1: var(--ux4g-ring-width-1);
+  --ux4g-ring-w-2: var(--ux4g-ring-width-2);
+  --ux4g-ring-w-3: var(--ux4g-ring-width-3);
+  --ux4g-ring-w-4: var(--ux4g-ring-width-4);
+  --ux4g-ring-w-8: var(--ux4g-ring-width-8);
+
+  /* Ring Offset Scale */
+  --ux4g-ring-offset-0: var(--ux4g-ring-offset-width-0);
+  --ux4g-ring-offset-1: var(--ux4g-ring-offset-width-1);
+  --ux4g-ring-offset-2: var(--ux4g-ring-offset-width-2);
+  --ux4g-ring-offset-4: var(--ux4g-ring-offset-width-4);
+
+  /* Semantic Ring Colors */
+  --ux4g-ring-color-primary:        var(--ux4g-border-color-primary-default);
+  --ux4g-ring-color-primary-strong: var(--ux4g-border-color-primary-strong);
+  --ux4g-ring-color-success:        var(--ux4g-border-color-success-default);
+  --ux4g-ring-color-error:          var(--ux4g-border-color-error-default);
+  --ux4g-ring-color-warning:        var(--ux4g-border-color-warning-default);
+  --ux4g-ring-color-info:           var(--ux4g-border-color-info-default);
+  --ux4g-ring-color-neutral:        var(--ux4g-border-color-neutral-default);
+}

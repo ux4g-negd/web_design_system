@@ -1,0 +1,71 @@
+/* =========================================
+   UX4G BORDER SEMANTIC TOKENS
+
+   1. Border Width
+   2. Neutral Border Colors
+   3. Status Border Colors
+   4. Brand Border Colors
+   5. Control & Disabled Borders
+========================================= */
+
+:root {
+
+  /* =========================================
+     1. BORDER WIDTH
+  ========================================= */
+  --ux4g-border-width-none: var(--ux4g-border-none); /* 0px */
+  --ux4g-border-width-sm:   var(--ux4g-border-sm);   /* 1px */
+  --ux4g-border-width-md:   var(--ux4g-border-md);   /* 2px */
+  --ux4g-border-width-lg:   var(--ux4g-border-lg);   /* 3px */
+  --ux4g-border-width-xl:   var(--ux4g-border-xl);   /* 4px */
+  --ux4g-border-width-2xl:  var(--ux4g-border-2xl);  /* 8px */
+
+
+  /* =========================================
+     2. NEUTRAL BORDER COLORS
+  ========================================= */
+  --ux4g-border-color-neutral-default:  var(--ux4g-color-neutral-300);
+  --ux4g-border-color-neutral-subtle:   var(--ux4g-color-neutral-200);
+  --ux4g-border-color-neutral-strong:   var(--ux4g-color-neutral-500);
+  --ux4g-border-color-neutral-focus:    var(--ux4g-color-neutral-600);
+  --ux4g-border-color-neutral-hover:    var(--ux4g-color-neutral-300);
+  --ux4g-border-color-neutral-active:   var(--ux4g-color-neutral-400);
+  --ux4g-border-color-neutral-elevated: var(--ux4g-color-neutral-0);
+
+
+  /* =========================================
+     3. STATUS BORDER COLORS
+  ========================================= */
+  /* Success */
+  --ux4g-border-color-success-default: var(--ux4g-color-green-300);
+  --ux4g-border-color-success-strong:  var(--ux4g-color-green-600);
+
+  /* Info */
+  --ux4g-border-color-info-default: var(--ux4g-color-cyan-300);
+  --ux4g-border-color-info-strong:  var(--ux4g-color-cyan-600);
+
+  /* Error */
+  --ux4g-border-color-error-default: var(--ux4g-color-red-300);
+  --ux4g-border-color-error-strong:  var(--ux4g-color-red-600);
+
+  /* Warning */
+  --ux4g-border-color-warning-default: var(--ux4g-color-orange-300);
+  --ux4g-border-color-warning-strong:  var(--ux4g-color-orange-600);
+
+
+  /* =========================================
+     4. BRAND BORDER COLORS
+  ========================================= */
+  --ux4g-border-color-primary-default:   var(--ux4g-color-primary-300);
+  --ux4g-border-color-primary-strong:    var(--ux4g-color-primary-600);
+  --ux4g-border-color-primary-hover:     var(--ux4g-color-primary-700);
+  --ux4g-border-color-secondary-default: var(--ux4g-color-secondary-300);
+  --ux4g-border-color-tertiary-default:  var(--ux4g-color-tertiary-300);
+
+
+  /* =========================================
+     5. CONTROL & DISABLED BORDERS
+  ========================================= */
+  --ux4g-control-border-default: var(--ux4g-color-neutral-200);
+  --ux4g-icon-border-disabled:   var(--ux4g-color-neutral-200);
+}

@@ -1,0 +1,151 @@
+/* =========================================================
+   CHIP BASE (all chip variants)
+   ========================================================= */
+
+:is(.ux4g-filter-chip-m, .ux4g-filter-chip-s,
+    .ux4g-choice-chip-m, .ux4g-choice-chip-s,
+    .ux4g-input-chip-m, .ux4g-input-chip-s,
+    .ux4g-input-chip-xs) {
+  width: fit-content;
+  color: var(--ux4g-text-neutral-primary);
+  font-size: var(--ux4g-fs-14);
+  border-radius: var(--ux4g-radius-sm);
+  padding: var(--ux4g-space-none) var(--ux4g-padding-xs);
+  border: var(--ux4g-border-width-sm) solid transparent;
+  transition:
+    background-color 220ms cubic-bezier(.25, .8, .25, 1),
+    border-color 220ms cubic-bezier(.25, .8, .25, 1);
+}
+.ux4g-input-chip{
+  cursor: pointer;
+}
+
+/* Sizes */
+:is(.ux4g-filter-chip-s, .ux4g-choice-chip-s, .ux4g-input-chip-s) { min-height: 28px; }
+:is(.ux4g-filter-chip-m, .ux4g-choice-chip-m, .ux4g-input-chip-m) { min-height: 32px;}
+
+.ux4g-input-chip-xs {
+  min-height: 1.25rem;
+  padding: var(--ux4g-space-none) var(--ux4g-padding-2xs) !important;
+  font-size: var(--ux4g-fs-12) !important;
+}
+
+/* Figma uses a 20px trailing close icon for M/S and 16px for XS. */
+:is(.ux4g-input-chip-m, .ux4g-input-chip-s) > .ux4g-icon-outlined:last-child {
+  --ux4g-icon-size: var(--ux4g-fs-20);
+  --ux4g-icon-width: var(--ux4g-fs-20);
+  --ux4g-icon-height: var(--ux4g-fs-20);
+}
+
+.ux4g-input-chip-xs > .ux4g-icon-outlined:last-child {
+  --ux4g-icon-size: var(--ux4g-fs-16);
+  --ux4g-icon-width: var(--ux4g-fs-16);
+  --ux4g-icon-height: var(--ux4g-fs-16);
+}
+
+/* =========================================================
+   FILTER CHIP (ux4g-chip) states
+   ========================================================= */
+
+:is(.ux4g-filter-chip-m, .ux4g-filter-chip-s) {
+  background-color: var(--ux4g-bg-neutral);
+  border-color: var(--ux4g-border-color-neutral-default);
+}
+:is(.ux4g-filter-chip-m, .ux4g-filter-chip-s):hover {
+  background-color: var(--ux4g-bg-neutral-subtle);
+  border-color: var(--ux4g-border-color-neutral-subtle);
+}
+:is(.ux4g-filter-chip-m, .ux4g-filter-chip-s).active {
+  background-color: var(--ux4g-bg-primary-soft);
+  color: var(--ux4g-bg-primary-strong);
+  border-color: var(--ux4g-bg-primary-emphasis);
+}
+
+:is(.ux4g-filter-chip-m, .ux4g-filter-chip-s).active:hover {
+  background-color: var(--ux4g-bg-primary-soft);
+  border-color: var(--ux4g-bg-primary-soft);
+}
+.ux4g-filter-chip-m.active .ux4g-icon-outlined, 
+.ux4g-filter-chip-s.active .ux4g-icon-outlined{
+  color: var(--ux4g-bg-primary-strong);
+}
+
+/* =========================================================
+   CHOICE CHIP (ux4g-choice-chip) states
+   ========================================================= */
+:is(.ux4g-choice-chip-m, .ux4g-choice-chip-s) {
+  background-color: var(--ux4g-bg-neutral);
+  border-color: var(--ux4g-border-color-neutral-default);
+}
+
+:is(.ux4g-choice-chip-m, .ux4g-choice-chip-s).active {
+  background-color: var(--ux4g-bg-primary-strong);
+  color: var(--ux4g-bg-neutral);
+}
+:is(.ux4g-choice-chip-m, .ux4g-choice-chip-s).active .ux4g-icon-outlined {
+  color: var(--ux4g-bg-neutral);
+}
+
+:is(.ux4g-choice-chip-m, .ux4g-choice-chip-s):hover {
+ box-shadow: var(--ux4g-shadow-l1);
+}
+
+:is(.ux4g-choice-chip-m, .ux4g-choice-chip-s).active:hover {
+  border-color: var(--ux4g-bg-neutral);
+}
+
+/* =========================================================
+   INPUT CHIP (ux4g-input-chip) states
+   ========================================================= */
+
+:is(.ux4g-input-chip-m, .ux4g-input-chip-s, .ux4g-input-chip-xs) {
+  background-color: var(--ux4g-bg-neutral);
+  border-color: var(--ux4g-border-color-neutral-subtle);
+}
+
+/* =========================================================
+   DISABLED (shared)
+   ========================================================= */
+
+
+:is(
+.ux4g-filter-chip-m, 
+.ux4g-filter-chip-s,
+.ux4g-choice-chip-m,
+.ux4g-choice-chip-s,
+.ux4g-input-chip-m,
+.ux4g-input-chip-s,
+.ux4g-input-chip-xs
+)[disabled] {
+   --ux4g-text-current: var(--ux4g-text-link-disabled);
+     color: var(--ux4g-text-current);
+     cursor: not-allowed;
+     text-decoration: var(--ux4g-td-none);
+     pointer-events: none;
+     border-color: var(--ux4g-border-color-neutral-subtle);
+}
+:is(
+.ux4g-choice-chip-m, 
+.ux4g-choice-chip-s,
+.ux4g-input-chip-m, 
+.ux4g-input-chip-s,
+.ux4g-filter-chip-m,
+.ux4g-filter-chip-s,
+.ux4g-input-chip-xs
+)[disabled] {
+  background-color:  var(--ux4g-bg-neutral-subtle);
+  --ux4g-text-current: var(--ux4g-text-neutral-disabled);
+  cursor: not-allowed;
+  text-decoration: var(--ux4g-td-none);
+  pointer-events: none;
+}
+
+/* If you want chip (not choice/input) to keep your special disabled color token: */
+/* :is(
+.ux4g-filter-chip-m,
+.ux4g-choice-chip-m,
+.ux4g-choice-chip-s,
+.ux4g-filter-chip-s)[disabled] {
+  --ux4g-text-current: var(--ux4g-text-link-disabled);
+  
+} */

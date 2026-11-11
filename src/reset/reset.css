@@ -1,0 +1,38 @@
+:where(html) {
+  box-sizing: border-box;
+}
+
+:where(*, *::before, *::after) {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+:where(img) {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+:where(body) {
+  background-color: var(--ux4g-bg-neutral-elevated);
+  color: var(--ux4g-text-neutral-primary);
+  font-family: var(--ux4g-font-family-base, "Noto Sans", system-ui, sans-serif);
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+:where(button) {
+  background: none;
+  cursor: pointer;
+}
+
+:where(a) {
+  text-decoration: none;
+}
+
+:where(ul) {
+  list-style: none;
+}

@@ -1,0 +1,100 @@
+/* =========================================
+   UX4G COLORS & TEXT SEMANTIC TOKENS
+
+   1. Neutral Text
+   2. Brand Text
+   3. Status Text
+   4. Status & Neutral Icons
+   5. Brand Links
+   6. Neutral Links
+   7. Visited Links
+   8. Specific Status Defaults
+   9. Static Colors & Disabled States
+========================================= */
+
+:root {
+
+  /* =========================================
+     1. NEUTRAL TEXT
+  ========================================= */
+  --ux4g-text-neutral-primary: var(--ux4g-color-neutral-900);
+  --ux4g-text-neutral-secondary: var(--ux4g-color-neutral-700);
+  --ux4g-text-neutral-tertiary: var(--ux4g-color-neutral-500);
+  --ux4g-text-neutral-inverse: var(--ux4g-color-neutral-50);
+  --ux4g-text-neutral-emphasis: var(--ux4g-color-neutral-300);
+  --ux4g-text-neutral-disabled: color-mix(in srgb, var(--ux4g-color-neutral-900) calc(var(--ux4g-opacity-25) * 100%), transparent);
+
+
+  /* =========================================
+     2. BRAND TEXT
+  ========================================= */
+  --ux4g-text-brand-primary-default: var(--ux4g-color-primary-600);
+  --ux4g-text-brand-secondary-default: var(--ux4g-color-secondary-600);
+  --ux4g-text-brand-tertiary-default: var(--ux4g-color-tertiary-600);
+
+
+  /* =========================================
+     3. STATUS TEXT
+  ========================================= */
+  --ux4g-text-status-success: var(--ux4g-color-green-800);
+  --ux4g-text-status-error: var(--ux4g-color-red-800);
+  --ux4g-text-status-warning: var(--ux4g-color-orange-800);
+  --ux4g-text-status-info: var(--ux4g-color-cyan-800);
+
+
+  /* =========================================
+     4. STATUS & NEUTRAL ICONS
+  ========================================= */
+  --ux4g-icon-status-error: var(--ux4g-color-red-600);
+  --ux4g-icon-status-success: var(--ux4g-color-green-600);
+  --ux4g-icon-status-warning: var(--ux4g-color-orange-600);
+  --ux4g-icon-status-info: var(--ux4g-color-cyan-600);
+  --ux4g-icon-neutral-inverse: var(--ux4g-color-neutral-50);
+
+
+  /* =========================================
+     5. BRAND LINKS
+  ========================================= */
+  --ux4g-text-link-default-default: var(--ux4g-color-primary-600);
+  --ux4g-text-link-default-hover: var(--ux4g-color-primary-700);
+  --ux4g-text-link-default-active: var(--ux4g-color-primary-800);
+  --ux4g-text-link-default-visited: var(--ux4g-color-primary-800);
+  --ux4g-text-link-default-inverse: var(--ux4g-color-primary-200);
+
+
+  /* =========================================
+     6. NEUTRAL LINKS
+  ========================================= */
+  --ux4g-text-link-neutral-default: var(--ux4g-color-neutral-600);
+  --ux4g-text-link-neutral-hover: var(--ux4g-color-neutral-700);
+  --ux4g-text-link-neutral-active: var(--ux4g-color-neutral-800);
+  --ux4g-text-link-neutral-visited: var(--ux4g-color-neutral-800);
+  --ux4g-text-link-neutral-inverse: var(--ux4g-color-neutral-200);
+  --ux4g-text-link-disabled: var(--ux4g-color-neutral-400);
+
+
+  /* =========================================
+     7. VISITED LINKS
+  ========================================= */
+  --ux4g-text-link-visited-default: var(--ux4g-color-primary-600);
+  --ux4g-text-link-visited-hover: var(--ux4g-color-primary-700);
+  --ux4g-text-link-visited-active: var(--ux4g-color-primary-800);
+  --ux4g-text-link-visited-inverse: var(--ux4g-color-neutral-200);
+
+
+  /* =========================================
+     8. SPECIFIC STATUS DEFAULTS
+  ========================================= */
+  --ux4g-text-info-default: var(--ux4g-color-cyan-600);
+  --ux4g-text-error-default: var(--ux4g-color-red-600);
+  --ux4g-text-success-default: var(--ux4g-color-green-600);
+  --ux4g-text-warning-default: var(--ux4g-color-orange-600);
+
+
+  /* =========================================
+     9. STATIC COLORS & DISABLED STATES
+  ========================================= */
+  --ux4g-text-white: var(--ux4g-color-neutral-0);
+  --ux4g-text-black: var(--ux4g-color-neutral-1000);
+
+}

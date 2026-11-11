@@ -1,0 +1,27 @@
+/* =========================================
+   UX4G BLUR UTILITIES
+
+   1. Blur Engine
+   2. Blur Scale
+========================================= */
+
+
+/* =========================================
+   1. BLUR ENGINE
+========================================= */
+
+[class^="ux4g-blur-"],
+[class*=" ux4g-blur-"] {
+  filter: var(--ux4g-blur-current, none) !important;
+}
+
+
+/* =========================================
+   2. BLUR SCALE
+========================================= */
+
+.ux4g-blur-0 { --ux4g-blur-current: blur(var(--ux4g-blur-zero)); }
+.ux4g-blur-1 { --ux4g-blur-current: blur(var(--ux4g-blur-subtle)); }
+.ux4g-blur-2 { --ux4g-blur-current: blur(var(--ux4g-blur-soft)); }
+.ux4g-blur-3 { --ux4g-blur-current: blur(var(--ux4g-blur-medium)); }
+.ux4g-blur-4 { --ux4g-blur-current: blur(var(--ux4g-blur-strong)); }

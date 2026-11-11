@@ -1,0 +1,15 @@
+/* =========================================
+   UX4G LINE CLAMP SEMANTIC TOKENS
+   Semantic truncation levels for multi-line text clamping
+========================================= */
+
+:root {
+  /* Line Clamp Semantic Scale */
+  --ux4g-lc-1:    var(--ux4g-line-clamp-1);
+  --ux4g-lc-2:    var(--ux4g-line-clamp-2);
+  --ux4g-lc-3:    var(--ux4g-line-clamp-3);
+  --ux4g-lc-4:    var(--ux4g-line-clamp-4);
+  --ux4g-lc-5:    var(--ux4g-line-clamp-5);
+  --ux4g-lc-6:    var(--ux4g-line-clamp-6);
+  --ux4g-lc-none: var(--ux4g-line-clamp-none);
+}

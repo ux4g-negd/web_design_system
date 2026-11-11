@@ -1,0 +1,423 @@
+/* =========================================
+   UX4G POSITION & INSET UTILITIES
+
+   Combined atomic positioning system:
+   1. Position Types (static, relative, absolute, fixed, sticky, sr-only)
+   2. Position Helpers (fixed-top/bottom, sticky-top/bottom)
+   3. Multi-side Inset (inset, inset-x, inset-y)
+   4. Directional Placement (top, bottom, start, end)
+   5. Negative Inset & Placement (top-px-n-*, inset-px-n-*, etc.)
+   6. Center Alignment Translates
+   7.Responsive 
+
+   Note:
+     Responsive classes (sm, md, lg, xl, 2xl)
+     are defined in ./position-responsive-utilities.css
+========================================= */
+
+
+/* =========================================
+   1. POSITION TYPES & ACCESSIBILITY
+========================================= */
+
+.ux4g-static   { position: var(--ux4g-pos-static); }
+.ux4g-relative { position: var(--ux4g-pos-relative); }
+.ux4g-absolute { position: var(--ux4g-pos-absolute); }
+.ux4g-fixed    { position: var(--ux4g-pos-fixed); }
+.ux4g-sticky   { position: var(--ux4g-pos-sticky); }
+
+.ux4g-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+/* =========================================
+   2. POSITION SHORTCUT HELPERS
+========================================= */
+
+.ux4g-fixed-top      { position: var(--ux4g-pos-fixed); top: 0; left: 0; right: 0; }
+.ux4g-fixed-bottom   { position: var(--ux4g-pos-fixed); bottom: 0; left: 0; right: 0; }
+.ux4g-sticky-top     { position: var(--ux4g-pos-sticky); top: 0; }
+.ux4g-sticky-bottom  { position: var(--ux4g-pos-sticky); bottom: 0; }
+
+
+/* =========================================
+   3. MULTI-SIDE INSET (TAILWIND STYLE)
+========================================= */
+
+/* --- Inset (All 4 Sides) Percentage --- */
+.ux4g-inset-0    { inset: var(--ux4g-pos-top-0); }
+.ux4g-inset-25   { inset: var(--ux4g-pos-top-25); }
+.ux4g-inset-50   { inset: var(--ux4g-pos-top-50); }
+.ux4g-inset-75   { inset: var(--ux4g-pos-top-75); }
+.ux4g-inset-100  { inset: var(--ux4g-pos-top-100); }
+.ux4g-inset-auto { inset: var(--ux4g-pos-top-auto); }
+
+/* --- Inset (All 4 Sides) Pixel --- */
+.ux4g-inset-px-2  { inset: var(--ux4g-pos-inset-px-2); }
+.ux4g-inset-px-4  { inset: var(--ux4g-pos-inset-px-4); }
+.ux4g-inset-px-6  { inset: var(--ux4g-pos-inset-px-6); }
+.ux4g-inset-px-8  { inset: var(--ux4g-pos-inset-px-8); }
+.ux4g-inset-px-10 { inset: var(--ux4g-pos-inset-px-10); }
+.ux4g-inset-px-12 { inset: var(--ux4g-pos-inset-px-12); }
+.ux4g-inset-px-14 { inset: var(--ux4g-pos-inset-px-14); }
+.ux4g-inset-px-16 { inset: var(--ux4g-pos-inset-px-16); }
+.ux4g-inset-px-20 { inset: var(--ux4g-pos-inset-px-20); }
+.ux4g-inset-px-24 { inset: var(--ux4g-pos-inset-px-24); }
+.ux4g-inset-px-28 { inset: var(--ux4g-pos-inset-px-28); }
+.ux4g-inset-px-32 { inset: var(--ux4g-pos-inset-px-32); }
+.ux4g-inset-px-36 { inset: var(--ux4g-pos-inset-px-36); }
+.ux4g-inset-px-40 { inset: var(--ux4g-pos-inset-px-40); }
+.ux4g-inset-px-48 { inset: var(--ux4g-pos-inset-px-48); }
+.ux4g-inset-px-56 { inset: var(--ux4g-pos-inset-px-56); }
+.ux4g-inset-px-64 { inset: var(--ux4g-pos-inset-px-64); }
+.ux4g-inset-px-80 { inset: var(--ux4g-pos-inset-px-80); }
+.ux4g-inset-px-96 { inset: var(--ux4g-pos-inset-px-96); }
+
+/* --- Inset X (Horizontal Axis - Start + End) Percentage --- */
+.ux4g-inset-x-0    { inset-inline-start: var(--ux4g-pos-start-0); inset-inline-end: var(--ux4g-pos-end-0); }
+.ux4g-inset-x-25   { inset-inline-start: var(--ux4g-pos-start-25); inset-inline-end: var(--ux4g-pos-end-25); }
+.ux4g-inset-x-50   { inset-inline-start: var(--ux4g-pos-start-50); inset-inline-end: var(--ux4g-pos-end-50); }
+.ux4g-inset-x-75   { inset-inline-start: var(--ux4g-pos-start-75); inset-inline-end: var(--ux4g-pos-end-75); }
+.ux4g-inset-x-100  { inset-inline-start: var(--ux4g-pos-start-100); inset-inline-end: var(--ux4g-pos-end-100); }
+.ux4g-inset-x-auto { inset-inline-start: var(--ux4g-pos-start-auto); inset-inline-end: var(--ux4g-pos-end-auto); }
+
+/* --- Inset X (Horizontal Axis - Start + End) Pixel --- */
+.ux4g-inset-x-px-2  { inset-inline-start: var(--ux4g-pos-inset-px-2); inset-inline-end: var(--ux4g-pos-inset-px-2); }
+.ux4g-inset-x-px-4  { inset-inline-start: var(--ux4g-pos-inset-px-4); inset-inline-end: var(--ux4g-pos-inset-px-4); }
+.ux4g-inset-x-px-6  { inset-inline-start: var(--ux4g-pos-inset-px-6); inset-inline-end: var(--ux4g-pos-inset-px-6); }
+.ux4g-inset-x-px-8  { inset-inline-start: var(--ux4g-pos-inset-px-8); inset-inline-end: var(--ux4g-pos-inset-px-8); }
+.ux4g-inset-x-px-10 { inset-inline-start: var(--ux4g-pos-inset-px-10); inset-inline-end: var(--ux4g-pos-inset-px-10); }
+.ux4g-inset-x-px-12 { inset-inline-start: var(--ux4g-pos-inset-px-12); inset-inline-end: var(--ux4g-pos-inset-px-12); }
+.ux4g-inset-x-px-14 { inset-inline-start: var(--ux4g-pos-inset-px-14); inset-inline-end: var(--ux4g-pos-inset-px-14); }
+.ux4g-inset-x-px-16 { inset-inline-start: var(--ux4g-pos-inset-px-16); inset-inline-end: var(--ux4g-pos-inset-px-16); }
+.ux4g-inset-x-px-20 { inset-inline-start: var(--ux4g-pos-inset-px-20); inset-inline-end: var(--ux4g-pos-inset-px-20); }
+.ux4g-inset-x-px-24 { inset-inline-start: var(--ux4g-pos-inset-px-24); inset-inline-end: var(--ux4g-pos-inset-px-24); }
+.ux4g-inset-x-px-28 { inset-inline-start: var(--ux4g-pos-inset-px-28); inset-inline-end: var(--ux4g-pos-inset-px-28); }
+.ux4g-inset-x-px-32 { inset-inline-start: var(--ux4g-pos-inset-px-32); inset-inline-end: var(--ux4g-pos-inset-px-32); }
+.ux4g-inset-x-px-36 { inset-inline-start: var(--ux4g-pos-inset-px-36); inset-inline-end: var(--ux4g-pos-inset-px-36); }
+.ux4g-inset-x-px-40 { inset-inline-start: var(--ux4g-pos-inset-px-40); inset-inline-end: var(--ux4g-pos-inset-px-40); }
+.ux4g-inset-x-px-48 { inset-inline-start: var(--ux4g-pos-inset-px-48); inset-inline-end: var(--ux4g-pos-inset-px-48); }
+.ux4g-inset-x-px-56 { inset-inline-start: var(--ux4g-pos-inset-px-56); inset-inline-end: var(--ux4g-pos-inset-px-56); }
+.ux4g-inset-x-px-64 { inset-inline-start: var(--ux4g-pos-inset-px-64); inset-inline-end: var(--ux4g-pos-inset-px-64); }
+.ux4g-inset-x-px-80 { inset-inline-start: var(--ux4g-pos-inset-px-80); inset-inline-end: var(--ux4g-pos-inset-px-80); }
+.ux4g-inset-x-px-96 { inset-inline-start: var(--ux4g-pos-inset-px-96); inset-inline-end: var(--ux4g-pos-inset-px-96); }
+
+/* --- Inset Y (Vertical Axis - Top + Bottom) Percentage --- */
+.ux4g-inset-y-0    { top: var(--ux4g-pos-top-0); bottom: var(--ux4g-pos-bottom-0); }
+.ux4g-inset-y-25   { top: var(--ux4g-pos-top-25); bottom: var(--ux4g-pos-bottom-25); }
+.ux4g-inset-y-50   { top: var(--ux4g-pos-top-50); bottom: var(--ux4g-pos-bottom-50); }
+.ux4g-inset-y-75   { top: var(--ux4g-pos-top-75); bottom: var(--ux4g-pos-bottom-75); }
+.ux4g-inset-y-100  { top: var(--ux4g-pos-top-100); bottom: var(--ux4g-pos-bottom-100); }
+.ux4g-inset-y-auto { top: var(--ux4g-pos-top-auto); bottom: var(--ux4g-pos-bottom-auto); }
+
+/* --- Inset Y (Vertical Axis - Top + Bottom) Pixel --- */
+.ux4g-inset-y-px-2  { top: var(--ux4g-pos-inset-px-2); bottom: var(--ux4g-pos-inset-px-2); }
+.ux4g-inset-y-px-4  { top: var(--ux4g-pos-inset-px-4); bottom: var(--ux4g-pos-inset-px-4); }
+.ux4g-inset-y-px-6  { top: var(--ux4g-pos-inset-px-6); bottom: var(--ux4g-pos-inset-px-6); }
+.ux4g-inset-y-px-8  { top: var(--ux4g-pos-inset-px-8); bottom: var(--ux4g-pos-inset-px-8); }
+.ux4g-inset-y-px-10 { top: var(--ux4g-pos-inset-px-10); bottom: var(--ux4g-pos-inset-px-10); }
+.ux4g-inset-y-px-12 { top: var(--ux4g-pos-inset-px-12); bottom: var(--ux4g-pos-inset-px-12); }
+.ux4g-inset-y-px-14 { top: var(--ux4g-pos-inset-px-14); bottom: var(--ux4g-pos-inset-px-14); }
+.ux4g-inset-y-px-16 { top: var(--ux4g-pos-inset-px-16); bottom: var(--ux4g-pos-inset-px-16); }
+.ux4g-inset-y-px-20 { top: var(--ux4g-pos-inset-px-20); bottom: var(--ux4g-pos-inset-px-20); }
+.ux4g-inset-y-px-24 { top: var(--ux4g-pos-inset-px-24); bottom: var(--ux4g-pos-inset-px-24); }
+.ux4g-inset-y-px-28 { top: var(--ux4g-pos-inset-px-28); bottom: var(--ux4g-pos-inset-px-28); }
+.ux4g-inset-y-px-32 { top: var(--ux4g-pos-inset-px-32); bottom: var(--ux4g-pos-inset-px-32); }
+.ux4g-inset-y-px-36 { top: var(--ux4g-pos-inset-px-36); bottom: var(--ux4g-pos-inset-px-36); }
+.ux4g-inset-y-px-40 { top: var(--ux4g-pos-inset-px-40); bottom: var(--ux4g-pos-inset-px-40); }
+.ux4g-inset-y-px-48 { top: var(--ux4g-pos-inset-px-48); bottom: var(--ux4g-pos-inset-px-48); }
+.ux4g-inset-y-px-56 { top: var(--ux4g-pos-inset-px-56); bottom: var(--ux4g-pos-inset-px-56); }
+.ux4g-inset-y-px-64 { top: var(--ux4g-pos-inset-px-64); bottom: var(--ux4g-pos-inset-px-64); }
+.ux4g-inset-y-px-80 { top: var(--ux4g-pos-inset-px-80); bottom: var(--ux4g-pos-inset-px-80); }
+.ux4g-inset-y-px-96 { top: var(--ux4g-pos-inset-px-96); bottom: var(--ux4g-pos-inset-px-96); }
+
+
+/* =========================================
+   4. DIRECTIONAL PLACEMENT (TOP, BOTTOM, START, END)
+========================================= */
+
+/* --- Top Percentage --- */
+.ux4g-top-0    { top: var(--ux4g-pos-top-0); }
+.ux4g-top-25   { top: var(--ux4g-pos-top-25); }
+.ux4g-top-50   { top: var(--ux4g-pos-top-50); }
+.ux4g-top-75   { top: var(--ux4g-pos-top-75); }
+.ux4g-top-100  { top: var(--ux4g-pos-top-100); }
+.ux4g-top-auto { top: var(--ux4g-pos-top-auto); }
+
+/* --- Bottom Percentage --- */
+.ux4g-bottom-0    { bottom: var(--ux4g-pos-bottom-0); }
+.ux4g-bottom-25   { bottom: var(--ux4g-pos-bottom-25); }
+.ux4g-bottom-50   { bottom: var(--ux4g-pos-bottom-50); }
+.ux4g-bottom-75   { bottom: var(--ux4g-pos-bottom-75); }
+.ux4g-bottom-100  { bottom: var(--ux4g-pos-bottom-100); }
+.ux4g-bottom-auto { bottom: var(--ux4g-pos-bottom-auto); }
+
+/* --- Start (Inline Start / Left) Percentage --- */
+.ux4g-start-0    { inset-inline-start: var(--ux4g-pos-start-0); }
+.ux4g-start-25   { inset-inline-start: var(--ux4g-pos-start-25); }
+.ux4g-start-50   { inset-inline-start: var(--ux4g-pos-start-50); }
+.ux4g-start-75   { inset-inline-start: var(--ux4g-pos-start-75); }
+.ux4g-start-100  { inset-inline-start: var(--ux4g-pos-start-100); }
+.ux4g-start-auto { inset-inline-start: var(--ux4g-pos-start-auto); }
+
+/* --- End (Inline End / Right) Percentage --- */
+.ux4g-end-0    { inset-inline-end: var(--ux4g-pos-end-0); }
+.ux4g-end-25   { inset-inline-end: var(--ux4g-pos-end-25); }
+.ux4g-end-50   { inset-inline-end: var(--ux4g-pos-end-50); }
+.ux4g-end-75   { inset-inline-end: var(--ux4g-pos-end-75); }
+.ux4g-end-100  { inset-inline-end: var(--ux4g-pos-end-100); }
+.ux4g-end-auto { inset-inline-end: var(--ux4g-pos-end-auto); }
+
+/* --- Top Pixel Scale --- */
+.ux4g-top-px-2  { top: var(--ux4g-pos-inset-px-2); }
+.ux4g-top-px-4  { top: var(--ux4g-pos-inset-px-4); }
+.ux4g-top-px-6  { top: var(--ux4g-pos-inset-px-6); }
+.ux4g-top-px-8  { top: var(--ux4g-pos-inset-px-8); }
+.ux4g-top-px-10 { top: var(--ux4g-pos-inset-px-10); }
+.ux4g-top-px-12 { top: var(--ux4g-pos-inset-px-12); }
+.ux4g-top-px-14 { top: var(--ux4g-pos-inset-px-14); }
+.ux4g-top-px-16 { top: var(--ux4g-pos-inset-px-16); }
+.ux4g-top-px-20 { top: var(--ux4g-pos-inset-px-20); }
+.ux4g-top-px-24 { top: var(--ux4g-pos-inset-px-24); }
+.ux4g-top-px-28 { top: var(--ux4g-pos-inset-px-28); }
+.ux4g-top-px-32 { top: var(--ux4g-pos-inset-px-32); }
+.ux4g-top-px-36 { top: var(--ux4g-pos-inset-px-36); }
+.ux4g-top-px-40 { top: var(--ux4g-pos-inset-px-40); }
+.ux4g-top-px-48 { top: var(--ux4g-pos-inset-px-48); }
+.ux4g-top-px-56 { top: var(--ux4g-pos-inset-px-56); }
+.ux4g-top-px-64 { top: var(--ux4g-pos-inset-px-64); }
+.ux4g-top-px-80 { top: var(--ux4g-pos-inset-px-80); }
+.ux4g-top-px-96 { top: var(--ux4g-pos-inset-px-96); }
+
+/* --- Bottom Pixel Scale --- */
+.ux4g-bottom-px-2  { bottom: var(--ux4g-pos-inset-px-2); }
+.ux4g-bottom-px-4  { bottom: var(--ux4g-pos-inset-px-4); }
+.ux4g-bottom-px-6  { bottom: var(--ux4g-pos-inset-px-6); }
+.ux4g-bottom-px-8  { bottom: var(--ux4g-pos-inset-px-8); }
+.ux4g-bottom-px-10 { bottom: var(--ux4g-pos-inset-px-10); }
+.ux4g-bottom-px-12 { bottom: var(--ux4g-pos-inset-px-12); }
+.ux4g-bottom-px-14 { bottom: var(--ux4g-pos-inset-px-14); }
+.ux4g-bottom-px-16 { bottom: var(--ux4g-pos-inset-px-16); }
+.ux4g-bottom-px-20 { bottom: var(--ux4g-pos-inset-px-20); }
+.ux4g-bottom-px-24 { bottom: var(--ux4g-pos-inset-px-24); }
+.ux4g-bottom-px-28 { bottom: var(--ux4g-pos-inset-px-28); }
+.ux4g-bottom-px-32 { bottom: var(--ux4g-pos-inset-px-32); }
+.ux4g-bottom-px-36 { bottom: var(--ux4g-pos-inset-px-36); }
+.ux4g-bottom-px-40 { bottom: var(--ux4g-pos-inset-px-40); }
+.ux4g-bottom-px-48 { bottom: var(--ux4g-pos-inset-px-48); }
+.ux4g-bottom-px-56 { bottom: var(--ux4g-pos-inset-px-56); }
+.ux4g-bottom-px-64 { bottom: var(--ux4g-pos-inset-px-64); }
+.ux4g-bottom-px-80 { bottom: var(--ux4g-pos-inset-px-80); }
+.ux4g-bottom-px-96 { bottom: var(--ux4g-pos-inset-px-96); }
+
+/* --- Start Pixel Scale --- */
+.ux4g-start-px-2  { inset-inline-start: var(--ux4g-pos-inset-px-2); }
+.ux4g-start-px-4  { inset-inline-start: var(--ux4g-pos-inset-px-4); }
+.ux4g-start-px-6  { inset-inline-start: var(--ux4g-pos-inset-px-6); }
+.ux4g-start-px-8  { inset-inline-start: var(--ux4g-pos-inset-px-8); }
+.ux4g-start-px-10 { inset-inline-start: var(--ux4g-pos-inset-px-10); }
+.ux4g-start-px-12 { inset-inline-start: var(--ux4g-pos-inset-px-12); }
+.ux4g-start-px-14 { inset-inline-start: var(--ux4g-pos-inset-px-14); }
+.ux4g-start-px-16 { inset-inline-start: var(--ux4g-pos-inset-px-16); }
+.ux4g-start-px-20 { inset-inline-start: var(--ux4g-pos-inset-px-20); }
+.ux4g-start-px-24 { inset-inline-start: var(--ux4g-pos-inset-px-24); }
+.ux4g-start-px-28 { inset-inline-start: var(--ux4g-pos-inset-px-28); }
+.ux4g-start-px-32 { inset-inline-start: var(--ux4g-pos-inset-px-32); }
+.ux4g-start-px-36 { inset-inline-start: var(--ux4g-pos-inset-px-36); }
+.ux4g-start-px-40 { inset-inline-start: var(--ux4g-pos-inset-px-40); }
+.ux4g-start-px-48 { inset-inline-start: var(--ux4g-pos-inset-px-48); }
+.ux4g-start-px-56 { inset-inline-start: var(--ux4g-pos-inset-px-56); }
+.ux4g-start-px-64 { inset-inline-start: var(--ux4g-pos-inset-px-64); }
+.ux4g-start-px-80 { inset-inline-start: var(--ux4g-pos-inset-px-80); }
+.ux4g-start-px-96 { inset-inline-start: var(--ux4g-pos-inset-px-96); }
+
+/* --- End Pixel Scale --- */
+.ux4g-end-px-2  { inset-inline-end: var(--ux4g-pos-inset-px-2); }
+.ux4g-end-px-4  { inset-inline-end: var(--ux4g-pos-inset-px-4); }
+.ux4g-end-px-6  { inset-inline-end: var(--ux4g-pos-inset-px-6); }
+.ux4g-end-px-8  { inset-inline-end: var(--ux4g-pos-inset-px-8); }
+.ux4g-end-px-10 { inset-inline-end: var(--ux4g-pos-inset-px-10); }
+.ux4g-end-px-12 { inset-inline-end: var(--ux4g-pos-inset-px-12); }
+.ux4g-end-px-14 { inset-inline-end: var(--ux4g-pos-inset-px-14); }
+.ux4g-end-px-16 { inset-inline-end: var(--ux4g-pos-inset-px-16); }
+.ux4g-end-px-20 { inset-inline-end: var(--ux4g-pos-inset-px-20); }
+.ux4g-end-px-24 { inset-inline-end: var(--ux4g-pos-inset-px-24); }
+.ux4g-end-px-28 { inset-inline-end: var(--ux4g-pos-inset-px-28); }
+.ux4g-end-px-32 { inset-inline-end: var(--ux4g-pos-inset-px-32); }
+.ux4g-end-px-36 { inset-inline-end: var(--ux4g-pos-inset-px-36); }
+.ux4g-end-px-40 { inset-inline-end: var(--ux4g-pos-inset-px-40); }
+.ux4g-end-px-48 { inset-inline-end: var(--ux4g-pos-inset-px-48); }
+.ux4g-end-px-56 { inset-inline-end: var(--ux4g-pos-inset-px-56); }
+.ux4g-end-px-64 { inset-inline-end: var(--ux4g-pos-inset-px-64); }
+.ux4g-end-px-80 { inset-inline-end: var(--ux4g-pos-inset-px-80); }
+.ux4g-end-px-96 { inset-inline-end: var(--ux4g-pos-inset-px-96); }
+
+
+/* =========================================
+   5. NEGATIVE INSET & PLACEMENT
+========================================= */
+
+/* --- Negative Inset (All Sides) --- */
+.ux4g-inset-px-n-2  { inset: var(--ux4g-pos-inset-px-n-2); }
+.ux4g-inset-px-n-4  { inset: var(--ux4g-pos-inset-px-n-4); }
+.ux4g-inset-px-n-6  { inset: var(--ux4g-pos-inset-px-n-6); }
+.ux4g-inset-px-n-8  { inset: var(--ux4g-pos-inset-px-n-8); }
+.ux4g-inset-px-n-10 { inset: var(--ux4g-pos-inset-px-n-10); }
+.ux4g-inset-px-n-12 { inset: var(--ux4g-pos-inset-px-n-12); }
+.ux4g-inset-px-n-14 { inset: var(--ux4g-pos-inset-px-n-14); }
+.ux4g-inset-px-n-16 { inset: var(--ux4g-pos-inset-px-n-16); }
+.ux4g-inset-px-n-20 { inset: var(--ux4g-pos-inset-px-n-20); }
+.ux4g-inset-px-n-24 { inset: var(--ux4g-pos-inset-px-n-24); }
+.ux4g-inset-px-n-28 { inset: var(--ux4g-pos-inset-px-n-28); }
+.ux4g-inset-px-n-32 { inset: var(--ux4g-pos-inset-px-n-32); }
+.ux4g-inset-px-n-36 { inset: var(--ux4g-pos-inset-px-n-36); }
+.ux4g-inset-px-n-40 { inset: var(--ux4g-pos-inset-px-n-40); }
+.ux4g-inset-px-n-48 { inset: var(--ux4g-pos-inset-px-n-48); }
+.ux4g-inset-px-n-56 { inset: var(--ux4g-pos-inset-px-n-56); }
+.ux4g-inset-px-n-64 { inset: var(--ux4g-pos-inset-px-n-64); }
+.ux4g-inset-px-n-80 { inset: var(--ux4g-pos-inset-px-n-80); }
+.ux4g-inset-px-n-96 { inset: var(--ux4g-pos-inset-px-n-96); }
+
+/* --- Negative Inset X (Horizontal Axis) --- */
+.ux4g-inset-x-px-n-2  { inset-inline-start: var(--ux4g-pos-inset-px-n-2); inset-inline-end: var(--ux4g-pos-inset-px-n-2); }
+.ux4g-inset-x-px-n-4  { inset-inline-start: var(--ux4g-pos-inset-px-n-4); inset-inline-end: var(--ux4g-pos-inset-px-n-4); }
+.ux4g-inset-x-px-n-6  { inset-inline-start: var(--ux4g-pos-inset-px-n-6); inset-inline-end: var(--ux4g-pos-inset-px-n-6); }
+.ux4g-inset-x-px-n-8  { inset-inline-start: var(--ux4g-pos-inset-px-n-8); inset-inline-end: var(--ux4g-pos-inset-px-n-8); }
+.ux4g-inset-x-px-n-10 { inset-inline-start: var(--ux4g-pos-inset-px-n-10); inset-inline-end: var(--ux4g-pos-inset-px-n-10); }
+.ux4g-inset-x-px-n-12 { inset-inline-start: var(--ux4g-pos-inset-px-n-12); inset-inline-end: var(--ux4g-pos-inset-px-n-12); }
+.ux4g-inset-x-px-n-14 { inset-inline-start: var(--ux4g-pos-inset-px-n-14); inset-inline-end: var(--ux4g-pos-inset-px-n-14); }
+.ux4g-inset-x-px-n-16 { inset-inline-start: var(--ux4g-pos-inset-px-n-16); inset-inline-end: var(--ux4g-pos-inset-px-n-16); }
+.ux4g-inset-x-px-n-20 { inset-inline-start: var(--ux4g-pos-inset-px-n-20); inset-inline-end: var(--ux4g-pos-inset-px-n-20); }
+.ux4g-inset-x-px-n-24 { inset-inline-start: var(--ux4g-pos-inset-px-n-24); inset-inline-end: var(--ux4g-pos-inset-px-n-24); }
+.ux4g-inset-x-px-n-28 { inset-inline-start: var(--ux4g-pos-inset-px-n-28); inset-inline-end: var(--ux4g-pos-inset-px-n-28); }
+.ux4g-inset-x-px-n-32 { inset-inline-start: var(--ux4g-pos-inset-px-n-32); inset-inline-end: var(--ux4g-pos-inset-px-n-32); }
+.ux4g-inset-x-px-n-36 { inset-inline-start: var(--ux4g-pos-inset-px-n-36); inset-inline-end: var(--ux4g-pos-inset-px-n-36); }
+.ux4g-inset-x-px-n-40 { inset-inline-start: var(--ux4g-pos-inset-px-n-40); inset-inline-end: var(--ux4g-pos-inset-px-n-40); }
+.ux4g-inset-x-px-n-48 { inset-inline-start: var(--ux4g-pos-inset-px-n-48); inset-inline-end: var(--ux4g-pos-inset-px-n-48); }
+.ux4g-inset-x-px-n-56 { inset-inline-start: var(--ux4g-pos-inset-px-n-56); inset-inline-end: var(--ux4g-pos-inset-px-n-56); }
+.ux4g-inset-x-px-n-64 { inset-inline-start: var(--ux4g-pos-inset-px-n-64); inset-inline-end: var(--ux4g-pos-inset-px-n-64); }
+.ux4g-inset-x-px-n-80 { inset-inline-start: var(--ux4g-pos-inset-px-n-80); inset-inline-end: var(--ux4g-pos-inset-px-n-80); }
+.ux4g-inset-x-px-n-96 { inset-inline-start: var(--ux4g-pos-inset-px-n-96); inset-inline-end: var(--ux4g-pos-inset-px-n-96); }
+
+/* --- Negative Inset Y (Vertical Axis) --- */
+.ux4g-inset-y-px-n-2  { top: var(--ux4g-pos-inset-px-n-2); bottom: var(--ux4g-pos-inset-px-n-2); }
+.ux4g-inset-y-px-n-4  { top: var(--ux4g-pos-inset-px-n-4); bottom: var(--ux4g-pos-inset-px-n-4); }
+.ux4g-inset-y-px-n-6  { top: var(--ux4g-pos-inset-px-n-6); bottom: var(--ux4g-pos-inset-px-n-6); }
+.ux4g-inset-y-px-n-8  { top: var(--ux4g-pos-inset-px-n-8); bottom: var(--ux4g-pos-inset-px-n-8); }
+.ux4g-inset-y-px-n-10 { top: var(--ux4g-pos-inset-px-n-10); bottom: var(--ux4g-pos-inset-px-n-10); }
+.ux4g-inset-y-px-n-12 { top: var(--ux4g-pos-inset-px-n-12); bottom: var(--ux4g-pos-inset-px-n-12); }
+.ux4g-inset-y-px-n-14 { top: var(--ux4g-pos-inset-px-n-14); bottom: var(--ux4g-pos-inset-px-n-14); }
+.ux4g-inset-y-px-n-16 { top: var(--ux4g-pos-inset-px-n-16); bottom: var(--ux4g-pos-inset-px-n-16); }
+.ux4g-inset-y-px-n-20 { top: var(--ux4g-pos-inset-px-n-20); bottom: var(--ux4g-pos-inset-px-n-20); }
+.ux4g-inset-y-px-n-24 { top: var(--ux4g-pos-inset-px-n-24); bottom: var(--ux4g-pos-inset-px-n-24); }
+.ux4g-inset-y-px-n-28 { top: var(--ux4g-pos-inset-px-n-28); bottom: var(--ux4g-pos-inset-px-n-28); }
+.ux4g-inset-y-px-n-32 { top: var(--ux4g-pos-inset-px-n-32); bottom: var(--ux4g-pos-inset-px-n-32); }
+.ux4g-inset-y-px-n-36 { top: var(--ux4g-pos-inset-px-n-36); bottom: var(--ux4g-pos-inset-px-n-36); }
+.ux4g-inset-y-px-n-40 { top: var(--ux4g-pos-inset-px-n-40); bottom: var(--ux4g-pos-inset-px-n-40); }
+.ux4g-inset-y-px-n-48 { top: var(--ux4g-pos-inset-px-n-48); bottom: var(--ux4g-pos-inset-px-n-48); }
+.ux4g-inset-y-px-n-56 { top: var(--ux4g-pos-inset-px-n-56); bottom: var(--ux4g-pos-inset-px-n-56); }
+.ux4g-inset-y-px-n-64 { top: var(--ux4g-pos-inset-px-n-64); bottom: var(--ux4g-pos-inset-px-n-64); }
+.ux4g-inset-y-px-n-80 { top: var(--ux4g-pos-inset-px-n-80); bottom: var(--ux4g-pos-inset-px-n-80); }
+.ux4g-inset-y-px-n-96 { top: var(--ux4g-pos-inset-px-n-96); bottom: var(--ux4g-pos-inset-px-n-96); }
+
+/* --- Negative Top --- */
+.ux4g-top-px-n-2  { top: var(--ux4g-pos-inset-px-n-2); }
+.ux4g-top-px-n-4  { top: var(--ux4g-pos-inset-px-n-4); }
+.ux4g-top-px-n-6  { top: var(--ux4g-pos-inset-px-n-6); }
+.ux4g-top-px-n-8  { top: var(--ux4g-pos-inset-px-n-8); }
+.ux4g-top-px-n-10 { top: var(--ux4g-pos-inset-px-n-10); }
+.ux4g-top-px-n-12 { top: var(--ux4g-pos-inset-px-n-12); }
+.ux4g-top-px-n-14 { top: var(--ux4g-pos-inset-px-n-14); }
+.ux4g-top-px-n-16 { top: var(--ux4g-pos-inset-px-n-16); }
+.ux4g-top-px-n-20 { top: var(--ux4g-pos-inset-px-n-20); }
+.ux4g-top-px-n-24 { top: var(--ux4g-pos-inset-px-n-24); }
+.ux4g-top-px-n-28 { top: var(--ux4g-pos-inset-px-n-28); }
+.ux4g-top-px-n-32 { top: var(--ux4g-pos-inset-px-n-32); }
+.ux4g-top-px-n-36 { top: var(--ux4g-pos-inset-px-n-36); }
+.ux4g-top-px-n-40 { top: var(--ux4g-pos-inset-px-n-40); }
+.ux4g-top-px-n-48 { top: var(--ux4g-pos-inset-px-n-48); }
+.ux4g-top-px-n-56 { top: var(--ux4g-pos-inset-px-n-56); }
+.ux4g-top-px-n-64 { top: var(--ux4g-pos-inset-px-n-64); }
+.ux4g-top-px-n-80 { top: var(--ux4g-pos-inset-px-n-80); }
+.ux4g-top-px-n-96 { top: var(--ux4g-pos-inset-px-n-96); }
+
+/* --- Negative Bottom --- */
+.ux4g-bottom-px-n-2  { bottom: var(--ux4g-pos-inset-px-n-2); }
+.ux4g-bottom-px-n-4  { bottom: var(--ux4g-pos-inset-px-n-4); }
+.ux4g-bottom-px-n-6  { bottom: var(--ux4g-pos-inset-px-n-6); }
+.ux4g-bottom-px-n-8  { bottom: var(--ux4g-pos-inset-px-n-8); }
+.ux4g-bottom-px-n-10 { bottom: var(--ux4g-pos-inset-px-n-10); }
+.ux4g-bottom-px-n-12 { bottom: var(--ux4g-pos-inset-px-n-12); }
+.ux4g-bottom-px-n-14 { bottom: var(--ux4g-pos-inset-px-n-14); }
+.ux4g-bottom-px-n-16 { bottom: var(--ux4g-pos-inset-px-n-16); }
+.ux4g-bottom-px-n-20 { bottom: var(--ux4g-pos-inset-px-n-20); }
+.ux4g-bottom-px-n-24 { bottom: var(--ux4g-pos-inset-px-n-24); }
+.ux4g-bottom-px-n-28 { bottom: var(--ux4g-pos-inset-px-n-28); }
+.ux4g-bottom-px-n-32 { bottom: var(--ux4g-pos-inset-px-n-32); }
+.ux4g-bottom-px-n-36 { bottom: var(--ux4g-pos-inset-px-n-36); }
+.ux4g-bottom-px-n-40 { bottom: var(--ux4g-pos-inset-px-n-40); }
+.ux4g-bottom-px-n-48 { bottom: var(--ux4g-pos-inset-px-n-48); }
+.ux4g-bottom-px-n-56 { bottom: var(--ux4g-pos-inset-px-n-56); }
+.ux4g-bottom-px-n-64 { bottom: var(--ux4g-pos-inset-px-n-64); }
+.ux4g-bottom-px-n-80 { bottom: var(--ux4g-pos-inset-px-n-80); }
+.ux4g-bottom-px-n-96 { bottom: var(--ux4g-pos-inset-px-n-96); }
+
+/* --- Negative Start --- */
+.ux4g-start-px-n-2  { inset-inline-start: var(--ux4g-pos-inset-px-n-2); }
+.ux4g-start-px-n-4  { inset-inline-start: var(--ux4g-pos-inset-px-n-4); }
+.ux4g-start-px-n-6  { inset-inline-start: var(--ux4g-pos-inset-px-n-6); }
+.ux4g-start-px-n-8  { inset-inline-start: var(--ux4g-pos-inset-px-n-8); }
+.ux4g-start-px-n-10 { inset-inline-start: var(--ux4g-pos-inset-px-n-10); }
+.ux4g-start-px-n-12 { inset-inline-start: var(--ux4g-pos-inset-px-n-12); }
+.ux4g-start-px-n-14 { inset-inline-start: var(--ux4g-pos-inset-px-n-14); }
+.ux4g-start-px-n-16 { inset-inline-start: var(--ux4g-pos-inset-px-n-16); }
+.ux4g-start-px-n-20 { inset-inline-start: var(--ux4g-pos-inset-px-n-20); }
+.ux4g-start-px-n-24 { inset-inline-start: var(--ux4g-pos-inset-px-n-24); }
+.ux4g-start-px-n-28 { inset-inline-start: var(--ux4g-pos-inset-px-n-28); }
+.ux4g-start-px-n-32 { inset-inline-start: var(--ux4g-pos-inset-px-n-32); }
+.ux4g-start-px-n-36 { inset-inline-start: var(--ux4g-pos-inset-px-n-36); }
+.ux4g-start-px-n-40 { inset-inline-start: var(--ux4g-pos-inset-px-n-40); }
+.ux4g-start-px-n-48 { inset-inline-start: var(--ux4g-pos-inset-px-n-48); }
+.ux4g-start-px-n-56 { inset-inline-start: var(--ux4g-pos-inset-px-n-56); }
+.ux4g-start-px-n-64 { inset-inline-start: var(--ux4g-pos-inset-px-n-64); }
+.ux4g-start-px-n-80 { inset-inline-start: var(--ux4g-pos-inset-px-n-80); }
+.ux4g-start-px-n-96 { inset-inline-start: var(--ux4g-pos-inset-px-n-96); }
+
+/* --- Negative End --- */
+.ux4g-end-px-n-2  { inset-inline-end: var(--ux4g-pos-inset-px-n-2); }
+.ux4g-end-px-n-4  { inset-inline-end: var(--ux4g-pos-inset-px-n-4); }
+.ux4g-end-px-n-6  { inset-inline-end: var(--ux4g-pos-inset-px-n-6); }
+.ux4g-end-px-n-8  { inset-inline-end: var(--ux4g-pos-inset-px-n-8); }
+.ux4g-end-px-n-10 { inset-inline-end: var(--ux4g-pos-inset-px-n-10); }
+.ux4g-end-px-n-12 { inset-inline-end: var(--ux4g-pos-inset-px-n-12); }
+.ux4g-end-px-n-14 { inset-inline-end: var(--ux4g-pos-inset-px-n-14); }
+.ux4g-end-px-n-16 { inset-inline-end: var(--ux4g-pos-inset-px-n-16); }
+.ux4g-end-px-n-20 { inset-inline-end: var(--ux4g-pos-inset-px-n-20); }
+.ux4g-end-px-n-24 { inset-inline-end: var(--ux4g-pos-inset-px-n-24); }
+.ux4g-end-px-n-28 { inset-inline-end: var(--ux4g-pos-inset-px-n-28); }
+.ux4g-end-px-n-32 { inset-inline-end: var(--ux4g-pos-inset-px-n-32); }
+.ux4g-end-px-n-36 { inset-inline-end: var(--ux4g-pos-inset-px-n-36); }
+.ux4g-end-px-n-40 { inset-inline-end: var(--ux4g-pos-inset-px-n-40); }
+.ux4g-end-px-n-48 { inset-inline-end: var(--ux4g-pos-inset-px-n-48); }
+.ux4g-end-px-n-56 { inset-inline-end: var(--ux4g-pos-inset-px-n-56); }
+.ux4g-end-px-n-64 { inset-inline-end: var(--ux4g-pos-inset-px-n-64); }
+.ux4g-end-px-n-80 { inset-inline-end: var(--ux4g-pos-inset-px-n-80); }
+.ux4g-end-px-n-96 { inset-inline-end: var(--ux4g-pos-inset-px-n-96); }
+
+
+/* =========================================
+   6. TRANSLATE & CENTER TRANSFORMS
+========================================= */
+
+.ux4g-translate-middle   { transform: var(--ux4g-pos-translate-middle); }
+.ux4g-translate-middle-x { transform: var(--ux4g-pos-translate-middle-x); }
+.ux4g-translate-middle-y { transform: var(--ux4g-pos-translate-middle-y); }

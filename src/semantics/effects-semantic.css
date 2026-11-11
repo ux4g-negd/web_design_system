@@ -1,0 +1,92 @@
+/* =========================================
+   UX4G EFFECTS & FILTERS SEMANTIC TOKENS
+   Semantic backdrop filter and overlay states
+========================================= */
+
+:root {
+  /* =========================================
+     1. DEFAULT FILTER ROLES
+  ========================================= */
+  --ux4g-backdrop-blur-default:     var(--ux4g-backdrop-blur-val-base);
+  --ux4g-backdrop-saturate-default: var(--ux4g-backdrop-saturate-val-100);
+  --ux4g-brightness-default:        var(--ux4g-brightness-val-100);
+  --ux4g-mix-blend-default:         var(--ux4g-mix-blend-normal);
+  --ux4g-bg-blend-default:          var(--ux4g-bg-blend-normal);
+
+  /* =========================================
+     2. BACKDROP BLUR SCALE
+  ========================================= */
+  --ux4g-backdrop-blur-val-none: blur(var(--ux4g-backdrop-blur-none));
+  --ux4g-backdrop-blur-val-xs:   blur(var(--ux4g-backdrop-blur-xs));
+  --ux4g-backdrop-blur-val-sm:   blur(var(--ux4g-backdrop-blur-sm));
+  --ux4g-backdrop-blur-val-base: blur(var(--ux4g-backdrop-blur-base));
+  --ux4g-backdrop-blur-val-md:   blur(var(--ux4g-backdrop-blur-md));
+  --ux4g-backdrop-blur-val-lg:   blur(var(--ux4g-backdrop-blur-lg));
+  --ux4g-backdrop-blur-val-xl:   blur(var(--ux4g-backdrop-blur-xl));
+  --ux4g-backdrop-blur-val-2xl:  blur(var(--ux4g-backdrop-blur-2xl));
+  --ux4g-backdrop-blur-val-3xl:  blur(var(--ux4g-backdrop-blur-3xl));
+
+  /* =========================================
+     3. BACKDROP SATURATE SCALE
+  ========================================= */
+  --ux4g-backdrop-saturate-val-0:   saturate(var(--ux4g-backdrop-saturate-0));
+  --ux4g-backdrop-saturate-val-50:  saturate(var(--ux4g-backdrop-saturate-50));
+  --ux4g-backdrop-saturate-val-100: saturate(var(--ux4g-backdrop-saturate-100));
+  --ux4g-backdrop-saturate-val-150: saturate(var(--ux4g-backdrop-saturate-150));
+  --ux4g-backdrop-saturate-val-200: saturate(var(--ux4g-backdrop-saturate-200));
+
+  /* =========================================
+     4. BRIGHTNESS SCALE
+  ========================================= */
+  --ux4g-brightness-val-0:   brightness(var(--ux4g-brightness-0));
+  --ux4g-brightness-val-50:  brightness(var(--ux4g-brightness-50));
+  --ux4g-brightness-val-75:  brightness(var(--ux4g-brightness-75));
+  --ux4g-brightness-val-90:  brightness(var(--ux4g-brightness-90));
+  --ux4g-brightness-val-95:  brightness(var(--ux4g-brightness-95));
+  --ux4g-brightness-val-100: brightness(var(--ux4g-brightness-100));
+  --ux4g-brightness-val-105: brightness(var(--ux4g-brightness-105));
+  --ux4g-brightness-val-110: brightness(var(--ux4g-brightness-110));
+  --ux4g-brightness-val-125: brightness(var(--ux4g-brightness-125));
+  --ux4g-brightness-val-150: brightness(var(--ux4g-brightness-150));
+  --ux4g-brightness-val-200: brightness(var(--ux4g-brightness-200));
+
+  /* =========================================
+     5. MIX BLEND MODES
+  ========================================= */
+  --ux4g-mix-blend-normal:      var(--ux4g-blend-normal);
+  --ux4g-mix-blend-multiply:    var(--ux4g-blend-multiply);
+  --ux4g-mix-blend-screen:      var(--ux4g-blend-screen);
+  --ux4g-mix-blend-overlay:     var(--ux4g-blend-overlay);
+  --ux4g-mix-blend-darken:      var(--ux4g-blend-darken);
+  --ux4g-mix-blend-lighten:     var(--ux4g-blend-lighten);
+  --ux4g-mix-blend-color-dodge: var(--ux4g-blend-color-dodge);
+  --ux4g-mix-blend-color-burn:  var(--ux4g-blend-color-burn);
+  --ux4g-mix-blend-hard-light:  var(--ux4g-blend-hard-light);
+  --ux4g-mix-blend-soft-light:  var(--ux4g-blend-soft-light);
+  --ux4g-mix-blend-difference:  var(--ux4g-blend-difference);
+  --ux4g-mix-blend-exclusion:   var(--ux4g-blend-exclusion);
+  --ux4g-mix-blend-hue:         var(--ux4g-blend-hue);
+  --ux4g-mix-blend-saturation:  var(--ux4g-blend-saturation);
+  --ux4g-mix-blend-color:       var(--ux4g-blend-color);
+  --ux4g-mix-blend-luminosity:  var(--ux4g-blend-luminosity);
+
+  /* =========================================
+     6. BACKGROUND BLEND MODES
+  ========================================= */
+  --ux4g-bg-blend-normal:      var(--ux4g-blend-normal);
+  --ux4g-bg-blend-multiply:    var(--ux4g-blend-multiply);
+  --ux4g-bg-blend-screen:      var(--ux4g-blend-screen);
+  --ux4g-bg-blend-overlay:     var(--ux4g-blend-overlay);
+  --ux4g-bg-blend-darken:      var(--ux4g-blend-darken);
+  --ux4g-bg-blend-lighten:     var(--ux4g-blend-lighten);
+  --ux4g-bg-blend-color-dodge: var(--ux4g-blend-color-dodge);
+  --ux4g-bg-blend-color-burn:  var(--ux4g-blend-color-burn);
+  --ux4g-bg-blend-hard-light:  var(--ux4g-blend-hard-light);
+  --ux4g-bg-blend-soft-light:  var(--ux4g-blend-soft-light);
+  --ux4g-bg-blend-difference:  var(--ux4g-blend-difference);
+  --ux4g-bg-blend-exclusion:   var(--ux4g-blend-exclusion);
+  --ux4g-bg-blend-hue:         var(--ux4g-blend-hue);
+  --ux4g-bg-blend-saturation:  var(--ux4g-blend-saturation);
+  --ux4g-bg-blend-color:       var(--ux4g-blend-color);
+  --ux4g-bg-blend-luminosity:  var(--ux4g-blend-luminosity);
+}

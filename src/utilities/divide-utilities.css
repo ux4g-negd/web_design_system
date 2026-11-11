@@ -1,0 +1,54 @@
+/* =========================================
+   UX4G DIVIDE UTILITIES
+
+   1. Divide Base
+   2. Divide X Width
+   3. Divide Y Width
+   4. Divide Style
+   5. Divide Color
+========================================= */
+
+/* =========================================
+   1. DIVIDE BASE
+========================================= */
+
+.ux4g-divide-x > * + * { border-inline-start: var(--ux4g-divide-width-default) solid var(--ux4g-border-current, var(--ux4g-divide-color-default)); }
+.ux4g-divide-y > * + * { border-block-start: var(--ux4g-divide-width-default) solid var(--ux4g-border-current, var(--ux4g-divide-color-default)); }
+
+/* =========================================
+   2. DIVIDE X WIDTH
+========================================= */
+
+.ux4g-divide-x-0 > * + * { border-inline-start-width: var(--ux4g-divide-width-none); }
+.ux4g-divide-x-1 > * + * { border-inline-start-width: var(--ux4g-divide-width-sm); }
+.ux4g-divide-x-2 > * + * { border-inline-start-width: var(--ux4g-divide-width-md); }
+.ux4g-divide-x-3 > * + * { border-inline-start-width: var(--ux4g-divide-width-lg); }
+.ux4g-divide-x-4 > * + * { border-inline-start-width: var(--ux4g-divide-width-xl); }
+
+/* =========================================
+   3. DIVIDE Y WIDTH
+========================================= */
+
+.ux4g-divide-y-0 > * + * { border-block-start-width: var(--ux4g-divide-width-none); }
+.ux4g-divide-y-1 > * + * { border-block-start-width: var(--ux4g-divide-width-sm); }
+.ux4g-divide-y-2 > * + * { border-block-start-width: var(--ux4g-divide-width-md); }
+.ux4g-divide-y-3 > * + * { border-block-start-width: var(--ux4g-divide-width-lg); }
+.ux4g-divide-y-4 > * + * { border-block-start-width: var(--ux4g-divide-width-xl); }
+
+/* =========================================
+   4. DIVIDE STYLE
+========================================= */
+
+.ux4g-divide-solid > * + * { border-style: solid; }
+.ux4g-divide-dashed > * + * { border-style: dashed; }
+.ux4g-divide-dotted > * + * { border-style: dotted; }
+.ux4g-divide-none > * + * { border-style: none; }
+
+/* =========================================
+   5. DIVIDE COLOR
+========================================= */
+
+.ux4g-divide-neutral > * + * { --ux4g-border-current: var(--ux4g-divide-color-default); }
+.ux4g-divide-subtle > * + *  { --ux4g-border-current: var(--ux4g-divide-color-subtle); }
+.ux4g-divide-strong > * + *  { --ux4g-border-current: var(--ux4g-divide-color-strong); }
+.ux4g-divide-primary > * + * { --ux4g-border-current: var(--ux4g-divide-color-primary); }

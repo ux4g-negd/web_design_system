@@ -1,0 +1,37 @@
+/*
+ * UX4G Design System — Master CSS Entry
+ *
+ * Layer order (MUST NOT be changed):
+ *   1. Reset
+ *   2. Tokens       (CSS custom properties — primitive values)
+ *   3. Semantic     (CSS custom properties — semantic aliases)
+ *   4. Foundations  (fonts, icons)
+ *   5. Utilities    (single-purpose helper classes)
+ *   6. Components   (multi-class component patterns)
+ *   7. Layout       (grid, container)
+ *
+ * This file is the single import point for build-css.mjs.
+ * Do NOT import individual layers directly in application code —
+ * always use the pre-built styles/ux4g.css bundle.
+ */
+
+/* 1. Reset */
+/* (inlined by build-css.mjs via postcss-import) */
+
+/* 2. Tokens */
+/* (inlined by build-css.mjs via postcss-import) */
+
+/* 3. Semantic */
+/* (inlined by build-css.mjs via postcss-import) */
+
+/* 4. Foundations */
+/* (inlined by build-css.mjs via postcss-import) */
+
+/* 5. Utilities */
+@import "./utilities/index.css";
+
+/* 6. Components */
+@import "./components/index.css";
+
+/* 7. Layout */
+/* (inlined by build-css.mjs via postcss-import) */

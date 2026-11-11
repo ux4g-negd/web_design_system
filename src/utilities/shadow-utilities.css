@@ -1,0 +1,21 @@
+/* =========================================
+   UX4G SHADOW & ELEVATION UTILITIES
+
+   1. Elevation Levels (L0 - L4)
+========================================= */
+
+
+/* =========================================
+   1. SHADOW LEVELS
+========================================= */
+
+[class^="ux4g-shadow-"],
+[class*=" ux4g-shadow-"] {
+  box-shadow: var(--ux4g-shadow-current, none);
+}
+
+.ux4g-shadow-l0 { --ux4g-shadow-current: var(--ux4g-shadow-l0); }
+.ux4g-shadow-l1 { --ux4g-shadow-current: var(--ux4g-shadow-l1); }
+.ux4g-shadow-l2 { --ux4g-shadow-current: var(--ux4g-shadow-l2); }
+.ux4g-shadow-l3 { --ux4g-shadow-current: var(--ux4g-shadow-l3); }
+.ux4g-shadow-l4 { --ux4g-shadow-current: var(--ux4g-shadow-l4); }

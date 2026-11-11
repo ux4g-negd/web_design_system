@@ -1,0 +1,114 @@
+/* =========================================
+   UX4G BORDER UTILITIES
+
+   1. Border Base
+   2. Border Width
+   3. Border Top
+   4. Border Inline End
+   5. Border Bottom
+   6. Border Inline Start
+   7. Border Style
+   8. Border Transparent
+   9. Border Color
+========================================= */
+
+
+/* =========================================
+   1. BORDER BASE
+========================================= */
+
+.ux4g-b-0 { border-width: var(--ux4g-border-width-none); }
+.ux4g-b-1 { border-style: solid; border-width: var(--ux4g-border-width-sm); border-color: var(--ux4g-border-color-neutral-default); }
+.ux4g-b-2 { border-style: solid; border-width: var(--ux4g-border-width-md); border-color: var(--ux4g-border-color-neutral-default); }
+.ux4g-b-3 { border-style: solid; border-width: var(--ux4g-border-width-lg); border-color: var(--ux4g-border-color-neutral-default); }
+.ux4g-b-4 { border-style: solid; border-width: var(--ux4g-border-width-xl); border-color: var(--ux4g-border-color-neutral-default); }
+.ux4g-b-8 { border-style: solid; border-width: var(--ux4g-border-width-2xl); border-color: var(--ux4g-border-color-neutral-default); }
+
+
+/* =========================================
+   2. BORDER TOP
+========================================= */
+
+.ux4g-bt-0 { border-top: 0; }
+.ux4g-bt-1 { border-top: var(--ux4g-border-width-sm) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+.ux4g-bt-2 { border-top: var(--ux4g-border-width-md) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+.ux4g-bt-3 { border-top: var(--ux4g-border-width-lg) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+.ux4g-bt-4 { border-top: var(--ux4g-border-width-xl) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+.ux4g-bt-8 { border-top: var(--ux4g-border-width-2xl) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+
+
+/* =========================================
+   3. BORDER INLINE END
+========================================= */
+
+.ux4g-br-0 { border-inline-end: 0; }
+.ux4g-br-1 { border-inline-end: var(--ux4g-border-width-sm) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+.ux4g-br-2 { border-inline-end: var(--ux4g-border-width-md) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+.ux4g-br-3 { border-inline-end: var(--ux4g-border-width-lg) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+.ux4g-br-4 { border-inline-end: var(--ux4g-border-width-xl) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+.ux4g-br-8 { border-inline-end: var(--ux4g-border-width-2xl) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+
+
+/* =========================================
+   4. BORDER BOTTOM
+========================================= */
+
+.ux4g-bb-0 { border-bottom: 0; }
+.ux4g-bb-1 { border-bottom: var(--ux4g-border-width-sm) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+.ux4g-bb-2 { border-bottom: var(--ux4g-border-width-md) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+.ux4g-bb-3 { border-bottom: var(--ux4g-border-width-lg) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+.ux4g-bb-4 { border-bottom: var(--ux4g-border-width-xl) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+.ux4g-bb-8 { border-bottom: var(--ux4g-border-width-2xl) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+
+
+/* =========================================
+   5. BORDER INLINE START
+========================================= */
+
+.ux4g-bl-0 { border-inline-start: 0; }
+.ux4g-bl-1 { border-inline-start: var(--ux4g-border-width-sm) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+.ux4g-bl-2 { border-inline-start: var(--ux4g-border-width-md) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+.ux4g-bl-3 { border-inline-start: var(--ux4g-border-width-lg) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+.ux4g-bl-4 { border-inline-start: var(--ux4g-border-width-xl) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+.ux4g-bl-8 { border-inline-start: var(--ux4g-border-width-2xl) solid var(--ux4g-border-current, var(--ux4g-border-color-neutral-default)); }
+
+
+/* =========================================
+   6. BORDER STYLE
+========================================= */
+
+.ux4g-border-dashed { border-style: dashed; }
+.ux4g-border-dotted { border-style: dotted; }
+
+
+/* =========================================
+   7. BORDER TRANSPARENT
+========================================= */
+
+.ux4g-bt-transparent { border-top-color: transparent !important; }
+.ux4g-br-transparent { border-right-color: transparent !important; border-inline-end-color: transparent !important; }
+.ux4g-bb-transparent { border-bottom-color: transparent !important; }
+.ux4g-bl-transparent { border-left-color: transparent !important; border-inline-start-color: transparent !important; }
+.ux4g-b-transparent { --ux4g-border-current: transparent !important; border-color: transparent !important; }
+
+
+/* =========================================
+   8. BORDER COLOR
+========================================= */
+
+.ux4g-border-neutral-subtle { --ux4g-border-current: var(--ux4g-border-color-neutral-subtle); border-color: var(--ux4g-border-color-neutral-subtle); }
+.ux4g-border-neutral-strong { --ux4g-border-current: var(--ux4g-border-color-neutral-strong); border-color: var(--ux4g-border-color-neutral-strong); }
+.ux4g-border-primary { --ux4g-border-current: var(--ux4g-border-color-primary-default); border-color: var(--ux4g-border-color-primary-default); }
+.ux4g-border-primary-strong { --ux4g-border-current: var(--ux4g-border-color-primary-strong); border-color: var(--ux4g-border-color-primary-strong); }
+.ux4g-border-secondary { --ux4g-border-current: var(--ux4g-border-color-secondary-default); border-color: var(--ux4g-border-color-secondary-default); }
+.ux4g-border-tertiary { --ux4g-border-current: var(--ux4g-border-color-tertiary-default); border-color: var(--ux4g-border-color-tertiary-default); }
+.ux4g-border-success { --ux4g-border-current: var(--ux4g-border-color-success-default); border-color: var(--ux4g-border-color-success-default); }
+.ux4g-border-success-strong { --ux4g-border-current: var(--ux4g-border-color-success-strong); border-color: var(--ux4g-border-color-success-strong); }
+.ux4g-border-info { --ux4g-border-current: var(--ux4g-border-color-info-default); border-color: var(--ux4g-border-color-info-default); }
+.ux4g-border-info-strong { --ux4g-border-current: var(--ux4g-border-color-info-strong); border-color: var(--ux4g-border-color-info-strong); }
+.ux4g-border-error { --ux4g-border-current: var(--ux4g-border-color-error-default); border-color: var(--ux4g-border-color-error-default); }
+.ux4g-border-error-strong { --ux4g-border-current: var(--ux4g-border-color-error-strong); border-color: var(--ux4g-border-color-error-strong); }
+.ux4g-border-warning { --ux4g-border-current: var(--ux4g-border-color-warning-default); border-color: var(--ux4g-border-color-warning-default); }
+.ux4g-border-warning-strong { --ux4g-border-current: var(--ux4g-border-color-warning-strong); border-color: var(--ux4g-border-color-warning-strong); }
+.ux4g-border-neutral-elevated { --ux4g-border-current: var(--ux4g-border-color-neutral-elevated); border-color: var(--ux4g-border-color-neutral-elevated); }
+.ux4g-border-control { --ux4g-border-current: var(--ux4g-control-border-default); border-color: var(--ux4g-control-border-default); }

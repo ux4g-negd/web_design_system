@@ -1,0 +1,102 @@
+/* =========================================
+   UX4G MASTER UTILITIES BUNDLE
+   
+   A central entry point importing all atomic utility classes.
+   Designed for modular consumption and AI/LLM context indexing.
+
+   Table of Contents:
+     1. Typography & Text
+     2. Layout & Spacing
+     3. Flexbox & Alignment
+     4. Visual Effects & Borders
+     5. Interactions & States
+     6. Transitions & Animations
+     7. Transforms
+     8. Filters & Effects
+
+   Breakpoints Reference:
+     xs (base):  <576px
+     sm:         ≥576px
+     md:         ≥768px
+     lg:         ≥992px
+     xl:         ≥1200px
+     2xl:        ≥1400px
+========================================= */
+
+
+/* =========================================
+   1. TYPOGRAPHY & TEXT
+========================================= */
+@import "./text-utilities.css";
+@import "./line-clamp-utilities.css";
+@import "./typography-utilities.css";
+@import "./typescale-utilities.css";
+@import "./colors-utilities.css";
+@import "./vertical-align-utilities.css";
+
+
+/* =========================================
+   2. LAYOUT & SPACING
+========================================= */
+@import "./display-utilities.css";
+@import "./position-utilities.css";
+@import "./position-responsive-utilities.css";
+@import "./size-utilities.css";
+@import "./padding-utilities.css";
+@import "./margin-utilities.css";
+@import "./gap-utilities.css";
+@import "./gutter-utilities.css";
+@import "./child-spacing-utilities.css";
+@import "./overflow-utilities.css";
+@import "./scroll-utilities.css";
+@import "./float-utilities.css";
+@import "./object-fit-utilities.css";
+@import "./visibility-utilities.css";
+@import "./z-index-utilities.css";
+
+
+/* =========================================
+   3. FLEXBOX & ALIGNMENT
+========================================= */
+@import "./flex-utilities.css";
+@import "./align-utilities.css";
+@import "./justify-utilities.css";
+@import "./order-utilities.css";
+
+
+/* =========================================
+   4. VISUAL EFFECTS & BORDERS
+========================================= */
+@import "./background-utilities.css";
+@import "./border-utilities.css";
+@import "./radius-utilities.css";
+@import "./outline-utilities.css";
+@import "./divide-utilities.css";
+@import "./ring-utilities.css";
+@import "./shadow-utilities.css";
+@import "./opacity-utilities.css";
+@import "./blur-utilities.css";
+
+
+/* =========================================
+   5. INTERACTIONS & STATES
+========================================= */
+@import "./interaction-utilities.css";
+
+
+/* =========================================
+   6. TRANSITIONS & ANIMATIONS
+========================================= */
+@import "./transition-utilities.css";
+
+
+/* =========================================
+   7. TRANSFORMS
+========================================= */
+@import "./transform-utilities.css";
+
+
+/* =========================================
+   8. FILTERS & EFFECTS
+========================================= */
+@import "./effects-utilities.css";

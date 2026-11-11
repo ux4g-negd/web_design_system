@@ -1,0 +1,156 @@
+/* =========================================
+   UX4G TEXT UTILITIES
+
+   1. Text Alignment
+   2. Text Wrapping
+   3. Word Break & Overflow Wrap
+   4. Text Transform
+   5. Text Decoration
+   6. Whitespace
+   7. Letter Spacing (Tracking)
+   8. Responsive Text Alignment
+
+   Breakpoints:
+     xs (base): <576px
+     sm:        ≥576px
+     md:        ≥768px
+     lg:        ≥992px
+     xl:        ≥1200px
+     2xl:       ≥1400px
+========================================= */
+
+
+/* =========================================
+   1. TEXT ALIGNMENT
+========================================= */
+
+.ux4g-text-start   { text-align: var(--ux4g-ta-start); }
+.ux4g-text-center  { text-align: var(--ux4g-ta-center); }
+.ux4g-text-end     { text-align: var(--ux4g-ta-end); }
+.ux4g-text-justify { text-align: var(--ux4g-ta-justify); }
+
+
+/* =========================================
+   2. TEXT WRAPPING
+========================================= */
+
+.ux4g-text-wrap   { white-space: var(--ux4g-ws-normal); }
+.ux4g-text-nowrap { white-space: var(--ux4g-ws-nowrap) !important; }
+
+
+/* =========================================
+   3. WORD BREAK & OVERFLOW WRAP
+========================================= */
+
+.ux4g-break-normal { overflow-wrap: var(--ux4g-ow-normal); word-break: var(--ux4g-wb-normal); }
+.ux4g-break-words  { overflow-wrap: var(--ux4g-ow-break); }
+.ux4g-break-all    { word-break: var(--ux4g-wb-all); }
+.ux4g-break-keep   { word-break: var(--ux4g-wb-keep); }
+.ux4g-text-break   { overflow-wrap: var(--ux4g-ow-break); word-break: var(--ux4g-wb-word); }
+
+
+/* =========================================
+   4. TEXT TRANSFORM
+========================================= */
+
+.ux4g-text-lowercase  { text-transform: var(--ux4g-tt-lowercase); }
+.ux4g-text-uppercase  { text-transform: var(--ux4g-tt-uppercase); }
+.ux4g-text-capitalize { text-transform: var(--ux4g-tt-capitalize); }
+.ux4g-text-none       { text-transform: var(--ux4g-tt-none); }
+
+
+/* =========================================
+   5. TEXT DECORATION
+========================================= */
+
+.ux4g-text-underline    { text-decoration: var(--ux4g-td-underline) !important; }
+.ux4g-text-line-through { text-decoration: var(--ux4g-td-line-through) !important; }
+.ux4g-text-no-underline { text-decoration: var(--ux4g-td-none) !important; }
+
+
+/* =========================================
+   6. WHITESPACE
+========================================= */
+
+.ux4g-whitespace-normal   { white-space: var(--ux4g-ws-normal); }
+.ux4g-whitespace-nowrap   { white-space: var(--ux4g-ws-nowrap); }
+.ux4g-whitespace-pre      { white-space: var(--ux4g-ws-pre); }
+.ux4g-whitespace-pre-line { white-space: var(--ux4g-ws-pre-line); }
+.ux4g-whitespace-pre-wrap { white-space: var(--ux4g-ws-pre-wrap); }
+
+
+/* =========================================
+   7. LETTER SPACING (TRACKING)
+========================================= */
+
+.ux4g-tracking-tighter { letter-spacing: var(--ux4g-ls-tighter); }
+.ux4g-tracking-tight   { letter-spacing: var(--ux4g-ls-tight); }
+.ux4g-tracking-normal  { letter-spacing: var(--ux4g-ls-normal); }
+.ux4g-tracking-wide    { letter-spacing: var(--ux4g-ls-wide); }
+.ux4g-tracking-wider   { letter-spacing: var(--ux4g-ls-wider); }
+.ux4g-tracking-widest  { letter-spacing: var(--ux4g-ls-widest); }
+
+
+/* =========================================
+   8. RESPONSIVE TEXT ALIGNMENT
+========================================= */
+
+
+/* =========================================
+   SM — ≥576px
+========================================= */
+
+@media (min-width: 576px) {
+  .ux4g-sm-text-start   { text-align: var(--ux4g-ta-start); }
+  .ux4g-sm-text-center  { text-align: var(--ux4g-ta-center); }
+  .ux4g-sm-text-end     { text-align: var(--ux4g-ta-end); }
+  .ux4g-sm-text-justify { text-align: var(--ux4g-ta-justify); }
+}
+
+
+/* =========================================
+   MD — ≥768px
+========================================= */
+
+@media (min-width: 768px) {
+  .ux4g-md-text-start   { text-align: var(--ux4g-ta-start); }
+  .ux4g-md-text-center  { text-align: var(--ux4g-ta-center); }
+  .ux4g-md-text-end     { text-align: var(--ux4g-ta-end); }
+  .ux4g-md-text-justify { text-align: var(--ux4g-ta-justify); }
+}
+
+
+/* =========================================
+   LG — ≥992px
+========================================= */
+
+@media (min-width: 992px) {
+  .ux4g-lg-text-start   { text-align: var(--ux4g-ta-start); }
+  .ux4g-lg-text-center  { text-align: var(--ux4g-ta-center); }
+  .ux4g-lg-text-end     { text-align: var(--ux4g-ta-end); }
+  .ux4g-lg-text-justify { text-align: var(--ux4g-ta-justify); }
+}
+
+
+/* =========================================
+   XL — ≥1200px
+========================================= */
+
+@media (min-width: 1200px) {
+  .ux4g-xl-text-start   { text-align: var(--ux4g-ta-start); }
+  .ux4g-xl-text-center  { text-align: var(--ux4g-ta-center); }
+  .ux4g-xl-text-end     { text-align: var(--ux4g-ta-end); }
+  .ux4g-xl-text-justify { text-align: var(--ux4g-ta-justify); }
+}
+
+
+/* =========================================
+   2XL — ≥1400px
+========================================= */
+
+@media (min-width: 1400px) {
+  .ux4g-2xl-text-start   { text-align: var(--ux4g-ta-start); }
+  .ux4g-2xl-text-center  { text-align: var(--ux4g-ta-center); }
+  .ux4g-2xl-text-end     { text-align: var(--ux4g-ta-end); }
+  .ux4g-2xl-text-justify { text-align: var(--ux4g-ta-justify); }
+}

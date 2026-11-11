@@ -1,0 +1,63 @@
+/* =========================================
+   UX4G RING UTILITIES
+
+   Focus ring utilities for accessible keyboard navigation (WCAG 2.4.7).
+
+   1. Base Focus Ring
+   2. Ring Width
+   3. Ring Colors
+   4. Ring Offset
+========================================= */
+
+
+/* =========================================
+   1. BASE FOCUS RING
+========================================= */
+
+[class*="ux4g-ring"] {
+  --ux4g-ring-inset: ;
+  --ux4g-ring-width: var(--ux4g-ring-width-default);
+  --ux4g-ring-offset-width: var(--ux4g-ring-offset-default);
+  --ux4g-ring-offset-color: var(--ux4g-ring-offset-color-default);
+  --ux4g-ring-color: var(--ux4g-ring-color-primary);
+
+  box-shadow: var(--ux4g-ring-inset) 0 0 0 var(--ux4g-ring-offset-width) var(--ux4g-ring-offset-color),
+              var(--ux4g-ring-inset) 0 0 0 calc(var(--ux4g-ring-width) + var(--ux4g-ring-offset-width)) var(--ux4g-ring-color);
+}
+
+
+/* =========================================
+   2. RING WIDTH
+========================================= */
+
+.ux4g-ring-0     { --ux4g-ring-width: var(--ux4g-ring-w-0); }
+.ux4g-ring-1     { --ux4g-ring-width: var(--ux4g-ring-w-1); }
+.ux4g-ring-2     { --ux4g-ring-width: var(--ux4g-ring-w-2); }
+.ux4g-ring-3      { --ux4g-ring-width: var(--ux4g-ring-w-3); }
+.ux4g-ring-4     { --ux4g-ring-width: var(--ux4g-ring-w-4); }
+.ux4g-ring-8     { --ux4g-ring-width: var(--ux4g-ring-w-8); }
+.ux4g-ring-inset { --ux4g-ring-inset: inset; }
+
+
+/* =========================================
+   3. RING COLORS
+========================================= */
+
+.ux4g-ring-primary         { --ux4g-ring-color: var(--ux4g-ring-color-primary); }
+.ux4g-ring-primary-strong  { --ux4g-ring-color: var(--ux4g-ring-color-primary-strong); }
+.ux4g-ring-success         { --ux4g-ring-color: var(--ux4g-ring-color-success); }
+.ux4g-ring-error           { --ux4g-ring-color: var(--ux4g-ring-color-error); }
+.ux4g-ring-warning         { --ux4g-ring-color: var(--ux4g-ring-color-warning); }
+.ux4g-ring-info            { --ux4g-ring-color: var(--ux4g-ring-color-info); }
+.ux4g-ring-neutral         { --ux4g-ring-color: var(--ux4g-ring-color-neutral); }
+.ux4g-ring-transparent     { --ux4g-ring-color: transparent; }
+
+
+/* =========================================
+   4. RING OFFSET
+========================================= */
+
+.ux4g-ring-offset-0 { --ux4g-ring-offset-width: var(--ux4g-ring-offset-0); }
+.ux4g-ring-offset-1 { --ux4g-ring-offset-width: var(--ux4g-ring-offset-1); }
+.ux4g-ring-offset-2 { --ux4g-ring-offset-width: var(--ux4g-ring-offset-2); }
+.ux4g-ring-offset-4 { --ux4g-ring-offset-width: var(--ux4g-ring-offset-4); }

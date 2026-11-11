@@ -1,0 +1,23 @@
+/* =========================================
+   UX4G INTERACTION SEMANTIC TOKENS
+   Semantic cursor, selection, and pointer states
+========================================= */
+
+:root {
+  /* Cursor Semantics */
+  --ux4g-cursor-default:     default;
+  --ux4g-cursor-interactive: pointer;
+  --ux4g-cursor-disabled:    not-allowed;
+  --ux4g-cursor-text-input:  text;
+  --ux4g-cursor-draggable:   grab;
+  --ux4g-cursor-dragging:    grabbing;
+
+  /* Select Semantics */
+  --ux4g-select-default:     auto;
+  --ux4g-select-prevent:     none;
+  --ux4g-select-content:     text;
+
+  /* Pointer Events Semantics */
+  --ux4g-pointer-events-interactive: auto;
+  --ux4g-pointer-events-disabled:    none;
+}

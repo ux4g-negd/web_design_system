@@ -1,0 +1,10 @@
+ :focus-visible {
+    position: var(--ux4g-pos-relative);
+     outline: var(--ux4g-border-width-md) solid var(--ux4g-border-color-primary-strong);
+     outline-offset: 2px;
+}
+ /* :focus {
+    position: var(--ux4g-pos-relative);
+     outline: var(--ux4g-border-width-md) solid var(--ux4g-border-color-primary-strong);
+     outline-offset: 2px;
+} */

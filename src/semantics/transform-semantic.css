@@ -1,0 +1,44 @@
+/* =========================================
+   UX4G TRANSFORM SEMANTIC TOKENS
+
+   1. Translate Semantic Values
+   2. Rotate Semantic Values
+========================================= */
+
+:root {
+
+  /* =========================================
+     1. TRANSLATE SEMANTIC VALUES
+  ========================================= */
+  --ux4g-tx-0:     var(--ux4g-translate-0);
+  --ux4g-tx-0-5:   var(--ux4g-translate-0-5);
+  --ux4g-tx-1:     var(--ux4g-translate-1);
+  --ux4g-tx-2:     var(--ux4g-translate-2);
+  --ux4g-tx-3:     var(--ux4g-translate-3);
+  --ux4g-tx-4:     var(--ux4g-translate-4);
+  --ux4g-tx-5:     var(--ux4g-translate-5);
+  --ux4g-tx-6:     var(--ux4g-translate-6);
+  --ux4g-tx-8:     var(--ux4g-translate-8);
+  --ux4g-tx-10:    var(--ux4g-translate-10);
+  --ux4g-tx-12:    var(--ux4g-translate-12);
+  --ux4g-tx-16:    var(--ux4g-translate-16);
+  --ux4g-tx-20:    var(--ux4g-translate-20);
+  --ux4g-tx-24:    var(--ux4g-translate-24);
+  --ux4g-tx-full:  var(--ux4g-translate-full);
+  --ux4g-tx-1\/2:  var(--ux4g-translate-1\/2);
+
+
+  /* =========================================
+     2. ROTATE SEMANTIC VALUES
+  ========================================= */
+  --ux4g-rot-0:    var(--ux4g-rotate-0);
+  --ux4g-rot-1:    var(--ux4g-rotate-1);
+  --ux4g-rot-2:    var(--ux4g-rotate-2);
+  --ux4g-rot-3:    var(--ux4g-rotate-3);
+  --ux4g-rot-6:    var(--ux4g-rotate-6);
+  --ux4g-rot-12:   var(--ux4g-rotate-12);
+  --ux4g-rot-45:   var(--ux4g-rotate-45);
+  --ux4g-rot-90:   var(--ux4g-rotate-90);
+  --ux4g-rot-180:  var(--ux4g-rotate-180);
+
+}

@@ -1,0 +1,38 @@
+/* =========================================
+   UX4G CHILD SPACING UTILITIES
+
+   1. Space X
+   2. Space Y
+========================================= */
+
+
+/* =========================================
+   1. SPACE X
+========================================= */
+
+.ux4g-space-x-0 > * + *   { margin-inline-start: var(--ux4g-spacing-0); }
+.ux4g-space-x-1 > * + *   { margin-inline-start: var(--ux4g-spacing-1); }
+.ux4g-space-x-2 > * + *   { margin-inline-start: var(--ux4g-spacing-2); }
+.ux4g-space-x-3 > * + *   { margin-inline-start: var(--ux4g-spacing-3); }
+.ux4g-space-x-4 > * + *   { margin-inline-start: var(--ux4g-spacing-4); }
+.ux4g-space-x-5 > * + *   { margin-inline-start: var(--ux4g-spacing-5); }
+.ux4g-space-x-6 > * + *   { margin-inline-start: var(--ux4g-spacing-6); }
+.ux4g-space-x-8 > * + *   { margin-inline-start: var(--ux4g-spacing-8); }
+.ux4g-space-x-10 > * + *  { margin-inline-start: var(--ux4g-spacing-10); }
+.ux4g-space-x-12 > * + *  { margin-inline-start: var(--ux4g-spacing-12); }
+
+
+/* =========================================
+   2. SPACE Y
+========================================= */
+
+.ux4g-space-y-0 > * + *   { margin-block-start: var(--ux4g-spacing-0); }
+.ux4g-space-y-1 > * + *   { margin-block-start: var(--ux4g-spacing-1); }
+.ux4g-space-y-2 > * + *   { margin-block-start: var(--ux4g-spacing-2); }
+.ux4g-space-y-3 > * + *   { margin-block-start: var(--ux4g-spacing-3); }
+.ux4g-space-y-4 > * + *   { margin-block-start: var(--ux4g-spacing-4); }
+.ux4g-space-y-5 > * + *   { margin-block-start: var(--ux4g-spacing-5); }
+.ux4g-space-y-6 > * + *   { margin-block-start: var(--ux4g-spacing-6); }
+.ux4g-space-y-8 > * + *   { margin-block-start: var(--ux4g-spacing-8); }
+.ux4g-space-y-10 > * + *  { margin-block-start: var(--ux4g-spacing-10); }
+.ux4g-space-y-12 > * + *  { margin-block-start: var(--ux4g-spacing-12); }

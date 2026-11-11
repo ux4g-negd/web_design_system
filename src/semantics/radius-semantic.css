@@ -1,0 +1,27 @@
+/* =========================================
+   UX4G RADIUS SEMANTIC TOKENS
+
+   1. Border Radius Scale
+========================================= */
+
+:root {
+
+  /* =========================================
+     1. BORDER RADIUS SCALE
+  ========================================= */
+  --ux4g-radius-none: var(--ux4g-radius-0);
+  --ux4g-radius-xs:   var(--ux4g-radius-1);        /* 2px */
+  --ux4g-radius-sm:   var(--ux4g-radius-2);        /* 4px */
+  --ux4g-radius-md:   var(--ux4g-radius-3);        /* 8px */
+  --ux4g-radius-lg:   var(--ux4g-radius-4);        /* 12px */
+  --ux4g-radius-xl:   var(--ux4g-radius-5);        /* 16px */
+  --ux4g-radius-2xl:  var(--ux4g-radius-6);        /* 24px */
+  --ux4g-radius-full: var(--ux4g-radius-circular);
+
+  /* =========================================
+     2. COMPONENT RADIUS DEFAULTS
+  ========================================= */
+  --ux4g-btn-radius:    var(--ux4g-radius-md);
+  --ux4g-navbar-radius: var(--ux4g-radius-none);
+
+}

@@ -1,0 +1,89 @@
+/* ==========================================================================
+   UX4G SIZE SEMANTIC TOKENS
+   Semantic sizing tokens mapped directly from primitive size tokens.
+   Used for icon dimensions, component heights/widths, and size scale aliases.
+   ========================================================================== */
+
+:root {
+  /* ─── 1. Base Sizing Scale (Numeric Mappings) ─── */
+  --ux4g-sz-8:   var(--ux4g-size-8);    /* 8px   (0.5rem) */
+  --ux4g-sz-10:  var(--ux4g-size-10);   /* 10px  (0.625rem) */
+  --ux4g-sz-11:  var(--ux4g-size-11);   /* 11px  (0.6875rem) */
+  --ux4g-sz-12:  var(--ux4g-size-12);   /* 12px  (0.75rem) */
+  --ux4g-sz-14:  var(--ux4g-size-14);   /* 14px  (0.875rem) */
+  --ux4g-sz-16:  var(--ux4g-size-16);   /* 16px  (1rem) */
+  --ux4g-sz-18:  var(--ux4g-size-18);   /* 18px  (1.125rem) */
+  --ux4g-sz-20:  var(--ux4g-size-20);   /* 20px  (1.25rem) */
+  --ux4g-sz-24:  var(--ux4g-size-24);   /* 24px  (1.5rem) */
+  --ux4g-sz-28:  var(--ux4g-size-28);   /* 28px  (1.75rem) */
+  --ux4g-sz-32:  var(--ux4g-size-32);   /* 32px  (2rem) */
+  --ux4g-sz-36:  var(--ux4g-size-36);   /* 36px  (2.25rem) */
+  --ux4g-sz-40:  var(--ux4g-size-40);   /* 40px  (2.5rem) */
+  --ux4g-sz-48:  var(--ux4g-size-48);   /* 48px  (3rem) */
+  --ux4g-sz-52:  var(--ux4g-size-52);   /* 52px  (3.25rem) */
+  --ux4g-sz-56:  var(--ux4g-size-56);   /* 56px  (3.5rem) */
+  --ux4g-sz-60:  var(--ux4g-size-60);   /* 60px  (3.75rem) */
+  --ux4g-sz-64:  var(--ux4g-size-64);   /* 64px  (4rem) */
+  --ux4g-sz-80:  var(--ux4g-size-80);   /* 80px  (5rem) */
+  --ux4g-sz-120: var(--ux4g-size-120);  /* 120px (7.5rem) */
+
+  /* ─── 2. Extended Sizing Scale (Utility Support) ─── */
+  --ux4g-sz-4:    var(--ux4g-size-4);    /* 4px   (0.25rem) */
+  --ux4g-sz-44:   var(--ux4g-size-44);   /* 44px  (2.75rem) */
+  --ux4g-sz-96:   var(--ux4g-size-96);   /* 96px  (6rem) */
+  --ux4g-sz-100:  var(--ux4g-size-100);  /* 100px (6.25rem) */
+  --ux4g-sz-112:  var(--ux4g-size-112);  /* 112px (7rem) */
+  --ux4g-sz-128:  var(--ux4g-size-128);  /* 128px (8rem) */
+  --ux4g-sz-144:  var(--ux4g-size-144);  /* 144px (9rem) */
+  --ux4g-sz-150:  var(--ux4g-size-150);  /* 150px (9.375rem) */
+  --ux4g-sz-160:  var(--ux4g-size-160);  /* 160px (10rem) */
+  --ux4g-sz-176:  var(--ux4g-size-176);  /* 176px (11rem) */
+  --ux4g-sz-180:  var(--ux4g-size-180);  /* 180px (11.25rem) */
+  --ux4g-sz-192:  var(--ux4g-size-192);  /* 192px (12rem) */
+  --ux4g-sz-200:  var(--ux4g-size-200);  /* 200px (12.5rem) */
+  --ux4g-sz-208:  var(--ux4g-size-208);  /* 208px (13rem) */
+  --ux4g-sz-224:  var(--ux4g-size-224);  /* 224px (14rem) */
+  --ux4g-sz-240:  var(--ux4g-size-240);  /* 240px (15rem) */
+  --ux4g-sz-256:  var(--ux4g-size-256);  /* 256px (16rem) */
+  --ux4g-sz-288:  var(--ux4g-size-288);  /* 288px (18rem) */
+  --ux4g-sz-300:  var(--ux4g-size-300);  /* 300px (18.75rem) */
+  --ux4g-sz-320:  var(--ux4g-size-320);  /* 320px (20rem) */
+  --ux4g-sz-384:  var(--ux4g-size-384);  /* 384px (24rem) */
+  --ux4g-sz-400:  var(--ux4g-size-400);  /* 400px (25rem) */
+  --ux4g-sz-448:  var(--ux4g-size-448);  /* 448px (28rem) */
+  --ux4g-sz-500:  var(--ux4g-size-500);  /* 500px (31.25rem) */
+  --ux4g-sz-512:  var(--ux4g-size-512);  /* 512px (32rem) */
+  --ux4g-sz-550:  var(--ux4g-size-550);  /* 550px (34.375rem) */
+  --ux4g-sz-576:  var(--ux4g-size-576);  /* 576px (36rem) */
+  --ux4g-sz-600:  var(--ux4g-size-600);  /* 600px (37.5rem) */
+  --ux4g-sz-650:  var(--ux4g-size-650);  /* 650px (40.625rem) */
+  --ux4g-sz-672:  var(--ux4g-size-672);  /* 672px (42rem) */
+  --ux4g-sz-700:  var(--ux4g-size-700);  /* 700px (43.75rem) */
+  --ux4g-sz-768:  var(--ux4g-size-768);  /* 768px (48rem) */
+  --ux4g-sz-896:  var(--ux4g-size-896);  /* 896px (56rem) */
+  --ux4g-sz-1024: var(--ux4g-size-1024); /* 1024px (64rem) */
+  --ux4g-sz-1152: var(--ux4g-size-1152); /* 1152px (72rem) */
+  --ux4g-sz-1280: var(--ux4g-size-1280); /* 1280px (80rem) */
+
+  /* ─── 3. Keyword / Layout Sizing ─── */
+  --ux4g-sz-none:     0;
+  --ux4g-sz-full:     100%;
+  --ux4g-sz-half:     50%;
+  --ux4g-sz-auto:     auto;
+  --ux4g-sz-min:      min-content;
+  --ux4g-sz-max:      max-content;
+  --ux4g-sz-fit:      fit-content;
+  --ux4g-sz-screen-w: 100vw;
+  --ux4g-sz-screen-h: 100vh;
+  --ux4g-sz-dvh:      100dvh;
+
+  /* ─── 4. Component Specific Size Aliases ─── */
+  --ux4g-sz-xs:   var(--ux4g-size-24);   /* 24px - Extra small component/avatar */
+  --ux4g-sz-s:    var(--ux4g-size-32);   /* 32px - Small component */
+  --ux4g-sz-base: var(--ux4g-size-36);   /* 36px - Standard input/button base */
+  --ux4g-sz-m:    var(--ux4g-size-40);   /* 40px - Medium component */
+  --ux4g-sz-l:    var(--ux4g-size-48);   /* 48px - Large component */
+  --ux4g-sz-xl:   var(--ux4g-size-64);   /* 64px - Extra large component */
+  --ux4g-sz-2xl:  var(--ux4g-size-80);   /* 80px - 2X Large */
+  --ux4g-sz-3xl:  var(--ux4g-size-120);  /* 120px - 3X Large */
+}

@@ -1,0 +1,19 @@
+/* =========================================
+   UX4G INTERACTION & MOTION PRIMITIVE TOKENS
+========================================= */
+
+:root {
+  /* Transition Durations */
+  --ux4g-transition-duration-fast: 150ms;
+  --ux4g-transition-duration-base: 250ms;
+  --ux4g-transition-duration-slow: 400ms;
+
+  /* Animation Durations */
+  --ux4g-duration-fast: 0.2s;
+  --ux4g-duration-normal: 0.28s;
+
+  /* Timing Functions */
+  --ux4g-transition-timing-ease: ease;
+  --ux4g-transition-timing-linear: linear;
+  --ux4g-transition-timing-in-out: ease-in-out;
+}

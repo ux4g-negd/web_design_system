@@ -1,0 +1,104 @@
+/* =========================================
+   UX4G LINE CLAMP UTILITIES
+
+   Controls multi-line text truncation.
+
+   1. Line Clamp 1
+   2. Line Clamp 2
+   3. Line Clamp 3
+   4. Line Clamp 4
+   5. Line Clamp 5
+   6. Line Clamp 6
+   7. Line Clamp None
+========================================= */
+
+
+/* =========================================
+   1. LINE CLAMP 1
+========================================= */
+
+.ux4g-line-clamp-1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--ux4g-lc-1);
+  line-clamp: var(--ux4g-lc-1);
+  overflow: hidden;
+}
+
+
+/* =========================================
+   2. LINE CLAMP 2
+========================================= */
+
+.ux4g-line-clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--ux4g-lc-2);
+  line-clamp: var(--ux4g-lc-2);
+  overflow: hidden;
+}
+
+
+/* =========================================
+   3. LINE CLAMP 3
+========================================= */
+
+.ux4g-line-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--ux4g-lc-3);
+  line-clamp: var(--ux4g-lc-3);
+  overflow: hidden;
+}
+
+
+/* =========================================
+   4. LINE CLAMP 4
+========================================= */
+
+.ux4g-line-clamp-4 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--ux4g-lc-4);
+  line-clamp: var(--ux4g-lc-4);
+  overflow: hidden;
+}
+
+
+/* =========================================
+   5. LINE CLAMP 5
+========================================= */
+
+.ux4g-line-clamp-5 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--ux4g-lc-5);
+  line-clamp: var(--ux4g-lc-5);
+  overflow: hidden;
+}
+
+
+/* =========================================
+   6. LINE CLAMP 6
+========================================= */
+
+.ux4g-line-clamp-6 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--ux4g-lc-6);
+  line-clamp: var(--ux4g-lc-6);
+  overflow: hidden;
+}
+
+
+/* =========================================
+   7. LINE CLAMP NONE
+========================================= */
+
+.ux4g-line-clamp-none {
+  display: block;
+  -webkit-line-clamp: var(--ux4g-lc-none);
+  line-clamp: var(--ux4g-lc-none);
+  -webkit-box-orient: unset;
+  overflow: visible;
+}

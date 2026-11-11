@@ -1,0 +1,23 @@
+/* =========================================
+   UX4G PADDING PRIMITIVE TOKENS
+========================================= */
+
+:root {
+  --ux4g-padding-token-none: 0;           /* 0px */
+  --ux4g-padding-token-1: 0.125rem;       /* 2px */
+  --ux4g-padding-token-2: 0.25rem;        /* 4px */
+  --ux4g-padding-token-3: 0.375rem;       /* 6px */
+  --ux4g-padding-token-4: 0.5rem;         /* 8px */
+  --ux4g-padding-token-5: 0.75rem;        /* 12px */
+  --ux4g-padding-token-6: 1rem;           /* 16px */
+  --ux4g-padding-token-7: 1.25rem;        /* 20px */
+  --ux4g-padding-token-8: 1.5rem;         /* 24px */
+  --ux4g-padding-token-9: 1.75rem;        /* 28px */
+  --ux4g-padding-token-10: 2rem;          /* 32px */
+  --ux4g-padding-token-11: 2.25rem;       /* 36px */
+  --ux4g-padding-token-12: 2.5rem;        /* 40px */
+  --ux4g-padding-token-13: 3rem;          /* 48px */
+  --ux4g-padding-token-14: 3.5rem;        /* 56px */
+  --ux4g-padding-token-15: 4rem;          /* 64px */
+  --ux4g-padding-token-16: 5rem;          /* 80px */
+}

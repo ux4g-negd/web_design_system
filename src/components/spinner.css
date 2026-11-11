@@ -1,0 +1,192 @@
+/* =========================================
+   UX4G SPINNER COMPONENT
+
+   Conic-gradient animated spinner with multiple color
+   and arc variants (full, split, partial).
+========================================= */
+
+:root {
+  /* Spinner Color Variables (Lowercased & Clean) */
+  --ux4g-spinner-primary-color-1: var(--ux4g-bg-primary-strong);
+  --ux4g-spinner-primary-color-2: var(--ux4g-bg-primary-soft);
+
+  --ux4g-spinner-secondary-color-1: var(--ux4g-bg-secondary-strong);
+  --ux4g-spinner-secondary-color-2: var(--ux4g-bg-secondary-soft);
+
+  --ux4g-spinner-tertiary-color-1: var(--ux4g-bg-tertiary-strong);
+  --ux4g-spinner-tertiary-color-2: var(--ux4g-bg-tertiary-soft);
+
+  --ux4g-spinner-light-color-1: var(--ux4g-color-neutral-0);
+  --ux4g-spinner-light-color-2: rgba(255, 255, 255, 0.25);
+
+  --ux4g-spinner-danger-color-1: var(--ux4g-bg-error-strong);
+  --ux4g-spinner-danger-color-2: var(--ux4g-bg-error-soft);
+
+  --ux4g-spinner-success-color-1: var(--ux4g-bg-success-strong);
+  --ux4g-spinner-success-color-2: var(--ux4g-bg-success-soft);
+
+  --ux4g-spinner-info-color-1: var(--ux4g-bg-info-strong);
+  --ux4g-spinner-info-color-2: var(--ux4g-bg-info-soft);
+
+  --ux4g-spinner-warning-color-1: var(--ux4g-bg-warning-strong);
+  --ux4g-spinner-warning-color-2: var(--ux4g-bg-warning-soft);
+}
+
+
+/* BASE SPINNER (Token Driven – Default 32px) */
+.ux4g-spinner,
+[class^="ux4g-spinner-"] {
+  --ux4g-spinner-size: var(--ux4g-fs-24);
+  --ux4g-spinner-stroke: var(--ux4g-border-width-xl, 4px);
+  --ux4g-spinner-color-1: var(--ux4g-spinner-primary-color-1);
+  --ux4g-spinner-color-2: var(--ux4g-spinner-primary-color-2);
+
+  width: var(--ux4g-spinner-size);
+  height: var(--ux4g-spinner-size);
+  border-radius: var(--ux4g-radius-full);
+  border: var(--ux4g-spinner-stroke) solid transparent;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: ux4g-spinner-rotate .9s linear infinite;
+  vertical-align: var(--ux4g-va-middle);
+  position: relative;
+}
+
+
+/* COLOR VARIANTS */
+[class*="spinner-primary"] {
+  --ux4g-spinner-color-1: var(--ux4g-spinner-primary-color-1);
+  --ux4g-spinner-color-2: var(--ux4g-spinner-primary-color-2);
+}
+
+[class*="spinner-inverse"],
+[class*="spinner-light"] {
+  --ux4g-spinner-color-1: var(--ux4g-spinner-light-color-2);
+  --ux4g-spinner-color-2: var(--ux4g-spinner-light-color-1);
+}
+
+[class*="spinner-danger"] {
+  --ux4g-spinner-color-1: var(--ux4g-spinner-danger-color-1);
+  --ux4g-spinner-color-2: var(--ux4g-spinner-danger-color-2);
+}
+
+/* [class*="spinner-secondary"] {
+  --ux4g-spinner-color-1: var(--ux4g-spinner-secondary-color-1);
+  --ux4g-spinner-color-2: var(--ux4g-spinner-secondary-color-2);
+}
+
+[class*="spinner-tertiary"] {
+  --ux4g-spinner-color-1: var(--ux4g-spinner-tertiary-color-1);
+  --ux4g-spinner-color-2: var(--ux4g-spinner-tertiary-color-2);
+}
+
+[class*="spinner-success"] {
+  --ux4g-spinner-color-1: var(--ux4g-spinner-success-color-1);
+  --ux4g-spinner-color-2: var(--ux4g-spinner-success-color-2);
+}
+
+[class*="spinner-info"] {
+  --ux4g-spinner-color-1: var(--ux4g-spinner-info-color-1);
+  --ux4g-spinner-color-2: var(--ux4g-spinner-info-color-2);
+}
+
+[class*="spinner-warning"] {
+  --ux4g-spinner-color-1: var(--ux4g-spinner-warning-color-1);
+  --ux4g-spinner-color-2: var(--ux4g-spinner-warning-color-2);
+} */
+
+
+/* SIZES */
+.ux4g-spinner-xl {
+  --ux4g-spinner-size: var(--ux4g-fs-40);
+}
+
+.ux4g-spinner-l {
+  --ux4g-spinner-size: var(--ux4g-fs-32);
+}
+
+.ux4g-spinner-m {
+  --ux4g-spinner-size: var(--ux4g-fs-24);
+}
+
+.ux4g-spinner-s {
+  --ux4g-spinner-size: var(--ux4g-fs-20);
+  --ux4g-spinner-stroke: var(--ux4g-border-width-lg, 3px);
+}
+
+.ux4g-spinner-xs {
+  --ux4g-spinner-size: var(--ux4g-fs-16);
+  --ux4g-spinner-stroke: var(--ux4g-border-width-lg, 3px);
+}
+
+
+/* FULL (Gradient Ring Spinner) */
+[class*="spinner-"][class*="-full"] {
+  background: conic-gradient(from 180deg at 50% 50%, var(--ux4g-spinner-color-1) 0deg, var(--ux4g-spinner-color-2) 360deg) border-box;
+  -webkit-mask:
+    linear-gradient(var(--ux4g-bg-neutral-elevated, var(--ux4g-color-neutral-0)) 0 0) padding-box,
+    linear-gradient(var(--ux4g-bg-neutral-elevated, var(--ux4g-color-neutral-0)) 0 0);
+  mask:
+    linear-gradient(var(--ux4g-bg-neutral-elevated, var(--ux4g-color-neutral-0)) 0 0) padding-box,
+    linear-gradient(var(--ux4g-bg-neutral-elevated, var(--ux4g-color-neutral-0)) 0 0);
+
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+
+/* SPLIT (Long Gradient Arc) */
+[class*="spinner-"][class*="-split"] {
+  background: conic-gradient(from 180deg at 50% 50%,
+      var(--ux4g-spinner-color-1) 0deg,
+      var(--ux4g-spinner-color-2) 270deg,
+      transparent 270deg,
+      transparent 360deg) border-box;
+
+  -webkit-mask:
+    linear-gradient(var(--ux4g-bg-neutral-elevated, var(--ux4g-color-neutral-0)) 0 0) padding-box,
+    linear-gradient(var(--ux4g-bg-neutral-elevated, var(--ux4g-color-neutral-0)) 0 0);
+  mask:
+    linear-gradient(var(--ux4g-bg-neutral-elevated, var(--ux4g-color-neutral-0)) 0 0) padding-box,
+    linear-gradient(var(--ux4g-bg-neutral-elevated, var(--ux4g-color-neutral-0)) 0 0);
+
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+
+/* PARTIAL (Short Gradient Arc) */
+[class*="spinner-"][class*="-partial"] {
+  background: conic-gradient(from 180deg at 50% 50%,
+      var(--ux4g-spinner-color-1) 0deg,
+      var(--ux4g-spinner-color-2) 90deg,
+      transparent 90deg,
+      transparent 360deg) border-box;
+
+  -webkit-mask:
+    linear-gradient(var(--ux4g-bg-neutral-elevated, var(--ux4g-color-neutral-0)) 0 0) padding-box,
+    linear-gradient(var(--ux4g-bg-neutral-elevated, var(--ux4g-color-neutral-0)) 0 0);
+  mask:
+    linear-gradient(var(--ux4g-bg-neutral-elevated, var(--ux4g-color-neutral-0)) 0 0) padding-box,
+    linear-gradient(var(--ux4g-bg-neutral-elevated, var(--ux4g-color-neutral-0)) 0 0);
+
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+@keyframes ux4g-spinner-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ux4g-spinner,
+  [class^="ux4g-spinner-"] {
+    animation: none;
+  }
+}

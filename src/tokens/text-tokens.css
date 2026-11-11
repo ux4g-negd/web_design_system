@@ -1,0 +1,66 @@
+/* =========================================
+   UX4G TEXT PRIMITIVE TOKENS
+
+   Table of Contents:
+     1. Text Alignment
+     2. Text Transform
+     3. Text Decoration
+     4. Text Wrapping & Whitespace
+     5. Word Break & Overflow Wrap
+     6. Letter Spacing (Tracking)
+========================================= */
+
+:root {
+  /* =========================================
+     1. TEXT ALIGNMENT
+  ========================================= */
+  --ux4g-text-align-start: start;
+  --ux4g-text-align-center: center;
+  --ux4g-text-align-end: end;
+  --ux4g-text-align-justify: justify;
+
+  /* =========================================
+     2. TEXT TRANSFORM
+  ========================================= */
+  --ux4g-text-transform-none: none;
+  --ux4g-text-transform-lowercase: lowercase;
+  --ux4g-text-transform-uppercase: uppercase;
+  --ux4g-text-transform-capitalize: capitalize;
+
+  /* =========================================
+     3. TEXT DECORATION
+  ========================================= */
+  --ux4g-text-decoration-underline: underline;
+  --ux4g-text-decoration-line-through: line-through;
+  --ux4g-text-decoration-none: none;
+
+  /* =========================================
+     4. TEXT WRAPPING & WHITESPACE
+  ========================================= */
+  --ux4g-whitespace-normal: normal;
+  --ux4g-whitespace-nowrap: nowrap;
+  --ux4g-whitespace-pre: pre;
+  --ux4g-whitespace-pre-line: pre-line;
+  --ux4g-whitespace-pre-wrap: pre-wrap;
+
+  /* =========================================
+     5. WORD BREAK & OVERFLOW WRAP
+  ========================================= */
+  --ux4g-word-break-normal: normal;
+  --ux4g-word-break-all: break-all;
+  --ux4g-word-break-keep: keep-all;
+  --ux4g-word-break-word: break-word;
+  --ux4g-overflow-wrap-normal: normal;
+  --ux4g-overflow-wrap-break: break-word;
+  --ux4g-overflow-wrap-anywhere: anywhere;
+
+  /* =========================================
+     6. LETTER SPACING (TRACKING)
+  ========================================= */
+  --ux4g-letter-spacing-tighter: -0.05em;
+  --ux4g-letter-spacing-tight: -0.025em;
+  --ux4g-letter-spacing-normal: 0em;
+  --ux4g-letter-spacing-wide: 0.025em;
+  --ux4g-letter-spacing-wider: 0.05em;
+  --ux4g-letter-spacing-widest: 0.1em;
+}

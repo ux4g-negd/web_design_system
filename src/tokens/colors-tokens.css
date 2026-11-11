@@ -1,0 +1,253 @@
+/* ==========================================================================
+   UX4G COLORS PRIMITIVE TOKENS
+
+   Table of Contents:
+     1. Primary Palette (Brand Purple: 50–950)
+     2. Secondary Palette (Brand Amber / Ochre: 50–950)
+     3. Tertiary Palette (Supporting Purple: 50–950)
+     4. Neutral Palette (Grayscale: 0–1000)
+     5. Red Palette (Error / Danger: 50–950)
+     6. Blue Palette (Info / Action: 50–950)
+     7. Skyblue Palette (50–950)
+     8. Cyan Palette (50–950)
+     9. Green Palette (Success: 50–950)
+     10. Lime Palette (50–950)
+     11. Yellow Palette (50–950)
+     12. Gold Palette (50–950)
+     13. Orange Palette (Warning: 50–950)
+     14. Purple Palette (50–950)
+     15. Pink Palette (50–950)
+   ========================================================================== */
+
+:root {
+  /* ==========================================================================
+     1. PRIMARY PALETTE
+     The core brand colors for UX4G.
+     ========================================================================== */
+  --ux4g-color-primary-50: #f2efff;
+  --ux4g-color-primary-100: #dcd4ff;
+  --ux4g-color-primary-200: #c0b3ff;
+  --ux4g-color-primary-300: #a391ff;
+  --ux4g-color-primary-400: #8670ff;
+  --ux4g-color-primary-500: #6a4eff;
+  --ux4g-color-primary-600: #4a2bc2;
+  --ux4g-color-primary-700: #3d239f;
+  --ux4g-color-primary-800: #301c7d;
+  --ux4g-color-primary-900: #24145c;
+  --ux4g-color-primary-950: #1a0e3d;
+
+  /* ==========================================================================
+     2. SECONDARY PALETTE
+     Supporting colors for accents and secondary actions.
+     ========================================================================== */
+  --ux4g-color-secondary-50: #fff5ea;
+  --ux4g-color-secondary-100: #ffebd6;
+  --ux4g-color-secondary-200: #ffd9af;
+  --ux4g-color-secondary-300: #ffbe6f;
+  --ux4g-color-secondary-400: #e89c30;
+  --ux4g-color-secondary-500: #c47d00;
+  --ux4g-color-secondary-600: #a46800;
+  --ux4g-color-secondary-700: #764a00;
+  --ux4g-color-secondary-800: #4b2d00;
+  --ux4g-color-secondary-900: #281600;
+  --ux4g-color-secondary-950: #110700;
+
+  /* ==========================================================================
+     3. TERTIARY PALETTE
+     Supplementary colors for varied visual expressions.
+     ========================================================================== */
+  --ux4g-color-tertiary-50: #f6effb;
+  --ux4g-color-tertiary-100: #e9daf3;
+  --ux4g-color-tertiary-200: #d9bfea;
+  --ux4g-color-tertiary-300: #c8a3e0;
+  --ux4g-color-tertiary-400: #b686d6;
+  --ux4g-color-tertiary-500: #a66acc;
+  --ux4g-color-tertiary-600: #8e55b3;
+  --ux4g-color-tertiary-700: #75419a;
+  --ux4g-color-tertiary-800: #5d2f80;
+  --ux4g-color-tertiary-900: #462166;
+  --ux4g-color-tertiary-950: #32174a;
+
+  /* ==========================================================================
+     4. NEUTRAL PALETTE
+     Grays used for layouts, spacing, and text hierarchy.
+     ========================================================================== */
+  --ux4g-color-neutral-0: #ffffff;
+  --ux4g-color-neutral-50: #fafafa;
+  --ux4g-color-neutral-100: #f5f5f5;
+  --ux4g-color-neutral-200: #e5e5e5;
+  --ux4g-color-neutral-300: #d9d9d9;
+  --ux4g-color-neutral-400: #a1a1a1;
+  --ux4g-color-neutral-500: #737373;
+  --ux4g-color-neutral-600: #525252;
+  --ux4g-color-neutral-700: #404040;
+  --ux4g-color-neutral-800: #262626;
+  --ux4g-color-neutral-900: #171717;
+  --ux4g-color-neutral-950: #0a0a0a;
+  --ux4g-color-neutral-1000: #000000;
+
+  /* ==========================================================================
+     5. RED PALETTE (Error / Danger)
+     ========================================================================== */
+  --ux4g-color-red-50: #fff8f8;
+  --ux4g-color-red-100: #ffecee;
+  --ux4g-color-red-200: #ffdadc;
+  --ux4g-color-red-300: #ffb3ae;
+  --ux4g-color-red-400: #ff8983;
+  --ux4g-color-red-500: #f55e57;
+  --ux4g-color-red-600: #db372d;
+  --ux4g-color-red-700: #b3251e;
+  --ux4g-color-red-800: #8a1a16;
+  --ux4g-color-red-900: #60150f;
+  --ux4g-color-red-950: #3a0907;
+
+  /* ==========================================================================
+     6. BLUE PALETTE (Info / Action)
+     ========================================================================== */
+  --ux4g-color-blue-50: #f5faff;
+  --ux4g-color-blue-100: #e7f2ff;
+  --ux4g-color-blue-200: #d0e4ff;
+  --ux4g-color-blue-300: #a1c9ff;
+  --ux4g-color-blue-400: #76acff;
+  --ux4g-color-blue-500: #4e8ff8;
+  --ux4g-color-blue-600: #3271ea;
+  --ux4g-color-blue-700: #1157ce;
+  --ux4g-color-blue-800: #04409f;
+  --ux4g-color-blue-900: #012c6f;
+  --ux4g-color-blue-950: #001944;
+
+  /* ==========================================================================
+     7. SKYBLUE PALETTE
+     ========================================================================== */
+  --ux4g-color-skyblue-50: #f4faff;
+  --ux4g-color-skyblue-100: #e0f4ff;
+  --ux4g-color-skyblue-200: #bde9ff;
+  --ux4g-color-skyblue-300: #67d4ff;
+  --ux4g-color-skyblue-400: #0bbbea;
+  --ux4g-color-skyblue-500: #009dc9;
+  --ux4g-color-skyblue-600: #0081a8;
+  --ux4g-color-skyblue-700: #006788;
+  --ux4g-color-skyblue-800: #004d68;
+  --ux4g-color-skyblue-900: #003549;
+  --ux4g-color-skyblue-950: #001f2d;
+
+  /* ==========================================================================
+     8. CYAN PALETTE
+     ========================================================================== */
+  --ux4g-color-cyan-50: #e6fffb;
+  --ux4g-color-cyan-100: #c9f7f2;
+  --ux4g-color-cyan-200: #adf0e9;
+  --ux4g-color-cyan-300: #91e8e0;
+  --ux4g-color-cyan-400: #75e0d7;
+  --ux4g-color-cyan-500: #59d8ce;
+  --ux4g-color-cyan-600: #13c2c2;
+  --ux4g-color-cyan-700: #08979c;
+  --ux4g-color-cyan-800: #006d75;
+  --ux4g-color-cyan-900: #00474f;
+  --ux4g-color-cyan-950: #002329;
+
+  /* ==========================================================================
+     9. GREEN PALETTE (Success)
+     ========================================================================== */
+  --ux4g-color-green-50: #f2fcef;
+  --ux4g-color-green-100: #ddf8d8;
+  --ux4g-color-green-200: #beefb8;
+  --ux4g-color-green-300: #80da88;
+  --ux4g-color-green-400: #44c265;
+  --ux4g-color-green-500: #1aa64a;
+  --ux4g-color-green-600: #128937;
+  --ux4g-color-green-700: #006c35;
+  --ux4g-color-green-800: #00522c;
+  --ux4g-color-green-900: #00381f;
+  --ux4g-color-green-950: #002110;
+
+  /* ==========================================================================
+     10. LIME PALETTE
+     ========================================================================== */
+  --ux4g-color-lime-50: #fcffe6;
+  --ux4g-color-lime-100: #f2ffbf;
+  --ux4g-color-lime-200: #e8ff99;
+  --ux4g-color-lime-300: #deff73;
+  --ux4g-color-lime-400: #d4f24d;
+  --ux4g-color-lime-500: #cae827;
+  --ux4g-color-lime-600: #a0d911;
+  --ux4g-color-lime-700: #7cb305;
+  --ux4g-color-lime-800: #5b8c00;
+  --ux4g-color-lime-900: #3f6600;
+  --ux4g-color-lime-950: #254000;
+
+  /* ==========================================================================
+     11. YELLOW PALETTE
+     ========================================================================== */
+  --ux4g-color-yellow-50: #fffee6;
+  --ux4g-color-yellow-100: #fffbc2;
+  --ux4g-color-yellow-200: #fff29c;
+  --ux4g-color-yellow-300: #ffe976;
+  --ux4g-color-yellow-400: #ffe050;
+  --ux4g-color-yellow-500: #ffd72a;
+  --ux4g-color-yellow-600: #fadb14;
+  --ux4g-color-yellow-700: #d4b106;
+  --ux4g-color-yellow-800: #ad8b00;
+  --ux4g-color-yellow-900: #876800;
+  --ux4g-color-yellow-950: #614700;
+
+  /* ==========================================================================
+     12. GOLD PALETTE
+     ========================================================================== */
+  --ux4g-color-gold-50: #fffbe6;
+  --ux4g-color-gold-100: #fff2bf;
+  --ux4g-color-gold-200: #ffe799;
+  --ux4g-color-gold-300: #ffdb73;
+  --ux4g-color-gold-400: #ffcf4d;
+  --ux4g-color-gold-500: #ffc327;
+  --ux4g-color-gold-600: #f2a90f;
+  --ux4g-color-gold-700: #d98a00;
+  --ux4g-color-gold-800: #b36b00;
+  --ux4g-color-gold-900: #8c4d00;
+  --ux4g-color-gold-950: #613400;
+
+  /* ==========================================================================
+     13. ORANGE PALETTE (Warning)
+     ========================================================================== */
+  --ux4g-color-orange-50: #fff7e6;
+  --ux4g-color-orange-100: #ffe7bf;
+  --ux4g-color-orange-200: #ffd899;
+  --ux4g-color-orange-300: #ffc973;
+  --ux4g-color-orange-400: #ffba4d;
+  --ux4g-color-orange-500: #ffab27;
+  --ux4g-color-orange-600: #fa8c16;
+  --ux4g-color-orange-700: #d46b08;
+  --ux4g-color-orange-800: #ad4e00;
+  --ux4g-color-orange-900: #873800;
+  --ux4g-color-orange-950: #612500;
+
+  /* ==========================================================================
+     14. PURPLE PALETTE
+     ========================================================================== */
+  --ux4g-color-purple-50: #fdf8ff;
+  --ux4g-color-purple-100: #f7ecfe;
+  --ux4g-color-purple-200: #eedcfe;
+  --ux4g-color-purple-300: #d9bafd;
+  --ux4g-color-purple-400: #c597ff;
+  --ux4g-color-purple-500: #ad72ff;
+  --ux4g-color-purple-600: #9254ea;
+  --ux4g-color-purple-700: #7438d2;
+  --ux4g-color-purple-800: #5629a4;
+  --ux4g-color-purple-900: #400b84;
+  --ux4g-color-purple-950: #280255;
+
+  /* ==========================================================================
+     15. PINK PALETTE
+     ========================================================================== */
+  --ux4g-color-pink-50: #fff7fc;
+  --ux4g-color-pink-100: #fecff6;
+  --ux4g-color-pink-200: #ffd8ef;
+  --ux4g-color-pink-300: #ffafe4;
+  --ux4g-color-pink-400: #ff7dd2;
+  --ux4g-color-pink-500: #f94aab;
+  --ux4g-color-pink-600: #dc258d;
+  --ux4g-color-pink-700: #b60d6e;
+  --ux4g-color-pink-800: #8d0053;
+  --ux4g-color-pink-900: #620438;
+  --ux4g-color-pink-950: #3d0023;
+}

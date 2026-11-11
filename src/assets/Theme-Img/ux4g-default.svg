@@ -1,0 +1,66 @@
+<svg width="384" height="216" viewBox="0 0 384 216" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="ux4g-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a2bc2" />
+      <stop offset="50%" stop-color="#3b1f9e" />
+      <stop offset="100%" stop-color="#24106b" />
+    </linearGradient>
+
+    <!-- Subtle Glow Gradient -->
+    <radialGradient id="ux4g-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c5dfa" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#24106b" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Drop Shadow for Text -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="384" height="216" rx="14" fill="url(#ux4g-bg)" />
+  <rect width="384" height="216" rx="14" fill="url(#ux4g-glow)" />
+
+  <!-- Geometric Mandala Ornament (Vector Pattern) -->
+  <g opacity="0.16" stroke="#ffffff" stroke-width="0.85" fill="none">
+    <!-- Center Concentric Rings -->
+    <circle cx="192" cy="108" r="92" />
+    <circle cx="192" cy="108" r="76" stroke-dasharray="2 3" />
+    <circle cx="192" cy="108" r="60" />
+    <circle cx="192" cy="108" r="44" />
+    <circle cx="192" cy="108" r="28" stroke-dasharray="1 2" />
+
+    <!-- Outer Radiating Petals (12-fold symmetry) -->
+    <path d="M192 16 Q210 60 192 108 Q174 60 192 16 Z" />
+    <path d="M192 200 Q210 156 192 108 Q174 156 192 200 Z" />
+    <path d="M100 108 Q144 126 192 108 Q144 90 100 108 Z" />
+    <path d="M284 108 Q240 126 192 108 Q240 90 284 108 Z" />
+
+    <path d="M127 43 Q165 75 192 108 Q145 95 127 43 Z" />
+    <path d="M257 173 Q219 141 192 108 Q239 121 257 173 Z" />
+    <path d="M127 173 Q165 141 192 108 Q145 121 127 173 Z" />
+    <path d="M257 43 Q219 75 192 108 Q239 95 257 43 Z" />
+
+    <!-- Corner Ambient Flares -->
+    <circle cx="0" cy="0" r="70" stroke-dasharray="3 4" />
+    <circle cx="384" cy="0" r="70" stroke-dasharray="3 4" />
+    <circle cx="0" cy="216" r="70" stroke-dasharray="3 4" />
+    <circle cx="384" cy="216" r="70" stroke-dasharray="3 4" />
+  </g>
+
+  <!-- Central Brand Typography -->
+  <!-- Title: UX4G -->
+  <text x="192" y="104" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans', sans-serif" font-size="34" font-weight="700" letter-spacing="7" fill="#ffffff" filter="url(#shadow)">UX4G</text>
+
+  <!-- Tagline Dividers & Text -->
+  <g filter="url(#shadow)">
+    <line x1="88" y1="126" x2="128" y2="126" stroke="#ffffff" stroke-width="0.75" opacity="0.6" />
+    <text x="192" y="129" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans', sans-serif" font-size="8.5" font-weight="400" letter-spacing="1.2" fill="#ffffff" opacity="0.9">Dependable. Modern. Clear</text>
+    <line x1="256" y1="126" x2="296" y2="126" stroke="#ffffff" stroke-width="0.75" opacity="0.6" />
+  </g>
+
+  <!-- Bottom Subtitle Badge -->
+  <text x="192" y="196" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans', sans-serif" font-size="8" font-weight="500" letter-spacing="0.5" fill="#ffffff" opacity="0.75">Theme based on <tspan font-weight="700" fill="#ffffff">UX4G Design System 3.0</tspan></text>
+</svg>

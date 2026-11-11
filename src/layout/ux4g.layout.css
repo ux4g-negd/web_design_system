@@ -1,0 +1,32 @@
+/* =========================================
+   UX4G MASTER LAYOUT BUNDLE
+   
+   Macro-structural layout systems (Scaffolding & Grids).
+   Designed for page-level structural architecture.
+
+   Table of Contents:
+     1. Containers (Responsive widths, fluid, fixed)
+     2. Flex Grid (12-column row/col system)
+     3. CSS Grid (Grid template columns & rows base)
+     4. Responsive CSS Grid (Breakpoint-based grid spans)
+
+   Breakpoints Reference:
+     xs (base):  <576px
+     sm:         ≥576px
+     md:         ≥768px
+     lg:         ≥992px
+     xl:         ≥1200px
+     2xl:        ≥1400px
+========================================= */
+
+/* 1. CONTAINERS */
+@import "./container.css";
+
+/* 2. FLEX GRID (12-COLUMN) */
+@import "./flex-grid.css";
+
+/* 3. CSS GRID (BASE) */
+@import "./grid.css";
+
+/* 4. CSS GRID (RESPONSIVE) */
+@import "./grid-responsive.css";

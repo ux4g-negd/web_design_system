@@ -1,0 +1,126 @@
+/* =========================================
+   UX4G OBJECT UTILITIES
+
+   1. Object Fit
+   2. Object Position
+   3. Fluid Image
+   4. Responsive Object Fit
+
+   Breakpoints:
+     xs (base):  <576px
+     sm:         ≥576px
+     md:         ≥768px
+     lg:         ≥992px
+     xl:         ≥1200px
+     2xl:        ≥1400px
+========================================= */
+
+
+/* =========================================
+   1. OBJECT FIT
+========================================= */
+
+.ux4g-of-cover { object-fit: var(--ux4g-of-cover); }
+.ux4g-of-contain { object-fit: var(--ux4g-of-contain); }
+.ux4g-of-fill { object-fit: var(--ux4g-of-fill); }
+.ux4g-of-none { object-fit: var(--ux4g-of-none); }
+.ux4g-of-scale-down { object-fit: var(--ux4g-of-scale-down); }
+
+
+/* =========================================
+   2. OBJECT POSITION
+========================================= */
+
+.ux4g-op { object-position: var(--ux4g-op-center); }
+
+.ux4g-op-center { object-position: var(--ux4g-op-center); }
+.ux4g-op-top { object-position: var(--ux4g-op-top); }
+.ux4g-op-bottom { object-position: var(--ux4g-op-bottom); }
+.ux4g-op-left { object-position: var(--ux4g-op-left); }
+.ux4g-op-right { object-position: var(--ux4g-op-right); }
+
+.ux4g-op-top-left { object-position: var(--ux4g-op-top-left); }
+.ux4g-op-top-right { object-position: var(--ux4g-op-top-right); }
+.ux4g-op-bottom-left { object-position: var(--ux4g-op-bottom-left); }
+.ux4g-op-bottom-right { object-position: var(--ux4g-op-bottom-right); }
+
+
+/* =========================================
+   3. FLUID IMAGE
+========================================= */
+
+.ux4g-img-fluid {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* =========================================
+   4. RESPONSIVE OBJECT FIT
+========================================= */
+
+
+/* =========================================
+   SM — ≥576px
+========================================= */
+
+@media (min-width: 576px) {
+  .ux4g-sm-of-cover { object-fit: var(--ux4g-of-cover); }
+  .ux4g-sm-of-contain { object-fit: var(--ux4g-of-contain); }
+  .ux4g-sm-of-fill { object-fit: var(--ux4g-of-fill); }
+  .ux4g-sm-of-none { object-fit: var(--ux4g-of-none); }
+  .ux4g-sm-of-scale-down { object-fit: var(--ux4g-of-scale-down); }
+}
+
+
+/* =========================================
+   MD — ≥768px
+========================================= */
+
+@media (min-width: 768px) {
+  .ux4g-md-of-cover { object-fit: var(--ux4g-of-cover); }
+  .ux4g-md-of-contain { object-fit: var(--ux4g-of-contain); }
+  .ux4g-md-of-fill { object-fit: var(--ux4g-of-fill); }
+  .ux4g-md-of-none { object-fit: var(--ux4g-of-none); }
+  .ux4g-md-of-scale-down { object-fit: var(--ux4g-of-scale-down); }
+}
+
+
+/* =========================================
+   LG — ≥992px
+========================================= */
+
+@media (min-width: 992px) {
+  .ux4g-lg-of-cover { object-fit: var(--ux4g-of-cover); }
+  .ux4g-lg-of-contain { object-fit: var(--ux4g-of-contain); }
+  .ux4g-lg-of-fill { object-fit: var(--ux4g-of-fill); }
+  .ux4g-lg-of-none { object-fit: var(--ux4g-of-none); }
+  .ux4g-lg-of-scale-down { object-fit: var(--ux4g-of-scale-down); }
+}
+
+
+/* =========================================
+   XL — ≥1200px
+========================================= */
+
+@media (min-width: 1200px) {
+  .ux4g-xl-of-cover { object-fit: var(--ux4g-of-cover); }
+  .ux4g-xl-of-contain { object-fit: var(--ux4g-of-contain); }
+  .ux4g-xl-of-fill { object-fit: var(--ux4g-of-fill); }
+  .ux4g-xl-of-none { object-fit: var(--ux4g-of-none); }
+  .ux4g-xl-of-scale-down { object-fit: var(--ux4g-of-scale-down); }
+}
+
+
+/* =========================================
+   2XL — ≥1400px
+========================================= */
+
+@media (min-width: 1400px) {
+  .ux4g-2xl-of-cover { object-fit: var(--ux4g-of-cover); }
+  .ux4g-2xl-of-contain { object-fit: var(--ux4g-of-contain); }
+  .ux4g-2xl-of-fill { object-fit: var(--ux4g-of-fill); }
+  .ux4g-2xl-of-none { object-fit: var(--ux4g-of-none); }
+  .ux4g-2xl-of-scale-down { object-fit: var(--ux4g-of-scale-down); }
+}

@@ -1,0 +1,171 @@
+/* =========================================
+   UX4G GRID SYSTEM
+
+   1. Grid Base
+   2. Grid Columns
+   3. Grid Rows
+   4. Grid Auto Columns
+   5. Grid Auto Rows
+   6. Grid Auto Flow
+   7. Span Utilities
+   8. Auto Fit (Responsive Layout)
+   9. Place Content
+   10. Place Items
+========================================= */
+
+
+/* =========================================
+   1. GRID BASE
+========================================= */
+
+.ux4g-grid { display: grid; }
+.ux4g-inline-grid { display: inline-grid; }
+
+
+/* =========================================
+   2. GRID COLUMNS
+   Explicit Grid Structure
+========================================= */
+
+.ux4g-grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.ux4g-grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.ux4g-grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.ux4g-grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+.ux4g-grid-cols-5 { grid-template-columns: repeat(5, 1fr); }
+.ux4g-grid-cols-6 { grid-template-columns: repeat(6, 1fr); }
+.ux4g-grid-cols-7 { grid-template-columns: repeat(7, 1fr); }
+.ux4g-grid-cols-8 { grid-template-columns: repeat(8, 1fr); }
+.ux4g-grid-cols-9 { grid-template-columns: repeat(9, 1fr); }
+.ux4g-grid-cols-10 { grid-template-columns: repeat(10, 1fr); }
+.ux4g-grid-cols-11 { grid-template-columns: repeat(11, 1fr); }
+.ux4g-grid-cols-12 { grid-template-columns: repeat(12, 1fr); }
+.ux4g-grid-cols-none { grid-template-columns: none; }
+.ux4g-grid-cols-subgrid { grid-template-columns: subgrid; }
+
+
+/* =========================================
+   3. GRID ROWS
+   Explicit Grid Structure
+========================================= */
+
+.ux4g-grid-rows-1 { grid-template-rows: repeat(1, 1fr); }
+.ux4g-grid-rows-2 { grid-template-rows: repeat(2, 1fr); }
+.ux4g-grid-rows-3 { grid-template-rows: repeat(3, 1fr); }
+.ux4g-grid-rows-4 { grid-template-rows: repeat(4, 1fr); }
+.ux4g-grid-rows-5 { grid-template-rows: repeat(5, 1fr); }
+.ux4g-grid-rows-6 { grid-template-rows: repeat(6, 1fr); }
+.ux4g-grid-rows-7 { grid-template-rows: repeat(7, 1fr); }
+.ux4g-grid-rows-8 { grid-template-rows: repeat(8, 1fr); }
+.ux4g-grid-rows-9 { grid-template-rows: repeat(9, 1fr); }
+.ux4g-grid-rows-10 { grid-template-rows: repeat(10, 1fr); }
+.ux4g-grid-rows-11 { grid-template-rows: repeat(11, 1fr); }
+.ux4g-grid-rows-12 { grid-template-rows: repeat(12, 1fr); }
+.ux4g-grid-rows-none { grid-template-rows: none; }
+.ux4g-grid-rows-subgrid { grid-template-rows: subgrid; }
+
+
+/* =========================================
+   4. GRID AUTO COLUMNS
+   Dynamic / Implicit Columns
+========================================= */
+
+.ux4g-auto-cols-auto { grid-auto-columns: auto; }
+.ux4g-auto-cols-min { grid-auto-columns: min-content; }
+.ux4g-auto-cols-max { grid-auto-columns: max-content; }
+.ux4g-auto-cols-fr { grid-auto-columns: minmax(0, 1fr); }
+
+
+/* =========================================
+   5. GRID AUTO ROWS
+   Dynamic / Implicit Rows
+========================================= */
+
+.ux4g-auto-rows-auto { grid-auto-rows: auto; }
+.ux4g-auto-rows-min { grid-auto-rows: min-content; }
+.ux4g-auto-rows-max { grid-auto-rows: max-content; }
+.ux4g-auto-rows-fr { grid-auto-rows: minmax(0, 1fr); }
+
+
+/* =========================================
+   6. GRID AUTO FLOW
+========================================= */
+
+.ux4g-grid-flow-row { grid-auto-flow: row; }
+.ux4g-grid-flow-col { grid-auto-flow: column; }
+.ux4g-grid-flow-dense { grid-auto-flow: dense; }
+.ux4g-grid-flow-row-dense { grid-auto-flow: row dense; }
+.ux4g-grid-flow-col-dense { grid-auto-flow: column dense; }
+
+
+/* =========================================
+   7. SPAN UTILITIES
+   Grid Item Placement
+========================================= */
+
+/* Column Span */
+
+.ux4g-cols-span-1 { grid-column: span 1; }
+.ux4g-cols-span-2 { grid-column: span 2; }
+.ux4g-cols-span-3 { grid-column: span 3; }
+.ux4g-cols-span-4 { grid-column: span 4; }
+.ux4g-cols-span-5 { grid-column: span 5; }
+.ux4g-cols-span-6 { grid-column: span 6; }
+.ux4g-cols-span-7 { grid-column: span 7; }
+.ux4g-cols-span-8 { grid-column: span 8; }
+.ux4g-cols-span-9 { grid-column: span 9; }
+.ux4g-cols-span-10 { grid-column: span 10; }
+.ux4g-cols-span-11 { grid-column: span 11; }
+.ux4g-cols-span-12 { grid-column: span 12; }
+
+
+/* Row Span */
+
+.ux4g-row-span-1 { grid-row: span 1; }
+.ux4g-row-span-2 { grid-row: span 2; }
+.ux4g-row-span-3 { grid-row: span 3; }
+.ux4g-row-span-4 { grid-row: span 4; }
+.ux4g-row-span-5 { grid-row: span 5; }
+.ux4g-row-span-6 { grid-row: span 6; }
+.ux4g-row-span-7 { grid-row: span 7; }
+.ux4g-row-span-8 { grid-row: span 8; }
+.ux4g-row-span-9 { grid-row: span 9; }
+.ux4g-row-span-10 { grid-row: span 10; }
+.ux4g-row-span-11 { grid-row: span 11; }
+.ux4g-row-span-12 { grid-row: span 12; }
+
+
+/* =========================================
+   8. AUTO FIT
+   Responsive Grid Layout
+========================================= */
+
+.ux4g-grid-auto-fit-200 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
+.ux4g-grid-auto-fit-250 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); }
+.ux4g-grid-auto-fit-300 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.ux4g-grid-auto-fit-400 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); }
+
+
+/* =========================================
+   9. PLACE CONTENT
+   Alignment of Entire Grid
+========================================= */
+
+.ux4g-place-content-center { place-content: center; }
+.ux4g-place-content-start { place-content: start; }
+.ux4g-place-content-end { place-content: end; }
+.ux4g-place-content-between { place-content: space-between; }
+.ux4g-place-content-around { place-content: space-around; }
+.ux4g-place-content-evenly { place-content: space-evenly; }
+.ux4g-place-content-stretch { place-content: stretch; }
+
+
+/* =========================================
+   10. PLACE ITEMS
+   Alignment of Grid Items
+========================================= */
+
+.ux4g-place-items-center { place-items: center; }
+.ux4g-place-items-start { place-items: start; }
+.ux4g-place-items-end { place-items: end; }
+.ux4g-place-items-stretch { place-items: stretch; }
+.ux4g-place-items-baseline { place-items: baseline; }

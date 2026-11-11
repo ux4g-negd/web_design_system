@@ -1,0 +1,335 @@
+/* ==========================================================================
+   UX4G SIDEBAR COMPONENT
+   Structural styling for 3 interactive states:
+   1. State 1 ('full'): Standard Full Sidebar with Organisation Header & Tree Menu
+   2. State 2 ('slim'): Collapsed Compact Icon Sidebar with Floating Toggle Button
+   3. State 3 ('submenu'): Compact Sidebar + Attached Sub-menu Panel
+   
+   All sizing, typography, layout spacing and colors are handled via UX4G system tokens & utilities.
+   ========================================================================== */
+
+/* ==========================================
+   1. BASE SIDEBAR CONTAINER
+   ========================================== */
+.ux4g-sidebar {
+  border-right: var(--ux4g-border-width-sm) solid var(--ux4g-border-color-neutral-subtle);
+  transition: all 0.3s ease;
+}
+
+/* ==========================================
+   2. PANELS (FULL, COMPACT, SUB-MENU)
+   ========================================== */
+.ux4g-sidebar-compact-panel,
+.ux4g-sidebar-slim-panel {
+  z-index: var(--ux4g-z-layout-overlay, 2);
+}
+
+.ux4g-sidebar-submenu-panel {
+  border-left: var(--ux4g-border-width-sm) solid var(--ux4g-border-color-neutral-subtle);
+  border-top-left-radius: var(--ux4g-radius-lg);
+  border-bottom-left-radius: var(--ux4g-radius-lg);
+}
+
+/* ==========================================
+   3. BUTTONS & INTERACTION HOVERS
+   ========================================== */
+.ux4g-sidebar-collapse-btn {
+  border-radius: var(--ux4g-radius-sm);
+  transition: all 0.2s ease;
+}
+
+.ux4g-sidebar-collapse-btn:hover {
+  background-color: var(--ux4g-bg-neutral-soft) !important;
+  color: var(--ux4g-text-neutral-primary) !important;
+  border-radius: var(--ux4g-radius-sm);
+}
+
+.ux4g-sidebar-collapse-btn .ux4g-icon-outlined {
+  font-size: var(--ux4g-fs-24);
+  width: var(--ux4g-sz-24);
+  height: var(--ux4g-sz-24);
+  color: var(--ux4g-text-neutral-tertiary);
+}
+
+.ux4g-sidebar-user-dropdown .ux4g-sidebar-collapse-btn .ux4g-icon-outlined {
+  font-size: var(--ux4g-fs-20);
+  width: var(--ux4g-sz-20);
+  height: var(--ux4g-sz-20);
+}
+
+.ux4g-sidebar .ux4g-dropdown-menu .ux4g-icon-outlined {
+  font-size: var(--ux4g-fs-18);
+  width: var(--ux4g-sz-18);
+  height: var(--ux4g-sz-18);
+}
+
+.ux4g-sidebar-nav-item {
+  border-radius: var(--ux4g-radius-md);
+  transition: all 0.2s ease;
+}
+
+.ux4g-sidebar-nav-item:hover,
+.ux4g-sidebar-nav-item.active {
+  background-color: var(--ux4g-bg-neutral-soft) !important;
+  border-radius: var(--ux4g-radius-md);
+}
+
+.ux4g-sidebar-nav-item .ux4g-icon-outlined,
+.ux4g-sidebar-nav-item .ux4g-icon {
+  font-size: var(--ux4g-fs-20);
+  width: var(--ux4g-sz-20);
+  height: var(--ux4g-sz-20);
+  flex-shrink: 0;
+}
+
+.ux4g-sidebar-icon-btn,
+.ux4g-sidebar-compact-btn {
+  border-radius: var(--ux4g-radius-md);
+  transition: all 0.2s ease;
+}
+
+.ux4g-sidebar-icon-btn:hover,
+.ux4g-sidebar-compact-btn:hover {
+  background-color: var(--ux4g-bg-neutral-subtle) !important;
+  border-radius: var(--ux4g-radius-md);
+}
+
+.ux4g-sidebar-icon-btn.active,
+.ux4g-sidebar-compact-btn.active {
+  background-color: var(--ux4g-bg-neutral-subtle) !important;
+  color: var(--ux4g-text-brand-primary-default) !important;
+  border-radius: var(--ux4g-radius-md);
+}
+
+.ux4g-sidebar-icon-btn.active .ux4g-icon-outlined,
+.ux4g-sidebar-compact-btn.active .ux4g-icon-outlined,
+.ux4g-sidebar-icon-btn.active .ux4g-icon,
+.ux4g-sidebar-compact-btn.active .ux4g-icon {
+  color: var(--ux4g-text-brand-primary-default) !important;
+}
+
+.ux4g-sidebar-icon-btn .ux4g-icon-outlined,
+.ux4g-sidebar-compact-btn .ux4g-icon-outlined {
+  font-size: var(--ux4g-fs-24);
+  width: var(--ux4g-sz-24);
+  height: var(--ux4g-sz-24);
+}
+
+/* Floating Circular Toggle Button Offset (Screen 2) */
+.ux4g-sidebar-toggle-btn {
+  top: var(--ux4g-pos-inset-px-24, 1.5rem);
+  right: var(--ux4g-pos-inset-px-n-16, -1rem);
+  transition: all 0.2s ease;
+}
+
+.ux4g-sidebar-toggle-btn .ux4g-icon-outlined {
+  font-size: var(--ux4g-fs-18);
+  width: var(--ux4g-sz-18);
+  height: var(--ux4g-sz-18);
+}
+
+/* ==========================================
+   4. ACCORDION TREE SUB-ITEMS (Smooth Transition)
+   ========================================== */
+.ux4g-sidebar-tree-children {
+  border-left: var(--ux4g-border-width-sm, 1px) solid var(--ux4g-border-color-neutral-strong);
+  margin-left: calc(var(--ux4g-padding-s, 0.75rem) + (var(--ux4g-sz-20, 1.25rem) / 2));
+  padding-left: var(--ux4g-padding-xs, 0.5rem);
+  list-style: none;
+  max-height: var(--ux4g-sz-256, 16rem);
+  opacity: 1;
+  transform: translateY(0);
+  overflow: hidden;
+  will-change: max-height, opacity, transform;
+  transition: max-height 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+              opacity 0.28s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.28s cubic-bezier(0.25, 1, 0.5, 1),
+              margin 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+              padding 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.ux4g-sidebar-tree-children.is-collapsed {
+  max-height: 0 !important;
+  opacity: 0 !important;
+  transform: translateY(var(--ux4g-pos-inset-px-n-4, -4px)) !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  pointer-events: none;
+}
+
+.ux4g-sidebar-tree-chevron {
+  font-size: var(--ux4g-fs-20);
+  width: var(--ux4g-sz-20);
+  height: var(--ux4g-sz-20);
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: rotate(0deg);
+  will-change: transform;
+}
+
+.ux4g-sidebar-tree-chevron.is-collapsed {
+  transform: rotate(180deg) !important;
+}
+
+/* ==========================================
+   5. DROPDOWN ALIGNMENT & HOVERS
+   ========================================== */
+.ux4g-sidebar-user-dropdown .ux4g-sidebar-collapse-btn {
+  margin-left: 0;
+}
+
+/* User Profile Kebab Dropdown Menu Alignment (Full Sidebar) */
+.ux4g-sidebar-user-dropdown.ux4g-dropdown .ux4g-dropdown-menu,
+.ux4g-sidebar-user-dropdown.ux4g-dropdown.ux4g-dropdown-overflow .ux4g-dropdown-menu,
+.ux4g-sidebar-user-dropdown .ux4g-dropdown-menu {
+  top: auto !important;
+  bottom: calc(var(--ux4g-sz-full, 100%) + var(--ux4g-spacing-2)) !important;
+  right: 0 !important;
+  left: auto !important;
+  min-width: var(--ux4g-sz-192, 12rem);
+  width: max-content;
+  max-width: calc(var(--ux4g-sz-288) - (var(--ux4g-padding-m) * 2));
+  box-shadow: var(--ux4g-shadow-l2);
+  border: var(--ux4g-border-width-sm) solid var(--ux4g-border-color-neutral-subtle);
+  border-radius: var(--ux4g-radius-md);
+  background-color: var(--ux4g-bg-neutral-elevated);
+  overflow: hidden;
+  z-index: var(--ux4g-z-dropdown, 1000);
+}
+
+/* User Profile Avatar Dropdown Menu Alignment (Compact Sidebar - Bottom) */
+.ux4g-sidebar-compact-user-dropdown.ux4g-dropdown .ux4g-dropdown-menu,
+.ux4g-sidebar-compact-user-dropdown.ux4g-dropdown.ux4g-dropdown-overflow .ux4g-dropdown-menu,
+.ux4g-sidebar-compact-user-dropdown .ux4g-dropdown-menu {
+  top: auto !important;
+  bottom: calc(var(--ux4g-sz-full, 100%) + var(--ux4g-spacing-2)) !important;
+  left: var(--ux4g-spacing-2) !important;
+  right: auto !important;
+  min-width: var(--ux4g-sz-192, 12rem);
+  width: max-content;
+  box-shadow: var(--ux4g-shadow-l2);
+  border: var(--ux4g-border-width-sm) solid var(--ux4g-border-color-neutral-subtle);
+  border-radius: var(--ux4g-radius-md);
+  background-color: var(--ux4g-bg-neutral-elevated);
+  overflow: hidden;
+  z-index: var(--ux4g-z-dropdown, 1000);
+}
+
+/* User Profile Dropdown when at Top (Opens Downward) */
+.ux4g-sidebar-user-top .ux4g-sidebar-user-dropdown.ux4g-dropdown .ux4g-dropdown-menu,
+.ux4g-sidebar-user-top .ux4g-sidebar-user-dropdown.ux4g-dropdown.ux4g-dropdown-overflow .ux4g-dropdown-menu,
+.ux4g-sidebar-user-top .ux4g-sidebar-user-dropdown .ux4g-dropdown-menu,
+.ux4g-sidebar-user-dropdown.ux4g-dropdown-down .ux4g-dropdown-menu,
+.ux4g-sidebar[data-variant="profile-top"] .ux4g-sidebar-user-dropdown .ux4g-dropdown-menu {
+  top: calc(var(--ux4g-sz-full, 100%) + var(--ux4g-spacing-2)) !important;
+  bottom: auto !important;
+  right: 0 !important;
+  left: auto !important;
+}
+
+.ux4g-sidebar-user-top .ux4g-sidebar-compact-user-dropdown.ux4g-dropdown .ux4g-dropdown-menu,
+.ux4g-sidebar-user-top .ux4g-sidebar-compact-user-dropdown.ux4g-dropdown.ux4g-dropdown-overflow .ux4g-dropdown-menu,
+.ux4g-sidebar-user-top .ux4g-sidebar-compact-user-dropdown .ux4g-dropdown-menu,
+.ux4g-sidebar-compact-user-dropdown.ux4g-dropdown-down .ux4g-dropdown-menu,
+.ux4g-sidebar[data-variant="profile-top"] .ux4g-sidebar-compact-user-dropdown .ux4g-dropdown-menu {
+  top: calc(var(--ux4g-sz-full, 100%) + var(--ux4g-spacing-2)) !important;
+  bottom: auto !important;
+  left: var(--ux4g-spacing-2) !important;
+  right: auto !important;
+}
+
+/* Dropdown List Item Hover (No Border Radius) */
+.ux4g-sidebar .ux4g-dropdown-menu .ux4g-list-item-row,
+.ux4g-sidebar .ux4g-dropdown-menu .ux4g-list-item {
+  border-radius: var(--ux4g-radius-none, 0) !important;
+}
+
+.ux4g-sidebar .ux4g-dropdown-menu .ux4g-list-item-row:hover,
+.ux4g-sidebar .ux4g-dropdown-menu .ux4g-list-item:hover,
+.ux4g-sidebar-user-dropdown .ux4g-list-item-row:hover,
+.ux4g-sidebar-compact-user-dropdown .ux4g-list-item-row:hover {
+  background-color: var(--ux4g-bg-neutral-soft) !important;
+  color: var(--ux4g-text-neutral-primary) !important;
+  border-radius: var(--ux4g-radius-none, 0) !important;
+  cursor: pointer;
+}
+
+/* ==========================================
+   6. STATE VISIBILITY & TRANSITION RULES
+   ========================================== */
+@keyframes ux4g-sidebar-panel-fade {
+  0% {
+    opacity: 0;
+    transform: translateX(var(--ux4g-pos-inset-px-n-6, -6px));
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes ux4g-sidebar-flyout-slide {
+  0% {
+    opacity: 0;
+    transform: translateX(var(--ux4g-pos-inset-px-n-16, -16px));
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes ux4g-sidebar-btn-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.ux4g-sidebar-full-panel {
+  animation: ux4g-sidebar-panel-fade 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.ux4g-sidebar-compact-panel,
+.ux4g-sidebar-slim-panel {
+  animation: ux4g-sidebar-panel-fade 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.ux4g-sidebar-submenu-panel {
+  animation: ux4g-sidebar-flyout-slide 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.ux4g-sidebar-toggle-btn {
+  animation: ux4g-sidebar-btn-pop 0.26s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.ux4g-sidebar[data-state="full"] .ux4g-sidebar-full-panel { display: flex !important; }
+.ux4g-sidebar[data-state="full"] .ux4g-sidebar-compact-panel,
+.ux4g-sidebar[data-state="full"] .ux4g-sidebar-slim-panel { display: none !important; }
+.ux4g-sidebar[data-state="full"] .ux4g-sidebar-submenu-panel { display: none !important; }
+
+.ux4g-sidebar[data-state="slim"] .ux4g-sidebar-full-panel { display: none !important; }
+.ux4g-sidebar[data-state="slim"] .ux4g-sidebar-compact-panel,
+.ux4g-sidebar[data-state="slim"] .ux4g-sidebar-slim-panel { display: flex !important; }
+.ux4g-sidebar[data-state="slim"] .ux4g-sidebar-toggle-btn { display: flex !important; }
+.ux4g-sidebar[data-state="slim"] .ux4g-sidebar-submenu-panel { display: none !important; }
+
+.ux4g-sidebar[data-state="flyout"] .ux4g-sidebar-full-panel,
+.ux4g-sidebar[data-state="submenu"] .ux4g-sidebar-full-panel { display: none !important; }
+.ux4g-sidebar[data-state="flyout"] .ux4g-sidebar-compact-panel,
+.ux4g-sidebar[data-state="flyout"] .ux4g-sidebar-slim-panel,
+.ux4g-sidebar[data-state="submenu"] .ux4g-sidebar-compact-panel,
+.ux4g-sidebar[data-state="submenu"] .ux4g-sidebar-slim-panel { display: flex !important; }
+.ux4g-sidebar[data-state="flyout"] .ux4g-sidebar-toggle-btn,
+.ux4g-sidebar[data-state="submenu"] .ux4g-sidebar-toggle-btn { display: none !important; }
+.ux4g-sidebar[data-state="flyout"] .ux4g-sidebar-submenu-panel,
+.ux4g-sidebar[data-state="submenu"] .ux4g-sidebar-submenu-panel { display: flex !important; }

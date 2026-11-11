@@ -1,0 +1,256 @@
+/* =========================================== UX4G BUTTON — Shared Base (layout, typography, transitions) =========================================== */
+ .ux4g-btn, .ux4g-btn-primary, .ux4g-btn-outline-primary, .ux4g-btn-text-primary, .ux4g-btn-tonal-primary, .ux4g-btn-danger, .ux4g-btn-outline-danger, .ux4g-btn-text-danger, .ux4g-btn-outline-neutral, .ux4g-btn-text-neutral{
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: var(--ux4g-btn-radius, var(--ux4g-radius-md));
+     /* Default typography (Medium size (M)) */
+     font-size: var(--ux4g-fs-16);
+     line-height: var(--ux4g-lh-20);
+     font-weight: var(--ux4g-font-weight-medium);
+     text-decoration: var(--ux4g-td-none);
+
+     cursor: pointer;
+     border: var(--ux4g-border-width-sm) solid transparent;
+     transition: background-color .15s ease, border-color .15s ease, color .15s ease, box-shadow .15s ease, outline-color .15s ease, outline-offset .15s ease, transform .08s ease;
+     column-gap: var(--ux4g-gap-column-xs);
+}
+
+/* Default dimensions (MD) at zero specificity — any explicit size class (0,1,0)
+   always beats this :where() (0,0,0) regardless of source order or minification. */
+:where(.ux4g-btn, .ux4g-btn-primary, .ux4g-btn-outline-primary, .ux4g-btn-text-primary, .ux4g-btn-tonal-primary, .ux4g-btn-danger, .ux4g-btn-outline-danger, .ux4g-btn-text-danger, .ux4g-btn-outline-neutral, .ux4g-btn-text-neutral) {
+     min-height: 2.5rem;
+     padding: var(--ux4g-padding-none) var(--ux4g-padding-m);
+}
+
+/* Button in icon color white */
+.ux4g-btn-primary .ux4g-icon-outlined,
+.ux4g-btn-danger .ux4g-icon-outlined{
+    color: var(--ux4g-text-neutral-inverse);
+}
+
+/* =========================================== PRIMARY (Default) =========================================== */
+ .ux4g-btn-primary{
+     background-color: var(--ux4g-bg-primary-strong);
+     color: var(--ux4g-text-neutral-inverse);
+}
+ .ux4g-btn-primary:hover{
+     background-color: var(--ux4g-bg-primary-strong-hover);
+}
+ .ux4g-btn-primary:active{
+     background-color: var(--ux4g-bg-primary-stronger);
+}
+
+/* Disabled */
+ .ux4g-btn-primary:disabled, .ux4g-btn-primary[aria-disabled="true"]{
+     background-color: var(--ux4g-bg-neutral-disabled);
+     color: var(--ux4g-text-neutral-disabled);
+     border-color: var(--ux4g-border-color-neutral-default);
+     pointer-events: none;
+}
+/* =========================================== SECONDARY (Default) =========================================== */
+/* Default */
+ .ux4g-btn-outline-primary{
+     background-color: var(--ux4g-bg-neutral-elevated);
+     color: var(--ux4g-text-brand-primary-default);
+     border-color: var(--ux4g-border-color-primary-default);
+}
+ .ux4g-btn-outline-primary:hover{
+     background-color: var(--ux4g-bg-primary-subtle);
+     border-color: var(--ux4g-border-color-primary-default);
+}
+ .ux4g-btn-outline-primary:active{
+     background-color: var(--ux4g-bg-primary-emphasis);
+     border-color: var(--ux4g-border-color-primary-default);
+}
+/* Disabled */
+ .ux4g-btn-outline-primary:disabled, .ux4g-btn-outline-primary[aria-disabled="true"]{
+     background-color: var(--ux4g-bg-neutral-elevated);
+     color: var(--ux4g-text-neutral-disabled);
+     border-color: var(--ux4g-border-color-neutral-default);
+     pointer-events: none;
+}
+/* =========================================== TERTIARY (Default) =========================================== */
+ .ux4g-btn-text-primary{
+     background-color: transparent;
+     color: var(--ux4g-text-brand-primary-default);
+     border-color: transparent;
+}
+ .ux4g-btn-text-primary:hover{
+     background-color: var(--ux4g-bg-primary-subtle);
+}
+ .ux4g-btn-text-primary:active{
+     background-color: var(--ux4g-bg-primary-emphasis);
+}
+/* Disabled */
+ .ux4g-btn-text-primary:disabled, .ux4g-btn-text-primary[aria-disabled="true"]{
+     background-color: transparent;
+     color: var(--ux4g-text-neutral-disabled);
+     border-color: transparent;
+     pointer-events: none;
+}
+/* =========================================== TONAL (Default) =========================================== */
+ .ux4g-btn-tonal-primary{
+     background-color: var(--ux4g-bg-primary-soft);
+     color: var(--ux4g-text-brand-primary-default);
+}
+ .ux4g-btn-tonal-primary:hover{
+     background-color: var(--ux4g-bg-primary-subtle);
+}
+ .ux4g-btn-tonal-primary:active{
+     background-color: var(--ux4g-bg-primary-emphasis);
+}
+/* Disabled */
+ .ux4g-btn-tonal-primary:disabled, .ux4g-btn-tonal-primary[aria-disabled="true"]{
+     background-color: var(--ux4g-bg-neutral-disabled);
+    color: var(--ux4g-text-neutral-disabled);
+     border-color: var(--ux4g-border-color-neutral-subtle);
+     pointer-events: none;
+}
+/* =========================================== Neutral Outline =========================================== */
+/* Default */
+ .ux4g-btn-outline-neutral{
+     background-color: var(--ux4g-bg-neutral-elevated);
+     color: var(--ux4g-text-neutral-primary);
+     border-color: var(--ux4g-border-color-neutral-default);
+}
+ .ux4g-btn-outline-neutral:hover{
+     background-color: var(--ux4g-bg-neutral-subtle);
+}
+ .ux4g-btn-outline-neutral:active{
+     background-color: var(--ux4g-bg-neutral-subtle);
+     border-color: var(--ux4g-border-color-neutral-default);
+}
+/* Disabled */
+ .ux4g-btn-outline-neutral:disabled, .ux4g-btn-outline-neutral[aria-disabled="true"]{
+     background-color: var(--ux4g-bg-neutral-elevated);
+     color: var(--ux4g-text-neutral-disabled);
+     border-color: var(--ux4g-border-color-neutral-subtle);
+     pointer-events: none;
+}
+/* =========================================== Neutral Text =========================================== */
+/* Default */
+ .ux4g-btn-text-neutral{
+     background-color: transparent;
+     color: var(--ux4g-text-neutral-primary);
+}
+ .ux4g-btn-text-neutral:hover{
+     background-color: var(--ux4g-bg-neutral-subtle);
+}
+ .ux4g-btn-text-neutral:active{
+     background-color: var(--ux4g-bg-neutral-subtle);
+}
+/* Disabled */
+ .ux4g-btn-text-neutral:disabled, .ux4g-btn-text-neutral[aria-disabled="true"]{
+     background-color: transparent;
+     color: var(--ux4g-text-neutral-disabled);
+     pointer-events: none;
+}
+/* =========================================== Danger =========================================== */
+ .ux4g-btn-danger{
+     background-color: var(--ux4g-bg-error-strong);
+     color: var(--ux4g-text-neutral-inverse);
+}
+ .ux4g-btn-danger:hover{
+     background-color: var(--ux4g-bg-error-strong-hover);
+}
+ .ux4g-btn-danger:active{
+     background-color: var(--ux4g-bg-error-stronger);
+}
+/* Disabled */
+ .ux4g-btn-danger:disabled, .ux4g-btn-danger[aria-disabled="true"]{
+     background-color: var(--ux4g-bg-neutral-disabled);
+     color: var(--ux4g-text-neutral-disabled);
+     border-color: var(--ux4g-border-color-neutral-default);
+     pointer-events: none;
+}
+/* =========================================== Danger Outline =========================================== */
+/* Default */
+ .ux4g-btn-outline-danger{
+     background-color: var(--ux4g-bg-neutral-elevated);
+     color: var(--ux4g-text-status-error);
+     border-color: var(--ux4g-border-color-error-strong);
+}
+ .ux4g-btn-outline-danger:hover{
+     background-color: var(--ux4g-bg-error-soft);
+}
+ .ux4g-btn-outline-danger:active{
+     background-color: var(--ux4g-bg-error-subtle);
+}
+/* Disabled */
+ .ux4g-btn-outline-danger:disabled, .ux4g-btn-outline-danger[aria-disabled="true"]{
+     background-color: var(--ux4g-bg-neutral-elevated);
+     color: var(--ux4g-text-neutral-disabled);
+     border-color: var(--ux4g-border-color-neutral-default);
+     pointer-events: none;
+}
+/* =========================================== Danger Tonal =========================================== */
+/* Default */
+ .ux4g-btn-text-danger{
+     background-color: transparent;
+     color: var(--ux4g-text-status-error);
+}
+ .ux4g-btn-text-danger:hover{
+     background-color: var(--ux4g-bg-error-soft);
+}
+ .ux4g-btn-text-danger:active{
+     background-color: var(--ux4g-bg-error-subtle);
+}
+/* Disabled */
+ .ux4g-btn-text-danger:disabled, .ux4g-btn-text-danger[aria-disabled="true"]{
+     background-color: transparent;
+    color: var(--ux4g-text-neutral-disabled);
+     pointer-events: none;
+}
+
+/* =========================================== UX4G BUTTON — SIZES (Override everything above) =========================================== */
+
+/* Size X Large (XL) */
+.ux4g-btn-xl{
+    min-height: 3.5rem;
+    padding: var(--ux4g-padding-none) var(--ux4g-padding-l);
+    font-size: var(--ux4g-fs-16);
+    line-height: var(--ux4g-lh-20);
+}
+
+/* Size Large (L) */
+.ux4g-btn-l{
+    min-height: 3rem;
+    padding: var(--ux4g-padding-none) var(--ux4g-padding-l);
+    font-size: var(--ux4g-fs-16);
+    line-height: var(--ux4g-lh-20);
+}
+
+/* Size Medium (M) - Default */
+.ux4g-btn-m{
+    min-height: 2.5rem;
+    padding: var(--ux4g-padding-none) var(--ux4g-padding-m);
+    font-size: var(--ux4g-fs-16);
+    line-height: var(--ux4g-lh-20);
+}
+
+/* Size Small (S) */
+.ux4g-btn-s{
+    min-height: 2rem;
+    padding: var(--ux4g-padding-none) var(--ux4g-padding-s);
+    border-radius: var(--ux4g-btn-radius, var(--ux4g-radius-md));
+    font-size: var(--ux4g-fs-14);
+    line-height: var(--ux4g-lh-18);
+    font-weight: var(--ux4g-font-weight-medium);
+}
+
+/* Size Extra Small (XS) */
+.ux4g-btn-xs{
+    min-height: 1.5rem;
+    padding: var(--ux4g-padding-none) var(--ux4g-padding-s);
+    border-radius: var(--ux4g-btn-radius, var(--ux4g-radius-sm));
+    font-size: var(--ux4g-fs-12);
+    line-height: var(--ux4g-lh-16);
+}
+
+.ux4g-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ux4g-gap-column-xs);
+}
+

@@ -1,0 +1,74 @@
+/* ==========================================================================
+   UX4G VERTICAL ALIGN UTILITIES
+   Alignment utility classes for inline elements and table cells.
+
+   Breakpoints:
+   xs: <576px
+   sm: ≥576px
+   md: ≥768px
+   lg: ≥992px
+   xl: ≥1200px
+   2xl: ≥1400px
+   ========================================================================== */
+
+/* ─── Vertical Align Keywords ─── */
+.ux4g-va-baseline    { vertical-align: var(--ux4g-va-baseline); }
+.ux4g-va-top         { vertical-align: var(--ux4g-va-top); }
+.ux4g-va-middle      { vertical-align: var(--ux4g-va-middle); }
+.ux4g-va-bottom      { vertical-align: var(--ux4g-va-bottom); }
+.ux4g-va-text-top    { vertical-align: var(--ux4g-va-text-top); }
+.ux4g-va-text-bottom { vertical-align: var(--ux4g-va-text-bottom); }
+
+/* =========================================
+   RESPONSIVE VERTICAL ALIGN
+   ========================================= */
+
+/* Small — ≥576px */
+@media (min-width: 576px) {
+  .ux4g-sm-va-baseline    { vertical-align: var(--ux4g-va-baseline); }
+  .ux4g-sm-va-top         { vertical-align: var(--ux4g-va-top); }
+  .ux4g-sm-va-middle      { vertical-align: var(--ux4g-va-middle); }
+  .ux4g-sm-va-bottom      { vertical-align: var(--ux4g-va-bottom); }
+  .ux4g-sm-va-text-top    { vertical-align: var(--ux4g-va-text-top); }
+  .ux4g-sm-va-text-bottom { vertical-align: var(--ux4g-va-text-bottom); }
+}
+
+/* Medium — ≥768px */
+@media (min-width: 768px) {
+  .ux4g-md-va-baseline    { vertical-align: var(--ux4g-va-baseline); }
+  .ux4g-md-va-top         { vertical-align: var(--ux4g-va-top); }
+  .ux4g-md-va-middle      { vertical-align: var(--ux4g-va-middle); }
+  .ux4g-md-va-bottom      { vertical-align: var(--ux4g-va-bottom); }
+  .ux4g-md-va-text-top    { vertical-align: var(--ux4g-va-text-top); }
+  .ux4g-md-va-text-bottom { vertical-align: var(--ux4g-va-text-bottom); }
+}
+
+/* Large — ≥992px */
+@media (min-width: 992px) {
+  .ux4g-lg-va-baseline    { vertical-align: var(--ux4g-va-baseline); }
+  .ux4g-lg-va-top         { vertical-align: var(--ux4g-va-top); }
+  .ux4g-lg-va-middle      { vertical-align: var(--ux4g-va-middle); }
+  .ux4g-lg-va-bottom      { vertical-align: var(--ux4g-va-bottom); }
+  .ux4g-lg-va-text-top    { vertical-align: var(--ux4g-va-text-top); }
+  .ux4g-lg-va-text-bottom { vertical-align: var(--ux4g-va-text-bottom); }
+}
+
+/* Extra Large — ≥1200px */
+@media (min-width: 1200px) {
+  .ux4g-xl-va-baseline    { vertical-align: var(--ux4g-va-baseline); }
+  .ux4g-xl-va-top         { vertical-align: var(--ux4g-va-top); }
+  .ux4g-xl-va-middle      { vertical-align: var(--ux4g-va-middle); }
+  .ux4g-xl-va-bottom      { vertical-align: var(--ux4g-va-bottom); }
+  .ux4g-xl-va-text-top    { vertical-align: var(--ux4g-va-text-top); }
+  .ux4g-xl-va-text-bottom { vertical-align: var(--ux4g-va-text-bottom); }
+}
+
+/* Extra Extra Large — ≥1400px */
+@media (min-width: 1400px) {
+  .ux4g-2xl-va-baseline    { vertical-align: var(--ux4g-va-baseline); }
+  .ux4g-2xl-va-top         { vertical-align: var(--ux4g-va-top); }
+  .ux4g-2xl-va-middle      { vertical-align: var(--ux4g-va-middle); }
+  .ux4g-2xl-va-bottom      { vertical-align: var(--ux4g-va-bottom); }
+  .ux4g-2xl-va-text-top    { vertical-align: var(--ux4g-va-text-top); }
+  .ux4g-2xl-va-text-bottom { vertical-align: var(--ux4g-va-text-bottom); }
+}

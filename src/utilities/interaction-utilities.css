@@ -1,0 +1,91 @@
+/* =========================================
+   UX4G INTERACTION & UTILITY SYSTEM
+
+   1. Appearance
+   2. Cursor
+   3. Pointer Events
+   4. User Select
+   5. Resize
+   6. Aspect Ratio
+   7. Table Layout
+   8. Caption Side
+========================================= */
+
+
+/* =========================================
+   1. APPEARANCE
+========================================= */
+
+.ux4g-appearance-none { appearance: none; -webkit-appearance: none; }
+.ux4g-appearance-auto { appearance: auto; -webkit-appearance: auto; }
+
+
+/* =========================================
+   2. CURSOR
+========================================= */
+
+.ux4g-cursor-auto        { cursor: auto; }
+.ux4g-cursor-default     { cursor: var(--ux4g-cursor-default, default); }
+.ux4g-cursor-pointer     { cursor: var(--ux4g-cursor-interactive, pointer); }
+.ux4g-cursor-not-allowed { cursor: var(--ux4g-cursor-disabled, not-allowed); }
+.ux4g-cursor-grab        { cursor: var(--ux4g-cursor-draggable, grab); }
+.ux4g-cursor-grabbing    { cursor: var(--ux4g-cursor-dragging, grabbing); }
+.ux4g-cursor-move        { cursor: move; }
+.ux4g-cursor-wait        { cursor: wait; }
+.ux4g-cursor-text        { cursor: var(--ux4g-cursor-text-input, text); }
+.ux4g-cursor-crosshair   { cursor: crosshair; }
+.ux4g-cursor-help        { cursor: help; }
+.ux4g-cursor-none        { cursor: none; }
+
+
+/* =========================================
+   3. POINTER EVENTS
+========================================= */
+
+.ux4g-pointer-events-none { pointer-events: var(--ux4g-pointer-events-disabled, none); }
+.ux4g-pointer-events-auto { pointer-events: var(--ux4g-pointer-events-interactive, auto); }
+
+
+/* =========================================
+   4. USER SELECT
+========================================= */
+
+.ux4g-select-none { user-select: var(--ux4g-select-prevent, none); }
+.ux4g-select-text { user-select: var(--ux4g-select-content, text); }
+.ux4g-select-all  { user-select: all; }
+.ux4g-select-auto { user-select: var(--ux4g-select-default, auto); }
+
+
+/* =========================================
+   5. RESIZE
+========================================= */
+
+.ux4g-resize-none { resize: none; }
+.ux4g-resize      { resize: both; }
+.ux4g-resize-x    { resize: horizontal; }
+.ux4g-resize-y    { resize: vertical; }
+
+
+/* =========================================
+   6. ASPECT RATIO
+========================================= */
+
+.ux4g-aspect-auto   { aspect-ratio: auto; }
+.ux4g-aspect-square { aspect-ratio: 1 / 1; }
+.ux4g-aspect-video  { aspect-ratio: 16 / 9; }
+
+
+/* =========================================
+   7. TABLE LAYOUT
+========================================= */
+
+.ux4g-table-auto  { table-layout: auto; }
+.ux4g-table-fixed { table-layout: fixed; }
+
+
+/* =========================================
+   8. CAPTION SIDE
+========================================= */
+
+.ux4g-caption-top    { caption-side: top; }
+.ux4g-caption-bottom { caption-side: bottom; }

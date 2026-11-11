@@ -1,0 +1,75 @@
+/* =========================================
+   UX4G TYPOGRAPHY SEMANTIC TOKENS
+
+   1. Font Family
+   2. Font Weight
+   3. Font Size
+   4. Line Height
+========================================= */
+
+:root {
+
+  /* =========================================
+     1. FONT FAMILY
+  ========================================= */
+  --ux4g-ff:         var(--ux4g-font-family-base);
+  --ux4g-ff-display: var(--ux4g-font-family-display);
+  --ux4g-ff-current: var(--ux4g-ff);
+
+
+  /* =========================================
+     2. FONT WEIGHT
+  ========================================= */
+  --ux4g-fw-thin:             var(--ux4g-font-weight-thin);
+  --ux4g-fw-light:            var(--ux4g-font-weight-light);
+  --ux4g-fw-regular:          var(--ux4g-font-weight-regular);
+  --ux4g-fw-medium:           var(--ux4g-font-weight-medium);
+  --ux4g-fw-semibold:         var(--ux4g-font-weight-semibold);
+  --ux4g-fw-bold:             var(--ux4g-font-weight-bold);
+  --ux4g-fw-extrabold:        var(--ux4g-font-weight-extrabold);
+  --ux4g-fw-black:            var(--ux4g-font-weight-black);
+  --ux4g-fw-display-semibold: var(--ux4g-font-weight-display-semibold);
+  --ux4g-fw-display-bold:     var(--ux4g-font-weight-display-bold);
+
+
+  /* =========================================
+     3. FONT SIZE
+  ========================================= */
+  --ux4g-fs-60: var(--ux4g-font-size-60);
+  --ux4g-fs-52: var(--ux4g-font-size-52);
+  --ux4g-fs-48: var(--ux4g-font-size-48);
+  --ux4g-fs-40: var(--ux4g-font-size-40);
+  --ux4g-fs-36: var(--ux4g-font-size-36);
+  --ux4g-fs-32: var(--ux4g-font-size-32);
+  --ux4g-fs-28: var(--ux4g-font-size-28);
+  --ux4g-fs-24: var(--ux4g-font-size-24);
+  --ux4g-fs-20: var(--ux4g-font-size-20);
+  --ux4g-fs-18: var(--ux4g-font-size-18);
+  --ux4g-fs-16: var(--ux4g-font-size-16);
+  --ux4g-fs-14: var(--ux4g-font-size-14);
+  --ux4g-fs-12: var(--ux4g-font-size-12);
+  --ux4g-fs-11: var(--ux4g-font-size-11);
+  --ux4g-fs-8:  var(--ux4g-font-size-8);
+
+
+  /* =========================================
+     4. LINE HEIGHT
+  ========================================= */
+  --ux4g-lh-64: var(--ux4g-line-height-64);
+  --ux4g-lh-56: var(--ux4g-line-height-56);
+  --ux4g-lh-52: var(--ux4g-line-height-52);
+  --ux4g-lh-48: var(--ux4g-line-height-48);
+  --ux4g-lh-44: var(--ux4g-line-height-44);
+  --ux4g-lh-40: var(--ux4g-line-height-40);
+  --ux4g-lh-36: var(--ux4g-line-height-36);
+  --ux4g-lh-32: var(--ux4g-line-height-32);
+  --ux4g-lh-28: var(--ux4g-line-height-28);
+  --ux4g-lh-26: var(--ux4g-line-height-26);
+  --ux4g-lh-24: var(--ux4g-line-height-24);
+  --ux4g-lh-22: var(--ux4g-line-height-22);
+  --ux4g-lh-20: var(--ux4g-line-height-20);
+  --ux4g-lh-18: var(--ux4g-line-height-18);
+  --ux4g-lh-16: var(--ux4g-line-height-16);
+  --ux4g-lh-14: var(--ux4g-line-height-14);
+
+}

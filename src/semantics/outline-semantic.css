@@ -1,0 +1,24 @@
+/* =========================================
+   UX4G OUTLINE SEMANTIC TOKENS
+   Semantic outline styles, colors, widths, and offsets
+========================================= */
+
+:root {
+  /* Default Outline Style & Color */
+  --ux4g-outline-style-default:  solid;
+  --ux4g-outline-color-default:  var(--ux4g-border-color-neutral-default);
+
+  /* Outline Width Scale */
+  --ux4g-outline-width-none: var(--ux4g-outline-width-0);
+  --ux4g-outline-width-sm:   var(--ux4g-outline-width-1);
+  --ux4g-outline-width-md:   var(--ux4g-outline-width-2);
+  --ux4g-outline-width-lg:   var(--ux4g-outline-width-4);
+  --ux4g-outline-width-xl:   var(--ux4g-outline-width-8);
+
+  /* Outline Offset Scale */
+  --ux4g-outline-offset-none: var(--ux4g-outline-offset-0);
+  --ux4g-outline-offset-sm:   var(--ux4g-outline-offset-1);
+  --ux4g-outline-offset-md:   var(--ux4g-outline-offset-2);
+  --ux4g-outline-offset-lg:   var(--ux4g-outline-offset-4);
+  --ux4g-outline-offset-xl:   var(--ux4g-outline-offset-8);
+}

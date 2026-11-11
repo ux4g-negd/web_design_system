@@ -1,0 +1,13 @@
+/* ==========================================================================
+   UX4G BLUR SEMANTIC TOKENS
+   Semantic aliases mapping to primitive blur tokens for glassmorphism and filters.
+   ========================================================================== */
+
+:root {
+  /* ─── Blur Semantic Levels ─── */
+  --ux4g-blur-zero:   var(--ux4g-blur-none); /* 0px */
+  --ux4g-blur-subtle: var(--ux4g-blur-1);    /* 2px - Subtle background softening */
+  --ux4g-blur-soft:   var(--ux4g-blur-2);    /* 4px - Soft glass overlay */
+  --ux4g-blur-medium: var(--ux4g-blur-3);    /* 8px - Standard modal / sheet backdrop */
+  --ux4g-blur-strong: var(--ux4g-blur-4);    /* 16px - Heavy frosted glass effect */
+}

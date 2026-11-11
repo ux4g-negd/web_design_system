@@ -1,0 +1,339 @@
+/* ==========================================================================
+   UX4G SIZING UTILITIES
+   Width, height, min/max dimensions, and logical sizing utility classes.
+
+   Table of Contents:
+     1. Percentage Widths
+     2. Fractional Widths
+     3. Fixed Sizing Widths
+     4. Max Width
+     5. Min Width
+     6. Square Size
+     7. Percentage Height
+     8. Fixed Sizing Heights
+     9. Max Height
+     10. Min Height
+     11. Logical Sizing
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. PERCENTAGE WIDTHS
+   ========================================================================== */
+
+.ux4g-w-0      { width: var(--ux4g-sz-none); }
+.ux4g-w-25     { width: 25%; }
+.ux4g-w-50     { width: var(--ux4g-sz-half); }
+.ux4g-w-75     { width: 75%; }
+.ux4g-w-100    { width: var(--ux4g-sz-full); }
+.ux4g-w-auto   { width: var(--ux4g-sz-auto); }
+.ux4g-w-min    { width: var(--ux4g-sz-min); }
+.ux4g-w-max    { width: var(--ux4g-sz-max); }
+.ux4g-w-fit    { width: var(--ux4g-sz-fit); }
+.ux4g-w-screen { width: var(--ux4g-sz-screen-w); }
+
+
+/* ==========================================================================
+   2. FRACTIONAL WIDTHS
+   ========================================================================== */
+
+.ux4g-w-1\/3   { width: 33.333333%; }
+.ux4g-w-2\/3   { width: 66.666667%; }
+.ux4g-w-1\/5   { width: 20%; }
+.ux4g-w-2\/5   { width: 40%; }
+.ux4g-w-3\/5   { width: 60%; }
+.ux4g-w-4\/5   { width: 80%; }
+.ux4g-w-1\/6   { width: 16.666667%; }
+.ux4g-w-5\/6   { width: 83.333333%; }
+.ux4g-w-1\/12  { width: 8.333333%; }
+.ux4g-w-5\/12  { width: 41.666667%; }
+.ux4g-w-7\/12  { width: 58.333333%; }
+.ux4g-w-11\/12 { width: 91.666667%; }
+
+
+/* ==========================================================================
+   3. FIXED SIZING WIDTHS (wpx-N = Npx equivalent)
+   ========================================================================== */
+
+.ux4g-wpx-4   { width: var(--ux4g-sz-4); }    /* 4px */
+.ux4g-wpx-8   { width: var(--ux4g-sz-8); }    /* 8px */
+.ux4g-wpx-12  { width: var(--ux4g-sz-12); }   /* 12px */
+.ux4g-wpx-16  { width: var(--ux4g-sz-16); }   /* 16px */
+.ux4g-wpx-20  { width: var(--ux4g-sz-20); }   /* 20px */
+.ux4g-wpx-24  { width: var(--ux4g-sz-24); }   /* 24px */
+.ux4g-wpx-28  { width: var(--ux4g-sz-28); }   /* 28px */
+.ux4g-wpx-32  { width: var(--ux4g-sz-32); }   /* 32px */
+.ux4g-wpx-36  { width: var(--ux4g-sz-36); }   /* 36px */
+.ux4g-wpx-40  { width: var(--ux4g-sz-40); }   /* 40px */
+.ux4g-wpx-44  { width: var(--ux4g-sz-44); }   /* 44px */
+.ux4g-wpx-48  { width: var(--ux4g-sz-48); }   /* 48px */
+.ux4g-wpx-56  { width: var(--ux4g-sz-56); }   /* 56px */
+.ux4g-wpx-60  { width: var(--ux4g-sz-60); }   /* 60px */
+.ux4g-wpx-64  { width: var(--ux4g-sz-64); }   /* 64px */
+.ux4g-wpx-80  { width: var(--ux4g-sz-80); }   /* 80px */
+.ux4g-wpx-96  { width: var(--ux4g-sz-96); }   /* 96px */
+.ux4g-wpx-100 { width: var(--ux4g-sz-100); }  /* 100px */
+.ux4g-wpx-112 { width: var(--ux4g-sz-112); }  /* 112px */
+.ux4g-wpx-120 { width: var(--ux4g-sz-120); }  /* 120px */
+.ux4g-wpx-128 { width: var(--ux4g-sz-128); }  /* 128px */
+.ux4g-wpx-144 { width: var(--ux4g-sz-144); }  /* 144px */
+.ux4g-wpx-150 { width: var(--ux4g-sz-150); }  /* 150px */
+.ux4g-wpx-160 { width: var(--ux4g-sz-160); }  /* 160px */
+.ux4g-wpx-176 { width: var(--ux4g-sz-176); }  /* 176px */
+.ux4g-wpx-192 { width: var(--ux4g-sz-192); }  /* 192px */
+.ux4g-wpx-200 { width: var(--ux4g-sz-200); }  /* 200px */
+.ux4g-wpx-208 { width: var(--ux4g-sz-208); }  /* 208px */
+.ux4g-wpx-224 { width: var(--ux4g-sz-224); }  /* 224px */
+.ux4g-wpx-240 { width: var(--ux4g-sz-240); }  /* 240px */
+.ux4g-wpx-256 { width: var(--ux4g-sz-256); }  /* 256px */
+.ux4g-wpx-288 { width: var(--ux4g-sz-288); }  /* 288px */
+.ux4g-wpx-300 { width: var(--ux4g-sz-300); }  /* 300px */
+.ux4g-wpx-320 { width: var(--ux4g-sz-320); }  /* 320px */
+.ux4g-wpx-384 { width: var(--ux4g-sz-384); }  /* 384px */
+.ux4g-wpx-400 { width: var(--ux4g-sz-400); }  /* 400px */
+.ux4g-wpx-500 { width: var(--ux4g-sz-500); }  /* 500px */
+.ux4g-wpx-550 { width: var(--ux4g-sz-550); }  /* 550px */
+.ux4g-wpx-600 { width: var(--ux4g-sz-600); }  /* 600px */
+.ux4g-wpx-650 { width: var(--ux4g-sz-650); }  /* 650px */
+.ux4g-wpx-700 { width: var(--ux4g-sz-700); }  /* 700px */
+
+
+/* ==========================================================================
+   4. MAX WIDTH
+   ========================================================================== */
+
+.ux4g-max-w-none { max-width: none; }
+.ux4g-max-w-xs   { max-width: var(--ux4g-sz-320); }  /* 320px */
+.ux4g-max-w-sm   { max-width: var(--ux4g-sz-384); }  /* 384px */
+.ux4g-max-w-md   { max-width: var(--ux4g-sz-448); }  /* 448px */
+.ux4g-max-w-lg   { max-width: var(--ux4g-sz-512); }  /* 512px */
+.ux4g-max-w-xl   { max-width: var(--ux4g-sz-576); }  /* 576px */
+.ux4g-max-w-2xl  { max-width: var(--ux4g-sz-672); }  /* 672px */
+.ux4g-max-w-3xl  { max-width: var(--ux4g-sz-768); }  /* 768px */
+.ux4g-max-w-4xl  { max-width: var(--ux4g-sz-896); }  /* 896px */
+.ux4g-max-w-5xl  { max-width: var(--ux4g-sz-1024); } /* 1024px */
+.ux4g-max-w-6xl  { max-width: var(--ux4g-sz-1152); } /* 1152px */
+.ux4g-max-w-7xl  { max-width: var(--ux4g-sz-1280); } /* 1280px */
+.ux4g-max-w-full { max-width: var(--ux4g-sz-full); }
+.ux4g-max-w-fit  { max-width: var(--ux4g-sz-fit); }
+
+
+/* ==========================================================================
+   5. MIN WIDTH
+   ========================================================================== */
+
+.ux4g-min-w-0   { min-width: var(--ux4g-sz-none); }
+.ux4g-min-w-16  { min-width: var(--ux4g-sz-16); }   /* 16px */
+.ux4g-min-w-32  { min-width: var(--ux4g-sz-32); }   /* 32px */
+.ux4g-min-w-48  { min-width: var(--ux4g-sz-48); }   /* 48px */
+.ux4g-min-w-64  { min-width: var(--ux4g-sz-64); }   /* 64px */
+.ux4g-min-w-80  { min-width: var(--ux4g-sz-80); }   /* 80px */
+.ux4g-min-w-96  { min-width: var(--ux4g-sz-96); }   /* 96px */
+.ux4g-min-w-112 { min-width: var(--ux4g-sz-112); }  /* 112px */
+.ux4g-min-w-128 { min-width: var(--ux4g-sz-128); }  /* 128px */
+.ux4g-min-w-144 { min-width: var(--ux4g-sz-144); }  /* 144px */
+.ux4g-min-w-160 { min-width: var(--ux4g-sz-160); }  /* 160px */
+.ux4g-min-w-192 { min-width: var(--ux4g-sz-192); }  /* 192px */
+.ux4g-min-w-256 { min-width: var(--ux4g-sz-256); }  /* 256px */
+
+/* Named Breakpoints */
+.ux4g-min-w-xs   { min-width: var(--ux4g-sz-320); }  /* 320px */
+.ux4g-min-w-sm   { min-width: var(--ux4g-sz-384); }  /* 384px */
+.ux4g-min-w-md   { min-width: var(--ux4g-sz-448); }  /* 448px */
+.ux4g-min-w-lg   { min-width: var(--ux4g-sz-512); }  /* 512px */
+.ux4g-min-w-xl   { min-width: var(--ux4g-sz-576); }  /* 576px */
+.ux4g-min-w-2xl  { min-width: var(--ux4g-sz-672); }  /* 672px */
+.ux4g-min-w-3xl  { min-width: var(--ux4g-sz-768); }  /* 768px */
+.ux4g-min-w-4xl  { min-width: var(--ux4g-sz-896); }  /* 896px */
+.ux4g-min-w-5xl  { min-width: var(--ux4g-sz-1024); } /* 1024px */
+.ux4g-min-w-6xl  { min-width: var(--ux4g-sz-1152); } /* 1152px */
+.ux4g-min-w-7xl  { min-width: var(--ux4g-sz-1280); } /* 1280px */
+
+.ux4g-min-w-max  { min-width: var(--ux4g-sz-max); }
+.ux4g-min-w-fit  { min-width: var(--ux4g-sz-fit); }
+.ux4g-min-w-full { min-width: var(--ux4g-sz-full); }
+
+
+/* ==========================================================================
+   6. SQUARE SIZE (Sets both width and height)
+   ========================================================================== */
+
+.ux4g-size-0  { width: var(--ux4g-sz-none); height: var(--ux4g-sz-none); }
+.ux4g-size-1  { width: var(--ux4g-sz-4);  height: var(--ux4g-sz-4); }   /* 4px */
+.ux4g-size-2  { width: var(--ux4g-sz-8);  height: var(--ux4g-sz-8); }   /* 8px */
+.ux4g-size-3  { width: var(--ux4g-sz-12); height: var(--ux4g-sz-12); }  /* 12px */
+.ux4g-size-4  { width: var(--ux4g-sz-16); height: var(--ux4g-sz-16); }  /* 16px */
+.ux4g-size-5  { width: var(--ux4g-sz-20); height: var(--ux4g-sz-20); }  /* 20px */
+.ux4g-size-6  { width: var(--ux4g-sz-24); height: var(--ux4g-sz-24); }  /* 24px */
+.ux4g-size-7  { width: var(--ux4g-sz-28); height: var(--ux4g-sz-28); }  /* 28px */
+.ux4g-size-8  { width: var(--ux4g-sz-32); height: var(--ux4g-sz-32); }  /* 32px */
+.ux4g-size-9  { width: var(--ux4g-sz-36); height: var(--ux4g-sz-36); }  /* 36px */
+.ux4g-size-10 { width: var(--ux4g-sz-40); height: var(--ux4g-sz-40); }  /* 40px */
+.ux4g-size-11 { width: var(--ux4g-sz-44); height: var(--ux4g-sz-44); }  /* 44px */
+.ux4g-size-12 { width: var(--ux4g-sz-48); height: var(--ux4g-sz-48); }  /* 48px */
+.ux4g-size-14 { width: var(--ux4g-sz-56); height: var(--ux4g-sz-56); }  /* 56px */
+.ux4g-size-16 { width: var(--ux4g-sz-64); height: var(--ux4g-sz-64); }  /* 64px */
+
+.ux4g-size-full { width: var(--ux4g-sz-full); height: var(--ux4g-sz-full); }
+
+
+/* ==========================================================================
+   7. HEIGHT
+   ========================================================================== */
+
+/* Percentage Heights */
+.ux4g-h-0      { height: var(--ux4g-sz-none); }
+.ux4g-h-25     { height: 25%; }
+.ux4g-h-50     { height: var(--ux4g-sz-half); }
+.ux4g-h-75     { height: 75%; }
+.ux4g-h-100    { height: var(--ux4g-sz-full); }
+.ux4g-h-auto   { height: var(--ux4g-sz-auto); }
+.ux4g-h-min    { height: var(--ux4g-sz-min); }
+.ux4g-h-max    { height: var(--ux4g-sz-max); }
+.ux4g-h-fit    { height: var(--ux4g-sz-fit); }
+
+/* Viewport Heights */
+.ux4g-h-screen { height: var(--ux4g-sz-screen-h); }
+.ux4g-h-dvh    { height: var(--ux4g-sz-dvh); }
+
+
+/* ==========================================================================
+   8. FIXED SIZING HEIGHTS (hpx-N = Npx equivalent)
+   ========================================================================== */
+
+.ux4g-hpx-4   { height: var(--ux4g-sz-4); }   /* 4px */
+.ux4g-hpx-8   { height: var(--ux4g-sz-8); }   /* 8px */
+.ux4g-hpx-12  { height: var(--ux4g-sz-12); }  /* 12px */
+.ux4g-hpx-16  { height: var(--ux4g-sz-16); }  /* 16px */
+.ux4g-hpx-20  { height: var(--ux4g-sz-20); }  /* 20px */
+.ux4g-hpx-24  { height: var(--ux4g-sz-24); }  /* 24px */
+.ux4g-hpx-28  { height: var(--ux4g-sz-28); }  /* 28px */
+.ux4g-hpx-32  { height: var(--ux4g-sz-32); }  /* 32px */
+.ux4g-hpx-36  { height: var(--ux4g-sz-36); }  /* 36px */
+.ux4g-hpx-40  { height: var(--ux4g-sz-40); }  /* 40px */
+.ux4g-hpx-44  { height: var(--ux4g-sz-44); }  /* 44px */
+.ux4g-hpx-48  { height: var(--ux4g-sz-48); }  /* 48px */
+.ux4g-hpx-56  { height: var(--ux4g-sz-56); }  /* 56px */
+.ux4g-hpx-60  { height: var(--ux4g-sz-60); }  /* 60px */
+.ux4g-hpx-64  { height: var(--ux4g-sz-64); }  /* 64px */
+.ux4g-hpx-80  { height: var(--ux4g-sz-80); }  /* 80px */
+.ux4g-hpx-96  { height: var(--ux4g-sz-96); }  /* 96px */
+.ux4g-hpx-100 { height: var(--ux4g-sz-100); } /* 100px */
+.ux4g-hpx-112 { height: var(--ux4g-sz-112); } /* 112px */
+.ux4g-hpx-120 { height: var(--ux4g-sz-120); } /* 120px */
+.ux4g-hpx-128 { height: var(--ux4g-sz-128); } /* 128px */
+.ux4g-hpx-144 { height: var(--ux4g-sz-144); } /* 144px */
+.ux4g-hpx-150 { height: var(--ux4g-sz-150); } /* 150px */
+.ux4g-hpx-160 { height: var(--ux4g-sz-160); } /* 160px */
+.ux4g-hpx-176 { height: var(--ux4g-sz-176); } /* 176px */
+.ux4g-hpx-192 { height: var(--ux4g-sz-192); } /* 192px */
+.ux4g-hpx-200 { height: var(--ux4g-sz-200); } /* 200px */
+.ux4g-hpx-208 { height: var(--ux4g-sz-208); } /* 208px */
+.ux4g-hpx-224 { height: var(--ux4g-sz-224); } /* 224px */
+.ux4g-hpx-240 { height: var(--ux4g-sz-240); } /* 240px */
+.ux4g-hpx-256 { height: var(--ux4g-sz-256); } /* 256px */
+.ux4g-hpx-288 { height: var(--ux4g-sz-288); } /* 288px */
+.ux4g-hpx-300 { height: var(--ux4g-sz-300); } /* 300px */
+.ux4g-hpx-320 { height: var(--ux4g-sz-320); } /* 320px */
+.ux4g-hpx-384 { height: var(--ux4g-sz-384); } /* 384px */
+.ux4g-hpx-400 { height: var(--ux4g-sz-400); } /* 400px */
+.ux4g-hpx-500 { height: var(--ux4g-sz-500); } /* 500px */
+.ux4g-hpx-550 { height: var(--ux4g-sz-550); } /* 550px */
+.ux4g-hpx-600 { height: var(--ux4g-sz-600); } /* 600px */
+.ux4g-hpx-650 { height: var(--ux4g-sz-650); } /* 650px */
+.ux4g-hpx-700 { height: var(--ux4g-sz-700); } /* 700px */
+
+
+/* ==========================================================================
+   9. MAX HEIGHT (max-h-N = Npx equivalent)
+   ========================================================================== */
+
+.ux4g-max-h-0   { max-height: var(--ux4g-sz-none); }
+.ux4g-max-h-4   { max-height: var(--ux4g-sz-4); }   /* 4px */
+.ux4g-max-h-8   { max-height: var(--ux4g-sz-8); }   /* 8px */
+.ux4g-max-h-16  { max-height: var(--ux4g-sz-16); }  /* 16px */
+.ux4g-max-h-32  { max-height: var(--ux4g-sz-32); }  /* 32px */
+.ux4g-max-h-48  { max-height: var(--ux4g-sz-48); }  /* 48px */
+.ux4g-max-h-64  { max-height: var(--ux4g-sz-64); }  /* 64px */
+.ux4g-max-h-80  { max-height: var(--ux4g-sz-80); }  /* 80px */
+.ux4g-max-h-96  { max-height: var(--ux4g-sz-96); }  /* 96px */
+.ux4g-max-h-112 { max-height: var(--ux4g-sz-112); } /* 112px */
+.ux4g-max-h-128 { max-height: var(--ux4g-sz-128); } /* 128px */
+.ux4g-max-h-160 { max-height: var(--ux4g-sz-160); } /* 160px */
+.ux4g-max-h-192 { max-height: var(--ux4g-sz-192); } /* 192px */
+.ux4g-max-h-224 { max-height: var(--ux4g-sz-224); } /* 224px */
+.ux4g-max-h-256 { max-height: var(--ux4g-sz-256); } /* 256px */
+.ux4g-max-h-288 { max-height: var(--ux4g-sz-288); } /* 288px */
+.ux4g-max-h-320 { max-height: var(--ux4g-sz-320); } /* 320px */
+.ux4g-max-h-384 { max-height: var(--ux4g-sz-384); } /* 384px */
+.ux4g-max-h-400 { max-height: var(--ux4g-sz-400); } /* 400px */
+.ux4g-max-h-500 { max-height: var(--ux4g-sz-500); } /* 500px */
+.ux4g-max-h-550 { max-height: var(--ux4g-sz-550); } /* 550px */
+.ux4g-max-h-600 { max-height: var(--ux4g-sz-600); } /* 600px */
+.ux4g-max-h-650 { max-height: var(--ux4g-sz-650); } /* 650px */
+.ux4g-max-h-700 { max-height: var(--ux4g-sz-700); } /* 700px */
+
+.ux4g-max-h-full   { max-height: var(--ux4g-sz-full); }
+.ux4g-max-h-none   { max-height: none; }
+.ux4g-max-h-screen { max-height: var(--ux4g-sz-screen-h); }
+.ux4g-max-h-dvh    { max-height: var(--ux4g-sz-dvh); }
+
+
+/* ==========================================================================
+   10. MIN HEIGHT
+   ========================================================================== */
+
+.ux4g-min-h-0   { min-height: var(--ux4g-sz-none); }
+.ux4g-min-h-4   { min-height: var(--ux4g-sz-4); }   /* 4px */
+.ux4g-min-h-8   { min-height: var(--ux4g-sz-8); }   /* 8px */
+.ux4g-min-h-16  { min-height: var(--ux4g-sz-16); }  /* 16px */
+.ux4g-min-h-32  { min-height: var(--ux4g-sz-32); }  /* 32px */
+.ux4g-min-h-48  { min-height: var(--ux4g-sz-48); }  /* 48px */
+.ux4g-min-h-64  { min-height: var(--ux4g-sz-64); }  /* 64px */
+.ux4g-min-h-80  { min-height: var(--ux4g-sz-80); }  /* 80px */
+.ux4g-min-h-96  { min-height: var(--ux4g-sz-96); }  /* 96px */
+.ux4g-min-h-112 { min-height: var(--ux4g-sz-112); } /* 112px */
+.ux4g-min-h-128 { min-height: var(--ux4g-sz-128); } /* 128px */
+.ux4g-min-h-160 { min-height: var(--ux4g-sz-160); } /* 160px */
+.ux4g-min-h-192 { min-height: var(--ux4g-sz-192); } /* 192px */
+.ux4g-min-h-224 { min-height: var(--ux4g-sz-224); } /* 224px */
+.ux4g-min-h-256 { min-height: var(--ux4g-sz-256); } /* 256px */
+.ux4g-min-h-288 { min-height: var(--ux4g-sz-288); } /* 288px */
+.ux4g-min-h-320 { min-height: var(--ux4g-sz-320); } /* 320px */
+.ux4g-min-h-384 { min-height: var(--ux4g-sz-384); } /* 384px */
+.ux4g-min-h-400 { min-height: var(--ux4g-sz-400); } /* 400px */
+.ux4g-min-h-500 { min-height: var(--ux4g-sz-500); } /* 500px */
+.ux4g-min-h-550 { min-height: var(--ux4g-sz-550); } /* 550px */
+.ux4g-min-h-600 { min-height: var(--ux4g-sz-600); } /* 600px */
+.ux4g-min-h-650 { min-height: var(--ux4g-sz-650); } /* 650px */
+.ux4g-min-h-700 { min-height: var(--ux4g-sz-700); } /* 700px */
+.ux4g-min-h-full   { min-height: var(--ux4g-sz-full); }
+.ux4g-min-h-screen { min-height: var(--ux4g-sz-screen-h); }
+.ux4g-min-h-dvh    { min-height: var(--ux4g-sz-dvh); }
+
+
+/* ==========================================================================
+   11. LOGICAL SIZING (RTL Safe)
+   ========================================================================== */
+
+/* Inline Size */
+.ux4g-is-auto   { inline-size: var(--ux4g-sz-auto); }
+.ux4g-is-full   { inline-size: var(--ux4g-sz-full); }
+.ux4g-is-fit    { inline-size: var(--ux4g-sz-fit); }
+.ux4g-is-screen { inline-size: 100vi; }
+
+/* Block Size */
+.ux4g-bs-auto   { block-size: var(--ux4g-sz-auto); }
+.ux4g-bs-full   { block-size: var(--ux4g-sz-full); }
+.ux4g-bs-fit    { block-size: var(--ux4g-sz-fit); }
+.ux4g-bs-screen { block-size: 100vb; }
+
+/* Min / Max Logical Size */
+.ux4g-min-is-0      { min-inline-size: var(--ux4g-sz-none); }
+.ux4g-min-is-full   { min-inline-size: var(--ux4g-sz-full); }
+.ux4g-max-is-full   { max-inline-size: var(--ux4g-sz-full); }
+
+.ux4g-min-bs-0      { min-block-size: var(--ux4g-sz-none); }
+.ux4g-min-bs-full   { min-block-size: var(--ux4g-sz-full); }
+.ux4g-min-bs-screen { min-block-size: 100vb; }
+.ux4g-max-bs-full   { max-block-size: var(--ux4g-sz-full); }
