@@ -226,7 +226,7 @@
 
   // Update open menus on resize/scroll
   const repositionAllMenus = () => {
-    document.querySelectorAll('.ux4g-dropdown.is-open, .ux4g-combobox.is-open, .ux4g-breadcrumb-dropdown .show + .show').forEach(el => {
+    document.querySelectorAll('.ux4g-dropdown.is-open, .ux4g-combobox.is-open, .ux4g-breadcrumb-dropdown .ux4g-breadcrumb-toggle.show').forEach(el => {
       let container = el;
       let menu = el.querySelector('.ux4g-dropdown-menu, .ux4g-combobox-menu, .ux4g-breadcrumb-menu');
       if (el.classList.contains('ux4g-breadcrumb-toggle')) {
@@ -467,12 +467,13 @@ document.addEventListener('click', (e) => {
       }
       try {
         const targetModal = targetSelector ? document.querySelector(targetSelector) : null;
+        // Only a class this component owns authorises opening an element as a
+        // modal. role="dialog" and aria-modal are accessibility annotations, not
+        // permission, and any region can carry them.
         if (targetModal && (
           targetModal.classList.contains('ux4g-modal') ||
           targetModal.classList.contains('ux4g-modal-backdrop') ||
-          targetModal.classList.contains('modal') ||
-          targetModal.getAttribute('role') === 'dialog' ||
-          targetModal.hasAttribute('aria-modal')
+          targetModal.classList.contains('modal')
         )) {
           targetModal.classList.add('is-open');
           document.body.style.overflow = 'hidden';
@@ -1541,6 +1542,13 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
     const isMulti = combobox.classList.contains("ux4g-combobox-multi");
     const filterMode = combobox.getAttribute("ux4g-combobox-filter") || "contains";
 
+    // Query the options once. When content is added after load, the runtime
+    // re-runs this initialiser with a querySelectorAll that skips elements it
+    // has already returned, so a second query for the same options is empty.
+    const options = isMulti
+      ? Array.from(combobox.querySelectorAll(".ux4g-combobox-option"))
+      : Array.from(combobox.querySelectorAll(".ux4g-combobox-single-option"));
+
     const popupRole = menu.getAttribute("role") === "menu" ? "menu" : (isMulti ? "dialog" : "listbox");
     menu.setAttribute("role", popupRole);
     if (isMulti) {
@@ -1548,7 +1556,7 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
     } else {
       menu.querySelectorAll("ul").forEach(ul => ul.setAttribute("role", "presentation"));
       menu.querySelectorAll("li").forEach(li => li.setAttribute("role", "presentation"));
-      menu.querySelectorAll(".ux4g-combobox-single-option").forEach(opt => {
+      options.forEach(opt => {
         opt.setAttribute("role", "option");
         if (!opt.hasAttribute("aria-selected")) opt.setAttribute("aria-selected", "false");
       });
@@ -1590,10 +1598,6 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
       }
     });
 
-    const options = isMulti
-      ? Array.from(combobox.querySelectorAll(".ux4g-combobox-option"))
-      : Array.from(combobox.querySelectorAll(".ux4g-combobox-single-option"));
-
     // Store original text for filtering
     options.forEach((option) => {
       let labelNode = isMulti
@@ -1615,6 +1619,8 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
         const isMatch = customQuery === "" ? true : window.ux4g.filterCore.matches(originalText, value, filterMode);
 
         option.style.display = isMatch ? "" : "none";
+        const listItem = option.closest(".ux4g-list-item");
+        if (listItem) listItem.style.display = isMatch ? "" : "none";
 
         const labelNode = isMulti
           ? option.querySelector(".ux4g-checkbox-label")
@@ -2298,6 +2304,48 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
 
 let alertCount = 0;
 
+// Recognised variant and position values. Both reach the DOM as class tokens,
+// so they are mapped through these lists before use.
+const ALERT_VARIANTS = ['info', 'success', 'warning', 'error', 'none'];
+const ALERT_POSITIONS = ['top-left', 'top-right', 'bottom-left', 'bottom-right'];
+const DEFAULT_ALERT_POSITION = 'top-right';
+
+function normaliseAlertPosition(position) {
+  // Trimmed, then matched exactly.
+  const requested = typeof position === 'string' ? position.trim() : position;
+  return ALERT_POSITIONS.indexOf(requested) !== -1 ? requested : DEFAULT_ALERT_POSITION;
+}
+
+// Returns a container this component owns. A host-declared container is reused
+// only when it is a div carrying the container class.
+function resolveAlertContainer(position) {
+  position = normaliseAlertPosition(position);
+  const containerId = `ux4g-alert-container-${position}`;
+
+  // 1. Already owned. Matched by attribute value, never an interpolated selector.
+  const owned = Array.from(document.querySelectorAll('div[data-ux4g-alert-container]'))
+    .find(el => el.getAttribute('data-ux4g-alert-container') === position);
+  if (owned) return owned;
+
+  // 2. Declared by the host application.
+  const existing = document.getElementById(containerId);
+  if (existing
+    && existing.tagName === 'DIV'
+    && existing.classList.contains('ux4g-alert-container')) {
+    existing.setAttribute('data-ux4g-alert-container', position);
+    return existing;
+  }
+
+  // 3. Create our own.
+  const container = document.createElement('div');
+  container.className = `ux4g-alert-container ux4g-alert-${position}`;
+  container.setAttribute('data-ux4g-alert-container', position);
+  // Claim the id only when free, so no duplicate id is introduced.
+  if (!existing) container.id = containerId;
+  document.body.appendChild(container);
+  return container;
+}
+
 /**
  * Shows a Context Alert (Toast) in the specified position with animation
  * @param {string} position - 'top-left', 'top-right', 'bottom-left', or 'bottom-right'
@@ -2314,23 +2362,20 @@ function showContextAlert(position, variant, customTitle, customBody) {
     'none': { icon: null, title: 'Alert Title' }
   };
 
+  position = normaliseAlertPosition(position);
+
   // Determine type (use variant, or cycle through if not provided)
   const types = Object.keys(statuses).filter(t => t !== 'none');
-  const type = variant || types[alertCount++ % types.length];
-  const status = statuses[type] || statuses['info'];
+  // The raw value decides cycling; only the allow-list match is trimmed.
+  const requestedType = variant || types[alertCount++ % types.length];
+  const normalisedType = typeof requestedType === 'string' ? requestedType.trim() : requestedType;
+  const type = ALERT_VARIANTS.indexOf(normalisedType) !== -1 ? normalisedType : 'info';
+  const status = statuses[type];
 
   const title = customTitle || status.title;
   const bodyText = customBody || `This is a ${type} alert shown at the ${position.replace('-', ' ')} corner.`;
 
-  const containerId = `ux4g-alert-container-${position}`;
-  let container = document.getElementById(containerId);
-
-  if (!container) {
-    container = document.createElement('div');
-    container.id = containerId;
-    container.className = `ux4g-alert-container ux4g-alert-${position}`;
-    document.body.appendChild(container);
-  }
+  const container = resolveAlertContainer(position);
 
   const alert = document.createElement('div');
   const animationClass = position.includes('left') ? 'ux4g-animate-left' : 'ux4g-animate-right';
@@ -2342,16 +2387,19 @@ function showContextAlert(position, variant, customTitle, customBody) {
   // Icon Logic: None means no icon HTML
   const iconHtml = status.icon ? `<i class="ux4g-icon ux4g-alert-icon">${status.icon}</i>` : '';
 
+  // Title and body are inserted as text below, never parsed as markup.
   alert.innerHTML = `
         ${iconHtml}
-        <span class="ux4g-alert-title">${title}</span>
+        <span class="ux4g-alert-title"></span>
         <div class="ux4g-alert-actions">
-            <button class="ux4g-alert-close" onclick="closeContextAlert(this)">
+            <button type="button" class="ux4g-alert-close">
                 <i class="ux4g-icon">close</i>
             </button>
         </div>
-        <div class="ux4g-alert-message">${bodyText}</div>
+        <div class="ux4g-alert-message"></div>
     `;
+  alert.querySelector('.ux4g-alert-title').textContent = String(title);
+  alert.querySelector('.ux4g-alert-message').textContent = String(bodyText);
 
   if (position.includes('bottom')) {
     container.insertBefore(alert, container.firstChild);
@@ -2516,14 +2564,6 @@ document.addEventListener('click', (e) => {
         }
       }
     }
-  }
-
-  // 5. Close button redirect delegator
-  const closeBtn = e.target.closest('.feedback-submitted-close-btn');
-  if (closeBtn) {
-    e.preventDefault();
-    window.location.href = './global-service-discovery.html';
-    return;
   }
 
   // 6. Submit and Skip Reset interaction
@@ -4286,29 +4326,50 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
 
         if (!checkbox || !scrollBox || !submitBtn) return;
 
-        let hasScrolledToBottom = false;
+        // Read live rather than latched, so consent always refers to the
+        // declaration currently shown.
+        function isScrolledToBottom() {
+            return Math.abs(scrollBox.scrollHeight - scrollBox.clientHeight - scrollBox.scrollTop) <= 10;
+        }
+
+        function syncHint() {
+            if (!hint) return;
+            if (isScrolledToBottom()) {
+                hint.style.opacity = '0';
+                hint.style.pointerEvents = 'none';
+            } else if (hint.style.opacity === '0') {
+                // Clear only what was set here, so stylesheet rules take over again.
+                hint.style.opacity = '';
+                hint.style.pointerEvents = '';
+            }
+        }
 
         function validateForm() {
             const isNameValid = nameInput ? nameInput.value.trim().length > 0 : true;
             const isChecked = checkbox.checked;
 
-            if (hasScrolledToBottom && isNameValid && isChecked) {
+            if (isScrolledToBottom() && isNameValid && isChecked) {
                 submitBtn.disabled = false;
             } else {
                 submitBtn.disabled = true;
             }
         }
 
-        scrollBox.addEventListener('scroll', function() {
-            if (Math.abs(this.scrollHeight - this.clientHeight - this.scrollTop) <= 10) {
-                if (hint) {
-                    hint.style.opacity = '0';
-                    hint.style.pointerEvents = 'none';
-                }
-                hasScrolledToBottom = true;
-                validateForm();
-            }
-        });
+        function update() {
+            syncHint();
+            validateForm();
+        }
+
+        scrollBox.addEventListener('scroll', update);
+
+        // Re-check when the declaration text itself changes or is extended.
+        if (typeof MutationObserver === 'function') {
+            new MutationObserver(update).observe(scrollBox, {
+                childList: true,
+                subtree: true,
+                characterData: true
+            });
+        }
 
         checkbox.addEventListener('change', function() {
             if (nameInputGroup) {
@@ -4327,7 +4388,7 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
         }
         
         // Initial validation
-        validateForm();
+        update();
     });
 });
 
@@ -4336,11 +4397,19 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
 // Single delegated click handler for alert close (Framework Agnostic)
 document.addEventListener('click', (e) => {
   const closeBtn = e.target.closest('.ux4g-alert-close');
-  if (closeBtn) {
-    const alert = closeBtn.closest('.ux4g-alert, .ux4g-context-alert');
-    if (alert) {
-      alert.style.display = 'none';
-    }
+  if (!closeBtn) return;
+
+  const contextAlert = closeBtn.closest('.ux4g-context-alert');
+  if (contextAlert) {
+    // Removed from the DOM, and hidden immediately as before.
+    closeContextAlert(closeBtn);
+    contextAlert.style.display = 'none';
+    return;
+  }
+
+  const alert = closeBtn.closest('.ux4g-alert');
+  if (alert) {
+    alert.style.display = 'none';
   }
 });
 
@@ -4476,63 +4545,6 @@ document.addEventListener('click', (e) => {
     });
 });
 
-window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomInitList.push(() => {
-    const wrappers = document.querySelectorAll('.ux4g-consent-capture-wrapper');
-    
-    wrappers.forEach(wrapper => {
-        const scrollBox = wrapper.querySelector('.ux4g-declaration-content');
-        const hint = wrapper.querySelector('.ux4g-declaration-scroll-hint');
-        const checkbox = wrapper.querySelector('.ux4g-checkbox-input');
-        const nameInputGroup = wrapper.querySelector('.ux4g-input-container');
-        const nameInput = wrapper.querySelector('.ux4g-input-input');
-        const submitBtn = wrapper.querySelector('.ux4g-consent-decl-btn-wrap .ux4g-btn-primary');
-
-        if (!checkbox || !scrollBox || !submitBtn) return;
-
-        let hasScrolledToBottom = false;
-
-        function validateForm() {
-            const isNameValid = nameInput ? nameInput.value.trim().length > 0 : true;
-            const isChecked = checkbox.checked;
-
-            if (hasScrolledToBottom && isNameValid && isChecked) {
-                submitBtn.disabled = false;
-            } else {
-                submitBtn.disabled = true;
-            }
-        }
-
-        scrollBox.addEventListener('scroll', function() {
-            if (Math.abs(this.scrollHeight - this.clientHeight - this.scrollTop) <= 10) {
-                if (hint) {
-                    hint.style.opacity = '0';
-                    hint.style.pointerEvents = 'none';
-                }
-                hasScrolledToBottom = true;
-                validateForm();
-            }
-        });
-
-        checkbox.addEventListener('change', function() {
-            if (nameInputGroup) {
-                if (this.checked) {
-                    nameInputGroup.classList.remove('ux4g-d-none');
-                } else {
-                    nameInputGroup.classList.add('ux4g-d-none');
-                    if (nameInput) nameInput.value = '';
-                }
-            }
-            validateForm();
-        });
-        
-        if (nameInput) {
-            nameInput.addEventListener('input', validateForm);
-        }
-        
-        // Initial validation
-        validateForm();
-    });
-});
 
 
 
@@ -4619,10 +4631,13 @@ const initCustomListDropdowns = () => {
   });
 };
 
-// Execute all registered initialization functions
+// Execute all registered initialization functions once. ux4gCustomInit (from
+// ux4g.js) runs the list itself and marks what it initialised; running the
+// list again would bind every handler twice.
 const ux4gInitAll = () => {
   if (typeof window.ux4gCustomInit === 'function') {
     try { window.ux4gCustomInit(); } catch(e) { console.error(e); }
+    return;
   }
   if (Array.isArray(window.ux4gCustomInitList)) {
     window.ux4gCustomInitList.forEach(fn => {
@@ -4854,6 +4869,86 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
     }
   }
 
+  /**
+   * Single guard for "may this control change?", called from every activation
+   * path. Mirrors the check the combobox already applies, so the same markup
+   * is honoured by both components.
+   */
+  function isSelectDisabled(selectContainer) {
+    if (!selectContainer) return false;
+    const parts = [
+      selectContainer,
+      selectContainer.querySelector('.ux4g-select-control'),
+      selectContainer.querySelector('select.ux4g-select-native')
+    ];
+    return parts.some(function(el) {
+      return !!el && (el.disabled === true
+        || el.hasAttribute('disabled')
+        || el.getAttribute('aria-disabled') === 'true');
+    });
+  }
+
+  /**
+   * Redraws a select from its native element, which is the value the form
+   * submits. Called after the change event so a consumer that reverts the
+   * choice is reflected on screen instead of being overwritten.
+   */
+  function syncSelectFromNative(selectContainer) {
+    const nativeSelect = selectContainer.querySelector('select.ux4g-select-native');
+    const textDisplay = selectContainer.querySelector('.ux4g-select-text');
+    if (!nativeSelect) return;
+
+    if (selectContainer.classList.contains('ux4g-select-multi')) {
+      const selected = Array.from(nativeSelect.selectedOptions).filter(function(o) { return o.value; });
+      const values = selected.map(function(o) { return o.value; });
+      selectContainer.querySelectorAll('.ux4g-select-checkbox-row').forEach(function(row) {
+        const on = values.indexOf(row.getAttribute('data-value') || '') !== -1;
+        row.classList.toggle('is-checked', on);
+        row.classList.toggle('is-selected', on);
+        row.setAttribute('aria-checked', on ? 'true' : 'false');
+        const cb = row.querySelector('.ux4g-checkbox-input');
+        if (cb) cb.checked = on;
+      });
+      if (textDisplay) {
+        if (selected.length === 0) {
+          const placeholder = textDisplay.getAttribute('data-placeholder');
+          if (placeholder) {
+            textDisplay.textContent = placeholder;
+            textDisplay.classList.add('is-placeholder');
+          }
+        } else {
+          textDisplay.textContent = selected.map(function(o) { return o.text; }).join(', ');
+          textDisplay.classList.remove('is-placeholder');
+        }
+      }
+      return;
+    }
+
+    const value = nativeSelect.value;
+    let label = '';
+    selectContainer.querySelectorAll('.ux4g-select-option').forEach(function(opt) {
+      const on = !!value && (opt.getAttribute('data-value') || '') === value;
+      opt.classList.toggle('is-selected', on);
+      opt.setAttribute('aria-selected', on ? 'true' : 'false');
+      if (on) {
+        const labelEl = opt.querySelector('.ux4g-select-option-label');
+        label = labelEl ? labelEl.textContent.trim() : value;
+      }
+    });
+
+    if (!textDisplay) return;
+    if (!value) {
+      const placeholder = textDisplay.getAttribute('data-placeholder');
+      if (placeholder) {
+        textDisplay.textContent = placeholder;
+        textDisplay.classList.add('is-placeholder');
+      }
+      return;
+    }
+    textDisplay.textContent = label || value;
+    textDisplay.classList.remove('is-placeholder');
+  }
+
   // Initialize all .ux4g-select instances on page load
   function initAll() {
     document.querySelectorAll('.ux4g-select').forEach(initUx4gSelect);
@@ -4874,7 +4969,7 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
     if (multiRow) {
       e.stopPropagation();
       const selectContainer = multiRow.closest('.ux4g-select');
-      if (!selectContainer) return;
+      if (!selectContainer || isSelectDisabled(selectContainer)) return;
 
       const checkbox = multiRow.querySelector('.ux4g-checkbox-input');
       const nativeSelect = selectContainer.querySelector('select.ux4g-select-native');
@@ -4901,7 +4996,6 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
             opt.selected = willBeChecked;
           }
         });
-        nativeSelect.dispatchEvent(new Event('change', { bubbles: true }));
       }
 
       // Update text display in the trigger
@@ -4924,6 +5018,12 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
           textDisplay.classList.remove('is-placeholder');
         }
       }
+
+      // Notify consumers last, then redraw from the native element.
+      if (nativeSelect) {
+        nativeSelect.dispatchEvent(new Event('change', { bubbles: true }));
+        syncSelectFromNative(selectContainer);
+      }
       return;
     }
 
@@ -4934,7 +5034,7 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
     if (singleOption) {
       e.stopPropagation();
       const selectContainer = singleOption.closest('.ux4g-select');
-      if (!selectContainer) return;
+      if (!selectContainer || isSelectDisabled(selectContainer)) return;
 
       const nativeSelect = selectContainer.querySelector('select.ux4g-select-native');
       const textDisplay = selectContainer.querySelector('.ux4g-select-text');
@@ -4946,8 +5046,6 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
       // Update native select
       if (nativeSelect) {
         nativeSelect.value = optionVal;
-        nativeSelect.dispatchEvent(new Event('change', { bubbles: true }));
-        nativeSelect.dispatchEvent(new Event('input', { bubbles: true }));
       }
 
       // Update custom option active states
@@ -4967,6 +5065,14 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
       // Close dropdown
       selectContainer.classList.remove('is-open');
       if (control) control.setAttribute('aria-expanded', 'false');
+
+      // Notify consumers last, then redraw from the native value, so a consumer
+      // that rejects the choice in its change handler is what stays on screen.
+      if (nativeSelect) {
+        nativeSelect.dispatchEvent(new Event('change', { bubbles: true }));
+        nativeSelect.dispatchEvent(new Event('input', { bubbles: true }));
+        syncSelectFromNative(selectContainer);
+      }
       return;
     }
 
@@ -4979,7 +5085,7 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
       if (e.target.closest('.ux4g-select-menu')) return;
       e.stopPropagation();
       const selectContainer = control.closest('.ux4g-select');
-      if (!selectContainer) return;
+      if (!selectContainer || isSelectDisabled(selectContainer)) return;
 
       const isOpen = selectContainer.classList.contains('is-open');
 
@@ -5021,7 +5127,7 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
     if (control && (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar' || e.key === 'ArrowDown' || e.key === 'ArrowUp')) {
       e.preventDefault();
       const selectContainer = control.closest('.ux4g-select');
-      if (!selectContainer) return;
+      if (!selectContainer || isSelectDisabled(selectContainer)) return;
 
       const isOpen = selectContainer.classList.contains('is-open');
 
@@ -5054,6 +5160,7 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
     const singleOption = document.activeElement ? document.activeElement.closest('.ux4g-select-single .ux4g-select-option') : null;
     if (singleOption && (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar')) {
       e.preventDefault();
+      if (isSelectDisabled(singleOption.closest('.ux4g-select'))) return;
       singleOption.click();
       return;
     }
@@ -5062,6 +5169,7 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
     const multiRow = document.activeElement ? document.activeElement.closest('.ux4g-select-multi .ux4g-select-checkbox-row') : null;
     if (multiRow && (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar')) {
       e.preventDefault();
+      if (isSelectDisabled(multiRow.closest('.ux4g-select'))) return;
       multiRow.click();
       return;
     }
@@ -5070,6 +5178,7 @@ window.ux4gCustomInitList = window.ux4gCustomInitList || []; window.ux4gCustomIn
     const activeOption = document.activeElement ? document.activeElement.closest('.ux4g-select-option, .ux4g-select-checkbox-row') : null;
     if (activeOption && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) {
       e.preventDefault();
+      if (isSelectDisabled(activeOption.closest('.ux4g-select'))) return;
       const menu = activeOption.closest('.ux4g-select-menu');
       if (menu) {
         const options = Array.from(menu.querySelectorAll('.ux4g-select-option, .ux4g-select-checkbox-row'));
@@ -5164,18 +5273,26 @@ window.ux4gCustomInitList.push(() => {
     const helperText = document.querySelector(`[data-helper-text="${key}"]`);
     const submitBtn = document.querySelector(`[data-submit-btn="${key}"]`);
 
+    // Evaluated live in both directions, so the gate always refers to the
+    // declaration currently shown.
     function checkScroll() {
-      if (box.scrollHeight - box.scrollTop <= box.clientHeight + 20) {
-        if (prompt) prompt.style.display = 'none';
-        if (agreeCb) {
-          agreeCb.removeAttribute('disabled');
-          agreeCb.disabled = false;
-        }
-        if (agreeGroup) agreeGroup.classList.remove('ux4g-checkbox-disabled');
-      }
+      const atBottom = box.scrollHeight - box.scrollTop <= box.clientHeight + 20;
+      if (prompt) prompt.style.display = atBottom ? 'none' : '';
+      if (agreeCb) agreeCb.disabled = !atBottom;
+      if (agreeGroup) agreeGroup.classList.toggle('ux4g-checkbox-disabled', !atBottom);
+      if (!atBottom && submitBtn) submitBtn.disabled = true;
     }
 
     box.addEventListener('scroll', checkScroll);
+
+    // Re-check when the declaration text itself changes or is extended.
+    if (typeof MutationObserver === 'function') {
+      new MutationObserver(checkScroll).observe(box, {
+        childList: true,
+        subtree: true,
+        characterData: true
+      });
+    }
     if (prompt) {
       prompt.addEventListener('click', () => {
         box.scrollTo({ top: box.scrollHeight, behavior: 'smooth' });

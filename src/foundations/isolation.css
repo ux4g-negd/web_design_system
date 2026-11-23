@@ -1,0 +1,21 @@
+/* ==========================================================================
+   ISOLATED MODE (data-ux4g-isolated on <html>)
+
+   UX4G no longer styles <body>, so the outermost UX4G element (one with a
+   ux4g- class that is not inside another, or a .ux4g-scope section) takes
+   the place of <body>: it sets what its contents would otherwise inherit from
+   the page. :where() keeps this at zero specificity, so any component or
+   utility rule still wins. Imported last in the foundations layer, after the
+   rule that makes form controls inherit their font.
+   ========================================================================== */
+
+:where([data-ux4g-isolated] .ux4g-scope,
+  [data-ux4g-isolated] :is([class^="ux4g-"], [class*=" ux4g-"]):not(.ux4g-scope *, [class^="ux4g-"] *, [class*=" ux4g-"] *)) {
+  color: var(--ux4g-text-neutral-primary);
+  font-family: var(--ux4g-font-family-base, "Noto Sans", system-ui, sans-serif);
+  line-height: normal;
+  letter-spacing: normal;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  text-align: start;
+}

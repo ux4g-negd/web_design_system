@@ -2,6 +2,58 @@
 
 All notable changes to ux4g-web-components are documented in this file.
 
+## [3.4.0]
+
+> **Use UX4G alongside another framework.** Pages built only with UX4G look exactly as in 3.3.4 and need no change.
+
+### Added
+
+- Isolated mode: with `data-ux4g-isolated` on `<html>`, UX4G styles only its own markup. It leaves the page font, colour and background, and plain headings, paragraphs, lists, buttons and form controls outside UX4G components, as they were, so it can be added to a site that uses Bootstrap, Tailwind or another framework without changing it
+- `.ux4g-scope`: in isolated mode, gives a section the full UX4G look, including plain HTML inside it
+- A `vendor` cascade layer below every UX4G layer. Import another framework into it, e.g. `@import "bootstrap.min.css" layer(vendor)`, and it can no longer override UX4G components
+- `ux4g-collapse` and `ux4g-collapsing` for accordions and collapsible content, so Bootstrap's `.collapse` rules do not apply to UX4G. The `collapse` class still works
+
+### Changed
+
+- The Storybook accordion and sidebar examples use `ux4g-collapse`
+
+### Fixed
+
+- Components already in the page when it loads were initialised twice, so each click ran its handler twice. A combobox option was selected and then cleared again, and could not be chosen. Affected pages that load UX4G from the CDN with the markup in the HTML; components rendered later by a framework were not affected
+- An open breadcrumb dropdown menu now moves with the breadcrumb when the page scrolls. It stayed at the same place on screen
+
+## [3.3.4]
+
+> **Security release.** From this version the npm package and the CDN share one version number: `ux4g-web-components@3.3.4` is built from the same sources as `UX4G@3.3.4`. Version 3.3.3 was published only as a test build under the `beta` tag.
+
+### Security
+
+- The runtime is bundled as module code instead of being injected as inline `<script>` elements, so it runs under a strict `script-src 'self'` Content Security Policy with no extra configuration
+- The stylesheet no longer imports Google Fonts and makes no third-party requests
+- Fixes for security vulnerabilities in the component runtime, including the context alert, modal, popover, select, OTP, upload and consent components
+
+### Added
+
+- Noto Sans faces for the scripts of the Eighth Schedule languages: Devanagari, Bengali, Gujarati, Gurmukhi, Odia, Tamil, Telugu, Kannada, Malayalam, Ol Chiki, Meetei Mayek and Arabic (Urdu, Kashmiri, Sindhi). A browser downloads a script's font only when the page uses that script
+
+### Changed
+
+- Fonts and images ship as files in `styles/assets/` instead of being inlined as base64, which makes the stylesheet much smaller and lets the fonts be cached separately
+- Content added to the page after load is initialised automatically
+- Your own CSS, and any framework loaded without layers such as Bootstrap 5, now overrides UX4G styles in the npm package as it already did with the CDN
+
+### Fixed
+
+- A combobox rendered after page load, as in Angular, React and Vue, now filters its options as you type
+- A JavaScript tooltip whose text is set only with `title` now shows that text instead of an empty bubble
+- The stylesheet keeps the CSS cascade layers and order of the CDN build. Earlier packages had no layers and loaded utilities before components, so about a thousand elements rendered differently from the CDN and Storybook: alert progress bars were all purple, and icons in inactive filter chips, breadcrumbs and buttons were white
+- Outlined icons are no longer coloured white everywhere by an unscoped selector in the accessibility bar styles
+
+### Removed
+
+- The Google Fonts import left over from the `gul`, `neel` and `rekh` brand themes, which are not part of the package. UX4G ships Noto Sans only
+- The Round, Sharp and Two Tone Material icon fonts; their classes now render the Outlined icons
+
 ## [3.0.3] — 2026-11-10
 
 > **Patch release.** This release corresponds to CDN `UX4G@3.3.2` — the CDN assets were already redeployed under the same CDN version, so only the npm package version advances here. No public class, token-name, or runtime API removals.

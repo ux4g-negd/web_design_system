@@ -19,7 +19,11 @@ initRuntime();
 
 // Auto-reinit: watch for new DOM elements and re-run ux4g.init()
 // This fixes the timing issue where Angular/React render after DOMContentLoaded
-if (typeof window !== 'undefined' && typeof MutationObserver !== 'undefined') {
+// Both entry points (runtime/bootstrap and design-system) run this file, so
+// guard against an app that imports both starting two observers.
+if (typeof window !== 'undefined' && typeof MutationObserver !== 'undefined'
+  && !(window as any).__UX4G_AUTO_INIT__) {
+  (window as any).__UX4G_AUTO_INIT__ = true;
   let reinitTimer: ReturnType<typeof setTimeout> | null = null;
 
   const observer = new MutationObserver((mutations) => {

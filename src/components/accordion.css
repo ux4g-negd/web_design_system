@@ -136,7 +136,8 @@
     height: auto;
 }
 
-.ux4g-accordion__collapse.collapsing {
+.ux4g-accordion__collapse.collapsing,
+.ux4g-accordion__collapse.ux4g-collapsing {
     height: 0;
     overflow: var(--ux4g-of-hidden);
     transition: height var(--ux4g-duration-normal, 0.28s) cubic-bezier(.4, 0, .2, 1);
@@ -230,7 +231,8 @@ padding: 0;
 @media (prefers-reduced-motion: reduce) {
     .ux4g-accordion__button,
     .ux4g-accordion__button::after,
-    .ux4g-accordion__collapse.collapsing {
+    .ux4g-accordion__collapse.collapsing,
+    .ux4g-accordion__collapse.ux4g-collapsing {
         transition: none;
     }
 }

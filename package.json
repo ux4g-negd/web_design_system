@@ -1,6 +1,6 @@
 {
   "name": "ux4g-web-components",
-  "version": "3.3.2",
+  "version": "3.4.0",
   "type": "module",
   "description": "UX4G Government Design System — accessible CSS components, utilities, tokens, and patterns for Indian public digital services.",
   "keywords": [
@@ -21,6 +21,7 @@
   },
   "license": "MIT",
   "author": "UX4G",
+  "private": true,
   "types": "./src/ux4g.d.ts",
   "files": [
     "src/",

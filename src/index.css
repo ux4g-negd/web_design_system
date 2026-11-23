@@ -4,14 +4,16 @@
    ========================================================================== */
 
 /* ─── CSS Cascade Layer Hierarchy ─── */
-@layer ux4g-tokens, ux4g-semantics, ux4g-reset, ux4g-foundations, ux4g-layout, ux4g-components, ux4g-patterns, ux4g-utilities, ux4g-templates;
+/* "vendor" comes first and stays empty unless a page imports another framework
+   into it, e.g. @import url("bootstrap.min.css") layer(vendor). That framework
+   then sits below every UX4G layer, wherever it is imported. */
+@layer vendor, ux4g-tokens, ux4g-semantics, ux4g-reset, ux4g-foundations, ux4g-layout, ux4g-components, ux4g-patterns, ux4g-utilities, ux4g-templates;
 
 /* ─── 1. Primitive Design Tokens ─── */
 @import "./tokens/ux4g-tokens.css" layer(ux4g-tokens);
 
 /* ─── 2. Semantic Tokens & Themes ─── */
 @import "./semantics/ux4g-semantic.css" layer(ux4g-semantics);
-@import "./themes/brand-themes.css" layer(ux4g-semantics);
 @import "./themes/dark.css" layer(ux4g-semantics);
 
 /* ─── 3. Reset & Base Foundations ─── */

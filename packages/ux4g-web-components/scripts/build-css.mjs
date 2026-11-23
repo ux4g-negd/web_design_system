@@ -9,18 +9,10 @@ import cssnano from 'cssnano';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Define master import entry style content in correct CSS source order
-const entryContent = `
-@import "../../../src/reset/reset.css";
-@import "../../../src/tokens/ux4g-tokens.css";
-@import "../../../src/semantics/ux4g-semantic.css";
-@import "../../../src/themes/dark.css";
-@import "../../../src/foundations/ux4g.foundations.css";
-@import "../../../src/utilities/ux4g-utilities.css";
-@import "../../../src/components/ux4g.components.css";
-@import "../../../src/patterns/ux4g-patterns.css";
-@import "../../../src/layout/ux4g.layout.css";
-`;
+// The same entry the CDN and Storybook use, so the package keeps their cascade
+// layers and order. A separate unlayered list here made components override
+// utilities and rendered about a thousand elements differently.
+const entryContent = `@import "../../../src/index.css";`;
 
 const resolveImport = (id, basedir, importOptions) => {
   if (id.startsWith('.')) {
@@ -57,12 +49,78 @@ const resolveImport = (id, basedir, importOptions) => {
   return id;
 };
 
+const OUTPUT_DIR = path.resolve(__dirname, '../styles');
+const OUTPUT_PATH = path.join(OUTPUT_DIR, 'ux4g.css');
+const ASSETS_DIR = path.join(OUTPUT_DIR, 'assets');
+const SRC_ASSETS = path.resolve(__dirname, '../../../src/assets');
+
+// --check rebuilds in memory and fails if the committed bundle is stale.
+const CHECK = process.argv.includes('--check');
+
+// Font licences (the OFL requires one to travel with the files).
+const LICENCE = /^(ofl|licen[cs]e)\b/i;
+const assetDirs = new Set();
+
+/**
+ * Copies a referenced asset next to the stylesheet and returns its new URL.
+ * Embedded, remote and fragment references are left as they are.
+ */
+function copyAsset(asset) {
+  const url = asset.url ?? '';
+  // %23 is an encoded '#', an SVG fragment reference.
+  if (!url || /^(data:|https?:|\/\/|#|%23)/i.test(url)) return url;
+
+  const from = asset.absolutePath;
+  if (!from || !fs.existsSync(from)) {
+    throw new Error(`build-css: asset not found for url(${url})`);
+  }
+
+  // Mirror the src/assets layout so names cannot collide.
+  const rel = path.relative(SRC_ASSETS, from);
+  if (rel.startsWith('..') || path.isAbsolute(rel)) {
+    throw new Error(`build-css: ${from} is outside src/assets`);
+  }
+
+  if (!CHECK) {
+    const dest = path.join(ASSETS_DIR, rel);
+    fs.mkdirSync(path.dirname(dest), { recursive: true });
+    fs.copyFileSync(from, dest);
+    assetDirs.add(path.dirname(from));
+  }
+
+  return 'assets/' + rel.split(path.sep).join('/') + (asset.search || '') + (asset.hash || '');
+}
+
+/**
+ * The package ships Noto Sans only, so a remote @import (the brand themes'
+ * Google Fonts) is dropped. It would make every page request a third party,
+ * trip strict CSPs, and Next.js rewrites every url() in a stylesheet that
+ * contains one to an unloadable webpack:/// path.
+ */
+const dropRemoteImports = {
+  postcssPlugin: 'drop-remote-imports',
+  AtRule: {
+    import(rule) {
+      if (/^\s*(url\(\s*)?["']?(https?:)?\/\//i.test(rule.params)) {
+        console.warn(`build-css: dropped remote @import ${rule.params}`);
+        rule.remove();
+      }
+    },
+  },
+};
+
+function copyLicences() {
+  for (const dir of assetDirs) {
+    for (const name of fs.readdirSync(dir).filter((f) => LICENCE.test(f))) {
+      fs.copyFileSync(path.join(dir, name), path.join(ASSETS_DIR, path.relative(SRC_ASSETS, dir), name));
+    }
+  }
+}
+
 async function build() {
-  const outputDir = path.resolve(__dirname, '../styles');
-  const outputPath = path.join(outputDir, 'ux4g.css');
-  
-  if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
+  if (!CHECK) {
+    fs.rmSync(ASSETS_DIR, { recursive: true, force: true });
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   }
 
   console.log("Compiling CSS bundle using PostCSS...");
@@ -72,20 +130,33 @@ async function build() {
       postcssImport({
         resolve: resolveImport
       }),
-      postcssUrl({
-        url: 'inline', // Inline all assets to ensure a self-contained bundle
-        maxSize: 10240 // 10MB limit to cover all fonts and images
-      }),
+      dropRemoteImports,
+      // Copied rather than inlined: base64 fonts made the stylesheet ~8MB and
+      // render-blocking, with nothing separately cacheable.
+      postcssUrl({ url: copyAsset }),
       cssnano({
         preset: 'default',
       })
     ]).process(entryContent, {
       from: __filename,
-      to: outputPath
+      to: OUTPUT_PATH
     });
 
-    fs.writeFileSync(outputPath, result.css);
-    console.log(`CSS Bundle compiled successfully to: ${outputPath} (${result.css.length} bytes)`);
+    if (CHECK) {
+      // A checkout may have converted line endings; content is what matters.
+      const norm = (s) => s.replace(/\r\n/g, '\n');
+      const read = (f) => (fs.existsSync(f) ? norm(fs.readFileSync(f, 'utf8')) : '');
+      if (read(OUTPUT_PATH) !== norm(result.css)) {
+        console.error('styles/ is out of date with src/. Run "npm run build:css".');
+        process.exit(1);
+      }
+      console.log('styles/ is up to date.');
+      return;
+    }
+
+    fs.writeFileSync(OUTPUT_PATH, result.css);
+    copyLicences();
+    console.log(`CSS Bundle compiled successfully to: ${OUTPUT_PATH} (${result.css.length} bytes)`);
   } catch (error) {
     console.error("PostCSS compilation failed:", error);
     process.exit(1);

@@ -20,32 +20,6 @@
   font-display: swap;
 }
 
-/* ----- Round ----- */
-@font-face {
-  font-family: "UX4G Material Icons Round";
-  src: url("../assets/fonts/MaterialIconsRound-Regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* ----- Sharp ----- */
-@font-face {
-  font-family: "UX4G Material Icons Sharp";
-  src: url("../assets/fonts/MaterialIconsSharp-Regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* ----- Two Tone ----- */
-@font-face {
-  font-family: "UX4G Material Icons TwoTone";
-  src: url("../assets/fonts/MaterialIconsTwoTone-Regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 /* ==========================================
    Base Icon Engine
    ========================================== */
@@ -89,14 +63,11 @@
   font-family: "UX4G Material Icons Outlined";
 }
 
-.ux4g-icon-round {
-  font-family: "UX4G Material Icons Round";
-}
-
-.ux4g-icon-sharp {
-  font-family: "UX4G Material Icons Sharp";
-}
-
+/* Deprecated variants. The Round, Sharp and TwoTone faces are no longer
+   shipped; these fall back to Outlined so existing markup keeps rendering
+   an icon rather than the ligature text. */
+.ux4g-icon-round,
+.ux4g-icon-sharp,
 .ux4g-icon-twotone {
-  font-family: "UX4G Material Icons TwoTone";
+  font-family: "UX4G Material Icons Outlined";
 }

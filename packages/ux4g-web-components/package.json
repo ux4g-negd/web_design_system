@@ -1,6 +1,6 @@
 {
   "name": "ux4g-web-components",
-  "version": "3.0.3",
+  "version": "3.4.0",
   "type": "module",
   "description": "UX4G Design System — complete CSS bundle with 57 components, 66 citizen journey patterns, 8 service patterns, 37 utility modules (3,681 mapped classes), 594 primitive + 554 semantic design tokens, dark mode theme, and runtime. All values in rem for accessible scaling. Use CSS classes directly in HTML/React/Angular.",
   "keywords": [
@@ -84,6 +84,7 @@
     "build:css": "node scripts/build-css.mjs",
     "build:types": "rollup -c rollup.config.mjs",
     "build": "npm run build:css && npm run build:types",
+    "check:css": "node scripts/build-css.mjs --check",
     "prepublishOnly": "npm run build",
     "test": "jest"
   },
@@ -147,11 +148,10 @@
     "README.md",
     "CHANGELOG.md",
     "styles/ux4g.css",
-    "dist/",
-    "dist/runtime/"
+    "styles/assets/",
+    "dist/"
   ],
   "devDependencies": {
-    "@rollup/plugin-replace": "^6.0.3",
     "@rollup/plugin-typescript": "^12.0.0",
     "@types/jest": "^29.5.14",
     "cssnano": "^7.0.0",

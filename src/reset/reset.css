@@ -1,8 +1,23 @@
-:where(html) {
+/* ==========================================================================
+   UX4G RESET
+
+   By default these rules style the whole page, as UX4G always has.
+
+   With data-ux4g-isolated on <html>, they style only UX4G markup: elements
+   with a ux4g- class, everything inside them, and .ux4g-scope sections. The
+   rest of the page keeps its own styles, so UX4G can be added to a site built
+   with another framework without changing it. foundations/isolation.css gives
+   the outermost UX4G element what it would otherwise inherit from <body>.
+   ========================================================================== */
+
+:where(html:not([data-ux4g-isolated])),
+:where([data-ux4g-isolated] .ux4g-scope) {
   box-sizing: border-box;
 }
 
-:where(*, *::before, *::after) {
+:where(html:not([data-ux4g-isolated])) :where(*, *::before, *::after),
+:where([data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]),
+  [data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]) *) {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -10,13 +25,16 @@
   outline: 0;
 }
 
-:where(img) {
+:where(html:not([data-ux4g-isolated])) :where(img),
+:where([data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]),
+  [data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]) *):where(img) {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-:where(body) {
+:where(html:not([data-ux4g-isolated])) :where(body),
+:where([data-ux4g-isolated] .ux4g-scope) {
   background-color: var(--ux4g-bg-neutral-elevated);
   color: var(--ux4g-text-neutral-primary);
   font-family: var(--ux4g-font-family-base, "Noto Sans", system-ui, sans-serif);
@@ -24,15 +42,57 @@
   overflow-x: clip;
 }
 
-:where(button) {
+:where(html:not([data-ux4g-isolated])) :where(button),
+:where([data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]),
+  [data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]) *):where(button) {
   background: none;
   cursor: pointer;
 }
 
-:where(a) {
+:where(html:not([data-ux4g-isolated])) :where(a),
+:where([data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]),
+  [data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]) *):where(a) {
   text-decoration: none;
 }
 
-:where(ul) {
+:where(html:not([data-ux4g-isolated])) :where(ul),
+:where([data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]),
+  [data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]) *):where(ul) {
   list-style: none;
 }
+
+/* Isolated mode only: inside UX4G markup, restate the browser defaults that
+   UX4G components rely on and other frameworks commonly restyle. These sit in
+   the reset layer, so every other UX4G rule still overrides them. */
+:where([data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]),
+  [data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]) *):where(h1) { font-size: 2em; font-weight: bold; line-height: inherit; }
+
+:where([data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]),
+  [data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]) *):where(h2) { font-size: 1.5em; font-weight: bold; line-height: inherit; }
+
+:where([data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]),
+  [data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]) *):where(h3) { font-size: 1.17em; font-weight: bold; line-height: inherit; }
+
+:where([data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]),
+  [data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]) *):where(h4) { font-size: 1em; font-weight: bold; line-height: inherit; }
+
+:where([data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]),
+  [data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]) *):where(h5) { font-size: 0.83em; font-weight: bold; line-height: inherit; }
+
+:where([data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]),
+  [data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]) *):where(h6) { font-size: 0.67em; font-weight: bold; line-height: inherit; }
+
+:where([data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]),
+  [data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]) *):where(p, li, dd, dt, blockquote, figcaption, label, legend) { line-height: inherit; }
+
+:where([data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]),
+  [data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]) *):where(small) { font-size: 80%; }
+
+:where([data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]),
+  [data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]) *):where(b, strong) { font-weight: bolder; }
+
+:where([data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]),
+  [data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]) *):where(hr) { color: gray; }
+
+:where([data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]),
+  [data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]) *):where(input:not([type=checkbox], [type=radio], [type=color], [type=file], [type=image], [type=button], [type=submit], [type=reset]), textarea, select) { background-color: Field; }

@@ -1,10 +1,9 @@
- :focus-visible {
-    position: var(--ux4g-pos-relative);
-     outline: var(--ux4g-border-width-md) solid var(--ux4g-border-color-primary-strong);
-     outline-offset: 2px;
+/* With data-ux4g-isolated on <html>, only UX4G markup gets this focus ring;
+   the rest of the page keeps its own. */
+:where(html:not([data-ux4g-isolated])) :focus-visible,
+:where([data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]),
+  [data-ux4g-isolated] :is(.ux4g-scope, [class^="ux4g-"], [class*=" ux4g-"]) *):focus-visible {
+  position: var(--ux4g-pos-relative);
+  outline: var(--ux4g-border-width-md) solid var(--ux4g-border-color-primary-strong);
+  outline-offset: 2px;
 }
- /* :focus {
-    position: var(--ux4g-pos-relative);
-     outline: var(--ux4g-border-width-md) solid var(--ux4g-border-color-primary-strong);
-     outline-offset: 2px;
-} */

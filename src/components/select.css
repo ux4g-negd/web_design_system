@@ -486,3 +486,30 @@
       height: 3rem;
   }
 }
+
+/* Disabled state - mirrors the combobox so the same markup looks the same in both */
+.ux4g-select .ux4g-select-control[aria-disabled="true"],
+.ux4g-select .ux4g-select-control[disabled],
+.ux4g-select[aria-disabled="true"] .ux4g-select-control,
+.ux4g-select[disabled] .ux4g-select-control {
+  border-color: var(--ux4g-border-color-neutral-subtle, #e5e5e5);
+  background: var(--ux4g-bg-neutral-disabled, #e5e5e5);
+  color: var(--ux4g-text-neutral-disabled, #a1a1a1);
+  box-shadow: var(--ux4g-shadow-l0, none);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.ux4g-select .ux4g-select-control[aria-disabled="true"] :is(.ux4g-select-caret, .ux4g-select-icon, .ux4g-icon-outlined),
+.ux4g-select .ux4g-select-control[disabled] :is(.ux4g-select-caret, .ux4g-select-icon, .ux4g-icon-outlined),
+.ux4g-select[aria-disabled="true"] .ux4g-select-control :is(.ux4g-select-caret, .ux4g-select-icon, .ux4g-icon-outlined),
+.ux4g-select[disabled] .ux4g-select-control :is(.ux4g-select-caret, .ux4g-select-icon, .ux4g-icon-outlined) {
+  color: var(--ux4g-text-neutral-disabled, #a1a1a1);
+}
+
+.ux4g-select .ux4g-select-control[aria-disabled="true"] .ux4g-select-text,
+.ux4g-select .ux4g-select-control[disabled] .ux4g-select-text,
+.ux4g-select[aria-disabled="true"] .ux4g-select-text,
+.ux4g-select[disabled] .ux4g-select-text {
+  color: var(--ux4g-text-neutral-disabled, #a1a1a1);
+}

@@ -1,68 +1,57 @@
 /**
  * UX4G Runtime Module
  *
- * Injects the vendor JS (ux4g.js + ux4g-custom.js) into the page as inline scripts.
- * These files handle all interactive behaviors: dropdowns, modals, tooltips,
- * accordions, carousels, drawers, tabs, popovers, toasts, scrollspy, etc.
+ * The behaviour behind dropdowns, modals, tooltips, accordions, carousels,
+ * drawers, tabs, popovers, toasts, scrollspy and the rest.
  *
- * The vendor JS is inlined at build time by the Rollup virtual plugin.
- * At runtime, initRuntime() creates <script> elements with the inlined code.
- *
- * Uses a singleton guard (window.__UX4G_RUNTIME_INITIALIZED__) to ensure
- * the scripts are injected exactly once.
+ * ux4g.js and ux4g-custom.js are bundled into this module as code, so they
+ * ship inside the application's own bundle. Nothing is injected as an inline
+ * script, and a Content-Security-Policy of `script-src 'self'` is sufficient.
  */
+import { runVendor } from 'virtual:ux4g-vendor';
 
 declare global {
   interface Window {
     __UX4G_RUNTIME_INITIALIZED__?: boolean;
-    ux4g?: Record<string, unknown>;
+    ux4g?: Record<string, unknown> & { init?: (root?: ParentNode) => void };
   }
 }
-
-// These will be replaced at build time by the Rollup plugin with the actual JS content
-declare const __UX4G_VENDOR_MAIN__: string;
-declare const __UX4G_VENDOR_CUSTOM__: string;
 
 const isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined';
 
+let runtime: Window['ux4g'];
+
 /**
- * Initialize the UX4G runtime by injecting the vendor JS scripts into the page.
+ * Initialize the UX4G runtime.
  *
- * - Safe for SSR — no-ops when window/document are unavailable.
- * - Singleton guard prevents double-injection.
- * - The vendor JS handles its own DOMContentLoaded timing internally.
- * - MutationObserver in the vendor JS auto-initializes dynamically added elements.
+ * - No-ops during SSR, where window and document are unavailable.
+ * - Idempotent; later calls do nothing until destroyRuntime().
+ * - Does not run a second copy if the page already loaded UX4G from the CDN.
+ * - The runtime handles its own DOMContentLoaded timing and initializes
+ *   elements added to the DOM later.
  */
 export function initRuntime(): void {
-  if (!isBrowser) return;
-  if (window.__UX4G_RUNTIME_INITIALIZED__) return;
+  if (!isBrowser || window.__UX4G_RUNTIME_INITIALIZED__) return;
+
+  if (!runtime) {
+    if (!window.ux4g) runVendor();
+    runtime = window.ux4g;
+  } else if (!window.ux4g) {
+    // Re-initializing after destroyRuntime(). The document-level listeners
+    // from the first run are still attached, so running the code again would
+    // bind every handler twice.
+    window.ux4g = runtime;
+    runtime.init?.(document);
+  }
+
   window.__UX4G_RUNTIME_INITIALIZED__ = true;
-
-  // Inject ux4g.js (sets up window.ux4g with all core components)
-  const script1 = document.createElement('script');
-  script1.setAttribute('data-ux4g-runtime', 'main');
-  script1.textContent = __UX4G_VENDOR_MAIN__;
-  document.head.appendChild(script1);
-
-  // Inject ux4g-custom.js (extends window.ux4g with custom behaviors)
-  const script2 = document.createElement('script');
-  script2.setAttribute('data-ux4g-runtime', 'custom');
-  script2.textContent = __UX4G_VENDOR_CUSTOM__;
-  document.head.appendChild(script2);
 }
 
 /**
- * Destroy the UX4G runtime.
- * Removes injected scripts and resets the singleton guard.
+ * Detach the global `ux4g` object and reset the guard.
  */
 export function destroyRuntime(): void {
   if (!isBrowser) return;
-  // Remove injected scripts
-  document.querySelectorAll('script[data-ux4g-runtime]').forEach(el => el.remove());
-  // Reset singleton guard
   window.__UX4G_RUNTIME_INITIALIZED__ = undefined;
-  // Clear the global ux4g object
-  if (window.ux4g) {
-    delete window.ux4g;
-  }
+  delete window.ux4g;
 }

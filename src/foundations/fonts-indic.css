@@ -1,0 +1,243 @@
+/* Noto Sans faces for the scripts of the Eighth Schedule languages. Noto Sans
+   already covers Devanagari, so only Noto Sans Display gets that face.
+
+   unicode-range means a script is only downloaded by pages that use it.
+   This file is imported before fonts.css because, where two faces cover a
+   character, the later one wins: the main files keep the characters they
+   already have (digits, punctuation, the rupee sign). Every face declares the
+   same weight range as the main files, because browsers only combine faces
+   whose descriptors match. */
+
+/* Noto Sans */
+
+/* Urdu, Kashmiri, Sindhi */
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../assets/fonts/NotoSansArabic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+
+/* Santali */
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../assets/fonts/NotoSansOlChiki.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+1C50-1C7F, U+20B9;
+}
+
+/* Manipuri */
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../assets/fonts/NotoSansMeeteiMayek.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+200C-200D, U+25CC, U+AAE0-AAF6, U+ABC0-ABFF;
+}
+
+/* Malayalam */
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../assets/fonts/NotoSansMalayalam.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0307, U+0323, U+0951-0952, U+0964-0965, U+0D00-0D7F, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC, U+A830-A832;
+}
+
+/* Kannada */
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../assets/fonts/NotoSansKannada.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0951-0952, U+0964-0965, U+0C80-0CF3, U+1CD0, U+1CD2-1CD3, U+1CDA, U+1CF2, U+1CF4, U+200C-200D, U+20B9, U+25CC, U+A830-A835;
+}
+
+/* Telugu */
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../assets/fonts/NotoSansTelugu.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0951-0952, U+0964-0965, U+0C00-0C7F, U+1CDA, U+1CF2, U+200C-200D, U+25CC;
+}
+
+/* Tamil */
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../assets/fonts/NotoSansTamil.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC;
+}
+
+/* Odia */
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../assets/fonts/NotoSansOriya.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0951-0952, U+0964-0965, U+0B01-0B77, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC;
+}
+
+/* Punjabi */
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../assets/fonts/NotoSansGurmukhi.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0951-0952, U+0964-0965, U+0A01-0A76, U+200C-200D, U+20B9, U+25CC, U+262C, U+A830-A839;
+}
+
+/* Gujarati */
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../assets/fonts/NotoSansGujarati.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0951-0952, U+0964-0965, U+0A80-0AFF, U+200C-200D, U+20B9, U+25CC, U+A830-A839;
+}
+
+/* Bengali, Assamese, Manipuri */
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../assets/fonts/NotoSansBengali.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0951-0952, U+0964-0965, U+0980-09FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+20B9, U+25CC, U+A8F1;
+}
+
+/* Noto Sans Display */
+
+/* Urdu, Kashmiri, Sindhi */
+@font-face {
+  font-family: "Noto Sans Display";
+  src: url("../assets/fonts/NotoSansArabic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+
+/* Santali */
+@font-face {
+  font-family: "Noto Sans Display";
+  src: url("../assets/fonts/NotoSansOlChiki.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+1C50-1C7F, U+20B9;
+}
+
+/* Manipuri */
+@font-face {
+  font-family: "Noto Sans Display";
+  src: url("../assets/fonts/NotoSansMeeteiMayek.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+200C-200D, U+25CC, U+AAE0-AAF6, U+ABC0-ABFF;
+}
+
+/* Malayalam */
+@font-face {
+  font-family: "Noto Sans Display";
+  src: url("../assets/fonts/NotoSansMalayalam.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0307, U+0323, U+0951-0952, U+0964-0965, U+0D00-0D7F, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC, U+A830-A832;
+}
+
+/* Kannada */
+@font-face {
+  font-family: "Noto Sans Display";
+  src: url("../assets/fonts/NotoSansKannada.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0951-0952, U+0964-0965, U+0C80-0CF3, U+1CD0, U+1CD2-1CD3, U+1CDA, U+1CF2, U+1CF4, U+200C-200D, U+20B9, U+25CC, U+A830-A835;
+}
+
+/* Telugu */
+@font-face {
+  font-family: "Noto Sans Display";
+  src: url("../assets/fonts/NotoSansTelugu.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0951-0952, U+0964-0965, U+0C00-0C7F, U+1CDA, U+1CF2, U+200C-200D, U+25CC;
+}
+
+/* Tamil */
+@font-face {
+  font-family: "Noto Sans Display";
+  src: url("../assets/fonts/NotoSansTamil.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC;
+}
+
+/* Odia */
+@font-face {
+  font-family: "Noto Sans Display";
+  src: url("../assets/fonts/NotoSansOriya.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0951-0952, U+0964-0965, U+0B01-0B77, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC;
+}
+
+/* Punjabi */
+@font-face {
+  font-family: "Noto Sans Display";
+  src: url("../assets/fonts/NotoSansGurmukhi.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0951-0952, U+0964-0965, U+0A01-0A76, U+200C-200D, U+20B9, U+25CC, U+262C, U+A830-A839;
+}
+
+/* Gujarati */
+@font-face {
+  font-family: "Noto Sans Display";
+  src: url("../assets/fonts/NotoSansGujarati.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0951-0952, U+0964-0965, U+0A80-0AFF, U+200C-200D, U+20B9, U+25CC, U+A830-A839;
+}
+
+/* Bengali, Assamese, Manipuri */
+@font-face {
+  font-family: "Noto Sans Display";
+  src: url("../assets/fonts/NotoSansBengali.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0951-0952, U+0964-0965, U+0980-09FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+20B9, U+25CC, U+A8F1;
+}
+
+/* Hindi, Marathi, Nepali, Sanskrit, Konkani, Maithili, Bodo, Dogri, Sindhi */
+@font-face {
+  font-family: "Noto Sans Display";
+  src: url("../assets/fonts/NotoSansDevanagari.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}

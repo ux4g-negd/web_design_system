@@ -9,19 +9,19 @@ This is the single package you need - it provides the complete CSS system, inter
 
 ---
 
-## What's New (v3.3.2 / npm 3.0.3)
+## What's New in 3.4.0 (CDN UX4G@3.4.0 / npm 3.4.0)
 
-- **Dark mode theme included:** Full `:root[data-theme="dark"]` overrides for text, backgrounds, borders, shadows, and component-specific styles
-- **57 components bundled:** Carousel, Chips Group, Draft Status Bar, Empty State, Feedback, Footer, Form Field Group, Navbar, OTP, Progress Indicator, Result List, SLA Progress Indicator, Social Link, Time Slot, File Upload, Combobox, Select — all in the CSS bundle
-- **66 citizen journey patterns included:** Identity Access, Payment, Dashboard, Notifications, Search & Discovery, Application & Submission, Consent & Declaration, Status Tracker, and more
-- **8 end-to-end service patterns:** Downloadable tourism/hospitality service flows (Homestay Registration, Hotel Registration, Tour Operator, Tourist Guide Registration, Adventure Activity, Entry & Event Permit, Tourism Event Sponsorship, Tourism Project Approval)
-- **37 utility families:** Including new scroll, child-spacing, divide, float, line-clamp, outline, effects, transforms, transitions, and ring utilities
-- **px-to-rem conversion:** All component and utility values now use rem for better accessibility scaling
-- **Button cascade fix (npm 2.0.1+):** Default button dimensions use `:where()` at zero specificity — size classes always win regardless of CSS source order
-- **Position utilities streamlined:** Responsive position utilities now percentage-only for smaller bundle size; pixel-based position utilities remain in base file
-- **Semantic radius tokens added:** Named aliases (`--ux4g-radius-xs` through `--ux4g-radius-full`) for the numeric scale
-- **594 primitive + 554 semantic design tokens** available as CSS custom properties
-- **iPad/tablet responsive fixes** across Footer, Mega Menu, Card, Alert, Modal, Pagination, OTP
+- **Security fixes:** cross-site scripting (XSS) in context alerts and popovers, class-name injection in alerts, toast containers that a page element could take over, modals opened from ARIA attributes alone, OTP lockouts and consent gates that could be bypassed, select controls that ignored the disabled state or showed a different value from the one submitted, and upload rows removed by file name
+- **Popover HTML is sanitised:** HTML content passes through an allow-list sanitiser (`ux4g.sanitizeHtml`), and HTML mode needs an explicit `data-ux-html="true"`
+- **Strict Content Security Policy:** no inline scripts or event handlers; the npm runtime is bundled as module code, so `script-src 'self'` is enough
+- **Subresource Integrity:** every CDN release has its own immutable version path, with SHA-384 `integrity` hashes published in this README
+- **No third-party requests:** fonts ship with the package (Noto Sans with Indian scripts, Material Icons); no Google Fonts import
+- **Use alongside Bootstrap, Tailwind or another framework:** `data-ux4g-isolated` on `<html>` limits UX4G to its own markup, and a `vendor` cascade layer keeps the other framework below UX4G (see [Using UX4G alongside Bootstrap, Tailwind or another framework](#using-ux4g-alongside-bootstrap-tailwind-or-another-framework))
+- **`ux4g-collapse`:** for accordions and collapsible content, so Bootstrap's `.collapse` no longer applies to them; `collapse` still works
+- **One build for CDN and npm:** the npm stylesheet uses the same cascade layers as the CDN
+- **Runtime fixes:** components added after page load (React, Angular) are initialised; components present at load are initialised once; combobox selection and filtering, title-only tooltips and breadcrumb menus on scroll fixed
+
+**Upgrading from 3.0.3:** popover `data-ux-html` must be `"true"` to render HTML; alert titles and messages are plain text; modals open only from elements with a UX4G modal class (`ux4g-modal`).
 
 See [CHANGELOG.md](./packages/ux4g-web-components/CHANGELOG.md) for full details.
 
@@ -45,13 +45,19 @@ npm install ux4g-web-components
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My UX4G Page</title>
-  <link rel="stylesheet" href="https://cdn.ux4g.gov.in/UX4G@3.3.2/index.css" />
+  <link rel="stylesheet" href="https://cdn.ux4g.gov.in/UX4G@3.4.0/index.css"
+        integrity="sha384-hn/iFlVdVAhK0ZgEJL7exzmNxZnnTnPsPxMAel2FfVz9jAHthyCPe8cEdCYa2cIx"
+        crossorigin="anonymous" />
 </head>
 <body>
   <button class="ux4g-btn-primary ux4g-btn-m ">Get Started</button>
 
-  <script src="https://cdn.ux4g.gov.in/UX4G@3.3.2/ux4g.js"></script>
-  <script src="https://cdn.ux4g.gov.in/UX4G@3.3.2/ux4g-custom.js"></script>
+  <script src="https://cdn.ux4g.gov.in/UX4G@3.4.0/ux4g.js"
+          integrity="sha384-ygZ/KUpZlgVFS/ADhUKNSOOGS9ivapPjuqZOFJhboWnGjgf0l3bJs8s+PJqfbbmL"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.ux4g.gov.in/UX4G@3.4.0/ux4g-custom.js"
+          integrity="sha384-wKLdQMsvxXHp0LWIyUs36IlDKREP6uF9sSOqQLDtnxcZAZw9W8qPT0HLvF/a+cL3"
+          crossorigin="anonymous"></script>
 </body>
 </html>
 ```
@@ -102,7 +108,7 @@ import 'ux4g-web-components/design-system';
 
 | Export Path | Description |
 |---|---|
-| `ux4g-web-components/styles.css` | Pre-built CSS bundle (~8 MB, fonts embedded as base64) |
+| `ux4g-web-components/styles.css` | Pre-built CSS bundle (~840 KB; fonts and images ship beside it under `styles/assets/`) |
 | `ux4g-web-components/design-system` | Side-effect import — auto-initializes runtime (recommended) |
 | `ux4g-web-components/runtime` | `initRuntime()` / `destroyRuntime()` — explicit control |
 
@@ -110,16 +116,111 @@ import 'ux4g-web-components/design-system';
 
 ## CSS Bundle
 
-Layer order (strict — do NOT reorder):
+The stylesheet uses CSS cascade layers. The npm package and the CDN are built from the same `src/index.css`, so they render identically. Layer order, lowest priority first (strict — do NOT reorder):
 
-1. **Tokens** — CSS custom properties (primitive values)
-2. **Semantics** — semantic aliases and dark theme
-3. **Reset** — browser normalization
-4. **Foundations** — fonts and icons (base64-embedded)
-5. **Layout** — container, flex-grid, grid utilities
-6. **Components** — all component CSS
-7. **Patterns** — citizen journey pattern CSS
-8. **Utilities** — 36 single-purpose helper class modules (highest specificity layer)
+1. **Tokens** (`ux4g-tokens`) — CSS custom properties (primitive values)
+2. **Semantics** (`ux4g-semantics`) — semantic aliases and dark theme
+3. **Reset** (`ux4g-reset`) — browser normalization
+4. **Foundations** (`ux4g-foundations`) — fonts and icons (font files ship under `assets/fonts/`)
+5. **Layout** (`ux4g-layout`) — container, flex-grid, grid utilities
+6. **Components** (`ux4g-components`) — all component CSS
+7. **Patterns** (`ux4g-patterns`) — citizen journey pattern CSS
+8. **Utilities** (`ux4g-utilities`) — 36 single-purpose helper class modules (highest priority)
+
+A rule in a later layer always wins over a rule in an earlier one, whatever its specificity. So a utility such as `ux4g-bg-error-strong` always overrides a component colour. A ninth layer, `vendor`, sits below them all and stays empty unless you load another framework into it (see below).
+
+### Using UX4G alongside Bootstrap, Tailwind or another framework
+
+A site built only with UX4G needs nothing from this section.
+
+If UX4G is added to a site that already uses another framework, for example
+while migrating it page by page, two settings keep both working and leave the
+existing site exactly as it was.
+
+**1. Add `data-ux4g-isolated` to `<html>`**
+
+```html
+<html lang="hi" data-ux4g-isolated>
+```
+
+UX4G then styles only its own markup: elements with a `ux4g-` class and
+everything inside them. It no longer sets the page font, colour or background
+on `<body>`, and it no longer resets plain `h1`, `p`, `button`, lists or form
+controls elsewhere on the page. The outermost UX4G element sets the font,
+colour and line height its contents would otherwise inherit from the page, so
+a UX4G component looks the same whatever the page around it uses.
+
+To give a whole section the UX4G look, including plain `<h1>`, `<p>` and
+lists inside it, wrap it in `.ux4g-scope`:
+
+```html
+<main class="ux4g-scope">
+  <h1>New UX4G page</h1>
+  <p>Plain text here gets UX4G typography.</p>
+</main>
+```
+
+**2. Load the other framework into the `vendor` layer**
+
+CSS that is not in a cascade layer always overrides CSS that is, so an
+unlayered Bootstrap or Tailwind would override UX4G components. UX4G reserves
+a layer named `vendor` below all of its own layers. Import the other framework
+into it, before or after UX4G:
+
+Plain HTML or CDN: create a small stylesheet, e.g. `vendor.css`, and load it
+with a `<link>` as usual:
+
+```css
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css") layer(vendor);
+```
+
+Vite, React, Next.js or Angular: in your global stylesheet (Angular: the file
+in `styles` in `angular.json`; Next.js: the CSS imported by `app/layout`):
+
+```css
+@import "bootstrap/dist/css/bootstrap.min.css" layer(vendor);
+@import "ux4g-web-components/styles.css";
+```
+
+Tailwind CSS v4:
+
+```css
+@import "tailwindcss" layer(vendor);
+@import "ux4g-web-components/styles.css";
+```
+
+Tailwind CSS v3: keep the `@tailwind` directives in their own file and import
+that file into the layer:
+
+```css
+/* tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* main stylesheet */
+@import "./tailwind.css" layer(vendor);
+@import "ux4g-web-components/styles.css";
+```
+
+Next.js and Angular print a warning that `@charset` must be the first rule
+when Bootstrap is imported into a layer. Browsers ignore that rule, so the
+warning is harmless.
+
+**Accordions and collapsible content.** Bootstrap also uses the class
+`collapse`. Mark UX4G collapsible content with `ux4g-collapse` instead; the
+runtime animates it with `ux4g-collapsing`. The older `collapse` class still
+works on pages without Bootstrap.
+
+**Overriding UX4G.** Your own stylesheet, if it is not in a layer, still
+overrides UX4G. To restyle components consistently, prefer the design tokens,
+for example `--ux4g-bg-primary-strong`, over overriding component classes.
+
+These setups were checked in Chrome with production builds of plain HTML,
+Vite with React, Next.js 16 and Angular 22, alongside Bootstrap 5.3 and
+Tailwind CSS v4 (and Tailwind CSS v3 with plain HTML and Vite): the host
+site's styles did not change, and UX4G components matched a page with UX4G
+alone.
 
 ---
 

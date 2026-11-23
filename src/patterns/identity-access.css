@@ -979,8 +979,7 @@
     box-sizing: border-box;
 }
 
-.ux4g-identity-access-layout-card .ux4g-success-badge-outer::after {
-    content: "Aadhaar identity verified successfully";
+.ux4g-identity-access-layout-card .ux4g-success-badge-text {
     color: var(--ux4g-text-status-success);
     font-size: 14px;
     line-height: 20px;

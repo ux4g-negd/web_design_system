@@ -287,6 +287,112 @@
     .replaceAll("'", "&#039;");
 
   // -----------------------------
+  // HTML sanitiser (allow-list)
+  // -----------------------------
+
+  // Removed together with everything inside them.
+  const SANITIZE_DROP_SUBTREE = new Set([
+    "script", "style", "iframe", "object", "embed", "link", "meta", "base",
+    "noscript", "template", "svg", "math", "frame", "frameset", "applet",
+    "audio", "video", "source", "track", "portal"
+  ]);
+
+  // Form controls stay allow-listed: popover content may contain a label and an
+  // input. They are rendered without handlers, with URL attributes scheme-checked.
+  const SANITIZE_ALLOWED_TAGS = new Set([
+    "a", "abbr", "b", "br", "button", "caption", "code", "col", "colgroup",
+    "datalist", "dd", "div", "dl", "dt", "em", "fieldset", "figcaption",
+    "figure", "form", "h1", "h2", "h3", "h4", "h5", "h6", "hr", "i", "img",
+    "input", "kbd", "label", "legend", "li", "mark", "meter", "ol", "optgroup",
+    "option", "output", "p", "pre", "progress", "s", "select", "small", "span",
+    "strong", "sub", "sup", "table", "tbody", "td", "textarea", "tfoot", "th",
+    "thead", "time", "tr", "u", "ul"
+  ]);
+
+  const SANITIZE_ALLOWED_ATTRS = new Set([
+    "class", "id", "title", "role", "lang", "dir", "tabindex", "hidden",
+    "href", "src", "alt", "width", "height", "loading", "type", "datetime",
+    "colspan", "rowspan", "scope", "start", "reversed", "value",
+    // Form control attributes.
+    "for", "name", "placeholder", "checked", "disabled", "readonly",
+    "required", "maxlength", "minlength", "min", "max", "step", "pattern",
+    "autocomplete", "inputmode", "multiple", "selected", "rows", "cols",
+    "list", "accept", "action", "method", "formaction", "novalidate"
+  ]);
+
+  // Attributes whose value is a URL, and must therefore carry an allowed scheme.
+  const SANITIZE_URL_ATTRS = new Set(["href", "src", "action", "formaction"]);
+
+  // Relative URLs and fragments pass; any explicit scheme must be listed here.
+  const SANITIZE_ALLOWED_SCHEMES = ["http", "https", "mailto", "tel"];
+
+  const isSafeUrl = (value) => {
+    // Control characters are stripped: browsers ignore them when resolving a URL.
+    const v = String(value).replace(/[\u0000-\u001F\u007F-\u009F]/g, "").trim();
+    const scheme = /^([a-z][a-z0-9+.-]*):/i.exec(v);
+    if (!scheme) return true;
+    return SANITIZE_ALLOWED_SCHEMES.indexOf(scheme[1].toLowerCase()) !== -1;
+  };
+
+  const sanitizeElement = (el) => {
+    Array.from(el.attributes).forEach((attr) => {
+      const name = attr.name.toLowerCase();
+
+      if (name.indexOf("on") === 0) { el.removeAttribute(attr.name); return; }
+
+      const allowed = SANITIZE_ALLOWED_ATTRS.has(name)
+        || name.indexOf("aria-") === 0
+        // Library hooks, so nested components still initialise.
+        || name.indexOf("data-ux-") === 0
+        || name.indexOf("data-bs-") === 0
+        || name.indexOf("ux4g-") === 0;
+
+      if (!allowed) { el.removeAttribute(attr.name); return; }
+
+      if (SANITIZE_URL_ATTRS.has(name) && !isSafeUrl(attr.value)) {
+        el.removeAttribute(attr.name);
+      }
+    });
+  };
+
+  // Sanitises an HTML string. Parsing happens inside an inert <template>.
+  const sanitizeHtml = (dirty) => {
+    if (dirty == null || dirty === "") return "";
+    const template = document.createElement("template");
+    template.innerHTML = String(dirty);
+    sanitizeNode(template.content);
+    return template.innerHTML;
+  };
+
+  // Cleans a live DOM fragment in place.
+  const sanitizeNode = (root) => {
+    if (!root) return root;
+
+    // Collected before mutating, since the tree changes as nodes are removed.
+    Array.from(root.querySelectorAll("*")).forEach((el) => {
+      // Skip nodes already detached with an ancestor.
+      if (!root.contains(el)) return;
+
+      const tag = el.tagName.toLowerCase();
+
+      if (SANITIZE_DROP_SUBTREE.has(tag)) { el.remove(); return; }
+
+      if (!SANITIZE_ALLOWED_TAGS.has(tag)) {
+        // Unwrap, so visible text is not lost.
+        const parent = el.parentNode;
+        if (!parent) return;
+        while (el.firstChild) parent.insertBefore(el.firstChild, el);
+        el.remove();
+        return;
+      }
+
+      sanitizeElement(el);
+    });
+
+    return root;
+  };
+
+  // -----------------------------
   // Dropdown
   // -----------------------------
   class Dropdown {
@@ -368,6 +474,12 @@
       // ux4g accordion uses data-bs-parent on .collapse
       this.parentSel = U.data(this.target, "parent") || U.data(this.trigger, "parent");
       this.duration = this._readDuration(this.target, 200);
+      // ux4g-collapse / ux4g-collapsing avoid Bootstrap's .collapse and
+      // .collapsing rules when both are on a page. Targets marked with the
+      // older collapse class keep working as before.
+      const prefixed = !!this.target && this.target.classList.contains("ux4g-collapse");
+      this.cls = prefixed ? "ux4g-collapse" : "collapse";
+      this.clsAnim = prefixed ? "ux4g-collapsing" : "collapsing";
 
       U.on(this.trigger, "click", (e) => {
         e.preventDefault();
@@ -395,7 +507,7 @@
       if (this.parentSel) {
         const parent = U.qs(this.parentSel);
         if (parent) {
-          U.qsa(".collapse.show", parent).forEach((el) => {
+          U.qsa(".collapse.show, .ux4g-collapse.show", parent).forEach((el) => {
             if (el === this.target) return;
             el.classList.remove("show");
             // update triggers for that element
@@ -411,8 +523,8 @@
       }
 
       // Animate height
-      this.target.classList.add("collapsing");
-      this.target.classList.remove("collapse");
+      this.target.classList.add(this.clsAnim);
+      this.target.classList.remove(this.cls);
       this.target.style.height = "0px";
       U.reflow(this.target);
 
@@ -423,8 +535,8 @@
       this.trigger.setAttribute("aria-expanded", "true");
 
       window.setTimeout(() => {
-        this.target.classList.remove("collapsing");
-        this.target.classList.add("collapse", "show");
+        this.target.classList.remove(this.clsAnim);
+        this.target.classList.add(this.cls, "show");
         this.target.style.height = "";
         U.dispatch(this.target, "ux4g.collapse.shown", {});
       }, this.duration);
@@ -436,8 +548,8 @@
       this.target.style.height = this.target.getBoundingClientRect().height + "px";
       U.reflow(this.target);
 
-      this.target.classList.add("collapsing");
-      this.target.classList.remove("collapse", "show");
+      this.target.classList.add(this.clsAnim);
+      this.target.classList.remove(this.cls, "show");
 
       this.trigger.classList.add("collapsed");
       this.trigger.setAttribute("aria-expanded", "false");
@@ -447,8 +559,8 @@
       }, 10);
 
       window.setTimeout(() => {
-        this.target.classList.remove("collapsing");
-        this.target.classList.add("collapse");
+        this.target.classList.remove(this.clsAnim);
+        this.target.classList.add(this.cls);
         this.target.style.height = "";
         U.dispatch(this.target, "ux4g.collapse.hidden", {});
       }, this.duration);
@@ -587,7 +699,10 @@
       this.placement = U.data(el, "placement", kind === "tooltip" ? "top" : "right");
       this.offset = U.num(U.data(el, "offset", 8), 8);
       this.trigger = U.data(el, "trigger", kind === "tooltip" ? "hover focus" : "click");
-      this.html = U.bool(U.data(el, "html", "false"), false);
+      // Not U.bool: an empty value must not enable HTML. Fails closed.
+      const htmlOption = U.data(el, "html");
+      const htmlValue = htmlOption == null ? "" : String(htmlOption).trim().toLowerCase();
+      this.html = htmlValue === "true" || htmlValue === "1";
 
       if (this.kind === "popover") {
         const contentId = U.data(this.el, "content-id");
@@ -686,6 +801,8 @@
           })();
 
       this._rewriteClonedIds(fragment);
+      // Sanitised after id rewriting, so references are remapped first.
+      sanitizeNode(fragment);
       return fragment;
     }
 
@@ -718,14 +835,14 @@
         const label = U.data(this.el, "label") || "";
         const actionHtml = U.data(this.el, "action-html") || "";
 
-        const t = this.html ? String(title) : escapeHtml(title);
-        const s = this.html ? String(subtitle) : escapeHtml(subtitle);
+        const t = this.html ? sanitizeHtml(title) : escapeHtml(title);
+        const s = this.html ? sanitizeHtml(subtitle) : escapeHtml(subtitle);
         const c = hasContentId
           ? ""
-          : (this.html ? String(content || "") : escapeHtml(content || ""));
-        const i = this.html ? String(icon) : escapeHtml(icon);
-        const l = this.html ? String(label) : escapeHtml(label);
-        const a = this.html ? String(actionHtml) : escapeHtml(actionHtml);
+          : (this.html ? sanitizeHtml(content || "") : escapeHtml(content || ""));
+        const i = this.html ? sanitizeHtml(icon) : escapeHtml(icon);
+        const l = this.html ? sanitizeHtml(label) : escapeHtml(label);
+        const a = this.html ? sanitizeHtml(actionHtml) : escapeHtml(actionHtml);
 
         let inner = "";
         if (t || s) {
@@ -753,8 +870,12 @@
         return inner;
       }
 
-      const t = content != null ? content : (this.el.getAttribute("title") || "");
-      return this.html ? String(t) : escapeHtml(t);
+      // show() moves title to data-ux-original-title before the tooltip is
+      // built, so read it from there too.
+      const t = content != null
+        ? content
+        : (this.el.getAttribute("title") || this.el.getAttribute("data-ux-original-title") || "");
+      return this.html ? sanitizeHtml(t) : escapeHtml(t);
     }
 
     _create() {
@@ -1572,6 +1693,9 @@
       this.heading = el.querySelector('.ux4g-upload-heading');
       this.defaultHeading = this.heading ? this.heading.textContent.trim() : '';
       this.files = [];
+      // Each rendered row keyed to its own entry, so files sharing a name are
+      // removed individually rather than by name.
+      this._rowFiles = new WeakMap();
       this.retryItem = null;
       this.dragDepth = 0;
       this.stateClasses = [
@@ -1778,6 +1902,7 @@
           </button>
         </div>
       `;
+      this._rowFiles.set(li, file);
       if (replaceItem && replaceItem.isConnected) {
         replaceItem.replaceWith(li);
       } else {
@@ -1818,8 +1943,17 @@
 
     _removeFile(item) {
       const name = item && item.dataset.fileName;
-      this.files = this.files.filter(f => f.name !== name);
-      if (item) item.remove();
+      // Remove the entry this row refers to. Falling back to the first name
+      // match covers rows this component did not render itself.
+      const entry = item ? this._rowFiles.get(item) : null;
+      let index = -1;
+      if (entry) index = this.files.indexOf(entry);
+      else if (name) index = this.files.findIndex(f => f.name === name);
+      if (index !== -1) this.files.splice(index, 1);
+      if (item) {
+        this._rowFiles.delete(item);
+        item.remove();
+      }
       this._syncHasFiles();
       U.dispatch(this.el, 'ux4g.upload.removed', { name });
     }
@@ -1836,7 +1970,12 @@
     _syncInitialState() {
       if (this.fileList) {
         this.files = Array.from(this.fileList.querySelectorAll('.ux4g-upload-file-item:not(.ux4g-upload-file-item-error)'))
-          .map(item => ({ name: item.dataset.fileName || item.textContent.trim(), size: 0 }));
+          .map(item => {
+            // Pre-rendered rows are keyed too, so they remove individually.
+            const entry = { name: item.dataset.fileName || item.textContent.trim(), size: 0 };
+            this._rowFiles.set(item, entry);
+            return entry;
+          });
       }
       if (this.el.classList.contains('ux4g-upload-state-error')) {
         if (this.errorMsg) this.errorMsg.classList.remove('ux4g-d-none');
@@ -1904,6 +2043,7 @@
       this.inputs = U.qsa('.ux4g-otp-input', el);
       this.length = this.count;
       this._syncInputs();
+      this._lockApplied = this.state === 'locked-out';
       this._observeErrorState();
       this._bind();
       this._applyVisualFocus();
@@ -1961,6 +2101,35 @@
 
     _isInteractive() {
       return this.state === 'default' || this.state === 'partial-filled' || this.state === 'all-filled';
+    }
+
+    // Read live, so a lockout applied to an existing instance takes effect.
+    _isLockedOut() {
+      return U.data(this.el, 'state', 'default') === 'locked-out';
+    }
+
+    // Applies or releases the lockout when the state attribute changes. Only the
+    // lockout is re-derived here; other states keep their construction-time
+    // behaviour.
+    _syncLockState() {
+      const locked = this._isLockedOut();
+      if (locked === this._lockApplied) return;
+      this._lockApplied = locked;
+      this.state = locked ? 'locked-out' : U.data(this.el, 'state', 'default');
+
+      this.inputs.forEach(input => {
+        if (locked) {
+          input.setAttribute('disabled', 'disabled');
+          input.setAttribute('readonly', 'readonly');
+          input.setAttribute('tabindex', '-1');
+          return;
+        }
+        input.removeAttribute('disabled');
+        if (this._isInteractive()) {
+          input.removeAttribute('readonly');
+          input.removeAttribute('tabindex');
+        }
+      });
     }
 
     _syncInputs() {
@@ -2031,6 +2200,7 @@
 
     _onInput(e, index) {
       const input = e.target;
+      if (this._isLockedOut()) { input.value = ''; return; }
       const value = (input.value || '').replace(/\D/g, '').slice(-1);
       input.value = value;
       input.placeholder = value ? '' : this.placeholder;
@@ -2050,6 +2220,7 @@
 
     _onKeydown(e, index) {
       const input = e.target;
+      if (this._isLockedOut()) { e.preventDefault(); return; }
 
       if (e.key === 'Backspace') {
         if (input.value) {
@@ -2095,6 +2266,8 @@
     }
 
     _updateStateFromValue() {
+      // A lockout must never be written over by typing.
+      if (this._isLockedOut()) return;
       if (!this._isInteractive()) return;
       const filled = this.inputs.filter(input => input.value).length;
       this._completedByUser = filled === this.length;
@@ -2125,7 +2298,10 @@
     }
 
     _observeErrorState() {
-      this._observer = new MutationObserver(() => this._triggerShakeIfError());
+      this._observer = new MutationObserver(() => {
+        this._syncLockState();
+        this._triggerShakeIfError();
+      });
       this._observer.observe(this.el, {
         attributes: true,
         attributeFilter: ['class', 'data-ux-state']
@@ -2674,17 +2850,23 @@
   };
 
   if (typeof MutationObserver !== "undefined") {
+    // Collected across batches: a frame cancelled by a later batch must not
+    // drop the nodes it was going to initialise.
+    const pending = new Set();
     const observer = new MutationObserver((mutations) => {
+      for (let i = 0; i < mutations.length; i++) {
+        for (let j = 0; j < mutations[i].addedNodes.length; j++) {
+          const node = mutations[i].addedNodes[j];
+          // init() only searches below its root, so an added node that is
+          // itself a trigger is reached through its parent.
+          if (node.nodeType === 1 && node.parentNode) pending.add(node.parentNode);
+        }
+      }
       cancelAnimationFrame(global._ux4gInitRaf);
       global._ux4gInitRaf = requestAnimationFrame(() => {
-        for (let i = 0; i < mutations.length; i++) {
-          for (let j = 0; j < mutations[i].addedNodes.length; j++) {
-            const node = mutations[i].addedNodes[j];
-            if (node.nodeType === 1) {
-              init(node);
-            }
-          }
-        }
+        const roots = Array.from(pending).filter((root) => root.isConnected);
+        pending.clear();
+        roots.forEach((root) => init(root));
         global.ux4gCustomInit();
       });
     });
@@ -2706,6 +2888,7 @@
     getI,
     setI,
     escapeHtml,
+    sanitizeHtml,
     init,
     Dropdown,
     Collapse,

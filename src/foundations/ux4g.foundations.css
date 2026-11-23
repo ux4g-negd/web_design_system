@@ -1,3 +1,5 @@
+@import "../foundations/fonts-indic.css";
 @import "../foundations/fonts.css";
 @import "../foundations/icons.css";
 @import "../foundations/focus.css";
+@import "../foundations/isolation.css";

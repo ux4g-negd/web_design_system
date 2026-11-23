@@ -9,20 +9,19 @@ This is the single package you need — it provides the complete CSS system, int
 
 ---
 
-## What's New in 3.0.3
+## What's New in 3.4.0
 
-- **Dark mode theme included:** Full `:root[data-theme="dark"]` overrides for text, backgrounds, borders, shadows, and component-specific styles
-- **57 components bundled:** Including Select (custom single/multi with chips, search, keyboard nav)
-- **66 citizen journey patterns** (up from 15): Full coverage of Identity, Payment, Dashboard, Notifications, Search & Discovery, Application & Submission, Consent & Declaration, and Status Tracker flows
-- **8 end-to-end service patterns:** Downloadable tourism/hospitality service flows (Homestay Registration, Hotel Registration, Tour Operator, Tourist Guide Registration, Adventure Activity, Entry & Event Permit, Tourism Event Sponsorship, Tourism Project Approval)
-- **37 utility modules** (up from 28): Added scroll, child-spacing, divide, float, line-clamp, outline, effects, transforms, transitions, and ring utilities
-- **px-to-rem conversion:** All component and utility values now use rem for better accessibility scaling
-- **Button cascade fix (v2.0.1):** Default button dimensions use `:where()` at zero specificity — size classes always win regardless of CSS source order
-- **Position utilities streamlined:** Responsive position utilities now percentage-only for smaller bundle; pixel offsets remain in base file
-- **Semantic radius token aliases:** `--ux4g-radius-xs` through `--ux4g-radius-full` for named radius scale
-- **594 primitive + 554 semantic design tokens** available as CSS custom properties
-- **iPad/tablet responsive fixes** across Footer, Mega Menu, Card, Alert, Modal, Pagination, OTP
-- **v2.0.2 (docs):** Corrected migration class names, documented new utility categories in all guides, fixed CDN placeholder in AI prompt
+- **Security fixes:** cross-site scripting (XSS) in context alerts and popovers, class-name injection in alerts, toast containers that a page element could take over, modals opened from ARIA attributes alone, OTP lockouts and consent gates that could be bypassed, select controls that ignored the disabled state or showed a different value from the one submitted, and upload rows removed by file name
+- **Popover HTML is sanitised:** HTML content passes through an allow-list sanitiser (`ux4g.sanitizeHtml`), and HTML mode needs an explicit `data-ux-html="true"`
+- **Strict Content Security Policy:** no inline scripts or event handlers; the npm runtime is bundled as module code, so `script-src 'self'` is enough
+- **Subresource Integrity:** every CDN release has its own immutable version path, with SHA-384 `integrity` hashes published in this README
+- **No third-party requests:** fonts ship with the package (Noto Sans with Indian scripts, Material Icons); no Google Fonts import
+- **Use alongside Bootstrap, Tailwind or another framework:** `data-ux4g-isolated` on `<html>` limits UX4G to its own markup, and a `vendor` cascade layer keeps the other framework below UX4G (see [Using UX4G alongside Bootstrap, Tailwind or another framework](#using-ux4g-alongside-bootstrap-tailwind-or-another-framework))
+- **`ux4g-collapse`:** for accordions and collapsible content, so Bootstrap's `.collapse` no longer applies to them; `collapse` still works
+- **One build for CDN and npm:** the npm stylesheet uses the same cascade layers as the CDN
+- **Runtime fixes:** components added after page load (React, Angular) are initialised; components present at load are initialised once; combobox selection and filtering, title-only tooltips and breadcrumb menus on scroll fixed
+
+**Upgrading from 3.0.3:** popover `data-ux-html` must be `"true"` to render HTML; alert titles and messages are plain text; modals open only from elements with a UX4G modal class (`ux4g-modal`).
 
 See [CHANGELOG.md](./CHANGELOG.md) for full details.
 
@@ -97,7 +96,9 @@ See [CHANGELOG.md](./CHANGELOG.md) for full details.
 
 ```html
 <!-- CDN -->
-<link rel="stylesheet" href="https://cdn.ux4g.gov.in/UX4G@3.3.2/index.css" />
+<link rel="stylesheet" href="https://cdn.ux4g.gov.in/UX4G@3.4.0/index.css"
+      integrity="sha384-hn/iFlVdVAhK0ZgEJL7exzmNxZnnTnPsPxMAel2FfVz9jAHthyCPe8cEdCYa2cIx"
+      crossorigin="anonymous" />
 
 <!-- npm (import in JS) -->
 import 'ux4g-web-components/styles.css';
@@ -125,12 +126,18 @@ npm install ux4g-web-components
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My UX4G Page</title>
-  <link rel="stylesheet" href="https://cdn.ux4g.gov.in/UX4G@3.3.2/index.css" />
+  <link rel="stylesheet" href="https://cdn.ux4g.gov.in/UX4G@3.4.0/index.css"
+        integrity="sha384-hn/iFlVdVAhK0ZgEJL7exzmNxZnnTnPsPxMAel2FfVz9jAHthyCPe8cEdCYa2cIx"
+        crossorigin="anonymous" />
 </head>
 <body>
   <button class="ux4g-btn-primary ux4g-btn-m ">Get Started</button>
-  <script src="https://cdn.ux4g.gov.in/UX4G@3.3.2/ux4g.js"></script>
-  <script src="https://cdn.ux4g.gov.in/UX4G@3.3.2/ux4g-custom.js"></script>
+  <script src="https://cdn.ux4g.gov.in/UX4G@3.4.0/ux4g.js"
+          integrity="sha384-ygZ/KUpZlgVFS/ADhUKNSOOGS9ivapPjuqZOFJhboWnGjgf0l3bJs8s+PJqfbbmL"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.ux4g.gov.in/UX4G@3.4.0/ux4g-custom.js"
+          integrity="sha384-wKLdQMsvxXHp0LWIyUs36IlDKREP6uF9sSOqQLDtnxcZAZw9W8qPT0HLvF/a+cL3"
+          crossorigin="anonymous"></script>
 </body>
 </html>
 ```
@@ -170,11 +177,40 @@ import 'ux4g-web-components/design-system';
 
 ---
 
+## Content Security Policy
+
+The runtime is ordinary module code. Your bundler includes it in your own
+JavaScript, so it is served from your origin and `script-src 'self'` is all it
+needs. Nothing is injected as an inline script and nothing is evaluated, so
+neither `'unsafe-inline'` nor `'unsafe-eval'` is required. This holds for
+Vite, webpack, Next.js, the Angular CLI and any other bundler, with no extra
+files to copy or configure.
+
+Importing it during server-side rendering is safe: it does nothing until it
+runs in a browser. In the Next.js App Router, import it from a client
+component (`'use client'`) so it reaches the browser bundle.
+
+Two framework settings matter under a strict policy, independent of UX4G:
+
+- **Angular**: the production build inlines critical CSS and loads the rest
+  with an inline `onload` handler, which `script-src 'self'` blocks, leaving
+  the stylesheet unapplied. Set
+  `"optimization": { "styles": { "inlineCritical": false } }` in
+  `angular.json`, or supply a nonce through Angular's `ngCspNonce`.
+- **Next.js**: its own hydration scripts are inline, so it needs a
+  per-request nonce from middleware.
+
+Fonts and images ship beside the stylesheet in `styles/assets/` and load from
+your origin too, so `font-src 'self'` and `img-src 'self'` cover them. The
+stylesheet makes no third-party requests.
+
+---
+
 ## Available Exports
 
 | Export Path | Description |
 |---|---|
-| `ux4g-web-components/styles.css` | Pre-built CSS bundle (~8 MB, fonts embedded as base64) |
+| `ux4g-web-components/styles.css` | Pre-built CSS bundle (~840 KB; fonts and images ship beside it under `styles/assets/`) |
 | `ux4g-web-components/design-system` | Side-effect import — auto-initializes runtime (recommended) |
 | `ux4g-web-components/runtime` | `initRuntime()` / `destroyRuntime()` — explicit control |
 
@@ -182,16 +218,111 @@ import 'ux4g-web-components/design-system';
 
 ## CSS Bundle
 
-Layer order (strict — do NOT reorder):
+The stylesheet uses CSS cascade layers. The npm package and the CDN are built from the same `src/index.css`, so they render identically. Layer order, lowest priority first (strict — do NOT reorder):
 
-1. **Tokens** — CSS custom properties (primitive values)
-2. **Semantics** — semantic aliases and dark theme
-3. **Reset** — browser normalization
-4. **Foundations** — fonts and icons (base64-embedded)
-5. **Layout** — container, flex-grid, grid utilities
-6. **Components** — 57 component CSS files
-7. **Patterns** — 66 citizen journey pattern CSS files
-8. **Utilities** — 37 single-purpose helper class modules (highest specificity layer)
+1. **Tokens** (`ux4g-tokens`) — CSS custom properties (primitive values)
+2. **Semantics** (`ux4g-semantics`) — semantic aliases and dark theme
+3. **Reset** (`ux4g-reset`) — browser normalization
+4. **Foundations** (`ux4g-foundations`) — fonts and icons (font files ship under `assets/fonts/`)
+5. **Layout** (`ux4g-layout`) — container, flex-grid, grid utilities
+6. **Components** (`ux4g-components`) — all component CSS
+7. **Patterns** (`ux4g-patterns`) — citizen journey pattern CSS
+8. **Utilities** (`ux4g-utilities`) — 37 single-purpose helper class modules (highest priority)
+
+A rule in a later layer always wins over a rule in an earlier one, whatever its specificity. So a utility such as `ux4g-bg-error-strong` always overrides a component colour. A ninth layer, `vendor`, sits below them all and stays empty unless you load another framework into it (see below).
+
+### Using UX4G alongside Bootstrap, Tailwind or another framework
+
+A site built only with UX4G needs nothing from this section.
+
+If UX4G is added to a site that already uses another framework, for example
+while migrating it page by page, two settings keep both working and leave the
+existing site exactly as it was.
+
+**1. Add `data-ux4g-isolated` to `<html>`**
+
+```html
+<html lang="hi" data-ux4g-isolated>
+```
+
+UX4G then styles only its own markup: elements with a `ux4g-` class and
+everything inside them. It no longer sets the page font, colour or background
+on `<body>`, and it no longer resets plain `h1`, `p`, `button`, lists or form
+controls elsewhere on the page. The outermost UX4G element sets the font,
+colour and line height its contents would otherwise inherit from the page, so
+a UX4G component looks the same whatever the page around it uses.
+
+To give a whole section the UX4G look, including plain `<h1>`, `<p>` and
+lists inside it, wrap it in `.ux4g-scope`:
+
+```html
+<main class="ux4g-scope">
+  <h1>New UX4G page</h1>
+  <p>Plain text here gets UX4G typography.</p>
+</main>
+```
+
+**2. Load the other framework into the `vendor` layer**
+
+CSS that is not in a cascade layer always overrides CSS that is, so an
+unlayered Bootstrap or Tailwind would override UX4G components. UX4G reserves
+a layer named `vendor` below all of its own layers. Import the other framework
+into it, before or after UX4G:
+
+Plain HTML or CDN: create a small stylesheet, e.g. `vendor.css`, and load it
+with a `<link>` as usual:
+
+```css
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css") layer(vendor);
+```
+
+Vite, React, Next.js or Angular: in your global stylesheet (Angular: the file
+in `styles` in `angular.json`; Next.js: the CSS imported by `app/layout`):
+
+```css
+@import "bootstrap/dist/css/bootstrap.min.css" layer(vendor);
+@import "ux4g-web-components/styles.css";
+```
+
+Tailwind CSS v4:
+
+```css
+@import "tailwindcss" layer(vendor);
+@import "ux4g-web-components/styles.css";
+```
+
+Tailwind CSS v3: keep the `@tailwind` directives in their own file and import
+that file into the layer:
+
+```css
+/* tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* main stylesheet */
+@import "./tailwind.css" layer(vendor);
+@import "ux4g-web-components/styles.css";
+```
+
+Next.js and Angular print a warning that `@charset` must be the first rule
+when Bootstrap is imported into a layer. Browsers ignore that rule, so the
+warning is harmless.
+
+**Accordions and collapsible content.** Bootstrap also uses the class
+`collapse`. Mark UX4G collapsible content with `ux4g-collapse` instead; the
+runtime animates it with `ux4g-collapsing`. The older `collapse` class still
+works on pages without Bootstrap.
+
+**Overriding UX4G.** Your own stylesheet, if it is not in a layer, still
+overrides UX4G. To restyle components consistently, prefer the design tokens,
+for example `--ux4g-bg-primary-strong`, over overriding component classes.
+
+These setups were checked in Chrome with production builds of plain HTML,
+Vite with React, Next.js 16 and Angular 22, alongside Bootstrap 5.3 and
+Tailwind CSS v4 (and Tailwind CSS v3 with plain HTML and Vite): the host
+site's styles did not change, and UX4G components matched a page with UX4G
+alone.
 
 ---
 
